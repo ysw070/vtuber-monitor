@@ -214,6 +214,7 @@ footer{margin-top:18px;font-size:11.5px;color:#9aa1b3}
 
 <div id="drawer"><button class="close" onclick="drawer.classList.remove('open')">✕</button><div id="d-body"></div></div>
 <footer id="foot">임계값(확정): 위키등재 OR 5만+ 팔로워 · 매월 1일 자동 수집.</footer>
+<div id="copyright" style="margin-top:8px;font-size:11.5px;color:#9aa1b3">© <span id="cyear"></span> (주)크리에이터버스. All rights reserved.</div>
 </div>
 <script>
 const D=__DATA__;
@@ -487,6 +488,7 @@ function renderMethod(){
   <p class="muted" style="margin-top:12px">데이터 수집일 ${D.collected} · 인용 시 출처를 위와 같이 밝혀 주세요.</p>`;
 }
 
+$('#cyear').textContent=new Date().getFullYear();
 renderG();renderS();renderTrend();renderA();renderU();renderTL();renderMethod();
 routeHash();
 window.addEventListener('hashchange',routeHash);
