@@ -1,0 +1,62 @@
+name: 월간 수집 및 배포
+
+# 매월 1일 00:00 UTC(= 한국시간 오전 9시) 자동 실행 + 수동 실행(재수집 버튼)
+on:
+  schedule:
+    - cron: "0 0 1 * *"
+  workflow_dispatch: {}
+
+# Pages 배포에 필요한 권한 + 스냅샷 커밋 권한
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+# 동시 실행 방지(중복 수집 차단)
+concurrency:
+  group: "collect-deploy"
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 체크아웃
+        uses: actions/checkout@v4
+
+      - name: 파이썬 설정
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: 의존성 설치
+        run: pip install -r requirements.txt
+
+      - name: 수집 → 스냅샷 → 빌드
+        env:
+          GH_REPO: ${{ github.repository }}
+        run: python build.py
+
+      - name: 갱신된 데이터 커밋(스냅샷 히스토리 보존)
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/ public/ || true
+          git commit -m "월간 수집: $(date -u +%Y-%m-%d)" || echo "변경 없음 — 커밋 건너뜀"
+          git push || echo "푸시 생략"
+
+      - name: Pages 아티팩트 업로드(public/ 디렉터리)
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: public
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: GitHub Pages 배포
+        id: deployment
+        uses: actions/deploy-pages@v4
