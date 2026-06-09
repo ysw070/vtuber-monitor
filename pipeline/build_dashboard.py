@@ -42,13 +42,45 @@ for r in rows:
     if r['twitter_id'] and not a['t']: a['t'] = r['twitter_id']
 solos = sorted(agg.values(), key=lambda x: -x['f'])
 
+# 소속사·운영사 정리 시트 → [이름, 유형, 대표그룹, 비고]
+agencies = []
+if '소속사·운영사 정리' in wb.sheetnames:
+    aw = wb['소속사·운영사 정리']
+    for r in aw.iter_rows(min_row=3, values_only=True):
+        if not r or not r[0]: continue
+        agencies.append([r[0] or '', r[1] or '', r[2] or '', (r[3] if len(r) > 3 else '') or ''])
+
+# 데뷔예정·신규 시트 → [그룹, 소속사, 상태, 데뷔(예정)일, 비고]
+upcoming = []
+for sn in wb.sheetnames:
+    if '데뷔예정' in sn or '신규' in sn:
+        uw = wb[sn]
+        for r in uw.iter_rows(min_row=3, values_only=True):
+            if not r or not r[0]: continue
+            upcoming.append([r[0] or '', r[1] or '', r[2] or '', str(r[3] or ''), (r[4] if len(r) > 4 else '') or ''])
+        break
+
+# 연표: 그룹의 활동시작에서 연도 추출 → 연도별 데뷔/종료 집계 + 항목
+import re as _re
+def year_of(s):
+    m = _re.search(r'(20\d{2})', str(s))
+    return m.group(1) if m else None
+timeline = {}
+for g in groups:
+    y = year_of(g[4])
+    if not y: continue
+    timeline.setdefault(y, {'debut': [], 'ended': []})
+    timeline[y]['debut'].append({'name': g[1], 'cls': g[5], 'st': g[6]})
+# 종료 연도는 비고/상태에서 추정 어려워 데뷔 기준 연표만 사용(상태로 색 구분)
+
 # 빌드 모드: cowork(기본, 아티팩트용) 또는 public(외부 사이트용)
 MODE = os.environ.get('SITE_MODE', 'cowork')
 GH_REPO = os.environ.get('GH_REPO', '')  # 예: 'ysw070/vtuber-monitor'
 cfg = {'mode': MODE, 'repo': GH_REPO}
 
 data = {'built': datetime.date.today().isoformat(), 'collected': collected_at or datetime.date.today().isoformat(),
-        'groups': groups, 'solos': solos, 'history': history, 'diff': diff, 'cfg': cfg}
+        'groups': groups, 'solos': solos, 'history': history, 'diff': diff, 'cfg': cfg,
+        'agencies': agencies, 'upcoming': upcoming, 'timeline': timeline}
 DATA = json.dumps(data, ensure_ascii=False, separators=(',', ':')).replace('</', '<\\/')
 
 HTML = r'''<!DOCTYPE html>
@@ -116,7 +148,11 @@ footer{margin-top:18px;font-size:11.5px;color:#9aa1b3}
   <div class="tab on" data-t="dash">📊 대시보드</div>
   <div class="tab" data-t="grp">그룹 전수목록 (<span id="cnt-g"></span>)</div>
   <div class="tab" data-t="solo">개인세 (<span id="cnt-s"></span>)</div>
+  <div class="tab" data-t="agency">소속사 (<span id="cnt-a"></span>)</div>
+  <div class="tab" data-t="upcoming">데뷔예정 (<span id="cnt-u"></span>)</div>
+  <div class="tab" data-t="timeline">📅 연표</div>
   <div class="tab" data-t="trend">📈 추세·변동</div>
+  <div class="tab" data-t="method">ℹ️ 데이터 기준</div>
 </div>
 
 <section id="t-dash">
@@ -158,6 +194,24 @@ footer{margin-top:18px;font-size:11.5px;color:#9aa1b3}
   </div>
 </section>
 
+<section id="t-agency" style="display:none">
+  <div class="toolbar"><input type="text" id="q-a" placeholder="소속사·대표그룹 검색"></div>
+  <table><thead><tr><th data-k="0">소속사·운영사</th><th data-k="1" class="hide-m">유형</th><th data-k="2">대표 그룹</th></tr></thead><tbody id="tb-a"></tbody></table>
+</section>
+
+<section id="t-upcoming" style="display:none">
+  <p class="muted" style="margin-bottom:10px">2026 신규 데뷔 및 데뷔 예정 워치리스트 — 정식 데뷔 시 그룹 전수목록으로 편입됩니다.</p>
+  <div id="up-cards" class="charts"></div>
+</section>
+
+<section id="t-timeline" style="display:none">
+  <p class="muted" style="margin-bottom:10px">데뷔(활동시작) 연도 기준. 색은 현재 상태 — 한국 버추얼 그룹 신(scene)의 흐름을 한눈에.</p>
+  <div class="chart-box" style="margin-bottom:14px"><h3>연도별 데뷔 수</h3><canvas id="ctl"></canvas></div>
+  <div id="tl-body"></div>
+</section>
+
+<section id="t-method" style="display:none"><div id="method-body"></div></section>
+
 <div id="drawer"><button class="close" onclick="drawer.classList.remove('open')">✕</button><div id="d-body"></div></div>
 <footer id="foot">임계값(확정): 위키등재 OR 5만+ 팔로워 · 매월 1일 자동 수집.</footer>
 </div>
@@ -168,13 +222,16 @@ const $=s=>document.querySelector(s),esc=s=>String(s??'').replace(/[&<>"]/g,c=>(
 const fmt=n=>n>=10000?(n/10000).toFixed(n>=100000?0:1)+'만':n.toLocaleString();
 $('#m-col').textContent=D.collected;$('#m-built').textContent=D.built;
 $('#cnt-g').textContent=D.groups.length;$('#cnt-s').textContent=D.solos.length;
+$('#cnt-a').textContent=(D.agencies||[]).length;$('#cnt-u').textContent=(D.upcoming||[]).length;
 const drawer=$('#drawer');
+const TABS=['dash','grp','solo','agency','upcoming','timeline','trend','method'];
 
 /* 탭 */
-document.querySelectorAll('.tab').forEach(t=>t.onclick=()=>{
-  document.querySelectorAll('.tab').forEach(x=>x.classList.remove('on'));t.classList.add('on');
-  ['dash','grp','solo','trend'].forEach(k=>$('#t-'+k).style.display=k===t.dataset.t?'':'none');
-});
+function showTab(t){
+  document.querySelectorAll('.tab').forEach(x=>x.classList.toggle('on',x.dataset.t===t));
+  TABS.forEach(k=>$('#t-'+k).style.display=k===t?'':'none');
+}
+document.querySelectorAll('.tab').forEach(t=>t.onclick=()=>showTab(t.dataset.t));
 
 /* 대시보드 */
 const cnt=(arr,fn)=>arr.reduce((m,x)=>{const k=fn(x);m[k]=(m[k]||0)+1;return m},{});
@@ -205,13 +262,15 @@ function renderG(){
 $('#q-g').oninput=e=>{gQ=e.target.value.toLowerCase();renderG()};
 document.querySelectorAll('#t-grp .chip').forEach(c=>c.onclick=()=>{document.querySelectorAll('#t-grp .chip').forEach(x=>x.classList.remove('on'));c.classList.add('on');gS=c.dataset.s;renderG()});
 document.querySelectorAll('#t-grp th').forEach(th=>th.onclick=()=>{const k=+th.dataset.k;gSort=[k,gSort[0]===k?-gSort[1]:1];renderG()});
-function openG(g){
+function openG(g,skipHash){
+  if(!skipHash)setHash('g/'+g[0]);
   $('#d-body').innerHTML=`<h2>${esc(g[1])}</h2><div class="muted">${esc(g[2])}</div>
   <div class="kv"><div><b>상태</b><span class="${stCls(g[6])}">${esc(g[6])}</span></div><div><b>소속·운영사</b><span>${esc(g[3])||'—'}</span></div>
   <div><b>활동 시작</b><span>${esc(g[4])||'—'}</span></div><div><b>분류</b><span>${esc(g[5])}</span></div></div>
   <div class="kv"><div style="display:block"><b>비고</b><p style="margin-top:6px;line-height:1.55">${esc(g[7])||'—'}</p></div></div>
   <a class="chlink" target="_blank" href="https://www.youtube.com/results?search_query=${encodeURIComponent(g[1]+' 버추얼')}"><span class="pf">▶ 유튜브에서 검색</span><span class="fl">새 창</span></a>
-  <a class="chlink" target="_blank" href="https://namu.wiki/Search?q=${encodeURIComponent(g[1])}"><span class="pf">📖 나무위키 검색</span><span class="fl">새 창</span></a>`;
+  <a class="chlink" target="_blank" href="https://namu.wiki/Search?q=${encodeURIComponent(g[1])}"><span class="pf">📖 나무위키 검색</span><span class="fl">새 창</span></a>
+  ${shareBtn()}`;
   drawer.classList.add('open');
 }
 
@@ -231,14 +290,16 @@ $('#q-s').oninput=e=>{sQ=e.target.value.toLowerCase();sLimit=100;renderS()};
 $('#f-plat').onchange=e=>{sP=e.target.value;sLimit=100;renderS()};
 $('#f-min').onchange=e=>{sM=+e.target.value;sLimit=100;renderS()};
 document.querySelectorAll('#t-solo th').forEach(th=>th.onclick=()=>{const k=th.dataset.k;sSort=[k,sSort[0]===k?-sSort[1]:-1];renderS()});
-function openS(s){
+function openS(s,skipHash){
+  if(!skipHash)setHash('s/'+encodeURIComponent(s.n));
   const links=Object.entries(s.ch).map(([p,[f,u,cn]])=>u?`<a class="chlink" target="_blank" href="${esc(u)}"><span class="pf">${esc(p)} · ${esc(cn||s.n)}</span><span class="fl">${f?fmt(f)+' 팔로워':''} ↗</span></a>`:'').join('');
   const tw=s.t?`<a class="chlink" target="_blank" href="https://x.com/${esc(s.t.replace('@',''))}"><span class="pf">𝕏 ${esc(s.t)}</span><span class="fl">새 창 ↗</span></a>`:'';
   const judge=s.f>=50000?'<span class="st st-활동중">5만+ 포함 후보</span>':s.f>=30000?'<span class="st st-전환">3만~5만 워치</span>':'<span class="st st-휴면">기준 미달 (위키등재 별도확인)</span>';
   $('#d-body').innerHTML=`<h2>${esc(s.n)}</h2><div class="muted">${esc(s.e)}</div>
   <div class="kv"><div><b>임계값 판정</b><span>${judge}</span></div><div><b>최대 팔로워</b><span><b>${s.f?s.f.toLocaleString():'—'}</b> (${esc(s.p)||'—'})</span></div>
   <div><b>데뷔일</b><span>${esc(s.d)||'—'}</span></div><div><b>최근 라이브</b><span>${esc(s.l)||'—'}</span></div></div>
-  <h3 style="margin-top:16px;font-size:13px;color:#555e76">채널</h3>${links||'<p class="muted" style="margin-top:6px">채널 URL 없음</p>'}${tw}`;
+  <h3 style="margin-top:16px;font-size:13px;color:#555e76">채널</h3>${links||'<p class="muted" style="margin-top:6px">채널 URL 없음</p>'}${tw}
+  ${shareBtn()}`;
   drawer.classList.add('open');
 }
 
@@ -312,7 +373,123 @@ $('#foot').innerHTML=CFG.mode==='public'
   ? '임계값(확정): 위키등재 OR 5만+ 팔로워 · 매월 1일 GitHub Actions에서 자동 수집·재배포 (서버리스, 운영자 PC와 무관). 데이터 출처: 한국 버추얼아이돌 전수조사 + 나의 작은 버튜버 API.'
   : '임계값(확정): 위키등재 OR 5만+ 팔로워 · 재수집 버튼은 월간 수집 작업을 즉시 실행합니다 (완료까지 수 분, 완료 후 페이지 자동 갱신). 매월 1일 09:00 자동 수집.';
 
-renderG();renderS();renderTrend();
+/* ── 공유 딥링크 ── */
+function setHash(h){ if(location.hash.slice(1)!==h) history.replaceState(null,'','#'+h); }
+function shareBtn(){ return `<button class="btn-s" style="margin-top:16px;width:100%" onclick="copyShare()">🔗 이 항목 링크 복사</button><div id="share-msg" class="muted" style="margin-top:6px"></div>`; }
+function copyShare(){
+  const url=location.href;
+  const done=()=>{const m=$('#share-msg');if(m){m.textContent='링크가 복사됐어요!';setTimeout(()=>{if(m)m.textContent='';},2500);}};
+  if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(url).then(done,()=>prompt('아래 링크를 복사하세요:',url));}
+  else prompt('아래 링크를 복사하세요:',url);
+}
+drawer.addEventListener('transitionend',()=>{ if(!drawer.classList.contains('open')&&location.hash) setHash(''); });
+function routeHash(){
+  const h=decodeURIComponent(location.hash.slice(1));
+  if(!h) return;
+  const [kind,...rest]=h.split('/'); const id=rest.join('/');
+  if(kind==='g'){const g=D.groups.find(x=>String(x[0])===id); if(g){showTab('grp');openG(g,true);}}
+  else if(kind==='s'){const s=D.solos.find(x=>x.n===id); if(s){showTab('solo');openS(s,true);}}
+  else if(kind==='a'){const a=(D.agencies||[]).find(x=>x[0]===id); if(a){showTab('agency');openA(a,true);}}
+  else if(TABS.includes(kind)){showTab(kind);}
+}
+
+/* ── 소속사 탭 ── */
+let aQ='';
+function renderA(){
+  const rs=(D.agencies||[]).filter(a=>!aQ||(a[0]+a[1]+a[2]+a[3]).toLowerCase().includes(aQ));
+  $('#tb-a').innerHTML=rs.map(a=>`<tr class="row" data-n="${esc(a[0])}"><td><b>${esc(a[0])}</b></td><td class="hide-m muted">${esc(a[1])}</td><td>${esc(a[2])||'—'}</td></tr>`).join('');
+  document.querySelectorAll('#tb-a .row').forEach(tr=>tr.onclick=()=>openA((D.agencies||[]).find(x=>x[0]===tr.dataset.n)));
+}
+const qa=$('#q-a'); if(qa) qa.oninput=e=>{aQ=e.target.value.toLowerCase();renderA();};
+function openA(a,skipHash){
+  if(!skipHash)setHash('a/'+encodeURIComponent(a[0]));
+  // 이 소속사에 매핑되는 그룹 전수목록 항목 찾기(소속사 컬럼 부분일치)
+  const key=a[0].replace(/\(.*?\)/g,'').trim();
+  const linked=D.groups.filter(g=>g[3]&&key&&g[3].includes(key.split(/[ (]/)[0]));
+  $('#d-body').innerHTML=`<h2>${esc(a[0])}</h2><div class="muted">${esc(a[1])}</div>
+  <div class="kv"><div><b>대표 그룹</b><span>${esc(a[2])||'—'}</span></div></div>
+  <div class="kv"><div style="display:block"><b>비고</b><p style="margin-top:6px;line-height:1.55">${esc(a[3])||'—'}</p></div></div>
+  ${linked.length?`<h3 style="margin-top:16px;font-size:13px;color:#555e76">전수목록 매칭 (${linked.length})</h3>`+linked.map(g=>`<div class="chlink" style="cursor:pointer" onclick="showTab('grp');openG(D.groups[${D.groups.indexOf(g)}])"><span class="pf">${esc(g[1])}</span><span class="fl"><span class="${stCls(g[6])}">${esc(g[6])}</span></span></div>`).join(''):''}
+  ${shareBtn()}`;
+  drawer.classList.add('open');
+}
+
+/* ── 데뷔예정 탭 ── */
+function renderU(){
+  $('#up-cards').innerHTML=(D.upcoming||[]).map(u=>`<div class="chart-box"><div style="display:flex;justify-content:space-between;align-items:start;gap:8px"><h3 style="font-size:15px">${esc(u[0])}</h3><span class="st st-확인필요">${esc(u[2])}</span></div>
+    <div class="kv"><div><b>소속사</b><span>${esc(u[1])||'—'}</span></div><div><b>데뷔(예정)</b><span>${esc(u[3])||'—'}</span></div></div>
+    <p class="muted" style="margin-top:8px;line-height:1.5">${esc(u[4])||''}</p></div>`).join('')||'<p class="muted">데뷔예정 데이터 없음</p>';
+}
+
+/* ── 연표 탭 ── */
+function renderTL(){
+  const tl=D.timeline||{},years=Object.keys(tl).sort();
+  if(!years.length){$('#tl-body').innerHTML='<p class="muted">연도 데이터 없음</p>';return;}
+  new Chart($('#ctl'),{type:'bar',data:{labels:years,datasets:[{label:'데뷔',data:years.map(y=>tl[y].debut.length),backgroundColor:'#3d5afe',borderWidth:0}]},
+    options:{plugins:{legend:{display:false}},scales:{y:{beginAtZero:true,ticks:{font:{size:11},precision:0}},x:{ticks:{font:{size:11}}}}}});
+  $('#tl-body').innerHTML=years.slice().reverse().map(y=>`<div class="chart-box" style="margin-bottom:10px"><h3>${y} <span class="muted">· ${tl[y].debut.length}팀 데뷔</span></h3>
+    <div style="display:flex;flex-wrap:wrap;gap:6px;margin-top:6px">${tl[y].debut.map(d=>`<span class="${stCls(d.st)}" style="cursor:pointer" onclick="openByName('${esc(d.name).replace(/'/g,"\\'")}')">${esc(d.name)}</span>`).join('')}</div></div>`).join('');
+}
+function openByName(n){const g=D.groups.find(x=>x[1]===n);if(g){showTab('grp');openG(g);}}
+
+/* ── 데이터 기준(방법론) 탭 ── */
+function renderMethod(){
+  const wikiN=null;
+  $('#method-body').innerHTML=`
+  <div class="chart-box" style="line-height:1.65">
+    <h3 style="font-size:16px;margin-bottom:8px">이 명부는 어떻게 만들어졌나</h3>
+    <p>한국에서 활동하는 버추얼 아이돌·버추얼 유튜버(버튜버)를 <b>그룹 단위</b>로 전수조사하고, 무소속(개인세) 버튜버는 <b>규모·등재 기준</b>으로 선별해 함께 수록합니다. 매월 1일 자동으로 갱신됩니다.</p>
+  </div>
+
+  <div class="chart-box" style="margin-top:12px">
+    <h3 style="font-size:15px">① 수집 출처</h3>
+    <div class="kv">
+      <div><b>그룹 명부</b><span>thewiki.kr·나무위키 '버추얼 그룹 목록', 언론 보도(머니투데이·이데일리·한경·스포츠경향·전자신문·톱셀럽·KMJ 등), MBC 버추얼 라이브 페스티벌 라인업을 교차검증</span></div>
+      <div><b>개인세 규모</b><span>'나의 작은 버튜버' 공개 API(유튜브 구독·치지직/SOOP 팔로워·최근 방송 집계)</span></div>
+      <div><b>소속사 확정</b><span>공식 보도자료·공식 채널·위키 문서 (2026-06-06 재조사 반영)</span></div>
+    </div>
+  </div>
+
+  <div class="chart-box" style="margin-top:12px">
+    <h3 style="font-size:15px">② 5기준 분류 체계 (A~E)</h3>
+    <table style="margin-top:8px;box-shadow:none">
+      <thead><tr><th>축</th><th>정의</th><th class="hide-m">데이터원</th></tr></thead>
+      <tbody>
+        <tr><td><b>A 활동기간</b></td><td>데뷔(전향)일 경과 — 2년+ / 3년+</td><td class="hide-m muted">위키·공식 SNS 첫 방송</td></tr>
+        <tr><td><b>B 규모</b></td><td>유튜브 구독 또는 치지직/SOOP 팔로워 — 1만 / 3만 / 5만 단계</td><td class="hide-m muted">YouTube·치지직·SOOP API</td></tr>
+        <tr><td><b>C 등재성</b></td><td>나무위키·더위키 개별 문서 존재</td><td class="hide-m muted">위키 검색</td></tr>
+        <tr><td><b>D 공적활동</b></td><td>음원·페스티벌·공중파·언론 보도 1건+</td><td class="hide-m muted">음원사·뉴스</td></tr>
+        <tr><td><b>E 인증</b></td><td>플랫폼 공식 인증(치지직 파트너·SOOP 파트너BJ·YT)</td><td class="hide-m muted">각 플랫폼</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="chart-box" style="margin-top:12px">
+    <h3 style="font-size:15px">③ 수록 임계값 (확정)</h3>
+    <p style="margin-top:6px"><b>C(위키 등재) OR B(5만+ 팔로워)</b> — 둘 중 하나를 충족하면 명부 수록. 3만~5만 구간은 '워치리스트'로 별도 표시(위키 등재 여부 후속 확인 대상).</p>
+  </div>
+
+  <div class="chart-box" style="margin-top:12px">
+    <h3 style="font-size:15px">④ 활동성 판정</h3>
+    <p style="margin-top:6px">최근 활동(업로드·방송·발매) 기준: <span class="st st-활동중">활동중</span> 3개월 이내 · <span class="st st-확인필요">확인필요</span> 3~12개월(휴면 의심) · <span class="st st-휴면">휴면</span> 12개월+ · <span class="st st-해체종료">해체/종료</span> 공식 발표. MAVE: 같은 사실상 중단 케이스도 자동 탐지합니다.</p>
+  </div>
+
+  <div class="chart-box" style="margin-top:12px">
+    <h3 style="font-size:15px">⑤ 알려진 한계</h3>
+    <ul style="margin:6px 0 0 18px;line-height:1.7">
+      <li>그룹 명부는 '위키 등재' 기준이라 미등재 초소형·프리데뷔 팀은 누락될 수 있음</li>
+      <li>개인세 규모는 비공식 단일 API 기반 — 공식 API(YouTube/치지직/SOOP)로 이전 예정</li>
+      <li>일부 소속사·데뷔일은 보도자료 크레딧 기반 '추정'(상세에 명시)</li>
+      <li>'확인필요' 항목은 공식 채널 최신 업로드 직접 확인이 필요</li>
+    </ul>
+  </div>
+
+  <p class="muted" style="margin-top:12px">데이터 수집일 ${D.collected} · 인용 시 출처를 위와 같이 밝혀 주세요.</p>`;
+}
+
+renderG();renderS();renderTrend();renderA();renderU();renderTL();renderMethod();
+routeHash();
+window.addEventListener('hashchange',routeHash);
 </script></body></html>'''
 
 html = HTML.replace('__DATA__', DATA).replace('__TASKID__', 'vtuber-monthly-collect')
