@@ -37,10 +37,11 @@ jobs:
           ISSUE_BODY: ${{ github.event.issue.body }}
         run: python pipeline/add_submission.py
 
-      - name: 사이트 재빌드(수집 생략, 제보 반영)
+      - name: 사이트 재빌드(수집 생략, 제보 반영 + 유튜브 통계)
         env:
           GH_REPO: ${{ github.repository }}
           SKIP_COLLECT: "1"
+          YT_API_KEY: ${{ secrets.YT_API_KEY }}
         run: python build.py
 
       - name: 변경분 커밋
