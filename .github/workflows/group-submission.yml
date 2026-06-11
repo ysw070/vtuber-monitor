@@ -1,0 +1,81 @@
+name: 그룹 제보 자동 반영
+
+# 누군가 사이트 제보 폼으로 만든 이슈(본문에 GROUPDATA 마커 포함)가 열리면
+# 자동으로 manual_groups.csv 에 추가 → 사이트 재빌드·재배포 → 이슈에 코멘트 후 닫기.
+on:
+  issues:
+    types: [opened]
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+  issues: write
+
+concurrency:
+  group: "collect-deploy"
+  cancel-in-progress: false
+
+jobs:
+  add-group:
+    # 제보 폼이 심은 마커가 있는 이슈만 처리(일반 이슈는 무시)
+    if: contains(github.event.issue.body, 'GROUPDATA:')
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - run: pip install -r requirements.txt
+
+      - name: 제보 파싱 → manual_groups.csv 추가
+        id: parse
+        env:
+          ISSUE_BODY: ${{ github.event.issue.body }}
+        run: python pipeline/add_submission.py
+
+      - name: 사이트 재빌드(수집 생략, 제보 반영)
+        env:
+          GH_REPO: ${{ github.repository }}
+          SKIP_COLLECT: "1"
+        run: python build.py
+
+      - name: 변경분 커밋
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/ public/ || true
+          git commit -m "그룹 제보 반영: #${{ github.event.issue.number }}" || echo "변경 없음"
+          git push || echo "푸시 생략"
+
+      - name: Pages 아티팩트 업로드
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: public
+
+      - name: 제보자에게 코멘트 + 이슈 닫기
+        uses: actions/github-script@v7
+        with:
+          script: |
+            await github.rest.issues.createComment({
+              owner: context.repo.owner, repo: context.repo.repo,
+              issue_number: context.issue.number,
+              body: '✅ 제보가 명부에 **(제보·미검증)** 표시와 함께 반영되어 사이트가 갱신되었습니다. 감사합니다! 운영자 검증 후 정식 항목으로 전환됩니다.'
+            });
+            await github.rest.issues.update({
+              owner: context.repo.owner, repo: context.repo.repo,
+              issue_number: context.issue.number, state: 'closed'
+            });
+
+  deploy:
+    needs: add-group
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: GitHub Pages 배포
+        id: deployment
+        uses: actions/deploy-pages@v4
