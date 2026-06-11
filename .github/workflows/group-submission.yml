@@ -1,10 +1,11 @@
-name: 그룹 제보 자동 반영
+name: 그룹 제보 승인 반영
 
-# 누군가 사이트 제보 폼으로 만든 이슈(본문에 GROUPDATA 마커 포함)가 열리면
-# 자동으로 manual_groups.csv 에 추가 → 사이트 재빌드·재배포 → 이슈에 코멘트 후 닫기.
+# 관리자가 제보 이슈(본문에 GROUPDATA 마커 포함)에 'approved' 라벨을 달면
+# manual_groups.csv 에 추가 → 사이트 재빌드·재배포 → 이슈에 코멘트 후 닫기.
+# 라벨은 저장소 쓰기 권한자(관리자)만 달 수 있으므로 이것이 승인 게이트 역할을 함.
 on:
   issues:
-    types: [opened]
+    types: [labeled]
 
 permissions:
   contents: write
@@ -18,8 +19,8 @@ concurrency:
 
 jobs:
   add-group:
-    # 제보 폼이 심은 마커가 있는 이슈만 처리(일반 이슈는 무시)
-    if: contains(github.event.issue.body, 'GROUPDATA:')
+    # 'approved' 라벨이 붙고, 제보 마커가 있는 이슈만 처리
+    if: github.event.label.name == 'approved' && contains(github.event.issue.body, 'GROUPDATA:')
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -62,7 +63,7 @@ jobs:
             await github.rest.issues.createComment({
               owner: context.repo.owner, repo: context.repo.repo,
               issue_number: context.issue.number,
-              body: '✅ 제보가 명부에 **(제보·미검증)** 표시와 함께 반영되어 사이트가 갱신되었습니다. 감사합니다! 운영자 검증 후 정식 항목으로 전환됩니다.'
+              body: '✅ 승인되어 명부에 **(제보)** 표시와 함께 반영되었습니다. 사이트가 곧 갱신됩니다. 감사합니다!'
             });
             await github.rest.issues.update({
               owner: context.repo.owner, repo: context.repo.repo,
