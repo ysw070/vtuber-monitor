@@ -107,6 +107,10 @@ for g in groups:
 MODE = os.environ.get('SITE_MODE', 'cowork')
 GH_REPO = os.environ.get('GH_REPO', '')  # 예: 'ysw070/vtuber-monitor'
 cfg = {'mode': MODE, 'repo': GH_REPO}
+# Supabase(회원·권한) — data/supabase_config.json 있으면 연결 (public 모드 전용)
+sbconf = load_json(os.path.join(os.path.dirname(os.path.abspath(CSVF)), 'supabase_config.json'), None)
+if sbconf and MODE == 'public':
+    cfg['supabase'] = {'url': sbconf.get('url', ''), 'key': sbconf.get('key', '')}
 
 data = {'built': datetime.date.today().isoformat(), 'collected': collected_at or datetime.date.today().isoformat(),
         'groups': groups, 'solos': solos, 'history': history, 'diff': diff, 'cfg': cfg,
@@ -117,6 +121,7 @@ HTML = r'''<!DOCTYPE html>
 <html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>한국 버추얼 아이돌·버튜버 모니터링</title>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.5.0/dist/chart.umd.js" integrity="sha384-iU8HYtnGQ8Cy4zl7gbNMOhsDTTKX02BTXptVP/vqAWIaTfM7isw76iyZCsjL2eVi" crossorigin="anonymous"></script>
+__SUPABASE_SCRIPT__
 <style>
 :root{color-scheme:light}
 *{box-sizing:border-box;margin:0;padding:0}
@@ -166,6 +171,12 @@ footer{margin-top:18px;font-size:11.5px;color:#9aa1b3}
 #t-submit label{display:block;font-size:12px;color:#555e76;font-weight:600}
 #t-submit input,#t-submit select{margin-top:4px}
 .st-제보{background:#efe7fb;color:#6b3fc0}
+#auth-modal{display:none;position:fixed;inset:0;background:rgba(20,30,60,.45);z-index:60;align-items:center;justify-content:center}
+#auth-modal.open{display:flex}
+.am-card{position:relative;background:#fff;border-radius:14px;padding:24px;width:360px;max-width:92vw;box-shadow:0 12px 40px rgba(20,30,60,.25)}
+.am-card h2{font-size:18px}
+.role-pill{display:inline-block;padding:1px 8px;border-radius:99px;font-size:11px;font-weight:700;background:#e8ebf4;color:#2c3550}
+.mrow{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:8px 0;border-bottom:1px solid #f1f3f9;font-size:13px}
 @media(max-width:640px){.hide-m{display:none}}
 </style></head><body><div class="wrap">
 <header>
@@ -175,6 +186,7 @@ footer{margin-top:18px;font-size:11.5px;color:#9aa1b3}
   <button class="btn-p" id="btn-collect">🔄 지금 재수집</button>
   <button class="btn-s" id="btn-xg">⬇ 그룹 CSV</button>
   <button class="btn-s" id="btn-xs">⬇ 개인세 CSV</button>
+  <span id="auth-area"></span>
 </header>
 <div class="notice" id="notice"></div>
 <div class="tabs">
@@ -274,9 +286,22 @@ footer{margin-top:18px;font-size:11.5px;color:#9aa1b3}
     <h3 style="font-size:16px">🛠 제보 게시판 (관리자)</h3>
     <button class="btn-s" id="admin-refresh" style="padding:5px 10px">새로고침</button>
   </div>
-  <p class="muted" style="line-height:1.55;margin-bottom:12px">대기 중인 제보 목록이에요(공개 GitHub 이슈에서 실시간 조회). <b>승인</b>하려면 카드의 '이슈에서 승인'을 열어 오른쪽 <b>Labels → approved</b> 라벨을 다세요. 라벨이 붙으면 자동으로 명부에 반영되고 이슈가 닫힙니다. 부적절한 제보는 이슈를 그냥 닫으면 됩니다.</p>
+  <p class="muted" style="line-height:1.55;margin-bottom:12px">에디터·관리자 전용 페이지예요. 검수 대기 제보를 <b>승인</b>하면 즉시 명부에 반영되고, <b>반려</b>하면 숨겨집니다. 관리자는 아래에서 회원 등급(일반/에디터/관리자)도 바꿀 수 있어요.</p>
   <div id="admin-body"></div>
 </section>
+
+<div id="auth-modal"><div class="am-card">
+  <button class="close" onclick="closeAuthModal()">✕</button>
+  <h2 id="am-title">로그인</h2>
+  <p class="muted" style="margin:4px 0 12px">회원가입하면 그룹 제보를 할 수 있어요. 가입 직후엔 일반회원 등급입니다.</p>
+  <label style="display:block;font-size:12px;color:#555e76;font-weight:600">이메일<input type="email" id="am-email" style="width:100%;margin-top:4px" placeholder="you@example.com"></label>
+  <label style="display:block;font-size:12px;color:#555e76;font-weight:600;margin-top:10px">비밀번호<input type="password" id="am-pw" style="width:100%;margin-top:4px" placeholder="6자 이상"></label>
+  <div style="display:flex;gap:8px;margin-top:14px">
+    <button class="btn-p" id="am-login" style="flex:1">로그인</button>
+    <button class="btn-s" id="am-signup" style="flex:1">회원가입</button>
+  </div>
+  <div id="am-msg" class="muted" style="margin-top:8px;min-height:16px"></div>
+</div></div>
 
 <div id="drawer"><button class="close" onclick="drawer.classList.remove('open')">✕</button><div id="d-body"></div></div>
 <footer id="foot">임계값(확정): 위키등재 OR 5만+ 팔로워 · 매월 1일 자동 수집.</footer>
@@ -574,58 +599,142 @@ function renderMethod(){
   <p class="muted" style="margin-top:12px">데이터 수집일 ${D.collected} · 인용 시 출처를 위와 같이 밝혀 주세요.</p>`;
 }
 
-/* ── 그룹 제보 폼 ── */
+/* ── Supabase 인증·권한 ── */
+let sb=null, ME=null, MYROLE=null;
+if(CFG.supabase && window.supabase){
+  try{ sb=window.supabase.createClient(CFG.supabase.url, CFG.supabase.key); }catch(e){ sb=null; }
+}
+const roleLabel=r=>({admin:'관리자',editor:'에디터',member:'일반회원'}[r]||'회원');
+const isStaff=()=>MYROLE==='editor'||MYROLE==='admin';
+
+async function loadMe(){
+  if(!sb){ renderAuthArea(); applyRoleGating(); return; }
+  const {data:{user}}=await sb.auth.getUser();
+  ME=user||null;
+  if(ME){
+    const {data}=await sb.from('profiles').select('role,nickname').eq('id',ME.id).maybeSingle();
+    MYROLE=data?data.role:'member';
+  }else MYROLE=null;
+  renderAuthArea(); applyRoleGating();
+  if(document.querySelector('.tab.on')&&document.querySelector('.tab.on').dataset.t==='admin') renderAdmin();
+}
+function renderAuthArea(){
+  const el=$('#auth-area'); if(!el) return;
+  if(!sb){ el.innerHTML=''; return; }
+  if(ME){
+    el.innerHTML=`<span class="muted" style="font-size:12px">${esc(ME.email)} <span class="role-pill">${roleLabel(MYROLE)}</span></span> <button class="btn-s" id="btn-logout">로그아웃</button>`;
+    $('#btn-logout').onclick=async()=>{ await sb.auth.signOut(); ME=null;MYROLE=null; renderAuthArea(); applyRoleGating(); };
+  }else{
+    el.innerHTML=`<button class="btn-s" id="btn-login">로그인 / 가입</button>`;
+    $('#btn-login').onclick=openAuthModal;
+  }
+}
+function applyRoleGating(){
+  const tab=document.querySelector('.tab[data-t="admin"]');
+  if(tab) tab.style.display=isStaff()?'':'none';
+  if(!isStaff()){ const on=document.querySelector('.tab.on'); if(on&&on.dataset.t==='admin') showTab('dash'); }
+}
+function openAuthModal(){ $('#am-msg').textContent=''; $('#auth-modal').classList.add('open'); }
+function closeAuthModal(){ $('#auth-modal').classList.remove('open'); }
+async function doAuth(mode){
+  const email=$('#am-email').value.trim(), pw=$('#am-pw').value, msg=$('#am-msg');
+  if(!email||!pw){ msg.style.color='#e74c3c'; msg.textContent='이메일과 비밀번호를 입력하세요.'; return; }
+  msg.style.color='#7a8194'; msg.textContent='처리 중…';
+  const res = mode==='signup' ? await sb.auth.signUp({email,password:pw}) : await sb.auth.signInWithPassword({email,password:pw});
+  if(res.error){ msg.style.color='#e74c3c'; msg.textContent=res.error.message; return; }
+  if(mode==='signup' && !res.data.session){ msg.style.color='#157a36'; msg.textContent='가입 완료! 이메일 확인이 필요하면 메일을 확인한 뒤 로그인하세요.'; return; }
+  msg.style.color='#157a36'; msg.textContent='완료!';
+  closeAuthModal(); await loadMe();
+}
+if($('#am-login')){ $('#am-login').onclick=()=>doAuth('login'); $('#am-signup').onclick=()=>doAuth('signup'); }
+if(sb) sb.auth.onAuthStateChange(()=>{ loadMe(); });
+
+/* ── 그룹 제보 폼 (로그인 기반 → Supabase) ── */
 (function(){
   const btn=$('#gf-submit'); if(!btn)return;
-  btn.onclick=()=>{
+  btn.onclick=async()=>{
     const val=id=>{const el=$('#gf-'+id);return el?el.value.trim():'';};
-    const name=val('name');
-    const msg=$('#gf-msg');
+    const name=val('name'); const msg=$('#gf-msg');
     if(!name){msg.style.color='#e74c3c';msg.textContent='그룹명은 필수예요.';return;}
-    const d={name,name_en:val('en'),agency:val('agency'),year:val('year'),category:$('#gf-cat').value,status:$('#gf-status').value,channel:val('channel'),note:val('note'),submitter:val('submitter')};
-    const repo=CFG.repo;
-    if(!repo){msg.style.color='#7a5b00';msg.textContent='제보는 공개 사이트(GitHub 연결)에서만 보낼 수 있어요. 운영자에게 알려 주세요.';return;}
-    const body=`빠진 버추얼 그룹 제보입니다. 아래 내용으로 명부 추가를 요청합니다.\n\n`+
-      `- 그룹명: ${d.name}\n- 영문/별칭: ${d.name_en}\n- 소속사: ${d.agency}\n- 활동시작: ${d.year}\n- 분류: ${d.category}\n- 상태: ${d.status}\n- 채널: ${d.channel}\n- 비고: ${d.note}\n- 제보자: ${d.submitter}\n\n`+
-      `<!--GROUPDATA:${JSON.stringify(d)}-->`;
-    const url=`https://github.com/${repo}/issues/new?title=${encodeURIComponent('[제보] '+d.name)}&labels=group-submission&body=${encodeURIComponent(body)}`;
-    window.open(url,'_blank');
-    msg.style.color='#157a36';msg.innerHTML='GitHub 이슈 작성 창을 열었어요. 그 화면에서 <b>Submit new issue</b>를 누르면 제보 게시판에 접수됩니다. 관리자 검토·승인 후 명부에 반영돼요. (GitHub 로그인 필요)';
+    if(!sb){ msg.style.color='#7a5b00'; msg.textContent='제보 시스템이 아직 연결되지 않았어요(공개 사이트에서 이용).'; return; }
+    if(!ME){ msg.style.color='#7a5b00'; msg.textContent='제보하려면 먼저 로그인이 필요해요.'; openAuthModal(); return; }
+    const row={name,name_en:val('en'),agency:val('agency'),year:val('year'),category:$('#gf-cat').value,status:$('#gf-status').value,channel:val('channel'),note:val('note'),submitter:ME.id};
+    msg.style.color='#7a8194'; msg.textContent='접수 중…';
+    const {error}=await sb.from('submissions').insert(row);
+    if(error){ msg.style.color='#e74c3c'; msg.textContent='접수 실패: '+error.message; return; }
+    msg.style.color='#157a36'; msg.textContent='제보가 접수됐어요! 검수자 승인 후 명부에 반영됩니다. 감사합니다.';
+    ['name','en','agency','year','channel','note'].forEach(id=>{const e=$('#gf-'+id);if(e)e.value='';});
   };
 })();
 
-/* ── 관리자 제보 게시판 (공개 이슈 실시간 조회) ── */
-function parseSub(body){ try{const m=body.match(/GROUPDATA:([\s\S]*?)-->/); return m?JSON.parse(m[1].trim()):null;}catch(e){return null;} }
+/* ── 관리자: 제보 검수 + 회원/등급 관리 (Supabase) ── */
 async function renderAdmin(){
-  const box=$('#admin-body'), repo=CFG.repo;
-  if(!repo){box.innerHTML='<p class="muted">공개 사이트(GitHub 연결)에서만 제보 게시판을 볼 수 있어요.</p>';return;}
-  box.innerHTML='<p class="muted">제보 불러오는 중…</p>';
-  try{
-    const r=await fetch(`https://api.github.com/repos/${repo}/issues?state=open&per_page=100`,{headers:{'Accept':'application/vnd.github+json'}});
-    if(!r.ok)throw 0;
-    const issues=await r.json();
-    const subs=issues.filter(i=>i.body&&i.body.includes('GROUPDATA:'));
-    if(!subs.length){box.innerHTML='<p class="muted">대기 중인 제보가 없어요. 👍</p>';return;}
-    box.innerHTML=subs.map(i=>{
-      const d=parseSub(i.body)||{};
-      const approved=(i.labels||[]).some(l=>(l.name||l)==='approved');
-      return `<div class="chart-box" style="margin-bottom:10px">
-        <div style="display:flex;justify-content:space-between;align-items:start;gap:8px"><h3 style="font-size:15px">${esc(d.name||i.title)} ${approved?'<span class="st st-활동중">승인됨·반영중</span>':'<span class="st st-확인필요">검토 대기</span>'}</h3><span class="muted">#${i.number} · ${(i.created_at||'').slice(0,10)}</span></div>
-        <div class="kv"><div><b>영문/별칭</b><span>${esc(d.name_en||'—')}</span></div><div><b>소속사</b><span>${esc(d.agency||'—')}</span></div><div><b>분류·상태</b><span>${esc(d.category||'—')} · ${esc(d.status||'—')}</span></div><div><b>채널</b><span>${d.channel?`<a href="${esc(d.channel)}" target="_blank">링크 ↗</a>`:'—'}</span></div><div><b>제보자</b><span>${esc(d.submitter||'익명')}</span></div></div>
-        ${d.note?`<p class="muted" style="margin-top:6px;line-height:1.5">${esc(d.note)}</p>`:''}
-        <a class="chlink" target="_blank" href="${esc(i.html_url)}"><span class="pf">📝 이슈에서 검토·승인 (Labels → approved)</span><span class="fl">새 창 ↗</span></a>
-      </div>`;
-    }).join('');
-  }catch(e){box.innerHTML='<p class="muted">제보를 불러오지 못했어요. 잠시 후 새로고침해 주세요(공개 API 분당 호출 제한일 수 있어요).</p>';}
+  const box=$('#admin-body');
+  if(!sb){ box.innerHTML='<p class="muted">로그인 시스템이 연결되지 않았어요(공개 사이트에서 이용).</p>'; return; }
+  if(!isStaff()){ box.innerHTML='<p class="muted">접근 권한이 없어요. 에디터 이상 등급만 이용할 수 있어요.</p>'; return; }
+  box.innerHTML='<p class="muted">불러오는 중…</p>';
+  const {data:subs,error}=await sb.from('submissions').select('*').eq('state','pending').order('created_at',{ascending:false});
+  if(error){ box.innerHTML='<p class="muted">제보를 불러오지 못했어요: '+esc(error.message)+'</p>'; return; }
+  let html=`<h3 style="font-size:15px;margin-bottom:8px">검수 대기 제보 (${subs.length})</h3>`;
+  html += subs.length? subs.map(s=>`<div class="chart-box" style="margin-bottom:10px">
+      <div style="display:flex;justify-content:space-between;align-items:start;gap:8px"><h3 style="font-size:15px">${esc(s.name)} <span class="muted">${esc(s.name_en||'')}</span></h3><span class="muted">#${s.id} · ${(s.created_at||'').slice(0,10)}</span></div>
+      <div class="kv"><div><b>소속사</b><span>${esc(s.agency||'—')}</span></div><div><b>분류·상태</b><span>${esc(s.category||'—')} · ${esc(s.status||'—')}</span></div><div><b>채널</b><span>${s.channel?`<a href="${esc(s.channel)}" target="_blank">링크 ↗</a>`:'—'}</span></div></div>
+      ${s.note?`<p class="muted" style="margin-top:6px;line-height:1.5">${esc(s.note)}</p>`:''}
+      <div style="display:flex;gap:8px;margin-top:10px"><button class="btn-p sub-approve" data-id="${s.id}">승인</button><button class="btn-s sub-reject" data-id="${s.id}">반려</button></div>
+    </div>`).join('') : '<p class="muted">대기 중인 제보가 없어요. 👍</p>';
+
+  if(MYROLE==='admin'){
+    const {data:members}=await sb.from('profiles').select('id,email,nickname,role').order('created_at',{ascending:true});
+    html+=`<h3 style="font-size:15px;margin:18px 0 8px">회원·등급 관리 (${(members||[]).length})</h3><div class="chart-box">`+
+      (members||[]).map(m=>`<div class="mrow"><span>${esc(m.email||m.nickname||m.id.slice(0,8))}</span>
+        <select class="role-sel" data-id="${m.id}">
+          <option value="member" ${m.role==='member'?'selected':''}>일반회원</option>
+          <option value="editor" ${m.role==='editor'?'selected':''}>에디터</option>
+          <option value="admin" ${m.role==='admin'?'selected':''}>관리자</option>
+        </select></div>`).join('')+`</div>`;
+  }
+  box.innerHTML=html;
+  document.querySelectorAll('.sub-approve').forEach(b=>b.onclick=()=>reviewSub(b.dataset.id,'approved'));
+  document.querySelectorAll('.sub-reject').forEach(b=>b.onclick=()=>reviewSub(b.dataset.id,'rejected'));
+  document.querySelectorAll('.role-sel').forEach(s=>s.onchange=()=>changeRole(s.dataset.id,s.value,s));
+}
+async function reviewSub(id,state){
+  const {error}=await sb.from('submissions').update({state,reviewed_by:ME.id,reviewed_at:new Date().toISOString()}).eq('id',id);
+  if(error){ alert('실패: '+error.message); return; }
+  await renderAdmin(); if(state==='approved') loadApprovedGroups();
+}
+async function changeRole(id,role,el){
+  const {error}=await sb.from('profiles').update({role}).eq('id',id);
+  if(error){ alert('등급 변경 실패: '+error.message); }
+  else { el.style.outline='2px solid #27ae60'; setTimeout(()=>el.style.outline='',1200); }
 }
 const ar=$('#admin-refresh'); if(ar) ar.onclick=renderAdmin;
+
+/* 승인된 제보를 명부에 합쳐 표시 */
+async function loadApprovedGroups(){
+  if(!sb) return;
+  const {data}=await sb.from('submissions').select('*').eq('state','approved');
+  if(!data) return;
+  let added=false; let maxNo=Math.max(0,...D.groups.map(g=>+g[0]||0));
+  data.forEach(s=>{
+    if(D.groups.some(g=>g[1]===s.name)) return;
+    D.groups.push([++maxNo,s.name,s.name_en||'',s.agency||'(제보)',String(s.year||''),s.category||'스트리밍/MCN형',s.status||'활동중',s.note||'',s.channel||'','제보']);
+    added=true;
+  });
+  if(added){ $('#cnt-g').textContent=D.groups.length; renderG(); }
+}
 
 $('#cyear').textContent=new Date().getFullYear();
 renderG();renderS();renderTrend();renderA();renderU();renderTL();renderMethod();
 routeHash();
 window.addEventListener('hashchange',routeHash);
+loadMe(); loadApprovedGroups();
 </script></body></html>'''
 
-html = HTML.replace('__DATA__', DATA).replace('__TASKID__', 'vtuber-monthly-collect')
+SB_SCRIPT = ('<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>'
+             if cfg.get('supabase') else '')
+html = (HTML.replace('__DATA__', DATA)
+            .replace('__TASKID__', 'vtuber-monthly-collect')
+            .replace('__SUPABASE_SCRIPT__', SB_SCRIPT))
 open(OUT, 'w', encoding='utf-8').write(html)
 print('written', OUT, len(html), 'bytes,', len(groups), 'groups,', len(solos), 'solos')
