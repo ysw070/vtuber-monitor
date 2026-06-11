@@ -9,6 +9,7 @@
 실행: python pipeline/enrich_youtube.py  (레포 루트에서)
 """
 import os, re, csv, json, datetime, urllib.parse, urllib.request
+from urllib.error import HTTPError
 
 KEY = os.environ.get('YT_API_KEY', '').strip()
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))  # 레포 루트(=pipeline의 상위)
@@ -83,6 +84,18 @@ def main():
                 stats[key] = info
                 n += 1
                 print(f"ok {key}: 구독 {info['subscribers']} · 영상 {info['videos']}")
+        except HTTPError as e:
+            body = ''
+            try:
+                body = e.read().decode('utf-8', 'ignore')
+            except Exception:
+                pass
+            reason = ''
+            try:
+                reason = json.loads(body)['error']['errors'][0].get('reason', '')
+            except Exception:
+                pass
+            print(f'err {key}: HTTP {e.code} reason={reason} body={body[:250]}')
         except Exception as e:
             print(f'err {key}: {e}')
     json.dump(stats, open(OUT, 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
