@@ -185,6 +185,7 @@ footer{margin-top:18px;font-size:11.5px;color:#9aa1b3}
   <div class="tab" data-t="trend">📈 추세·변동</div>
   <div class="tab" data-t="method">ℹ️ 데이터 기준</div>
   <div class="tab" data-t="submit">➕ 그룹 제보</div>
+  <div class="tab" data-t="admin">🛠 관리자</div>
 </div>
 
 <section id="t-dash">
@@ -247,7 +248,7 @@ footer{margin-top:18px;font-size:11.5px;color:#9aa1b3}
 <section id="t-submit" style="display:none">
   <div class="chart-box" style="max-width:640px">
     <h3 style="font-size:16px;margin-bottom:4px">➕ 빠진 그룹 제보하기</h3>
-    <p class="muted" style="line-height:1.55;margin-bottom:14px">위키 미등재·조용히 활동하는 그룹이 빠졌다면 알려주세요. 제출하면 GitHub 이슈로 접수되고, 자동으로 명부에 <b>'제보' 표시</b>와 함께 추가됩니다(검증 전 항목으로 구분 표시).</p>
+    <p class="muted" style="line-height:1.55;margin-bottom:14px">위키 미등재·조용히 활동하는 그룹이 빠졌다면 알려주세요. 제출하면 제보 게시판에 접수되고, <b>관리자 승인 후</b> 명부에 <b>'제보' 표시</b>와 함께 추가됩니다.</p>
     <div style="display:grid;gap:10px">
       <label>그룹명 <span style="color:#e74c3c">*</span><input type="text" id="gf-name" style="width:100%" placeholder="예: 별빛소녀단"></label>
       <label>영문/별칭<input type="text" id="gf-en" style="width:100%" placeholder="예: Starlight Girls"></label>
@@ -266,6 +267,15 @@ footer{margin-top:18px;font-size:11.5px;color:#9aa1b3}
   </div>
 </section>
 
+<section id="t-admin" style="display:none">
+  <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px">
+    <h3 style="font-size:16px">🛠 제보 게시판 (관리자)</h3>
+    <button class="btn-s" id="admin-refresh" style="padding:5px 10px">새로고침</button>
+  </div>
+  <p class="muted" style="line-height:1.55;margin-bottom:12px">대기 중인 제보 목록이에요(공개 GitHub 이슈에서 실시간 조회). <b>승인</b>하려면 카드의 '이슈에서 승인'을 열어 오른쪽 <b>Labels → approved</b> 라벨을 다세요. 라벨이 붙으면 자동으로 명부에 반영되고 이슈가 닫힙니다. 부적절한 제보는 이슈를 그냥 닫으면 됩니다.</p>
+  <div id="admin-body"></div>
+</section>
+
 <div id="drawer"><button class="close" onclick="drawer.classList.remove('open')">✕</button><div id="d-body"></div></div>
 <footer id="foot">임계값(확정): 위키등재 OR 5만+ 팔로워 · 매월 1일 자동 수집.</footer>
 <div id="copyright" style="margin-top:8px;font-size:11.5px;color:#9aa1b3">© <span id="cyear"></span> (주)크리에이터버스. All rights reserved.</div>
@@ -279,12 +289,14 @@ $('#m-col').textContent=D.collected;$('#m-built').textContent=D.built;
 $('#cnt-g').textContent=D.groups.length;$('#cnt-s').textContent=D.solos.length;
 $('#cnt-a').textContent=(D.agencies||[]).length;$('#cnt-u').textContent=(D.upcoming||[]).length;
 const drawer=$('#drawer');
-const TABS=['dash','grp','solo','agency','upcoming','timeline','trend','method','submit'];
+const TABS=['dash','grp','solo','agency','upcoming','timeline','trend','method','submit','admin'];
 
 /* 탭 */
+let adminLoaded=false;
 function showTab(t){
   document.querySelectorAll('.tab').forEach(x=>x.classList.toggle('on',x.dataset.t===t));
   TABS.forEach(k=>$('#t-'+k).style.display=k===t?'':'none');
+  if(t==='admin'&&!adminLoaded){adminLoaded=true;renderAdmin();}
 }
 document.querySelectorAll('.tab').forEach(t=>t.onclick=()=>showTab(t.dataset.t));
 
@@ -563,9 +575,35 @@ function renderMethod(){
       `<!--GROUPDATA:${JSON.stringify(d)}-->`;
     const url=`https://github.com/${repo}/issues/new?title=${encodeURIComponent('[제보] '+d.name)}&labels=group-submission&body=${encodeURIComponent(body)}`;
     window.open(url,'_blank');
-    msg.style.color='#157a36';msg.innerHTML='GitHub 이슈 작성 창을 열었어요. 그 화면에서 <b>Submit new issue</b>를 누르면 접수되고, 잠시 후 자동으로 명부에 반영됩니다. (GitHub 로그인 필요)';
+    msg.style.color='#157a36';msg.innerHTML='GitHub 이슈 작성 창을 열었어요. 그 화면에서 <b>Submit new issue</b>를 누르면 제보 게시판에 접수됩니다. 관리자 검토·승인 후 명부에 반영돼요. (GitHub 로그인 필요)';
   };
 })();
+
+/* ── 관리자 제보 게시판 (공개 이슈 실시간 조회) ── */
+function parseSub(body){ try{const m=body.match(/GROUPDATA:([\s\S]*?)-->/); return m?JSON.parse(m[1].trim()):null;}catch(e){return null;} }
+async function renderAdmin(){
+  const box=$('#admin-body'), repo=CFG.repo;
+  if(!repo){box.innerHTML='<p class="muted">공개 사이트(GitHub 연결)에서만 제보 게시판을 볼 수 있어요.</p>';return;}
+  box.innerHTML='<p class="muted">제보 불러오는 중…</p>';
+  try{
+    const r=await fetch(`https://api.github.com/repos/${repo}/issues?state=open&per_page=100`,{headers:{'Accept':'application/vnd.github+json'}});
+    if(!r.ok)throw 0;
+    const issues=await r.json();
+    const subs=issues.filter(i=>i.body&&i.body.includes('GROUPDATA:'));
+    if(!subs.length){box.innerHTML='<p class="muted">대기 중인 제보가 없어요. 👍</p>';return;}
+    box.innerHTML=subs.map(i=>{
+      const d=parseSub(i.body)||{};
+      const approved=(i.labels||[]).some(l=>(l.name||l)==='approved');
+      return `<div class="chart-box" style="margin-bottom:10px">
+        <div style="display:flex;justify-content:space-between;align-items:start;gap:8px"><h3 style="font-size:15px">${esc(d.name||i.title)} ${approved?'<span class="st st-활동중">승인됨·반영중</span>':'<span class="st st-확인필요">검토 대기</span>'}</h3><span class="muted">#${i.number} · ${(i.created_at||'').slice(0,10)}</span></div>
+        <div class="kv"><div><b>영문/별칭</b><span>${esc(d.name_en||'—')}</span></div><div><b>소속사</b><span>${esc(d.agency||'—')}</span></div><div><b>분류·상태</b><span>${esc(d.category||'—')} · ${esc(d.status||'—')}</span></div><div><b>채널</b><span>${d.channel?`<a href="${esc(d.channel)}" target="_blank">링크 ↗</a>`:'—'}</span></div><div><b>제보자</b><span>${esc(d.submitter||'익명')}</span></div></div>
+        ${d.note?`<p class="muted" style="margin-top:6px;line-height:1.5">${esc(d.note)}</p>`:''}
+        <a class="chlink" target="_blank" href="${esc(i.html_url)}"><span class="pf">📝 이슈에서 검토·승인 (Labels → approved)</span><span class="fl">새 창 ↗</span></a>
+      </div>`;
+    }).join('');
+  }catch(e){box.innerHTML='<p class="muted">제보를 불러오지 못했어요. 잠시 후 새로고침해 주세요(공개 API 분당 호출 제한일 수 있어요).</p>';}
+}
+const ar=$('#admin-refresh'); if(ar) ar.onclick=renderAdmin;
 
 $('#cyear').textContent=new Date().getFullYear();
 renderG();renderS();renderTrend();renderA();renderU();renderTL();renderMethod();
