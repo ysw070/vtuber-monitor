@@ -198,6 +198,7 @@ footer{margin-top:18px;font-size:11.5px;color:#9aa1b3}
   <div class="tab" data-t="timeline">📅 연표</div>
   <div class="tab" data-t="trend">📈 추세·변동</div>
   <div class="tab" data-t="method">ℹ️ 데이터 기준</div>
+  <div class="tab" data-t="premium">⭐ 프리미엄</div>
   <div class="tab" data-t="submit">➕ 그룹 제보</div>
   <div class="tab" data-t="admin">🛠 관리자</div>
 </div>
@@ -259,6 +260,8 @@ footer{margin-top:18px;font-size:11.5px;color:#9aa1b3}
 
 <section id="t-method" style="display:none"><div id="method-body"></div></section>
 
+<section id="t-premium" style="display:none"><div id="premium-body"></div></section>
+
 <section id="t-submit" style="display:none">
   <div class="chart-box" style="max-width:640px">
     <h3 style="font-size:16px;margin-bottom:4px">➕ 빠진 그룹 제보하기</h3>
@@ -316,14 +319,14 @@ $('#m-col').textContent=D.collected;$('#m-built').textContent=D.built;
 $('#cnt-g').textContent=D.groups.length;$('#cnt-s').textContent=D.solos.length;
 $('#cnt-a').textContent=(D.agencies||[]).length;$('#cnt-u').textContent=(D.upcoming||[]).length;
 const drawer=$('#drawer');
-const TABS=['dash','grp','solo','agency','upcoming','timeline','trend','method','submit','admin'];
+const TABS=['dash','grp','solo','agency','upcoming','timeline','trend','method','premium','submit','admin'];
 
 /* 탭 */
-let adminLoaded=false;
 function showTab(t){
   document.querySelectorAll('.tab').forEach(x=>x.classList.toggle('on',x.dataset.t===t));
   TABS.forEach(k=>$('#t-'+k).style.display=k===t?'':'none');
-  if(t==='admin'&&!adminLoaded){adminLoaded=true;renderAdmin();}
+  if(t==='admin') renderAdmin();
+  if(t==='premium') renderPremium();
 }
 document.querySelectorAll('.tab').forEach(t=>t.onclick=()=>showTab(t.dataset.t));
 
@@ -604,8 +607,9 @@ let sb=null, ME=null, MYROLE=null;
 if(CFG.supabase && window.supabase){
   try{ sb=window.supabase.createClient(CFG.supabase.url, CFG.supabase.key); }catch(e){ sb=null; }
 }
-const roleLabel=r=>({admin:'관리자',editor:'에디터',member:'일반회원'}[r]||'회원');
+const roleLabel=r=>({admin:'관리자',editor:'에디터',premium:'프리미엄',member:'일반회원'}[r]||'회원');
 const isStaff=()=>MYROLE==='editor'||MYROLE==='admin';
+const canPremium=()=>MYROLE==='premium'||MYROLE==='editor'||MYROLE==='admin';
 
 async function loadMe(){
   if(!sb){ renderAuthArea(); applyRoleGating(); return; }
@@ -689,6 +693,7 @@ async function renderAdmin(){
       (members||[]).map(m=>`<div class="mrow"><span>${esc(m.email||m.nickname||m.id.slice(0,8))}</span>
         <select class="role-sel" data-id="${m.id}">
           <option value="member" ${m.role==='member'?'selected':''}>일반회원</option>
+          <option value="premium" ${m.role==='premium'?'selected':''}>프리미엄</option>
           <option value="editor" ${m.role==='editor'?'selected':''}>에디터</option>
           <option value="admin" ${m.role==='admin'?'selected':''}>관리자</option>
         </select></div>`).join('')+`</div>`;
@@ -722,6 +727,57 @@ async function loadApprovedGroups(){
     added=true;
   });
   if(added){ $('#cnt-g').textContent=D.groups.length; renderG(); }
+}
+
+/* ── ⭐ 프리미엄 (등급 게이팅) ── */
+async function renderPremium(){
+  const box=$('#premium-body');
+  const staff=isStaff();
+  if(!sb){ box.innerHTML='<div class="chart-box"><h3>⭐ 프리미엄</h3><p class="muted">로그인 시스템이 연결되지 않았어요(공개 사이트에서 이용).</p></div>'; return; }
+  // 비프리미엄(비회원·일반회원): 잠금 티저
+  if(!canPremium()){
+    box.innerHTML=`<div class="chart-box" style="text-align:center;padding:30px">
+      <div style="font-size:34px">🔒</div>
+      <h3 style="font-size:18px;margin-top:8px">프리미엄 전용 자료</h3>
+      <p class="muted" style="line-height:1.6;margin-top:8px">가공·심화 데이터(분석 리포트, 추세 인사이트, 전용 데이터셋)는 <b>프리미엄 등급</b>부터 열람할 수 있어요.<br>${ME?'관리자에게 프리미엄 등급을 요청해 주세요.':'로그인 후 이용 가능하며, 등급은 관리자가 부여합니다.'}</p>
+      ${ME?'':'<button class="btn-p" style="margin-top:12px" onclick="openAuthModal()">로그인 / 가입</button>'}
+    </div>`;
+    return;
+  }
+  box.innerHTML='<p class="muted">불러오는 중…</p>';
+  const {data,error}=await sb.from('premium_content').select('*').order('created_at',{ascending:false});
+  if(error){ box.innerHTML='<p class="muted">불러오기 실패: '+esc(error.message)+'</p>'; return; }
+  let html=`<div style="display:flex;align-items:center;gap:8px;margin-bottom:10px"><h3 style="font-size:16px">⭐ 프리미엄 자료 (${data.length})</h3><span class="role-pill">${roleLabel(MYROLE)} 열람</span></div>`;
+  // 스태프: 자료 작성 폼
+  if(staff){
+    html+=`<div class="chart-box" style="margin-bottom:12px">
+      <h3 style="font-size:14px">새 프리미엄 자료 작성</h3>
+      <input type="text" id="pc-title" style="width:100%;margin-top:8px" placeholder="제목">
+      <textarea id="pc-body" rows="4" style="width:100%;margin-top:8px;padding:8px 10px;border:1px solid #d7dbe8;border-radius:8px;font-size:13px;font-family:inherit" placeholder="가공 분석·인사이트·데이터 설명(마크다운/텍스트)"></textarea>
+      <button class="btn-p" id="pc-save" style="margin-top:8px">등록</button>
+      <span id="pc-msg" class="muted" style="margin-left:8px"></span>
+    </div>`;
+  }
+  html+= data.length? data.map(c=>`<div class="chart-box" style="margin-bottom:10px">
+      <div style="display:flex;justify-content:space-between;gap:8px"><h3 style="font-size:15px">${esc(c.title)}</h3><span class="muted">${(c.created_at||'').slice(0,10)}</span></div>
+      <p style="margin-top:8px;line-height:1.6;white-space:pre-wrap">${esc(c.body||'')}</p>
+      ${staff?`<button class="btn-s pc-del" data-id="${c.id}" style="margin-top:8px">삭제</button>`:''}
+    </div>`).join('') : '<p class="muted">아직 등록된 프리미엄 자료가 없어요.</p>';
+  box.innerHTML=html;
+  if(staff){
+    $('#pc-save').onclick=async()=>{
+      const title=$('#pc-title').value.trim(), body=$('#pc-body').value.trim(), msg=$('#pc-msg');
+      if(!title){msg.style.color='#e74c3c';msg.textContent='제목을 입력하세요.';return;}
+      msg.style.color='#7a8194';msg.textContent='등록 중…';
+      const {error}=await sb.from('premium_content').insert({title,body,created_by:ME.id});
+      if(error){msg.style.color='#e74c3c';msg.textContent='실패: '+error.message;return;}
+      renderPremium();
+    };
+    document.querySelectorAll('.pc-del').forEach(b=>b.onclick=async()=>{
+      if(!confirm('삭제할까요?'))return;
+      await sb.from('premium_content').delete().eq('id',b.dataset.id); renderPremium();
+    });
+  }
 }
 
 $('#cyear').textContent=new Date().getFullYear();
