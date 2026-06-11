@@ -729,50 +729,57 @@ async function loadApprovedGroups(){
   if(added){ $('#cnt-g').textContent=D.groups.length; renderG(); }
 }
 
-/* ── ⭐ 프리미엄 (등급 게이팅) ── */
+/* ── ⭐ 프리미엄/자료실 (항목별 접근 레벨) ── */
+const LV={0:'공개',1:'일반회원',2:'프리미엄',3:'스태프'};
+const myLevel=()=>({admin:4,editor:3,premium:2,member:1}[MYROLE]||0);
+const lvBadge=l=>`<span class="role-pill">${LV[l]||'프리미엄'} 이상</span>`;
 async function renderPremium(){
-  const box=$('#premium-body');
-  const staff=isStaff();
-  if(!sb){ box.innerHTML='<div class="chart-box"><h3>⭐ 프리미엄</h3><p class="muted">로그인 시스템이 연결되지 않았어요(공개 사이트에서 이용).</p></div>'; return; }
-  // 비프리미엄(비회원·일반회원): 잠금 티저
-  if(!canPremium()){
-    box.innerHTML=`<div class="chart-box" style="text-align:center;padding:30px">
-      <div style="font-size:34px">🔒</div>
-      <h3 style="font-size:18px;margin-top:8px">프리미엄 전용 자료</h3>
-      <p class="muted" style="line-height:1.6;margin-top:8px">가공·심화 데이터(분석 리포트, 추세 인사이트, 전용 데이터셋)는 <b>프리미엄 등급</b>부터 열람할 수 있어요.<br>${ME?'관리자에게 프리미엄 등급을 요청해 주세요.':'로그인 후 이용 가능하며, 등급은 관리자가 부여합니다.'}</p>
-      ${ME?'':'<button class="btn-p" style="margin-top:12px" onclick="openAuthModal()">로그인 / 가입</button>'}
-    </div>`;
-    return;
-  }
+  const box=$('#premium-body'); const staff=isStaff();
+  if(!sb){ box.innerHTML='<div class="chart-box"><h3>⭐ 자료실</h3><p class="muted">로그인 시스템이 연결되지 않았어요(공개 사이트에서 이용).</p></div>'; return; }
   box.innerHTML='<p class="muted">불러오는 중…</p>';
+  // RLS가 내 레벨 이상만 내려줌
   const {data,error}=await sb.from('premium_content').select('*').order('created_at',{ascending:false});
-  if(error){ box.innerHTML='<p class="muted">불러오기 실패: '+esc(error.message)+'</p>'; return; }
-  let html=`<div style="display:flex;align-items:center;gap:8px;margin-bottom:10px"><h3 style="font-size:16px">⭐ 프리미엄 자료 (${data.length})</h3><span class="role-pill">${roleLabel(MYROLE)} 열람</span></div>`;
-  // 스태프: 자료 작성 폼
+  if(error){ box.innerHTML='<p class="muted">불러오기 실패: '+esc(error.message)+' (Supabase에 phase3 마이그레이션을 실행했는지 확인)</p>'; return; }
+  let html=`<div style="display:flex;align-items:center;gap:8px;margin-bottom:6px"><h3 style="font-size:16px">⭐ 자료실</h3><span class="role-pill">${roleLabel(MYROLE)||'비회원'} · 열람가능 ${data.length}건</span></div>
+    <p class="muted" style="margin-bottom:12px;line-height:1.5">가공 분석·인사이트·데이터셋. 자료마다 접근 등급이 달라요${staff?' (아래 드롭다운으로 항목별 권한 조정).':'. 더 많은 자료는 상위 등급(프리미엄+)에서 열려요.'}</p>`;
+  // 스태프: 작성 폼(등급 선택 포함)
   if(staff){
     html+=`<div class="chart-box" style="margin-bottom:12px">
-      <h3 style="font-size:14px">새 프리미엄 자료 작성</h3>
+      <h3 style="font-size:14px">새 자료 작성</h3>
       <input type="text" id="pc-title" style="width:100%;margin-top:8px" placeholder="제목">
-      <textarea id="pc-body" rows="4" style="width:100%;margin-top:8px;padding:8px 10px;border:1px solid #d7dbe8;border-radius:8px;font-size:13px;font-family:inherit" placeholder="가공 분석·인사이트·데이터 설명(마크다운/텍스트)"></textarea>
-      <button class="btn-p" id="pc-save" style="margin-top:8px">등록</button>
-      <span id="pc-msg" class="muted" style="margin-left:8px"></span>
+      <textarea id="pc-body" rows="4" style="width:100%;margin-top:8px;padding:8px 10px;border:1px solid #d7dbe8;border-radius:8px;font-size:13px;font-family:inherit" placeholder="가공 분석·인사이트·데이터 설명"></textarea>
+      <div style="display:flex;align-items:center;gap:8px;margin-top:8px">
+        <label style="font-size:12px;color:#555e76;font-weight:600">접근등급</label>
+        <select id="pc-level"><option value="0">공개</option><option value="1">일반회원+</option><option value="2" selected>프리미엄+</option><option value="3">스태프</option></select>
+        <button class="btn-p" id="pc-save">등록</button>
+        <span id="pc-msg" class="muted"></span>
+      </div>
     </div>`;
   }
   html+= data.length? data.map(c=>`<div class="chart-box" style="margin-bottom:10px">
-      <div style="display:flex;justify-content:space-between;gap:8px"><h3 style="font-size:15px">${esc(c.title)}</h3><span class="muted">${(c.created_at||'').slice(0,10)}</span></div>
+      <div style="display:flex;justify-content:space-between;align-items:start;gap:8px"><h3 style="font-size:15px">${esc(c.title)}</h3>
+        <span style="display:flex;align-items:center;gap:6px">${lvBadge(c.min_level)}<span class="muted">${(c.created_at||'').slice(0,10)}</span></span></div>
       <p style="margin-top:8px;line-height:1.6;white-space:pre-wrap">${esc(c.body||'')}</p>
-      ${staff?`<button class="btn-s pc-del" data-id="${c.id}" style="margin-top:8px">삭제</button>`:''}
-    </div>`).join('') : '<p class="muted">아직 등록된 프리미엄 자료가 없어요.</p>';
+      ${staff?`<div style="display:flex;align-items:center;gap:8px;margin-top:10px">
+        <label style="font-size:12px;color:#555e76;font-weight:600">접근등급</label>
+        <select class="pc-lvl" data-id="${c.id}"><option value="0" ${c.min_level===0?'selected':''}>공개</option><option value="1" ${c.min_level===1?'selected':''}>일반회원+</option><option value="2" ${c.min_level===2?'selected':''}>프리미엄+</option><option value="3" ${c.min_level===3?'selected':''}>스태프</option></select>
+        <button class="btn-s pc-del" data-id="${c.id}">삭제</button></div>`:''}
+    </div>`).join('') : `<div class="chart-box" style="text-align:center;padding:24px"><div style="font-size:30px">🔒</div><p class="muted" style="margin-top:8px;line-height:1.6">열람 가능한 자료가 아직 없어요.${myLevel()<2?'<br>가공 데이터는 <b>프리미엄 등급</b>부터 더 많이 열려요.'+(ME?' 관리자에게 등급을 요청해 주세요.':''):''}</p>${ME?'':'<button class="btn-p" style="margin-top:10px" onclick="openAuthModal()">로그인 / 가입</button>'}</div>`;
   box.innerHTML=html;
   if(staff){
     $('#pc-save').onclick=async()=>{
-      const title=$('#pc-title').value.trim(), body=$('#pc-body').value.trim(), msg=$('#pc-msg');
+      const title=$('#pc-title').value.trim(), body=$('#pc-body').value.trim(), min_level=+$('#pc-level').value, msg=$('#pc-msg');
       if(!title){msg.style.color='#e74c3c';msg.textContent='제목을 입력하세요.';return;}
       msg.style.color='#7a8194';msg.textContent='등록 중…';
-      const {error}=await sb.from('premium_content').insert({title,body,created_by:ME.id});
+      const {error}=await sb.from('premium_content').insert({title,body,min_level,created_by:ME.id});
       if(error){msg.style.color='#e74c3c';msg.textContent='실패: '+error.message;return;}
       renderPremium();
     };
+    document.querySelectorAll('.pc-lvl').forEach(s=>s.onchange=async()=>{
+      const {error}=await sb.from('premium_content').update({min_level:+s.value}).eq('id',s.dataset.id);
+      if(error) alert('변경 실패: '+error.message);
+      else { s.style.outline='2px solid #27ae60'; setTimeout(()=>s.style.outline='',1200); }
+    });
     document.querySelectorAll('.pc-del').forEach(b=>b.onclick=async()=>{
       if(!confirm('삭제할까요?'))return;
       await sb.from('premium_content').delete().eq('id',b.dataset.id); renderPremium();
