@@ -21,6 +21,34 @@ for r in ws.iter_rows(min_row=4, values_only=True):
     if r[0] is None: continue
     groups.append([r[0], r[1] or '', r[2] or '', r[3] or '', str(r[4] or ''), r[5] or '', r[6] or '', r[7] or ''])
 
+# 수동 제보 그룹 병합 (data/manual_groups.csv) — 방문자 제보로 추가된 그룹
+MANUAL = os.path.join(os.path.dirname(os.path.abspath(CSVF)), 'manual_groups.csv')
+manual_count = 0
+if os.path.exists(MANUAL):
+    try:
+        mrows = list(csv.DictReader(open(MANUAL, encoding='utf-8-sig')))
+    except Exception:
+        mrows = []
+    next_no = max([g[0] for g in groups if isinstance(g[0], int)] or [0]) + 1
+    seen = {g[1] for g in groups}
+    for m in mrows:
+        name = (m.get('name') or '').strip()
+        if not name or name in seen:
+            continue
+        seen.add(name)
+        groups.append([
+            next_no, name, (m.get('name_en') or '').strip(),
+            (m.get('agency') or '').strip() or '(제보)',
+            str(m.get('year') or '').strip(),
+            (m.get('category') or '').strip() or '스트리밍/MCN형',
+            (m.get('status') or '활동중').strip() or '활동중',
+            (m.get('note') or '').strip(),
+            (m.get('channel') or '').strip(),  # g[8] 채널
+            '제보',                              # g[9] 출처 마커
+        ])
+        next_no += 1
+        manual_count += 1
+
 rows = list(csv.DictReader(open(CSVF, encoding='utf-8-sig')))
 agg = {}
 collected_at = ''
@@ -133,6 +161,9 @@ tr.row{cursor:pointer}tr.row:hover{background:#f4f6fd}
 .pagei{font-size:12px;color:#7a8194;margin:8px 2px}
 .notice{display:none;background:#fff7e0;border:1px solid #f3df9d;color:#7a5b00;border-radius:10px;padding:10px 14px;margin-bottom:12px;font-size:13px}
 footer{margin-top:18px;font-size:11.5px;color:#9aa1b3}
+#t-submit label{display:block;font-size:12px;color:#555e76;font-weight:600}
+#t-submit input,#t-submit select{margin-top:4px}
+.st-제보{background:#efe7fb;color:#6b3fc0}
 @media(max-width:640px){.hide-m{display:none}}
 </style></head><body><div class="wrap">
 <header>
@@ -153,6 +184,7 @@ footer{margin-top:18px;font-size:11.5px;color:#9aa1b3}
   <div class="tab" data-t="timeline">📅 연표</div>
   <div class="tab" data-t="trend">📈 추세·변동</div>
   <div class="tab" data-t="method">ℹ️ 데이터 기준</div>
+  <div class="tab" data-t="submit">➕ 그룹 제보</div>
 </div>
 
 <section id="t-dash">
@@ -212,6 +244,28 @@ footer{margin-top:18px;font-size:11.5px;color:#9aa1b3}
 
 <section id="t-method" style="display:none"><div id="method-body"></div></section>
 
+<section id="t-submit" style="display:none">
+  <div class="chart-box" style="max-width:640px">
+    <h3 style="font-size:16px;margin-bottom:4px">➕ 빠진 그룹 제보하기</h3>
+    <p class="muted" style="line-height:1.55;margin-bottom:14px">위키 미등재·조용히 활동하는 그룹이 빠졌다면 알려주세요. 제출하면 GitHub 이슈로 접수되고, 자동으로 명부에 <b>'제보' 표시</b>와 함께 추가됩니다(검증 전 항목으로 구분 표시).</p>
+    <div style="display:grid;gap:10px">
+      <label>그룹명 <span style="color:#e74c3c">*</span><input type="text" id="gf-name" style="width:100%" placeholder="예: 별빛소녀단"></label>
+      <label>영문/별칭<input type="text" id="gf-en" style="width:100%" placeholder="예: Starlight Girls"></label>
+      <label>소속사·운영사<input type="text" id="gf-agency" style="width:100%" placeholder="모르면 비워두세요"></label>
+      <div style="display:flex;gap:10px;flex-wrap:wrap">
+        <label style="flex:1;min-width:120px">활동시작(연도)<input type="text" id="gf-year" style="width:100%" placeholder="예: 2025"></label>
+        <label style="flex:1;min-width:140px">분류<select id="gf-cat" style="width:100%"><option>스트리밍/MCN형</option><option>음반/아이돌형</option><option>버추얼휴먼/솔로</option><option>혼합형</option></select></label>
+        <label style="flex:1;min-width:120px">상태<select id="gf-status" style="width:100%"><option>활동중</option><option>휴면</option><option>확인필요</option></select></label>
+      </div>
+      <label>대표 채널 링크 (유튜브/치지직/SOOP/X)<input type="text" id="gf-channel" style="width:100%" placeholder="https://..."></label>
+      <label>비고<textarea id="gf-note" rows="3" style="width:100%;padding:8px 10px;border:1px solid #d7dbe8;border-radius:8px;font-size:13px;font-family:inherit" placeholder="멤버 수, 데뷔곡, 플랫폼 등 아는 정보"></textarea></label>
+      <label>제보자(선택)<input type="text" id="gf-submitter" style="width:100%" placeholder="닉네임 또는 빈칸"></label>
+      <button class="btn-p" id="gf-submit" style="margin-top:4px">제보 보내기 (GitHub 이슈 열기)</button>
+      <div id="gf-msg" class="muted"></div>
+    </div>
+  </div>
+</section>
+
 <div id="drawer"><button class="close" onclick="drawer.classList.remove('open')">✕</button><div id="d-body"></div></div>
 <footer id="foot">임계값(확정): 위키등재 OR 5만+ 팔로워 · 매월 1일 자동 수집.</footer>
 <div id="copyright" style="margin-top:8px;font-size:11.5px;color:#9aa1b3">© <span id="cyear"></span> (주)크리에이터버스. All rights reserved.</div>
@@ -225,7 +279,7 @@ $('#m-col').textContent=D.collected;$('#m-built').textContent=D.built;
 $('#cnt-g').textContent=D.groups.length;$('#cnt-s').textContent=D.solos.length;
 $('#cnt-a').textContent=(D.agencies||[]).length;$('#cnt-u').textContent=(D.upcoming||[]).length;
 const drawer=$('#drawer');
-const TABS=['dash','grp','solo','agency','upcoming','timeline','trend','method'];
+const TABS=['dash','grp','solo','agency','upcoming','timeline','trend','method','submit'];
 
 /* 탭 */
 function showTab(t){
@@ -257,7 +311,7 @@ const stCls=s=>'st st-'+s.replace('/','');
 function renderG(){
   let rs=D.groups.filter(g=>(!gS||g[6]===gS)&&(!gQ||(g[1]+g[2]+g[3]).toLowerCase().includes(gQ)));
   rs.sort((a,b)=>{const k=gSort[0];return (a[k]>b[k]?1:a[k]<b[k]?-1:0)*gSort[1]});
-  $('#tb-g').innerHTML=rs.map((g,i)=>`<tr class="row" data-i="${D.groups.indexOf(g)}"><td class="muted">${g[0]}</td><td><b>${esc(g[1])}</b> <span class="muted">${esc(g[2])}</span></td><td>${esc(g[3])}</td><td class="hide-m">${esc(g[4])}</td><td class="hide-m muted">${esc(g[5])}</td><td><span class="${stCls(g[6])}">${esc(g[6])}</span></td></tr>`).join('');
+  $('#tb-g').innerHTML=rs.map((g,i)=>`<tr class="row" data-i="${D.groups.indexOf(g)}"><td class="muted">${g[0]}</td><td><b>${esc(g[1])}</b> <span class="muted">${esc(g[2])}</span>${g[9]==='제보'?' <span class="st st-제보">제보</span>':''}</td><td>${esc(g[3])}</td><td class="hide-m">${esc(g[4])}</td><td class="hide-m muted">${esc(g[5])}</td><td><span class="${stCls(g[6])}">${esc(g[6])}</span></td></tr>`).join('');
   document.querySelectorAll('#tb-g .row').forEach(tr=>tr.onclick=()=>openG(D.groups[+tr.dataset.i]));
 }
 $('#q-g').oninput=e=>{gQ=e.target.value.toLowerCase();renderG()};
@@ -265,12 +319,17 @@ document.querySelectorAll('#t-grp .chip').forEach(c=>c.onclick=()=>{document.que
 document.querySelectorAll('#t-grp th').forEach(th=>th.onclick=()=>{const k=+th.dataset.k;gSort=[k,gSort[0]===k?-gSort[1]:1];renderG()});
 function openG(g,skipHash){
   if(!skipHash)setHash('g/'+g[0]);
-  $('#d-body').innerHTML=`<h2>${esc(g[1])}</h2><div class="muted">${esc(g[2])}</div>
+  const isSub=g[9]==='제보';
+  const subBadge=isSub?' <span class="st st-제보">제보·미검증</span>':'';
+  const chLink=g[8]?`<a class="chlink" target="_blank" href="${esc(g[8])}"><span class="pf">🔗 제보된 채널 링크</span><span class="fl">새 창 ↗</span></a>`:'';
+  $('#d-body').innerHTML=`<h2>${esc(g[1])}${subBadge}</h2><div class="muted">${esc(g[2])}</div>
   <div class="kv"><div><b>상태</b><span class="${stCls(g[6])}">${esc(g[6])}</span></div><div><b>소속·운영사</b><span>${esc(g[3])||'—'}</span></div>
   <div><b>활동 시작</b><span>${esc(g[4])||'—'}</span></div><div><b>분류</b><span>${esc(g[5])}</span></div></div>
   <div class="kv"><div style="display:block"><b>비고</b><p style="margin-top:6px;line-height:1.55">${esc(g[7])||'—'}</p></div></div>
+  ${chLink}
   <a class="chlink" target="_blank" href="https://www.youtube.com/results?search_query=${encodeURIComponent(g[1]+' 버추얼')}"><span class="pf">▶ 유튜브에서 검색</span><span class="fl">새 창</span></a>
   <a class="chlink" target="_blank" href="https://namu.wiki/Search?q=${encodeURIComponent(g[1])}"><span class="pf">📖 나무위키 검색</span><span class="fl">새 창</span></a>
+  ${isSub?'<p class="muted" style="margin-top:10px">※ 방문자 제보로 추가된 항목입니다. 운영자 검증 전이에요.</p>':''}
   ${shareBtn()}`;
   drawer.classList.add('open');
 }
@@ -487,6 +546,26 @@ function renderMethod(){
 
   <p class="muted" style="margin-top:12px">데이터 수집일 ${D.collected} · 인용 시 출처를 위와 같이 밝혀 주세요.</p>`;
 }
+
+/* ── 그룹 제보 폼 ── */
+(function(){
+  const btn=$('#gf-submit'); if(!btn)return;
+  btn.onclick=()=>{
+    const val=id=>{const el=$('#gf-'+id);return el?el.value.trim():'';};
+    const name=val('name');
+    const msg=$('#gf-msg');
+    if(!name){msg.style.color='#e74c3c';msg.textContent='그룹명은 필수예요.';return;}
+    const d={name,name_en:val('en'),agency:val('agency'),year:val('year'),category:$('#gf-cat').value,status:$('#gf-status').value,channel:val('channel'),note:val('note'),submitter:val('submitter')};
+    const repo=CFG.repo;
+    if(!repo){msg.style.color='#7a5b00';msg.textContent='제보는 공개 사이트(GitHub 연결)에서만 보낼 수 있어요. 운영자에게 알려 주세요.';return;}
+    const body=`빠진 버추얼 그룹 제보입니다. 아래 내용으로 명부 추가를 요청합니다.\n\n`+
+      `- 그룹명: ${d.name}\n- 영문/별칭: ${d.name_en}\n- 소속사: ${d.agency}\n- 활동시작: ${d.year}\n- 분류: ${d.category}\n- 상태: ${d.status}\n- 채널: ${d.channel}\n- 비고: ${d.note}\n- 제보자: ${d.submitter}\n\n`+
+      `<!--GROUPDATA:${JSON.stringify(d)}-->`;
+    const url=`https://github.com/${repo}/issues/new?title=${encodeURIComponent('[제보] '+d.name)}&labels=group-submission&body=${encodeURIComponent(body)}`;
+    window.open(url,'_blank');
+    msg.style.color='#157a36';msg.innerHTML='GitHub 이슈 작성 창을 열었어요. 그 화면에서 <b>Submit new issue</b>를 누르면 접수되고, 잠시 후 자동으로 명부에 반영됩니다. (GitHub 로그인 필요)';
+  };
+})();
 
 $('#cyear').textContent=new Date().getFullYear();
 renderG();renderS();renderTrend();renderA();renderU();renderTL();renderMethod();
