@@ -13,6 +13,8 @@ def load_json(p, default):
     except Exception: return default
 history = load_json(os.path.join(SNAPDIR, 'index.json'), {})
 diff = load_json(os.path.join(SNAPDIR, 'diff_latest.json'), {'available': False})
+# 유튜브 자동 통계(있으면) — enrich_youtube.py 가 생성, 핸들/채널ID 키
+ytstats = load_json(os.path.join(os.path.dirname(os.path.abspath(CSVF)), 'youtube_stats.json'), {})
 
 wb = openpyxl.load_workbook(XLSX)
 ws = wb['버추얼 그룹 전수목록']
@@ -108,7 +110,7 @@ cfg = {'mode': MODE, 'repo': GH_REPO}
 
 data = {'built': datetime.date.today().isoformat(), 'collected': collected_at or datetime.date.today().isoformat(),
         'groups': groups, 'solos': solos, 'history': history, 'diff': diff, 'cfg': cfg,
-        'agencies': agencies, 'upcoming': upcoming, 'timeline': timeline}
+        'agencies': agencies, 'upcoming': upcoming, 'timeline': timeline, 'ytstats': ytstats}
 DATA = json.dumps(data, ensure_ascii=False, separators=(',', ':')).replace('</', '<\\/')
 
 HTML = r'''<!DOCTYPE html>
@@ -317,6 +319,16 @@ mk('#c3','bar',bks.map(b=>b[0]),bks.map(b=>D.solos.filter(b[1]).length));
 const sp=cnt(D.solos,s=>s.p||'미상');
 mk('#c4','doughnut',Object.keys(sp),Object.values(sp));
 
+/* 유튜브 자동 통계 조회: 채널 URL → 캐시 키(@핸들/UC아이디) */
+function ytLookup(url){
+  if(!url||!D.ytstats)return null;
+  let m=url.match(/youtube\.com\/@([A-Za-z0-9._\-가-힣]+)/);
+  if(m&&D.ytstats['@'+m[1]])return D.ytstats['@'+m[1]];
+  m=url.match(/youtube\.com\/channel\/(UC[A-Za-z0-9_\-]+)/);
+  if(m&&D.ytstats[m[1]])return D.ytstats[m[1]];
+  return null;
+}
+
 /* 그룹 테이블 */
 let gQ='',gS='',gSort=[0,1];
 const stCls=s=>'st st-'+s.replace('/','');
@@ -334,10 +346,13 @@ function openG(g,skipHash){
   const isSub=g[9]==='제보';
   const subBadge=isSub?' <span class="st st-제보">제보·미검증</span>':'';
   const chLink=g[8]?`<a class="chlink" target="_blank" href="${esc(g[8])}"><span class="pf">🔗 제보된 채널 링크</span><span class="fl">새 창 ↗</span></a>`:'';
+  const yt=ytLookup(g[8]);
+  const ytLine=yt?`<div class="kv"><div><b>📊 유튜브</b><span>구독 <b>${yt.subscribers!=null?fmt(yt.subscribers):'비공개'}</b>${yt.videos!=null?' · 영상 '+yt.videos.toLocaleString()+'개':''}${yt.views?' · 누적 '+fmt(yt.views)+'뷰':''} <span class="muted">(자동 갱신 ${esc(yt.fetched||'')})</span></span></div></div>`:'';
   $('#d-body').innerHTML=`<h2>${esc(g[1])}${subBadge}</h2><div class="muted">${esc(g[2])}</div>
   <div class="kv"><div><b>상태</b><span class="${stCls(g[6])}">${esc(g[6])}</span></div><div><b>소속·운영사</b><span>${esc(g[3])||'—'}</span></div>
   <div><b>활동 시작</b><span>${esc(g[4])||'—'}</span></div><div><b>분류</b><span>${esc(g[5])}</span></div></div>
   <div class="kv"><div style="display:block"><b>비고</b><p style="margin-top:6px;line-height:1.55">${esc(g[7])||'—'}</p></div></div>
+  ${ytLine}
   ${chLink}
   <a class="chlink" target="_blank" href="https://www.youtube.com/results?search_query=${encodeURIComponent(g[1]+' 버추얼')}"><span class="pf">▶ 유튜브에서 검색</span><span class="fl">새 창</span></a>
   <a class="chlink" target="_blank" href="https://namu.wiki/Search?q=${encodeURIComponent(g[1])}"><span class="pf">📖 나무위키 검색</span><span class="fl">새 창</span></a>
