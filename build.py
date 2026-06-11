@@ -50,6 +50,9 @@ def main():
     run('2/3 스냅샷', [os.path.join(PIPE, 'snapshot.py'), 'save'],
         {'CSV_PATH': CSV, 'SNAP_DIR': SNAP})
 
+    # 2.5) 유튜브 통계 보강(YT_API_KEY 있을 때만 동작, 없으면 no-op)
+    run('2.5 유튜브 통계', [os.path.join(PIPE, 'enrich_youtube.py')], {})
+
     # 3) 대시보드 빌드 (public 모드)
     xlsx = latest_xlsx()
     if not xlsx:
