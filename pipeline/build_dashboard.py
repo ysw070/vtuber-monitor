@@ -46,7 +46,8 @@ if os.path.exists(MANUAL):
             (m.get('status') or '활동중').strip() or '활동중',
             (m.get('note') or '').strip(),
             (m.get('channel') or '').strip(),  # g[8] 채널
-            '제보',                              # g[9] 출처 마커
+            ('검증' if str(m.get('verified') or '').strip().lower() in ('1', 'true', 'y')
+             else '제보'),                       # g[9] 출처(검증완료 / 제보·미검증)
         ])
         next_no += 1
         manual_count += 1
@@ -171,6 +172,7 @@ footer{margin-top:18px;font-size:11.5px;color:#9aa1b3}
 #t-submit label{display:block;font-size:12px;color:#555e76;font-weight:600}
 #t-submit input,#t-submit select{margin-top:4px}
 .st-제보{background:#efe7fb;color:#6b3fc0}
+.st-검증{background:#dff3ee;color:#0f7c62}
 #auth-modal{display:none;position:fixed;inset:0;background:rgba(20,30,60,.45);z-index:60;align-items:center;justify-content:center}
 #auth-modal.open{display:flex}
 .am-card{position:relative;background:#fff;border-radius:14px;padding:24px;width:360px;max-width:92vw;box-shadow:0 12px 40px rgba(20,30,60,.25)}
@@ -185,14 +187,14 @@ footer{margin-top:18px;font-size:11.5px;color:#9aa1b3}
   <div class="spacer"></div>
   <button class="btn-p" id="btn-collect">🔄 지금 재수집</button>
   <button class="btn-s" id="btn-xg">⬇ 그룹 CSV</button>
-  <button class="btn-s" id="btn-xs">⬇ 개인세 CSV</button>
+  <button class="btn-s" id="btn-xs">⬇ 스트리머 CSV</button>
   <span id="auth-area"></span>
 </header>
 <div class="notice" id="notice"></div>
 <div class="tabs">
   <div class="tab on" data-t="dash">📊 대시보드</div>
   <div class="tab" data-t="grp">그룹 전수목록 (<span id="cnt-g"></span>)</div>
-  <div class="tab" data-t="solo">개인세 (<span id="cnt-s"></span>)</div>
+  <div class="tab" data-t="solo">수집 스트리머 (<span id="cnt-s"></span>)</div>
   <div class="tab" data-t="agency">소속사 (<span id="cnt-a"></span>)</div>
   <div class="tab" data-t="upcoming">데뷔예정 (<span id="cnt-u"></span>)</div>
   <div class="tab" data-t="timeline">📅 연표</div>
@@ -208,8 +210,8 @@ footer{margin-top:18px;font-size:11.5px;color:#9aa1b3}
   <div class="charts">
     <div class="chart-box"><h3>그룹 상태별</h3><canvas id="c1"></canvas></div>
     <div class="chart-box"><h3>그룹 분류별</h3><canvas id="c2"></canvas></div>
-    <div class="chart-box"><h3>개인세 규모 분포 (최대 팔로워)</h3><canvas id="c3"></canvas></div>
-    <div class="chart-box"><h3>개인세 주 플랫폼</h3><canvas id="c4"></canvas></div>
+    <div class="chart-box"><h3>스트리머 규모 분포 (최대 팔로워)</h3><canvas id="c3"></canvas></div>
+    <div class="chart-box"><h3>스트리머 주 플랫폼</h3><canvas id="c4"></canvas></div>
   </div>
 </section>
 
@@ -222,6 +224,7 @@ footer{margin-top:18px;font-size:11.5px;color:#9aa1b3}
 </section>
 
 <section id="t-solo" style="display:none">
+  <p class="muted" style="margin-bottom:10px;line-height:1.55">라이브 스트리머 집계 API로 자동 수집한 목록이에요. <b>이 소스는 소속사 정보를 제공하지 않아 소속 여부를 판별할 수 없습니다</b>(소속 미상). 따라서 '무소속(개인세)' 목록이 아니며, 소속 있는 스트리머가 포함될 수 있어요. 소속이 확인된 솔로 아티스트는 <b>그룹 전수목록</b>의 <code>버추얼휴먼/솔로</code>로 등재합니다.</p>
   <div class="toolbar">
     <input type="text" id="q-s" placeholder="활동명 검색">
     <select id="f-plat"><option value="">전체 플랫폼</option></select>
@@ -334,7 +337,7 @@ document.querySelectorAll('.tab').forEach(t=>t.onclick=()=>showTab(t.dataset.t))
 const cnt=(arr,fn)=>arr.reduce((m,x)=>{const k=fn(x);m[k]=(m[k]||0)+1;return m},{});
 const gs=cnt(D.groups,g=>g[6]),gc=cnt(D.groups,g=>g[5]);
 const n5=D.solos.filter(s=>s.f>=50000).length,n3=D.solos.filter(s=>s.f>=30000).length;
-$('#cards').innerHTML=[['전체 그룹',D.groups.length],['활동중 그룹',gs['활동중']||0],['개인세(수집)',D.solos.length],['5만+ 포함 후보',n5],['3만+ 워치',n3-n5]]
+$('#cards').innerHTML=[['전체 그룹',D.groups.length],['활동중 그룹',gs['활동중']||0],['수집 스트리머',D.solos.length],['5만+ 포함 후보',n5],['3만+ 워치',n3-n5]]
  .map(([k,v])=>`<div class="card"><div class="v">${v}</div><div class="k">${k}</div></div>`).join('');
 const PAL=['#3d5afe','#27ae60','#e74c3c','#95a0b6','#f5a623','#8e44ad','#16a2b8'];
 const mk=(id,type,labels,vals,horiz)=>new Chart($(id),{type,data:{labels,datasets:[{data:vals,backgroundColor:PAL,borderWidth:0}]},
@@ -363,7 +366,7 @@ const stCls=s=>'st st-'+s.replace('/','');
 function renderG(){
   let rs=D.groups.filter(g=>(!gS||g[6]===gS)&&(!gQ||(g[1]+g[2]+g[3]).toLowerCase().includes(gQ)));
   rs.sort((a,b)=>{const k=gSort[0];return (a[k]>b[k]?1:a[k]<b[k]?-1:0)*gSort[1]});
-  $('#tb-g').innerHTML=rs.map((g,i)=>`<tr class="row" data-i="${D.groups.indexOf(g)}"><td class="muted">${g[0]}</td><td><b>${esc(g[1])}</b> <span class="muted">${esc(g[2])}</span>${g[9]==='제보'?' <span class="st st-제보">제보</span>':''}</td><td>${esc(g[3])}</td><td class="hide-m">${esc(g[4])}</td><td class="hide-m muted">${esc(g[5])}</td><td><span class="${stCls(g[6])}">${esc(g[6])}</span></td></tr>`).join('');
+  $('#tb-g').innerHTML=rs.map((g,i)=>`<tr class="row" data-i="${D.groups.indexOf(g)}"><td class="muted">${g[0]}</td><td><b>${esc(g[1])}</b> <span class="muted">${esc(g[2])}</span>${g[9]==='검증'?' <span class="st st-검증">검증</span>':(g[9]==='제보'?' <span class="st st-제보">제보</span>':'')}</td><td>${esc(g[3])}</td><td class="hide-m">${esc(g[4])}</td><td class="hide-m muted">${esc(g[5])}</td><td><span class="${stCls(g[6])}">${esc(g[6])}</span></td></tr>`).join('');
   document.querySelectorAll('#tb-g .row').forEach(tr=>tr.onclick=()=>openG(D.groups[+tr.dataset.i]));
 }
 $('#q-g').oninput=e=>{gQ=e.target.value.toLowerCase();renderG()};
@@ -371,9 +374,9 @@ document.querySelectorAll('#t-grp .chip').forEach(c=>c.onclick=()=>{document.que
 document.querySelectorAll('#t-grp th').forEach(th=>th.onclick=()=>{const k=+th.dataset.k;gSort=[k,gSort[0]===k?-gSort[1]:1];renderG()});
 function openG(g,skipHash){
   if(!skipHash)setHash('g/'+g[0]);
-  const isSub=g[9]==='제보';
-  const subBadge=isSub?' <span class="st st-제보">제보·미검증</span>':'';
-  const chLink=g[8]?`<a class="chlink" target="_blank" href="${esc(g[8])}"><span class="pf">🔗 제보된 채널 링크</span><span class="fl">새 창 ↗</span></a>`:'';
+  const isSub=g[9]==='제보', isVer=g[9]==='검증';
+  const subBadge=isVer?' <span class="st st-검증">검증완료</span>':(isSub?' <span class="st st-제보">제보·미검증</span>':'');
+  const chLink=g[8]?`<a class="chlink" target="_blank" href="${esc(g[8])}"><span class="pf">🔗 공식 채널</span><span class="fl">새 창 ↗</span></a>`:'';
   const yt=ytLookup(g[8]);
   const ytLine=yt?`<div class="kv"><div><b>📊 유튜브</b><span>구독 <b>${yt.subscribers!=null?fmt(yt.subscribers):'비공개'}</b>${yt.videos!=null?' · 영상 '+yt.videos.toLocaleString()+'개':''}${yt.views?' · 누적 '+fmt(yt.views)+'뷰':''} <span class="muted">(자동 갱신 ${esc(yt.fetched||'')})</span></span></div></div>`:'';
   $('#d-body').innerHTML=`<h2>${esc(g[1])}${subBadge}</h2><div class="muted">${esc(g[2])}</div>
@@ -385,6 +388,7 @@ function openG(g,skipHash){
   <a class="chlink" target="_blank" href="https://www.youtube.com/results?search_query=${encodeURIComponent(g[1]+' 버추얼')}"><span class="pf">▶ 유튜브에서 검색</span><span class="fl">새 창</span></a>
   <a class="chlink" target="_blank" href="https://namu.wiki/Search?q=${encodeURIComponent(g[1])}"><span class="pf">📖 나무위키 검색</span><span class="fl">새 창</span></a>
   ${isSub?'<p class="muted" style="margin-top:10px">※ 방문자 제보로 추가된 항목입니다. 운영자 검증 전이에요.</p>':''}
+  ${isVer?'<p class="muted" style="margin-top:10px">※ 명부에 추가 등재된 항목으로, 운영자가 공식 채널·언론·위키로 교차검증했습니다.</p>':''}
   ${shareBtn()}`;
   drawer.classList.add('open');
 }
@@ -424,7 +428,7 @@ function dl(name,rows){
   const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([csv],{type:'text/csv'}));a.download=name;a.click();
 }
 $('#btn-xg').onclick=()=>dl(`버추얼그룹_전수목록_${D.collected}.csv`,[['No.','그룹명','영문/별칭','소속사·운영사','활동시작','분류','상태','비고'],...D.groups]);
-$('#btn-xs').onclick=()=>dl(`개인세_수집_${D.collected}.csv`,[['활동명','영문','최대 팔로워','주 플랫폼','플랫폼 목록','데뷔일','최근 라이브','트위터'],...D.solos.map(s=>[s.n,s.e,s.f,s.p,Object.keys(s.ch).join('·'),s.d,s.l,s.t])]);
+$('#btn-xs').onclick=()=>dl(`수집스트리머_${D.collected}.csv`,[['활동명','영문','최대 팔로워','주 플랫폼','플랫폼 목록','데뷔일','최근 라이브','트위터'],...D.solos.map(s=>[s.n,s.e,s.f,s.p,Object.keys(s.ch).join('·'),s.d,s.l,s.t])]);
 
 /* 재수집 버튼 — 모드별 분기 */
 const CFG=D.cfg||{mode:'cowork'};
@@ -553,14 +557,16 @@ function renderMethod(){
   $('#method-body').innerHTML=`
   <div class="chart-box" style="line-height:1.65">
     <h3 style="font-size:16px;margin-bottom:8px">이 명부는 어떻게 만들어졌나</h3>
-    <p>한국에서 활동하는 버추얼 아이돌·버추얼 유튜버(버튜버)를 <b>그룹 단위</b>로 전수조사하고, 무소속(개인세) 버튜버는 <b>규모·등재 기준</b>으로 선별해 함께 수록합니다. 매월 1일 자동으로 갱신됩니다.</p>
+    <p>한국에서 활동하는 버추얼 아이돌·버추얼 유튜버(버튜버)를 <b>그룹·개별 엔티티 단위</b>로 전수조사하고, 라이브 스트리머는 <b>규모·등재 기준</b>으로 선별해 함께 수록합니다. 매월 1일 자동으로 갱신됩니다.</p>
+    <p style="margin-top:8px">수록 경로는 둘입니다. ① <b>명부(전수목록)</b> — 운영자가 공식 채널·언론·위키로 교차검증해 등재(소속사·분류 포함). ② <b>수집 스트리머</b> — 스트리머 집계 API로 자동 수집(규모 기준 선별).</p>
   </div>
 
   <div class="chart-box" style="margin-top:12px">
     <h3 style="font-size:15px">① 수집 출처</h3>
     <div class="kv">
       <div><b>그룹 명부</b><span>thewiki.kr·나무위키 '버추얼 그룹 목록', 언론 보도(머니투데이·이데일리·한경·스포츠경향·전자신문·톱셀럽·KMJ 등), MBC 버추얼 라이브 페스티벌 라인업을 교차검증</span></div>
-      <div><b>개인세 규모</b><span>'나의 작은 버튜버' 공개 API(유튜브 구독·치지직/SOOP 팔로워·최근 방송 집계)</span></div>
+      <div><b>스트리머 규모</b><span>'나의 작은 버튜버' 공개 API(유튜브 구독·치지직/SOOP 팔로워·최근 방송 집계). <b>소속사 정보는 제공하지 않음</b> → 소속 미상</span></div>
+      <div><b>채널 통계</b><span>YouTube Data API v3 — 명부 등재 엔티티의 채널 구독자·영상수·조회수를 월간 자동 갱신</span></div>
       <div><b>소속사 확정</b><span>공식 보도자료·공식 채널·위키 문서 (2026-06-06 재조사 반영)</span></div>
     </div>
   </div>
@@ -593,7 +599,9 @@ function renderMethod(){
     <h3 style="font-size:15px">⑤ 알려진 한계</h3>
     <ul style="margin:6px 0 0 18px;line-height:1.7">
       <li>그룹 명부는 '위키 등재' 기준이라 미등재 초소형·프리데뷔 팀은 누락될 수 있음</li>
-      <li>개인세 규모는 비공식 단일 API 기반 — 공식 API(YouTube/치지직/SOOP)로 이전 예정</li>
+      <li><b>소속 여부 판별 불가</b>: 스트리머 집계 API가 소속사 정보를 제공하지 않아, '수집 스트리머' 목록은 무소속(개인세) 명단이 아니라 <b>소속 미상</b>입니다. 소속이 확인된 솔로는 명부의 <code>버추얼휴먼/솔로</code>로 등재합니다</li>
+      <li><b>음반·MV 중심 아티스트는 자동수집 사각지대</b>: 라이브 비중이 낮으면 스트리머 집계에 잡히지 않습니다(예: Hebi.). 이런 아티스트는 <b>명부에 수동 등재</b>하고, 채널 통계만 YouTube API로 자동 갱신합니다</li>
+      <li>스트리머 규모는 비공식 단일 API 기반 — 공식 API(치지직/SOOP)로 이전 예정</li>
       <li>일부 소속사·데뷔일은 보도자료 크레딧 기반 '추정'(상세에 명시)</li>
       <li>'확인필요' 항목은 공식 채널 최신 업로드 직접 확인이 필요</li>
     </ul>
