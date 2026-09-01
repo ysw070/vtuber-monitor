@@ -2,31 +2,33 @@
  "@seliv_official": {
   "channel_id": "UCKWpaSBkZ_A4xAPVSDuow6w",
   "title": "셀리브【Seliv】",
-  "subscribers": 9580,
-  "videos": 24,
-  "views": 678495,
+  "subscribers": 10500,
+  "videos": 29,
+  "views": 864455,
   "history": {
    "2026-06-11": 8650,
    "2026-07-01": 9160,
    "2026-07-08": 9280,
    "2026-07-17": 9350,
-   "2026-08-01": 9580
+   "2026-08-01": 9580,
+   "2026-09-01": 10500
   },
-  "fetched": "2026-08-01",
+  "fetched": "2026-09-01",
   "group": "셀리브"
  },
  "@hebich": {
   "channel_id": "UCPUcv2Zv9WhH6y8H1A9uWfg",
   "title": "Hebi.",
-  "subscribers": 381000,
-  "videos": 206,
-  "views": 202822738,
+  "subscribers": 384000,
+  "videos": 227,
+  "views": 211136067,
   "history": {
    "2026-07-08": 379000,
    "2026-07-17": 380000,
-   "2026-08-01": 381000
+   "2026-08-01": 381000,
+   "2026-09-01": 384000
   },
-  "fetched": "2026-08-01",
+  "fetched": "2026-09-01",
   "group": "헤비"
  }
 }
