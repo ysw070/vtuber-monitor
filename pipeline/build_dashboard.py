@@ -91,6 +91,14 @@ for sn in wb.sheetnames:
             upcoming.append([r[0] or '', r[1] or '', r[2] or '', str(r[3] or ''), (r[4] if len(r) > 4 else '') or ''])
         break
 
+# AI 생성형 아티스트 시트 → [이름, 영문, 소속사, 유형, 상태, 데뷔일, 발매작, 비고, 근거]
+ai_artists = []
+if 'AI 생성형 아티스트' in wb.sheetnames:
+    xw = wb['AI 생성형 아티스트']
+    for r in xw.iter_rows(min_row=5, values_only=True):
+        if not r or not r[0]: continue
+        ai_artists.append([(r[i] if i < len(r) and r[i] is not None else '') for i in range(9)])
+
 # 연표: 그룹의 활동시작에서 연도 추출 → 연도별 데뷔/종료 집계 + 항목
 import re as _re
 def year_of(s):
@@ -115,7 +123,7 @@ if sbconf and MODE == 'public':
 
 data = {'built': datetime.date.today().isoformat(), 'collected': collected_at or datetime.date.today().isoformat(),
         'groups': groups, 'solos': solos, 'history': history, 'diff': diff, 'cfg': cfg,
-        'agencies': agencies, 'upcoming': upcoming, 'timeline': timeline, 'ytstats': ytstats}
+        'agencies': agencies, 'upcoming': upcoming, 'timeline': timeline, 'ytstats': ytstats, 'ai': ai_artists}
 DATA = json.dumps(data, ensure_ascii=False, separators=(',', ':')).replace('</', '<\\/')
 
 HTML = r'''<!DOCTYPE html>
@@ -197,6 +205,7 @@ footer{margin-top:18px;font-size:11.5px;color:#9aa1b3}
   <div class="tab" data-t="solo">수집 스트리머 (<span id="cnt-s"></span>)</div>
   <div class="tab" data-t="agency">소속사 (<span id="cnt-a"></span>)</div>
   <div class="tab" data-t="upcoming">데뷔예정 (<span id="cnt-u"></span>)</div>
+  <div class="tab" data-t="ai">🤖 AI 아티스트 (<span id="cnt-ai"></span>)</div>
   <div class="tab" data-t="timeline">📅 연표</div>
   <div class="tab" data-t="trend">📈 추세·변동</div>
   <div class="tab" data-t="method">ℹ️ 데이터 기준</div>
@@ -253,6 +262,11 @@ footer{margin-top:18px;font-size:11.5px;color:#9aa1b3}
 <section id="t-upcoming" style="display:none">
   <p class="muted" style="margin-bottom:10px">2026 신규 데뷔 및 데뷔 예정 워치리스트 — 정식 데뷔 시 그룹 전수목록으로 편입됩니다.</p>
   <div id="up-cards" class="charts"></div>
+</section>
+
+<section id="t-ai" style="display:none">
+  <p class="muted" style="margin-bottom:10px;line-height:1.55">사람 연기자(모션캡처·성우) 없이 <b>전 과정 생성형 AI</b>로 제작·가창되는 아티스트. 버추얼 아이돌 명부와 성격이 달라 <b>별도로 관리</b>합니다(전수목록 집계에 미포함).</p>
+  <div id="ai-cards" class="charts"></div>
 </section>
 
 <section id="t-timeline" style="display:none">
@@ -320,9 +334,9 @@ const $=s=>document.querySelector(s),esc=s=>String(s??'').replace(/[&<>"]/g,c=>(
 const fmt=n=>n>=10000?(n/10000).toFixed(n>=100000?0:1)+'만':n.toLocaleString();
 $('#m-col').textContent=D.collected;$('#m-built').textContent=D.built;
 $('#cnt-g').textContent=D.groups.length;$('#cnt-s').textContent=D.solos.length;
-$('#cnt-a').textContent=(D.agencies||[]).length;$('#cnt-u').textContent=(D.upcoming||[]).length;
+$('#cnt-a').textContent=(D.agencies||[]).length;$('#cnt-u').textContent=(D.upcoming||[]).length;$('#cnt-ai').textContent=(D.ai||[]).length;
 const drawer=$('#drawer');
-const TABS=['dash','grp','solo','agency','upcoming','timeline','trend','method','premium','submit','admin'];
+const TABS=['dash','grp','solo','agency','upcoming','ai','timeline','trend','method','premium','submit','admin'];
 
 /* 탭 */
 function showTab(t){
@@ -540,6 +554,14 @@ function renderU(){
     <p class="muted" style="margin-top:8px;line-height:1.5">${esc(u[4])||''}</p></div>`).join('')||'<p class="muted">데뷔예정 데이터 없음</p>';
 }
 
+/* ── AI 아티스트 탭 ── */
+function renderAI(){
+  const el=$('#ai-cards'); if(!el) return;
+  el.innerHTML=(D.ai||[]).map(a=>`<div class="chart-box"><div style="display:flex;justify-content:space-between;align-items:start;gap:8px"><h3 style="font-size:15px">${esc(a[0])} <span class="muted">${esc(a[1])}</span></h3><span class="st st-확인필요">${esc(a[4])}</span></div>
+    <div class="kv"><div><b>소속·제작</b><span>${esc(a[2])||'—'}</span></div><div><b>유형</b><span>${esc(a[3])}</span></div><div><b>데뷔</b><span>${esc(a[5])||'—'}</span></div><div><b>발매작</b><span>${esc(a[6])||'—'}</span></div></div>
+    <p class="muted" style="margin-top:8px;line-height:1.5">${esc(a[7])||''}</p><p class="muted" style="margin-top:4px;font-size:11px">근거: ${esc(a[8])}</p></div>`).join('')||'<p class="muted">데이터 없음</p>';
+}
+
 /* ── 연표 탭 ── */
 function renderTL(){
   const tl=D.timeline||{},years=Object.keys(tl).sort();
@@ -558,7 +580,7 @@ function renderMethod(){
   <div class="chart-box" style="line-height:1.65">
     <h3 style="font-size:16px;margin-bottom:8px">이 명부는 어떻게 만들어졌나</h3>
     <p>한국에서 활동하는 버추얼 아이돌·버추얼 유튜버(버튜버)를 <b>그룹·개별 엔티티 단위</b>로 전수조사하고, 라이브 스트리머는 <b>규모·등재 기준</b>으로 선별해 함께 수록합니다. 매월 1일 자동으로 갱신됩니다.</p>
-    <p style="margin-top:8px">수록 경로는 둘입니다. ① <b>명부(전수목록)</b> — 운영자가 공식 채널·언론·위키로 교차검증해 등재(소속사·분류 포함). ② <b>수집 스트리머</b> — 스트리머 집계 API로 자동 수집(규모 기준 선별).</p>
+    <p style="margin-top:8px">수록 경로는 둘입니다. ① <b>명부(전수목록)</b> — 운영자가 공식 채널·언론·위키로 교차검증해 등재(소속사·분류 포함). ② <b>수집 스트리머</b> — 스트리머 집계 API로 자동 수집(규모 기준 선별). ③ <b>AI 생성형 아티스트</b> — 사람 연기자 없이 생성형 AI로 제작되는 아티스트는 성격이 달라 별도 탭으로 분리(전수목록 미포함).</p>
   </div>
 
   <div class="chart-box" style="margin-top:12px">
@@ -601,6 +623,7 @@ function renderMethod(){
       <li>그룹 명부는 '위키 등재' 기준이라 미등재 초소형·프리데뷔 팀은 누락될 수 있음</li>
       <li><b>소속 여부 판별 불가</b>: 스트리머 집계 API가 소속사 정보를 제공하지 않아, '수집 스트리머' 목록은 무소속(개인세) 명단이 아니라 <b>소속 미상</b>입니다. 소속이 확인된 솔로는 명부의 <code>버추얼휴먼/솔로</code>로 등재합니다</li>
       <li><b>음반·MV 중심 아티스트는 자동수집 사각지대</b>: 라이브 비중이 낮으면 스트리머 집계에 잡히지 않습니다(예: Hebi.). 이런 아티스트는 <b>명부에 수동 등재</b>하고, 채널 통계만 YouTube API로 자동 갱신합니다</li>
+      <li><b>신규 그룹 발견은 뉴스에 의존</b>: 데뷔·론칭 사실은 자동수집 API에 없어, 매월 위키 목록 대조·전문매체 기사·음원 발매 3갈래로 조사해 보강합니다. 기사 근거 없이 위키에만 있는 소형 그룹은 <code>확인필요</code>로 등재</li>
       <li>스트리머 규모는 비공식 단일 API 기반 — 공식 API(치지직/SOOP)로 이전 예정</li>
       <li>일부 소속사·데뷔일은 보도자료 크레딧 기반 '추정'(상세에 명시)</li>
       <li>'확인필요' 항목은 공식 채널 최신 업로드 직접 확인이 필요</li>
@@ -796,7 +819,7 @@ async function renderPremium(){
 }
 
 $('#cyear').textContent=new Date().getFullYear();
-renderG();renderS();renderTrend();renderA();renderU();renderTL();renderMethod();
+renderG();renderS();renderTrend();renderA();renderU();renderAI();renderTL();renderMethod();
 routeHash();
 window.addEventListener('hashchange',routeHash);
 loadMe(); loadApprovedGroups();
