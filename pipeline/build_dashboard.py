@@ -181,6 +181,7 @@ footer{margin-top:18px;font-size:11.5px;color:#9aa1b3}
 #t-submit input,#t-submit select{margin-top:4px}
 .st-제보{background:#efe7fb;color:#6b3fc0}
 .st-검증{background:#dff3ee;color:#0f7c62}
+.st-데뷔전{background:#f3e8ff;color:#6b3fc0}
 #auth-modal{display:none;position:fixed;inset:0;background:rgba(20,30,60,.45);z-index:60;align-items:center;justify-content:center}
 #auth-modal.open{display:flex}
 .am-card{position:relative;background:#fff;border-radius:14px;padding:24px;width:360px;max-width:92vw;box-shadow:0 12px 40px rgba(20,30,60,.25)}
@@ -227,7 +228,7 @@ footer{margin-top:18px;font-size:11.5px;color:#9aa1b3}
 <section id="t-grp" style="display:none">
   <div class="toolbar">
     <input type="text" id="q-g" placeholder="그룹명·소속사 검색">
-    <span class="chip on" data-s="">전체</span><span class="chip" data-s="활동중">활동중</span><span class="chip" data-s="해체/종료">해체/종료</span><span class="chip" data-s="휴면">휴면</span><span class="chip" data-s="확인필요">확인필요</span>
+    <span class="chip on" data-s="">전체</span><span class="chip" data-s="활동중">활동중</span><span class="chip" data-s="해체/종료">해체/종료</span><span class="chip" data-s="데뷔전">데뷔전</span><span class="chip" data-s="휴면">휴면</span><span class="chip" data-s="확인필요">확인필요</span>
   </div>
   <table><thead><tr><th data-k="0">No.</th><th data-k="1">그룹명</th><th data-k="3">소속사·운영사</th><th data-k="4" class="hide-m">시작</th><th data-k="5" class="hide-m">분류</th><th data-k="6">상태</th></tr></thead><tbody id="tb-g"></tbody></table>
 </section>
@@ -614,7 +615,7 @@ function renderMethod(){
 
   <div class="chart-box" style="margin-top:12px">
     <h3 style="font-size:15px">④ 활동성 판정</h3>
-    <p style="margin-top:6px">최근 활동(업로드·방송·발매) 기준: <span class="st st-활동중">활동중</span> 3개월 이내 · <span class="st st-확인필요">확인필요</span> 3~12개월(휴면 의심) · <span class="st st-휴면">휴면</span> 12개월+ · <span class="st st-해체종료">해체/종료</span> 공식 발표. MAVE: 같은 사실상 중단 케이스도 자동 탐지합니다.</p>
+    <p style="margin-top:6px">최근 활동(업로드·방송·발매) 기준: <span class="st st-활동중">활동중</span> 3개월 이내 · <span class="st st-확인필요">확인필요</span> 3~12개월(휴면 의심) · <span class="st st-휴면">휴면</span> 12개월+ · <span class="st st-해체종료">해체/종료</span> 공식 발표 · <span class="st st-데뷔전">데뷔전</span> 프리데뷔·선공개·데뷔 예고 단계(정식 데뷔 시 활동중으로 전환). MAVE: 같은 사실상 중단 케이스도 자동 탐지합니다.</p>
   </div>
 
   <div class="chart-box" style="margin-top:12px">
