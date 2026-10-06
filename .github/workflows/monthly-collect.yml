@@ -1,9 +1,9 @@
-name: 월간 수집 및 배포
+name: 주간 수집 및 배포
 
-# 매월 1일 00:00 UTC(= 한국시간 오전 9시) 자동 실행 + 수동 실행(재수집 버튼)
+# 매주 월요일 00:00 UTC(= 한국시간 오전 9시) 자동 실행 + 수동 실행(재수집 버튼)
 on:
   schedule:
-    - cron: "0 0 1 * *"
+    - cron: "0 0 * * 1"
   workflow_dispatch: {}
 
 # Pages 배포에 필요한 권한 + 스냅샷 커밋 권한
@@ -43,7 +43,7 @@ jobs:
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add data/ public/ || true
-          git commit -m "월간 수집: $(date -u +%Y-%m-%d)" || echo "변경 없음 — 커밋 건너뜀"
+          git commit -m "주간 수집: $(date -u +%Y-%m-%d)" || echo "변경 없음 — 커밋 건너뜀"
           git push || echo "푸시 생략"
 
       - name: Pages 아티팩트 업로드(public/ 디렉터리)
