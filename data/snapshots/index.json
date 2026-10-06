@@ -138,5 +138,19 @@
    "soop": 61,
    "youtube": 213
   }
+ },
+ "2026-10-06": {
+  "total_people": 622,
+  "total_channels": 1517,
+  "n_50k": 30,
+  "n_30k": 60,
+  "n_10k": 160,
+  "n_1k": 499,
+  "sum_followers": 9265362,
+  "platforms": {
+   "youtube": 208,
+   "chzzk": 352,
+   "soop": 62
+  }
  }
 }
