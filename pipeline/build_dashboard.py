@@ -215,7 +215,6 @@ footer{margin-top:18px;font-size:11.5px;color:#9aa1b3}
   <div><h1>한국 버추얼 아이돌·버튜버 모니터링</h1>
   <div class="meta">데이터 수집일 <b id="m-col"></b> · 페이지 빌드 <span id="m-built"></span> · 출처: 전수조사 xlsx + 나의 작은 버튜버 API</div></div>
   <div class="spacer"></div>
-  <button class="btn-p" id="btn-collect">🔄 지금 재수집</button>
   <button class="btn-s" id="btn-xg">⬇ 그룹 CSV</button>
   <button class="btn-s" id="btn-xs">⬇ 스트리머 CSV</button>
   <span id="auth-area"></span>
@@ -479,30 +478,8 @@ function dl(name,rows){
 $('#btn-xg').onclick=()=>dl(`버추얼그룹_전수목록_${D.collected}.csv`,[['No.','그룹명','영문/별칭','소속사·운영사','활동시작','분류','상태','비고'],...D.groups]);
 $('#btn-xs').onclick=()=>dl(`수집스트리머_${D.collected}.csv`,[['활동명','영문','최대 팔로워','주 플랫폼','플랫폼 목록','데뷔일','최근 라이브','트위터'],...D.solos.map(s=>[s.n,s.e,s.f,s.p,Object.keys(s.ch).join('·'),s.d,s.l,s.t])]);
 
-/* 재수집 버튼 — 모드별 분기 */
 const CFG=D.cfg||{mode:'cowork'};
-const btn=$('#btn-collect'),notice=$('#notice');
-if(CFG.mode==='public'){
-  // 공개 사이트: 시크릿 노출 없이 GitHub Actions 'Run workflow' 페이지로 이동 (레포 권한자만 실제 실행 가능)
-  btn.textContent='🔄 수동 수집 실행';
-  const url=CFG.repo?`https://github.com/${CFG.repo}/actions/workflows/monthly-collect.yml`:'';
-  btn.onclick=()=>{
-    if(url)window.open(url,'_blank');
-    notice.style.display='block';
-    notice.innerHTML=url?`GitHub Actions 페이지를 열었어요. <b>Run workflow</b> 버튼을 누르면 수집→스냅샷→재배포가 클라우드에서 실행됩니다(레포 권한 필요, 수 분 후 사이트 자동 갱신).`:'레포가 설정되지 않았습니다. README의 GH_REPO 안내를 확인하세요.';
-  };
-}else{
-  // Cowork 아티팩트: 월간 스케줄 작업 즉시 실행
-  btn.onclick=async()=>{
-    try{
-      if(!window.cowork||!window.cowork.runScheduledTask)throw 0;
-      await window.cowork.runScheduledTask(TASK);
-      notice.style.display='block';notice.textContent='수집 작업을 시작했어요. 완료까지 수 분 걸리며, 끝나면 이 페이지가 갱신됩니다 — 잠시 후 다시 열어 확인해 주세요.';
-    }catch(e){
-      notice.style.display='block';notice.textContent='작업 실행에 실패했어요. 채팅에서 "버튜버 데이터 재수집해줘"라고 요청해 주세요.';
-    }
-  };
-}
+const notice=$('#notice');
 
 /* 추세·변동 */
 function renderTrend(){
@@ -510,7 +487,7 @@ function renderTrend(){
   const empty=$('#trend-empty'),body=$('#trend-body');
   if(keys.length<2){
     empty.style.display='block';body.style.display='none';
-    empty.innerHTML=`스냅샷이 <b>${keys.length}개</b> 있어요. 추세 차트와 변동 리포트는 <b>스냅샷이 2개 이상</b> 쌓이면 나타납니다 — 다음 월간 수집(또는 "지금 재수집") 이후 자동으로 채워져요.${keys.length?`<br><span class="muted">현재 스냅샷: ${keys.join(', ')} · 인원 ${hist[keys[0]].total_people}명</span>`:''}`;
+    empty.innerHTML=`스냅샷이 <b>${keys.length}개</b> 있어요. 추세 차트와 변동 리포트는 <b>스냅샷이 2개 이상</b> 쌓이면 나타납니다 — 다음 주간 수집 이후 자동으로 채워져요.${keys.length?`<br><span class="muted">현재 스냅샷: ${keys.join(', ')} · 인원 ${hist[keys[0]].total_people}명</span>`:''}`;
     return;
   }
   empty.style.display='none';body.style.display='block';
@@ -539,7 +516,7 @@ function renderTrend(){
 
 $('#foot').innerHTML=CFG.mode==='public'
   ? '임계값(확정): 위키등재 OR 5만+ 팔로워 · 매주 월요일 GitHub Actions에서 자동 수집·재배포 (서버리스, 운영자 PC와 무관). 데이터 출처: 한국 버추얼아이돌 전수조사 + 나의 작은 버튜버 API.'
-  : '임계값(확정): 위키등재 OR 5만+ 팔로워 · 재수집 버튼은 월간 수집 작업을 즉시 실행합니다 (완료까지 수 분, 완료 후 페이지 자동 갱신). 매주 월요일 09:00 자동 수집.';
+  : '임계값(확정): 위키등재 OR 5만+ 팔로워 · 매주 월요일 09:00 자동 수집.';
 
 /* ── 공유 딥링크 ── */
 function setHash(h){ if(location.hash.slice(1)!==h) history.replaceState(null,'','#'+h); }
