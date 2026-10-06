@@ -99,6 +99,18 @@ if 'AI 생성형 아티스트' in wb.sheetnames:
         if not r or not r[0]: continue
         ai_artists.append([(r[i] if i < len(r) and r[i] is not None else '') for i in range(9)])
 
+# 주간 뉴스 (data/news/*.json, 최신 주차 우선)
+import glob as _glob
+news_weeks = []
+NEWSDIR = os.path.join(os.path.dirname(os.path.abspath(CSVF)), 'news')
+for fp in sorted(_glob.glob(os.path.join(NEWSDIR, '*.json')), reverse=True):
+    try:
+        w = json.load(open(fp, encoding='utf-8'))
+        if isinstance(w, dict) and w.get('items'):
+            news_weeks.append(w)
+    except Exception:
+        pass
+
 # 연표: 그룹의 활동시작에서 연도 추출 → 연도별 데뷔/종료 집계 + 항목
 import re as _re
 def year_of(s):
@@ -123,7 +135,7 @@ if sbconf and MODE == 'public':
 
 data = {'built': datetime.date.today().isoformat(), 'collected': collected_at or datetime.date.today().isoformat(),
         'groups': groups, 'solos': solos, 'history': history, 'diff': diff, 'cfg': cfg,
-        'agencies': agencies, 'upcoming': upcoming, 'timeline': timeline, 'ytstats': ytstats, 'ai': ai_artists}
+        'agencies': agencies, 'upcoming': upcoming, 'timeline': timeline, 'ytstats': ytstats, 'ai': ai_artists, 'news': news_weeks}
 DATA = json.dumps(data, ensure_ascii=False, separators=(',', ':')).replace('</', '<\\/')
 
 HTML = r'''<!DOCTYPE html>
@@ -182,6 +194,15 @@ footer{margin-top:18px;font-size:11.5px;color:#9aa1b3}
 .st-제보{background:#efe7fb;color:#6b3fc0}
 .st-검증{background:#dff3ee;color:#0f7c62}
 .st-데뷔전{background:#f3e8ff;color:#6b3fc0}
+.nw-card{background:#fff;border-radius:12px;padding:14px 16px;margin-bottom:10px;box-shadow:0 1px 3px rgba(20,30,60,.07);border-left:4px solid #3d5afe}
+.nw-card h4{font-size:14.5px;margin-bottom:6px;line-height:1.4}
+.nw-card p{font-size:13px;line-height:1.6;color:#2c3550}
+.nw-tag{display:inline-block;padding:2px 8px;border-radius:99px;font-size:11px;font-weight:700;margin-right:6px}
+.nw-g{display:inline-block;padding:2px 8px;border-radius:6px;font-size:11.5px;background:#eef1fb;color:#2455c3;margin:6px 6px 0 0;cursor:pointer}
+.nw-g:hover{background:#dfe6fb}
+.nw-high{background:linear-gradient(135deg,#eef1fb,#f6f0ff);border-radius:12px;padding:14px 16px;margin-bottom:14px}
+.nw-high h3{font-size:14px;margin-bottom:8px}
+.nw-high li{font-size:13px;line-height:1.6;margin-left:18px}
 #auth-modal{display:none;position:fixed;inset:0;background:rgba(20,30,60,.45);z-index:60;align-items:center;justify-content:center}
 #auth-modal.open{display:flex}
 .am-card{position:relative;background:#fff;border-radius:14px;padding:24px;width:360px;max-width:92vw;box-shadow:0 12px 40px rgba(20,30,60,.25)}
@@ -202,6 +223,7 @@ footer{margin-top:18px;font-size:11.5px;color:#9aa1b3}
 <div class="notice" id="notice"></div>
 <div class="tabs">
   <div class="tab on" data-t="dash">📊 대시보드</div>
+  <div class="tab" data-t="news">📰 주간 뉴스</div>
   <div class="tab" data-t="grp">그룹 전수목록 (<span id="cnt-g"></span>)</div>
   <div class="tab" data-t="solo">수집 스트리머 (<span id="cnt-s"></span>)</div>
   <div class="tab" data-t="agency">소속사 (<span id="cnt-a"></span>)</div>
@@ -223,6 +245,18 @@ footer{margin-top:18px;font-size:11.5px;color:#9aa1b3}
     <div class="chart-box"><h3>스트리머 규모 분포 (최대 팔로워)</h3><canvas id="c3"></canvas></div>
     <div class="chart-box"><h3>스트리머 주 플랫폼</h3><canvas id="c4"></canvas></div>
   </div>
+</section>
+
+<section id="t-news" style="display:none">
+  <div class="toolbar" style="justify-content:space-between">
+    <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap">
+      <select id="nw-week"></select>
+      <span id="nw-chips" style="display:flex;gap:6px;flex-wrap:wrap"></span>
+    </div>
+    <span class="muted" id="nw-meta"></span>
+  </div>
+  <div id="nw-high"></div>
+  <div id="nw-list"></div>
 </section>
 
 <section id="t-grp" style="display:none">
@@ -325,7 +359,7 @@ footer{margin-top:18px;font-size:11.5px;color:#9aa1b3}
 </div></div>
 
 <div id="drawer"><button class="close" onclick="drawer.classList.remove('open')">✕</button><div id="d-body"></div></div>
-<footer id="foot">임계값(확정): 위키등재 OR 5만+ 팔로워 · 매월 1일 자동 수집.</footer>
+<footer id="foot">임계값(확정): 위키등재 OR 5만+ 팔로워 · 매주 월요일 자동 수집.</footer>
 <div id="copyright" style="margin-top:8px;font-size:11.5px;color:#9aa1b3">© <span id="cyear"></span> (주)크리에이터버스. All rights reserved.</div>
 </div>
 <script>
@@ -337,7 +371,7 @@ $('#m-col').textContent=D.collected;$('#m-built').textContent=D.built;
 $('#cnt-g').textContent=D.groups.length;$('#cnt-s').textContent=D.solos.length;
 $('#cnt-a').textContent=(D.agencies||[]).length;$('#cnt-u').textContent=(D.upcoming||[]).length;$('#cnt-ai').textContent=(D.ai||[]).length;
 const drawer=$('#drawer');
-const TABS=['dash','grp','solo','agency','upcoming','ai','timeline','trend','method','premium','submit','admin'];
+const TABS=['dash','news','grp','solo','agency','upcoming','ai','timeline','trend','method','premium','submit','admin'];
 
 /* 탭 */
 function showTab(t){
@@ -504,8 +538,8 @@ function renderTrend(){
 }
 
 $('#foot').innerHTML=CFG.mode==='public'
-  ? '임계값(확정): 위키등재 OR 5만+ 팔로워 · 매월 1일 GitHub Actions에서 자동 수집·재배포 (서버리스, 운영자 PC와 무관). 데이터 출처: 한국 버추얼아이돌 전수조사 + 나의 작은 버튜버 API.'
-  : '임계값(확정): 위키등재 OR 5만+ 팔로워 · 재수집 버튼은 월간 수집 작업을 즉시 실행합니다 (완료까지 수 분, 완료 후 페이지 자동 갱신). 매월 1일 09:00 자동 수집.';
+  ? '임계값(확정): 위키등재 OR 5만+ 팔로워 · 매주 월요일 GitHub Actions에서 자동 수집·재배포 (서버리스, 운영자 PC와 무관). 데이터 출처: 한국 버추얼아이돌 전수조사 + 나의 작은 버튜버 API.'
+  : '임계값(확정): 위키등재 OR 5만+ 팔로워 · 재수집 버튼은 월간 수집 작업을 즉시 실행합니다 (완료까지 수 분, 완료 후 페이지 자동 갱신). 매주 월요일 09:00 자동 수집.';
 
 /* ── 공유 딥링크 ── */
 function setHash(h){ if(location.hash.slice(1)!==h) history.replaceState(null,'','#'+h); }
@@ -555,6 +589,28 @@ function renderU(){
     <p class="muted" style="margin-top:8px;line-height:1.5">${esc(u[4])||''}</p></div>`).join('')||'<p class="muted">데뷔예정 데이터 없음</p>';
 }
 
+/* ── 주간 뉴스 탭 ── */
+const NW_CAT={'데뷔·프리데뷔':'#6b3fc0','음반·음원':'#157a36','공연·행사':'#9a6b00','소속사·산업':'#2455c3','멤버·활동':'#b3261e','해체·종료':'#5d6068','기타':'#555e76'};
+let nwIdx=0,nwCat='';
+function nwGroupLink(name){ const g=D.groups.find(x=>x[1]===name||x[2]===name); return g?`<span class="nw-g" onclick="showTab('grp');openG(D.groups[${D.groups.indexOf(g)}])">${esc(name)}</span>`:`<span class="nw-g" style="cursor:default;background:#f1f3f9;color:#7a8194">${esc(name)}</span>`; }
+function renderNews(){
+  const weeks=D.news||[]; const sel=$('#nw-week'); if(!sel) return;
+  if(!weeks.length){ $('#nw-list').innerHTML='<div class="chart-box"><p class="muted">아직 수집된 주간 뉴스가 없어요. 매주 월요일 자동 수집됩니다.</p></div>'; return; }
+  if(!sel.options.length) weeks.forEach((w,i)=>sel.insertAdjacentHTML('beforeend',`<option value="${i}">${esc(w.week_start)} ~ ${esc(w.week_end)} (${w.items.length}건)</option>`));
+  sel.value=nwIdx; const w=weeks[nwIdx];
+  $('#nw-meta').textContent=`수집 ${w.generated||''} · 출처 ${new Set(w.items.map(i=>i.source)).size}곳`;
+  const cats=[...new Set(w.items.map(i=>i.category||'기타'))];
+  $('#nw-chips').innerHTML=`<span class="chip ${!nwCat?'on':''}" data-c="">전체</span>`+cats.map(c=>`<span class="chip ${nwCat===c?'on':''}" data-c="${esc(c)}">${esc(c)}</span>`).join('');
+  document.querySelectorAll('#nw-chips .chip').forEach(c=>c.onclick=()=>{nwCat=c.dataset.c;renderNews();});
+  $('#nw-high').innerHTML=(w.highlights&&w.highlights.length)?`<div class="nw-high"><h3>✨ 이번 주 하이라이트</h3><ul>${w.highlights.map(h=>`<li>${esc(h)}</li>`).join('')}</ul></div>`:'';
+  const items=w.items.filter(i=>!nwCat||(i.category||'기타')===nwCat).sort((a,b)=>(b.date||'').localeCompare(a.date||''));
+  $('#nw-list').innerHTML=items.map(i=>{const col=NW_CAT[i.category]||'#555e76';return `<div class="nw-card" style="border-left-color:${col}">
+    <div style="display:flex;justify-content:space-between;gap:8px;align-items:start"><div><span class="nw-tag" style="background:${col}22;color:${col}">${esc(i.category||'기타')}</span><span class="muted">${esc(i.date||'')}</span></div>${i.url?`<a href="${esc(i.url)}" target="_blank" class="muted" style="white-space:nowrap">${esc(i.source||'출처')} ↗</a>`:`<span class="muted">${esc(i.source||'')}</span>`}</div>
+    <h4 style="margin-top:6px">${esc(i.title)}</h4><p>${esc(i.summary||'')}</p>
+    ${(i.groups||[]).length?`<div>${i.groups.map(nwGroupLink).join('')}</div>`:''}</div>`;}).join('')||'<p class="muted">해당 카테고리 뉴스 없음</p>';
+}
+const nws=$('#nw-week'); if(nws) nws.onchange=e=>{nwIdx=+e.target.value;nwCat='';renderNews();};
+
 /* ── AI 아티스트 탭 ── */
 function renderAI(){
   const el=$('#ai-cards'); if(!el) return;
@@ -580,7 +636,7 @@ function renderMethod(){
   $('#method-body').innerHTML=`
   <div class="chart-box" style="line-height:1.65">
     <h3 style="font-size:16px;margin-bottom:8px">이 명부는 어떻게 만들어졌나</h3>
-    <p>한국에서 활동하는 버추얼 아이돌·버추얼 유튜버(버튜버)를 <b>그룹·개별 엔티티 단위</b>로 전수조사하고, 라이브 스트리머는 <b>규모·등재 기준</b>으로 선별해 함께 수록합니다. 매월 1일 자동으로 갱신됩니다.</p>
+    <p>한국에서 활동하는 버추얼 아이돌·버추얼 유튜버(버튜버)를 <b>그룹·개별 엔티티 단위</b>로 전수조사하고, 라이브 스트리머는 <b>규모·등재 기준</b>으로 선별해 함께 수록합니다. 매주 월요일 자동으로 갱신됩니다(통계·뉴스).</p>
     <p style="margin-top:8px">수록 경로는 둘입니다. ① <b>명부(전수목록)</b> — 운영자가 공식 채널·언론·위키로 교차검증해 등재(소속사·분류 포함). ② <b>수집 스트리머</b> — 스트리머 집계 API로 자동 수집(규모 기준 선별). ③ <b>AI 생성형 아티스트</b> — 사람 연기자 없이 생성형 AI로 제작되는 아티스트는 성격이 달라 별도 탭으로 분리(전수목록 미포함).</p>
   </div>
 
@@ -624,7 +680,7 @@ function renderMethod(){
       <li>그룹 명부는 '위키 등재' 기준이라 미등재 초소형·프리데뷔 팀은 누락될 수 있음</li>
       <li><b>소속 여부 판별 불가</b>: 스트리머 집계 API가 소속사 정보를 제공하지 않아, '수집 스트리머' 목록은 무소속(개인세) 명단이 아니라 <b>소속 미상</b>입니다. 소속이 확인된 솔로는 명부의 <code>버추얼휴먼/솔로</code>로 등재합니다</li>
       <li><b>음반·MV 중심 아티스트는 자동수집 사각지대</b>: 라이브 비중이 낮으면 스트리머 집계에 잡히지 않습니다(예: Hebi.). 이런 아티스트는 <b>명부에 수동 등재</b>하고, 채널 통계만 YouTube API로 자동 갱신합니다</li>
-      <li><b>신규 그룹 발견은 뉴스에 의존</b>: 데뷔·론칭 사실은 자동수집 API에 없어, 매월 위키 목록 대조·전문매체 기사·음원 발매 3갈래로 조사해 보강합니다. 기사 근거 없이 위키에만 있는 소형 그룹은 <code>확인필요</code>로 등재</li>
+      <li><b>신규 그룹 발견은 뉴스에 의존</b>: 데뷔·론칭 사실은 자동수집 API에 없어, 매주 위키 목록 대조·전문매체 기사·음원 발매 3갈래로 조사해 보강하고, 그 주 기사는 📰주간 뉴스 탭에 정리합니다. 기사 근거 없이 위키에만 있는 소형 그룹은 <code>확인필요</code>로 등재</li>
       <li>스트리머 규모는 비공식 단일 API 기반 — 공식 API(치지직/SOOP)로 이전 예정</li>
       <li>일부 소속사·데뷔일은 보도자료 크레딧 기반 '추정'(상세에 명시)</li>
       <li>'확인필요' 항목은 공식 채널 최신 업로드 직접 확인이 필요</li>
@@ -820,7 +876,7 @@ async function renderPremium(){
 }
 
 $('#cyear').textContent=new Date().getFullYear();
-renderG();renderS();renderTrend();renderA();renderU();renderAI();renderTL();renderMethod();
+renderG();renderS();renderTrend();renderA();renderU();renderAI();renderNews();renderTL();renderMethod();
 routeHash();
 window.addEventListener('hashchange',routeHash);
 loadMe(); loadApprovedGroups();
