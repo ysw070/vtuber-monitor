@@ -144,106 +144,162 @@ HTML = r'''<!DOCTYPE html>
 <title>한국 버추얼 아이돌·버튜버 모니터링</title>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.5.0/dist/chart.umd.js" integrity="sha384-iU8HYtnGQ8Cy4zl7gbNMOhsDTTKX02BTXptVP/vqAWIaTfM7isw76iyZCsjL2eVi" crossorigin="anonymous"></script>
 __SUPABASE_SCRIPT__
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
 <style>
-:root{color-scheme:light}
+:root{--bg:#f5f4fb;--surface:#fff;--surface2:#f4f2fb;--line:#ebe8f4;--text:#1b1830;--sub:#686480;--mute:#9a96ae;
+  --brand:#7c5cff;--brand2:#ff4fa3;--brand3:#22c7e8;--grad:linear-gradient(115deg,#7c5cff 0%,#c056ff 45%,#ff4fa3 100%);
+  --shadow:0 1px 2px rgba(27,24,48,.04),0 8px 24px rgba(27,24,48,.06);--r:16px;color-scheme:light}
+@media (prefers-color-scheme:dark){:root{--bg:#0e0c1b;--surface:#18152c;--surface2:#211d39;--line:#2b2747;--text:#eceaf6;--sub:#aaa6c6;--mute:#7a7699;
+  --shadow:0 1px 2px rgba(0,0,0,.35),0 10px 28px rgba(0,0,0,.28);color-scheme:dark}}
 *{box-sizing:border-box;margin:0;padding:0}
-body{font-family:'Apple SD Gothic Neo','Malgun Gothic',sans-serif;background:#f6f7fb;color:#1e2433;font-size:14px}
-.wrap{max-width:1200px;margin:0 auto;padding:18px}
-header{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin-bottom:14px}
-h1{font-size:19px;font-weight:800}
-.meta{font-size:12px;color:#7a8194}
+body{font-family:'Pretendard Variable',Pretendard,-apple-system,'Apple SD Gothic Neo','Malgun Gothic',sans-serif;background:var(--bg);color:var(--text);font-size:14px;-webkit-font-smoothing:antialiased;letter-spacing:-.01em}
+a{color:var(--brand)}
+.wrap{max-width:1180px;margin:0 auto;padding:0 18px}
+/* 히어로 */
+.hero{position:relative;overflow:hidden;color:#fff;background:#120f24}
+.hero::before{content:"";position:absolute;inset:0;background:radial-gradient(900px 320px at 8% -30%,rgba(124,92,255,.75),transparent 60%),radial-gradient(700px 300px at 95% -10%,rgba(255,79,163,.55),transparent 60%),radial-gradient(500px 200px at 60% 130%,rgba(34,199,232,.35),transparent 70%)}
+.hero::after{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.05) 1px,transparent 1px);background-size:28px 28px;mask-image:linear-gradient(180deg,#000,transparent 85%)}
+.hero .wrap{position:relative;z-index:1;padding:26px 18px 22px;display:flex;flex-wrap:wrap;gap:14px;align-items:flex-end}
+.eyebrow{font-size:11px;letter-spacing:.22em;font-weight:800;color:#c9bbff;display:flex;align-items:center;gap:8px}
+.eyebrow .dot{width:8px;height:8px;border-radius:50%;background:#3ef0a0;box-shadow:0 0 0 4px rgba(62,240,160,.18);animation:pulse 2s infinite}
+@keyframes pulse{50%{box-shadow:0 0 0 7px rgba(62,240,160,0)}}
+h1{font-size:26px;font-weight:800;letter-spacing:-.035em;margin-top:6px;line-height:1.25}
+h1 .g{background:linear-gradient(90deg,#c9b8ff,#ff9bd0);-webkit-background-clip:text;background-clip:text;color:transparent}
+.meta{font-size:12px;color:rgba(255,255,255,.62);margin-top:6px}
+.meta b{color:#fff;font-weight:700}
 .spacer{flex:1}
-button{border:0;border-radius:8px;padding:8px 14px;font-size:13px;font-weight:600;cursor:pointer}
-.btn-p{background:#3d5afe;color:#fff}.btn-p:hover{background:#2a46e8}
-.btn-s{background:#e8ebf4;color:#2c3550}.btn-s:hover{background:#dde1ee}
-.tabs{display:flex;gap:6px;margin-bottom:14px}
-.tab{padding:8px 16px;border-radius:8px;background:#e8ebf4;color:#555e76;font-weight:700;cursor:pointer;font-size:13px}
-.tab.on{background:#1e2433;color:#fff}
-.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin-bottom:14px}
-.card{background:#fff;border-radius:12px;padding:14px;box-shadow:0 1px 3px rgba(20,30,60,.07)}
-.card .v{font-size:24px;font-weight:800}.card .k{font-size:12px;color:#7a8194;margin-top:2px}
-.charts{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:12px}
-.chart-box{background:#fff;border-radius:12px;padding:14px;box-shadow:0 1px 3px rgba(20,30,60,.07)}
-.chart-box h3{font-size:13px;margin-bottom:8px;color:#2c3550}
-.toolbar{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:10px;align-items:center}
-input[type=text],select{padding:8px 10px;border:1px solid #d7dbe8;border-radius:8px;font-size:13px;background:#fff}
-input[type=text]{min-width:200px}
-.chip{padding:5px 11px;border-radius:99px;font-size:12px;font-weight:600;cursor:pointer;background:#e8ebf4;color:#555e76}
-.chip.on{background:#1e2433;color:#fff}
-table{width:100%;border-collapse:collapse;background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 1px 3px rgba(20,30,60,.07)}
-th{background:#fafbfe;text-align:left;padding:9px 10px;font-size:12px;color:#555e76;cursor:pointer;user-select:none;white-space:nowrap;border-bottom:1px solid #edf0f7}
-td{padding:8px 10px;border-bottom:1px solid #f1f3f9;font-size:13px;vertical-align:middle}
-tr.row{cursor:pointer}tr.row:hover{background:#f4f6fd}
-.st{display:inline-block;padding:2px 9px;border-radius:99px;font-size:11.5px;font-weight:700}
-.st-활동중{background:#dcf5e2;color:#157a36}.st-해체종료{background:#fde3e3;color:#b3261e}
-.st-휴면{background:#e9e9ec;color:#5d6068}.st-확인필요{background:#dfe9fb;color:#2455c3}.st-전환{background:#fdf0d5;color:#9a6b00}
+.hacts{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+button{border:0;border-radius:10px;padding:8px 14px;font-size:13px;font-weight:700;cursor:pointer;font-family:inherit}
+.btn-p{background:var(--grad);color:#fff;box-shadow:0 4px 14px rgba(124,92,255,.35)}.btn-p:hover{filter:brightness(1.08)}
+.btn-s{background:var(--surface2);color:var(--text);border:1px solid var(--line)}.btn-s:hover{border-color:var(--brand)}
+.hbtn{background:rgba(255,255,255,.1);color:#fff;border:1px solid rgba(255,255,255,.18);backdrop-filter:blur(6px)}.hbtn:hover{background:rgba(255,255,255,.18)}
+.hero .btn-s{background:rgba(255,255,255,.1);color:#fff;border:1px solid rgba(255,255,255,.18)}
+.hero .muted{color:rgba(255,255,255,.7)!important}
+/* 내비 */
+.navbar{position:sticky;top:0;z-index:30;background:color-mix(in srgb,var(--bg) 82%,transparent);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.tabs{display:flex;gap:4px;overflow-x:auto;scrollbar-width:none;padding:10px 0}
+.tabs::-webkit-scrollbar{display:none}
+.tab{flex:none;padding:8px 15px;border-radius:999px;color:var(--sub);font-weight:700;cursor:pointer;font-size:14px;white-space:nowrap;transition:.15s}
+.tab:hover{color:var(--text);background:var(--surface2)}
+.tab.on{color:#fff;background:var(--grad);box-shadow:0 4px 14px rgba(124,92,255,.3)}
+#segbar{display:flex;gap:6px;flex-wrap:wrap;margin:16px 0 4px}
+.seg{background:var(--surface);color:var(--sub);border:1px solid var(--line);border-radius:999px;padding:6px 13px;font-size:13px}
+.seg.on{color:var(--brand);border-color:var(--brand);background:color-mix(in srgb,var(--brand) 9%,var(--surface))}
+.seg .n{font-weight:600;color:var(--mute);margin-left:4px;font-size:12px}
+main{padding:16px 0 10px}
+section>.lead{color:var(--sub);font-size:13px;line-height:1.6;margin-bottom:12px}
+/* 카드·패널 */
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:12px;margin-bottom:14px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:16px 16px 14px;box-shadow:var(--shadow);position:relative;overflow:hidden}
+.card::after{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--c,var(--brand))}
+.card .k{font-size:12.5px;color:var(--sub);font-weight:600}
+.card .v{font-size:30px;font-weight:800;letter-spacing:-.04em;margin-top:4px;font-variant-numeric:tabular-nums}
+.card .s{font-size:11.5px;color:var(--mute);margin-top:2px}
+.charts{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:12px}
+.chart-box,.panel{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:16px;box-shadow:var(--shadow)}
+.chart-box h3,.panel h3{font-size:14px;margin-bottom:10px;color:var(--text);font-weight:800;letter-spacing:-.02em}
+.cv{position:relative;height:230px}.cv.sm{height:200px}.cv.lg{height:260px}
+.home{display:grid;grid-template-columns:repeat(12,1fr);gap:12px}
+.home>*{grid-column:span 4;min-width:0}.home .w8{grid-column:span 8}.home .w6{grid-column:span 6}.home .w12{grid-column:span 12}
+@media(max-width:900px){.home>*,.home .w8,.home .w6{grid-column:span 12}}
+.ph{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px}.ph h3{margin:0}
+.more{font-size:12px;color:var(--brand);font-weight:700;cursor:pointer;background:none;padding:0}
+.hl li{list-style:none;position:relative;padding:7px 0 7px 18px;border-bottom:1px dashed var(--line);line-height:1.55;font-size:13.5px}
+.hl li:last-child{border-bottom:0}
+.hl li::before{content:"";position:absolute;left:2px;top:14px;width:7px;height:7px;border-radius:2px;background:var(--grad);transform:rotate(45deg)}
+.rowi{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:8px 0;border-bottom:1px solid var(--line);font-size:13.5px;cursor:pointer}
+.rowi:last-child{border-bottom:0}.rowi:hover .nm{color:var(--brand)}
+.rowi .nm{font-weight:700}.rowi .sb{font-size:11.5px;color:var(--mute)}
+.rank{display:inline-flex;width:22px;height:22px;border-radius:7px;align-items:center;justify-content:center;font-size:11px;font-weight:800;background:var(--surface2);color:var(--sub);margin-right:8px}
+.rowi:nth-child(1) .rank{background:var(--grad);color:#fff}
+.up{color:#16a34a;font-weight:800;font-variant-numeric:tabular-nums}
+/* 툴바·표 */
+.toolbar{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px;align-items:center}
+input[type=text],input[type=email],input[type=password],select,textarea{padding:9px 12px;border:1px solid var(--line);border-radius:10px;font-size:13px;background:var(--surface);color:var(--text);font-family:inherit}
+input:focus,select:focus,textarea:focus{outline:2px solid color-mix(in srgb,var(--brand) 40%,transparent);border-color:var(--brand)}
+input[type=text]{min-width:220px}
+.toolbar input[type=text]{flex:1 1 240px;max-width:380px;min-width:150px}
+.toolbar .spacer{flex:1}
+.chip{padding:6px 12px;border-radius:999px;font-size:12.5px;font-weight:700;cursor:pointer;background:var(--surface);color:var(--sub);border:1px solid var(--line)}
+.chip.on{background:var(--text);color:var(--bg);border-color:var(--text)}
+table{width:100%;border-collapse:separate;border-spacing:0;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;box-shadow:var(--shadow)}
+th{background:var(--surface2);text-align:left;padding:10px 12px;font-size:12px;color:var(--sub);cursor:pointer;user-select:none;white-space:nowrap;border-bottom:1px solid var(--line);font-weight:700}
+td{padding:10px 12px;border-bottom:1px solid var(--line);font-size:13.5px;vertical-align:middle}
+tr:last-child td{border-bottom:0}
+tr.row{cursor:pointer}tr.row:hover td{background:color-mix(in srgb,var(--brand) 5%,var(--surface))}
+.st{display:inline-block;padding:3px 10px;border-radius:999px;font-size:11.5px;font-weight:700;white-space:nowrap}
+.st-활동중{background:rgba(34,197,94,.14);color:#15924a}.st-해체종료{background:rgba(244,63,94,.12);color:#d02b4c}
+.st-휴면{background:rgba(148,163,184,.18);color:#64748b}.st-확인필요{background:rgba(56,189,248,.15);color:#0b84b8}.st-전환{background:rgba(245,158,11,.15);color:#b4730a}
+.st-데뷔전{background:rgba(167,139,250,.18);color:#7a4fe0}.st-제보{background:rgba(192,86,255,.14);color:#9b3fd6}.st-검증{background:rgba(20,184,166,.15);color:#0f8a7c}
+.st-ai{background:rgba(34,199,232,.15);color:#0b8aa6}
+@media (prefers-color-scheme:dark){.st-활동중{color:#4ade80}.st-해체종료{color:#fb7185}.st-휴면{color:#a3b0c2}.st-확인필요{color:#7dd3fc}.st-전환{color:#fbbf24}.st-데뷔전{color:#c4b5fd}.st-제보{color:#e0a3ff}.st-검증{color:#5eead4}.st-ai{color:#67e8f9}}
+.cdot{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:6px;vertical-align:1px}
 .num{text-align:right;font-variant-numeric:tabular-nums}
-.muted{color:#9aa1b3;font-size:12px}
-#drawer{position:fixed;top:0;right:-420px;width:400px;max-width:92vw;height:100%;background:#fff;box-shadow:-6px 0 24px rgba(20,30,60,.15);transition:right .22s;z-index:50;padding:20px;overflow-y:auto}
+.muted{color:var(--mute);font-size:12px}
+code{background:var(--surface2);padding:1px 6px;border-radius:6px;font-size:12px}
+#drawer{position:fixed;top:0;right:-460px;width:430px;max-width:94vw;height:100%;background:var(--surface);box-shadow:-10px 0 40px rgba(20,16,40,.25);transition:right .25s cubic-bezier(.2,.8,.2,1);z-index:50;padding:22px;overflow-y:auto;border-left:1px solid var(--line)}
 #drawer.open{right:0}
-#drawer h2{font-size:18px;margin-bottom:2px}
-#drawer .close{position:absolute;top:14px;right:14px;background:#e8ebf4;border-radius:8px;width:30px;height:30px;font-size:15px}
-.kv{margin-top:14px}.kv div{display:flex;gap:10px;padding:6px 0;border-bottom:1px solid #f1f3f9;font-size:13px}
-.kv b{min-width:84px;color:#7a8194;font-weight:600}
-.chlink{display:flex;justify-content:space-between;align-items:center;background:#f6f7fb;border-radius:10px;padding:10px 12px;margin-top:8px;text-decoration:none;color:#1e2433}
-.chlink:hover{background:#eceef7}.chlink .pf{font-weight:700;font-size:13px}.chlink .fl{font-size:12px;color:#7a8194}
-.pagei{font-size:12px;color:#7a8194;margin:8px 2px}
-.notice{display:none;background:#fff7e0;border:1px solid #f3df9d;color:#7a5b00;border-radius:10px;padding:10px 14px;margin-bottom:12px;font-size:13px}
-footer{margin-top:18px;font-size:11.5px;color:#9aa1b3}
-#t-submit label{display:block;font-size:12px;color:#555e76;font-weight:600}
+#drawer::before{content:"";position:absolute;left:0;right:0;top:0;height:5px;background:var(--grad)}
+#drawer h2{font-size:21px;margin:6px 34px 2px 0;letter-spacing:-.03em}
+.close{position:absolute;top:16px;right:16px;background:var(--surface2);color:var(--text);border-radius:10px;width:32px;height:32px;font-size:15px;padding:0}
+.kv{margin-top:14px}.kv div{display:flex;gap:10px;padding:8px 0;border-bottom:1px solid var(--line);font-size:13.5px}
+.kv b{min-width:86px;color:var(--sub);font-weight:600}
+.chlink{display:flex;justify-content:space-between;align-items:center;background:var(--surface2);border:1px solid var(--line);border-radius:12px;padding:11px 13px;margin-top:8px;text-decoration:none;color:var(--text)}
+.chlink:hover{border-color:var(--brand)}.chlink .pf{font-weight:700;font-size:13px}.chlink .fl{font-size:12px;color:var(--sub)}
+.pagei{font-size:12px;color:var(--sub);margin:10px 2px}
+.notice{display:none;background:color-mix(in srgb,#f5a623 12%,var(--surface));border:1px solid color-mix(in srgb,#f5a623 35%,var(--line));color:var(--text);border-radius:12px;padding:10px 14px;margin-bottom:12px;font-size:13px}
+footer{margin-top:28px;border-top:1px solid var(--line);padding:18px 0 30px;font-size:12px;color:var(--mute);display:flex;flex-wrap:wrap;gap:10px 18px;align-items:center}
+footer .fl{display:flex;gap:14px;flex-wrap:wrap}footer .fl a{color:var(--sub);text-decoration:none;cursor:pointer;font-weight:600}footer .fl a:hover{color:var(--brand)}
+#t-submit label{display:block;font-size:12px;color:var(--sub);font-weight:600}
 #t-submit input,#t-submit select{margin-top:4px}
-.st-제보{background:#efe7fb;color:#6b3fc0}
-.st-검증{background:#dff3ee;color:#0f7c62}
-.st-데뷔전{background:#f3e8ff;color:#6b3fc0}
-.nw-card{background:#fff;border-radius:12px;padding:14px 16px;margin-bottom:10px;box-shadow:0 1px 3px rgba(20,30,60,.07);border-left:4px solid #3d5afe}
-.nw-card h4{font-size:14.5px;margin-bottom:6px;line-height:1.4}
-.nw-card p{font-size:13px;line-height:1.6;color:#2c3550}
-.nw-tag{display:inline-block;padding:2px 8px;border-radius:99px;font-size:11px;font-weight:700;margin-right:6px}
-.nw-g{display:inline-block;padding:2px 8px;border-radius:6px;font-size:11.5px;background:#eef1fb;color:#2455c3;margin:6px 6px 0 0;cursor:pointer}
-.nw-g:hover{background:#dfe6fb}
-.nw-high{background:linear-gradient(135deg,#eef1fb,#f6f0ff);border-radius:12px;padding:14px 16px;margin-bottom:14px}
-.nw-high h3{font-size:14px;margin-bottom:8px}
-.nw-high li{font-size:13px;line-height:1.6;margin-left:18px}
-#auth-modal{display:none;position:fixed;inset:0;background:rgba(20,30,60,.45);z-index:60;align-items:center;justify-content:center}
+.nw-card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:15px 17px;margin-bottom:10px;box-shadow:var(--shadow);border-left:4px solid var(--brand)}
+.nw-card h4{font-size:15px;margin-bottom:6px;line-height:1.45;letter-spacing:-.02em}
+.nw-card p{font-size:13.5px;line-height:1.65;color:var(--sub)}
+.nw-tag{display:inline-block;padding:2px 9px;border-radius:999px;font-size:11px;font-weight:800;margin-right:6px}
+.nw-g{display:inline-block;padding:3px 9px;border-radius:8px;font-size:12px;font-weight:600;background:color-mix(in srgb,var(--brand) 10%,var(--surface));color:var(--brand);margin:8px 6px 0 0;cursor:pointer}
+.nw-g:hover{background:color-mix(in srgb,var(--brand) 18%,var(--surface))}
+.nw-high{position:relative;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:16px 18px;margin-bottom:14px;overflow:hidden;box-shadow:var(--shadow)}
+.nw-high::before{content:"";position:absolute;inset:0 0 auto 0;height:4px;background:var(--grad)}
+.nw-high h3{font-size:15px;margin-bottom:6px}
+.nw-high li{font-size:13.5px;line-height:1.65;margin-left:18px}
+#auth-modal{display:none;position:fixed;inset:0;background:rgba(14,12,27,.55);backdrop-filter:blur(4px);z-index:60;align-items:center;justify-content:center}
 #auth-modal.open{display:flex}
-.am-card{position:relative;background:#fff;border-radius:14px;padding:24px;width:360px;max-width:92vw;box-shadow:0 12px 40px rgba(20,30,60,.25)}
-.am-card h2{font-size:18px}
-.role-pill{display:inline-block;padding:1px 8px;border-radius:99px;font-size:11px;font-weight:700;background:#e8ebf4;color:#2c3550}
-.mrow{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:8px 0;border-bottom:1px solid #f1f3f9;font-size:13px}
-@media(max-width:640px){.hide-m{display:none}}
-</style></head><body><div class="wrap">
-<header>
-  <div><h1>한국 버추얼 아이돌·버튜버 모니터링</h1>
-  <div class="meta">데이터 수집일 <b id="m-col"></b> · 페이지 빌드 <span id="m-built"></span> · 출처: 전수조사 xlsx + 나의 작은 버튜버 API</div></div>
+.am-card{position:relative;background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:26px;width:370px;max-width:92vw;box-shadow:0 20px 60px rgba(20,16,40,.35)}
+.am-card h2{font-size:19px}
+.role-pill{display:inline-block;padding:2px 9px;border-radius:999px;font-size:11px;font-weight:700;background:var(--surface2);color:var(--sub);border:1px solid var(--line)}
+.hero .role-pill{background:rgba(255,255,255,.12);color:#fff;border-color:rgba(255,255,255,.2)}
+.mrow{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:8px 0;border-bottom:1px solid var(--line);font-size:13px}
+.ycards{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:12px}
+@media(max-width:640px){.cards .card:last-child:nth-child(odd){grid-column:1/-1}.hide-m{display:none}h1{font-size:21px}.hero .wrap{padding:20px 16px 16px}.wrap{padding:0 16px}input[type=text]{min-width:0;flex:1}.card .v{font-size:26px}}
+</style></head><body>
+<div class="hero"><div class="wrap">
+  <div>
+    <div class="eyebrow"><span class="dot"></span>KOREA VIRTUAL IDOL MONITOR</div>
+    <h1>한국 <span class="g">버추얼 아이돌</span>·버튜버 모니터링</h1>
+    <div class="meta">데이터 수집 <b id="m-col"></b> · 빌드 <span id="m-built"></span> · 매주 월요일 자동 갱신</div>
+  </div>
   <div class="spacer"></div>
-  <button class="btn-s" id="btn-xg">⬇ 그룹 CSV</button>
-  <button class="btn-s" id="btn-xs">⬇ 스트리머 CSV</button>
-  <span id="auth-area"></span>
-</header>
+  <div class="hacts">
+    <button class="hbtn" id="btn-submit">➕ 그룹 제보</button>
+    <button class="hbtn" id="btn-admin" style="display:none">🛠 관리자</button>
+    <span id="auth-area"></span>
+  </div>
+</div></div>
+<div class="navbar"><div class="wrap"><nav class="tabs" id="tabs"></nav></div></div>
+<span hidden id="cnt-g"></span><span hidden id="cnt-s"></span><span hidden id="cnt-a"></span><span hidden id="cnt-u"></span><span hidden id="cnt-ai"></span>
+<div class="wrap"><main>
+<div id="segbar" style="display:none"></div>
 <div class="notice" id="notice"></div>
-<div class="tabs">
-  <div class="tab on" data-t="dash">📊 대시보드</div>
-  <div class="tab" data-t="news">📰 주간 뉴스</div>
-  <div class="tab" data-t="grp">그룹 전수목록 (<span id="cnt-g"></span>)</div>
-  <div class="tab" data-t="solo">수집 스트리머 (<span id="cnt-s"></span>)</div>
-  <div class="tab" data-t="agency">소속사 (<span id="cnt-a"></span>)</div>
-  <div class="tab" data-t="upcoming">데뷔예정 (<span id="cnt-u"></span>)</div>
-  <div class="tab" data-t="ai">🤖 AI 아티스트 (<span id="cnt-ai"></span>)</div>
-  <div class="tab" data-t="timeline">📅 연표</div>
-  <div class="tab" data-t="trend">📈 추세·변동</div>
-  <div class="tab" data-t="method">ℹ️ 데이터 기준</div>
-  <div class="tab" data-t="premium">⭐ 프리미엄</div>
-  <div class="tab" data-t="submit">➕ 그룹 제보</div>
-  <div class="tab" data-t="admin">🛠 관리자</div>
-</div>
 
 <section id="t-dash">
   <div class="cards" id="cards"></div>
-  <div class="charts">
-    <div class="chart-box"><h3>그룹 상태별</h3><canvas id="c1"></canvas></div>
-    <div class="chart-box"><h3>그룹 분류별</h3><canvas id="c2"></canvas></div>
-    <div class="chart-box"><h3>스트리머 규모 분포 (최대 팔로워)</h3><canvas id="c3"></canvas></div>
-    <div class="chart-box"><h3>스트리머 주 플랫폼</h3><canvas id="c4"></canvas></div>
+  <div class="home">
+    <div class="panel w8" id="h-news"></div>
+    <div class="panel" id="h-debut"></div>
+    <div class="panel w6"><div class="ph"><h3>연도별 데뷔 추이</h3><button class="more" data-go="timeline">연표 보기 →</button></div><div class="cv"><canvas id="cy"></canvas></div></div>
+    <div class="panel w6" id="h-rise"></div>
+    <div class="panel w6"><div class="ph"><h3>그룹 상태</h3><button class="more" data-go="grp">명부 보기 →</button></div><div class="cv sm"><canvas id="c1"></canvas></div></div>
+    <div class="panel w6"><div class="ph"><h3>그룹 분류</h3></div><div class="cv sm"><canvas id="c2"></canvas></div></div>
   </div>
 </section>
 
@@ -261,29 +317,35 @@ footer{margin-top:18px;font-size:11.5px;color:#9aa1b3}
 
 <section id="t-grp" style="display:none">
   <div class="toolbar">
-    <input type="text" id="q-g" placeholder="그룹명·소속사 검색">
+    <input type="text" id="q-g" placeholder="그룹명·영문·소속사 검색">
     <span class="chip on" data-s="">전체</span><span class="chip" data-s="활동중">활동중</span><span class="chip" data-s="해체/종료">해체/종료</span><span class="chip" data-s="데뷔전">데뷔전</span><span class="chip" data-s="휴면">휴면</span><span class="chip" data-s="확인필요">확인필요</span>
+    <span class="spacer"></span><button class="btn-s" id="btn-xg">⬇ CSV</button>
   </div>
   <table><thead><tr><th data-k="0">No.</th><th data-k="1">그룹명</th><th data-k="3">소속사·운영사</th><th data-k="4" class="hide-m">시작</th><th data-k="5" class="hide-m">분류</th><th data-k="6">상태</th></tr></thead><tbody id="tb-g"></tbody></table>
 </section>
 
 <section id="t-solo" style="display:none">
-  <p class="muted" style="margin-bottom:10px;line-height:1.55">라이브 스트리머 집계 API로 자동 수집한 목록이에요. <b>이 소스는 소속사 정보를 제공하지 않아 소속 여부를 판별할 수 없습니다</b>(소속 미상). 따라서 '무소속(개인세)' 목록이 아니며, 소속 있는 스트리머가 포함될 수 있어요. 소속이 확인된 솔로 아티스트는 <b>그룹 전수목록</b>의 <code>버추얼휴먼/솔로</code>로 등재합니다.</p>
+  <p class="lead">'나의 작은 버튜버' 집계 API로 매주 자동 수집한 라이브 스트리머예요. 이 소스는 소속사 정보를 주지 않아 <b>소속 미상</b>으로 표시합니다. 소속이 확인된 솔로 아티스트는 명부의 <code>버추얼휴먼/솔로</code>로 따로 등재해요.</p>
+  <div class="charts" style="margin-bottom:14px">
+    <div class="chart-box"><h3>규모 분포 (최대 팔로워)</h3><div class="cv sm"><canvas id="c3"></canvas></div></div>
+    <div class="chart-box"><h3>주 플랫폼</h3><div class="cv sm"><canvas id="c4"></canvas></div></div>
+  </div>
   <div class="toolbar">
     <input type="text" id="q-s" placeholder="활동명 검색">
     <select id="f-plat"><option value="">전체 플랫폼</option></select>
-    <select id="f-min"><option value="0">규모 전체</option><option value="10000">1만+</option><option value="30000">3만+</option><option value="50000">5만+ (포함 후보)</option></select>
+    <select id="f-min"><option value="0">규모 전체</option><option value="10000">1만+</option><option value="30000">3만+</option><option value="50000">5만+</option></select>
+    <span class="spacer"></span><button class="btn-s" id="btn-xs">⬇ CSV</button>
   </div>
   <table><thead><tr><th data-k="n">활동명</th><th data-k="f" class="num">최대 팔로워</th><th data-k="p" class="hide-m">주 플랫폼</th><th data-k="d" class="hide-m">데뷔일</th><th data-k="l">최근 라이브</th></tr></thead><tbody id="tb-s"></tbody></table>
   <div class="pagei" id="pg-s"></div>
 </section>
 
 <section id="t-trend" style="display:none">
-  <div id="trend-empty" class="notice" style="display:none;background:#eef1fb;border-color:#cfd8f5;color:#3a4a7a"></div>
+  <div id="trend-empty" class="notice" style="display:none"></div>
   <div id="trend-body" style="display:none">
     <div class="charts">
-      <div class="chart-box"><h3>수집 인원 추이</h3><canvas id="ct1"></canvas></div>
-      <div class="chart-box"><h3>규모 구간별 인원 추이</h3><canvas id="ct2"></canvas></div>
+      <div class="chart-box"><h3>수집 인원 추이</h3><div class="cv"><canvas id="ct1"></canvas></div></div>
+      <div class="chart-box"><h3>규모 구간별 인원 추이</h3><div class="cv"><canvas id="ct2"></canvas></div></div>
     </div>
     <div id="diff-wrap" style="margin-top:14px"></div>
   </div>
@@ -295,18 +357,18 @@ footer{margin-top:18px;font-size:11.5px;color:#9aa1b3}
 </section>
 
 <section id="t-upcoming" style="display:none">
-  <p class="muted" style="margin-bottom:10px">2026 신규 데뷔 및 데뷔 예정 워치리스트 — 정식 데뷔 시 그룹 전수목록으로 편입됩니다.</p>
-  <div id="up-cards" class="charts"></div>
+  <p class="lead">데뷔를 앞두었거나 올해 새로 나온 팀의 일정 워치리스트예요. 정식 데뷔가 확인되면 명부 상태가 <span class="st st-활동중">활동중</span>으로 바뀝니다.</p>
+  <div id="up-cards" class="ycards"></div>
 </section>
 
 <section id="t-ai" style="display:none">
-  <p class="muted" style="margin-bottom:10px;line-height:1.55">사람 연기자(모션캡처·성우) 없이 <b>전 과정 생성형 AI</b>로 제작·가창되는 아티스트. 버추얼 아이돌 명부와 성격이 달라 <b>별도로 관리</b>합니다(전수목록 집계에 미포함).</p>
-  <div id="ai-cards" class="charts"></div>
+  <p class="lead">사람 연기자(모션캡처·성우) 없이 <b>전 과정 생성형 AI</b>로 만들고 노래하는 아티스트예요. 버추얼 아이돌과 성격이 달라 그룹 집계에는 넣지 않고 따로 모읍니다.</p>
+  <div id="ai-cards" class="ycards"></div>
 </section>
 
 <section id="t-timeline" style="display:none">
-  <p class="muted" style="margin-bottom:10px">데뷔(활동시작) 연도 기준. 색은 현재 상태 — 한국 버추얼 그룹 신(scene)의 흐름을 한눈에.</p>
-  <div class="chart-box" style="margin-bottom:14px"><h3>연도별 데뷔 수</h3><canvas id="ctl"></canvas></div>
+  <p class="lead">활동 시작 연도별로 모았어요. 색은 현재 상태입니다.</p>
+  <div class="chart-box" style="margin-bottom:14px"><h3>연도별 데뷔 수</h3><div class="cv"><canvas id="ctl"></canvas></div></div>
   <div id="tl-body"></div>
 </section>
 
@@ -316,7 +378,7 @@ footer{margin-top:18px;font-size:11.5px;color:#9aa1b3}
 
 <section id="t-submit" style="display:none">
   <div class="chart-box" style="max-width:640px">
-    <h3 style="font-size:16px;margin-bottom:4px">➕ 빠진 그룹 제보하기</h3>
+    <h3 style="font-size:18px;margin-bottom:4px">➕ 빠진 그룹 제보하기</h3>
     <p class="muted" style="line-height:1.55;margin-bottom:14px">위키 미등재·조용히 활동하는 그룹이 빠졌다면 알려주세요. 제출하면 제보 게시판에 접수되고, <b>관리자 승인 후</b> 명부에 <b>'제보' 표시</b>와 함께 추가됩니다.</p>
     <div style="display:grid;gap:10px">
       <label>그룹명 <span style="color:#e74c3c">*</span><input type="text" id="gf-name" style="width:100%" placeholder="예: 별빛소녀단"></label>
@@ -328,9 +390,9 @@ footer{margin-top:18px;font-size:11.5px;color:#9aa1b3}
         <label style="flex:1;min-width:120px">상태<select id="gf-status" style="width:100%"><option>활동중</option><option>휴면</option><option>확인필요</option></select></label>
       </div>
       <label>대표 채널 링크 (유튜브/치지직/SOOP/X)<input type="text" id="gf-channel" style="width:100%" placeholder="https://..."></label>
-      <label>비고<textarea id="gf-note" rows="3" style="width:100%;padding:8px 10px;border:1px solid #d7dbe8;border-radius:8px;font-size:13px;font-family:inherit" placeholder="멤버 수, 데뷔곡, 플랫폼 등 아는 정보"></textarea></label>
+      <label>비고<textarea id="gf-note" rows="3" style="width:100%;padding:8px 10px;border:1px solid var(--line);border-radius:8px;font-size:13px;font-family:inherit" placeholder="멤버 수, 데뷔곡, 플랫폼 등 아는 정보"></textarea></label>
       <label>제보자(선택)<input type="text" id="gf-submitter" style="width:100%" placeholder="닉네임 또는 빈칸"></label>
-      <button class="btn-p" id="gf-submit" style="margin-top:4px">제보 보내기 (GitHub 이슈 열기)</button>
+      <button class="btn-p" id="gf-submit" style="margin-top:4px">제보 보내기</button>
       <div id="gf-msg" class="muted"></div>
     </div>
   </div>
@@ -349,8 +411,8 @@ footer{margin-top:18px;font-size:11.5px;color:#9aa1b3}
   <button class="close" onclick="closeAuthModal()">✕</button>
   <h2 id="am-title">로그인</h2>
   <p class="muted" style="margin:4px 0 12px">회원가입하면 그룹 제보를 할 수 있어요. 가입 직후엔 일반회원 등급입니다.</p>
-  <label style="display:block;font-size:12px;color:#555e76;font-weight:600">이메일<input type="email" id="am-email" style="width:100%;margin-top:4px" placeholder="you@example.com"></label>
-  <label style="display:block;font-size:12px;color:#555e76;font-weight:600;margin-top:10px">비밀번호<input type="password" id="am-pw" style="width:100%;margin-top:4px" placeholder="6자 이상"></label>
+  <label style="display:block;font-size:12px;color:var(--sub);font-weight:600">이메일<input type="email" id="am-email" style="width:100%;margin-top:4px" placeholder="you@example.com"></label>
+  <label style="display:block;font-size:12px;color:var(--sub);font-weight:600;margin-top:10px">비밀번호<input type="password" id="am-pw" style="width:100%;margin-top:4px" placeholder="6자 이상"></label>
   <div style="display:flex;gap:8px;margin-top:14px">
     <button class="btn-p" id="am-login" style="flex:1">로그인</button>
     <button class="btn-s" id="am-signup" style="flex:1">회원가입</button>
@@ -358,10 +420,15 @@ footer{margin-top:18px;font-size:11.5px;color:#9aa1b3}
   <div id="am-msg" class="muted" style="margin-top:8px;min-height:16px"></div>
 </div></div>
 
-<div id="drawer"><button class="close" onclick="drawer.classList.remove('open')">✕</button><div id="d-body"></div></div>
-<footer id="foot">임계값(확정): 위키등재 OR 5만+ 팔로워 · 매주 월요일 자동 수집.</footer>
-<div id="copyright" style="margin-top:8px;font-size:11.5px;color:#9aa1b3">© <span id="cyear"></span> (주)크리에이터버스. All rights reserved.</div>
+</main>
+<footer>
+  <div class="fl"><a data-go="method">ℹ️ 데이터 기준</a><a data-go="submit">➕ 그룹 제보</a><a data-go="premium">⭐ 자료실</a></div>
+  <span class="spacer"></span>
+  <span id="foot"></span>
+  <div id="copyright" style="width:100%">© <span id="cyear"></span> (주)크리에이터버스. All rights reserved.</div>
+</footer>
 </div>
+<div id="drawer"><button class="close" onclick="drawer.classList.remove('open')">✕</button><div id="d-body"></div></div>
 <script>
 const D=__DATA__;
 const TASK='__TASKID__';
@@ -369,35 +436,93 @@ const $=s=>document.querySelector(s),esc=s=>String(s??'').replace(/[&<>"]/g,c=>(
 const fmt=n=>n>=10000?(n/10000).toFixed(n>=100000?0:1)+'만':n.toLocaleString();
 $('#m-col').textContent=D.collected;$('#m-built').textContent=D.built;
 $('#cnt-g').textContent=D.groups.length;$('#cnt-s').textContent=D.solos.length;
-$('#cnt-a').textContent=(D.agencies||[]).length;$('#cnt-u').textContent=(D.upcoming||[]).length;$('#cnt-ai').textContent=(D.ai||[]).length;
 const drawer=$('#drawer');
-const TABS=['dash','news','grp','solo','agency','upcoming','ai','timeline','trend','method','premium','submit','admin'];
 
-/* 탭 */
+/* ── 내비: 상위 6개 + 하위 세그먼트 ── */
+const NAV=[['dash','홈'],['news','📰 주간 뉴스'],['roster','명부',['grp','agency','ai']],['cal','데뷔·연표',['upcoming','timeline']],['stream','스트리머',['solo','trend']],['premium','⭐ 자료실']];
+const SUBL={grp:'그룹',agency:'소속사',ai:'🤖 AI 아티스트',upcoming:'데뷔 예정',timeline:'연도별 연표',solo:'스트리머 순위',trend:'추세·변동'};
+const TABS=['dash','news','grp','agency','ai','upcoming','timeline','solo','trend','premium','method','submit','admin'];
+const subCnt=k=>({grp:D.groups.length,agency:(D.agencies||[]).length,ai:(D.ai||[]).length,upcoming:(D.upcoming||[]).length,solo:D.solos.length}[k]);
+const lastSub={roster:'grp',cal:'upcoming',stream:'solo'};
+const parentOf=t=>NAV.find(n=>n[0]===t||(n[2]||[]).includes(t));
+$('#tabs').innerHTML=NAV.map(n=>`<div class="tab" data-t="${n[0]}">${n[1]}</div>`).join('');
 function showTab(t){
-  document.querySelectorAll('.tab').forEach(x=>x.classList.toggle('on',x.dataset.t===t));
+  const top=NAV.find(n=>n[0]===t); if(top&&top[2]) t=lastSub[top[0]];
+  const p=parentOf(t); if(p&&p[2]) lastSub[p[0]]=t;
+  document.querySelectorAll('.tab').forEach(x=>x.classList.toggle('on',!!p&&x.dataset.t===p[0]));
+  const sb=$('#segbar');
+  if(p&&p[2]){ sb.style.display='';
+    sb.innerHTML=p[2].map(k=>{const c=subCnt(k);return `<button class="seg ${k===t?'on':''}" data-s="${k}">${SUBL[k]}${c!=null?`<span class="n">${c}</span>`:''}</button>`}).join('');
+    sb.querySelectorAll('.seg').forEach(b=>b.onclick=()=>showTab(b.dataset.s));
+  } else { sb.style.display='none'; sb.innerHTML=''; }
   TABS.forEach(k=>$('#t-'+k).style.display=k===t?'':'none');
   if(t==='admin') renderAdmin();
   if(t==='premium') renderPremium();
+  const nb=document.querySelector('.navbar'); if(nb&&window.scrollY>nb.offsetTop) window.scrollTo({top:nb.offsetTop});
 }
 document.querySelectorAll('.tab').forEach(t=>t.onclick=()=>showTab(t.dataset.t));
+document.addEventListener('click',e=>{const g=e.target.closest('[data-go]'); if(g){e.preventDefault();showTab(g.dataset.go);}});
+$('#btn-submit').onclick=()=>showTab('submit');
+$('#btn-admin').onclick=()=>showTab('admin');
 
-/* 대시보드 */
+/* ── 차트 공통 스타일 ── */
+const CSSV=k=>getComputedStyle(document.documentElement).getPropertyValue(k).trim();
+Chart.defaults.font.family="'Pretendard Variable',Pretendard,-apple-system,sans-serif";
+Chart.defaults.font.size=11.5; Chart.defaults.color=CSSV('--sub')||'#686480';
+const GRID=CSSV('--line')||'#ebe8f4';
+const STC={'활동중':'#22c55e','데뷔전':'#a78bfa','휴면':'#94a3b8','확인필요':'#38bdf8','해체/종료':'#f43f5e','전환':'#f59e0b'};
+const PAL=['#7c5cff','#ff4fa3','#22c7e8','#f59e0b','#22c55e','#94a3b8','#c056ff'];
+const mk=(id,type,labels,vals,colors,horiz)=>new Chart($(id),{type,data:{labels,datasets:[{data:vals,backgroundColor:colors||PAL,borderWidth:type==='doughnut'?2:0,borderColor:CSSV('--surface'),borderRadius:type==='bar'?7:0,maxBarThickness:34}]},
+ options:{maintainAspectRatio:false,indexAxis:horiz?'y':'x',cutout:type==='doughnut'?'64%':undefined,
+  plugins:{legend:{display:type==='doughnut',position:'right',labels:{boxWidth:9,boxHeight:9,usePointStyle:true,pointStyle:'circle',padding:12}}},
+  scales:type==='doughnut'?{}:{x:{grid:{display:!!horiz,color:GRID},border:{display:false},beginAtZero:true,ticks:{precision:0}},y:{grid:{display:!horiz,color:GRID},border:{display:false},beginAtZero:true,ticks:{precision:0}}}}});
+
+/* ── 홈 ── */
 const cnt=(arr,fn)=>arr.reduce((m,x)=>{const k=fn(x);m[k]=(m[k]||0)+1;return m},{});
 const gs=cnt(D.groups,g=>g[6]),gc=cnt(D.groups,g=>g[5]);
-const n5=D.solos.filter(s=>s.f>=50000).length,n3=D.solos.filter(s=>s.f>=30000).length;
-$('#cards').innerHTML=[['전체 그룹',D.groups.length],['활동중 그룹',gs['활동중']||0],['수집 스트리머',D.solos.length],['5만+ 포함 후보',n5],['3만+ 워치',n3-n5]]
- .map(([k,v])=>`<div class="card"><div class="v">${v}</div><div class="k">${k}</div></div>`).join('');
-const PAL=['#3d5afe','#27ae60','#e74c3c','#95a0b6','#f5a623','#8e44ad','#16a2b8'];
-const mk=(id,type,labels,vals,horiz)=>new Chart($(id),{type,data:{labels,datasets:[{data:vals,backgroundColor:PAL,borderWidth:0}]},
- options:{indexAxis:horiz?'y':'x',plugins:{legend:{display:type==='doughnut',position:'right',labels:{boxWidth:12,font:{size:11}}}},
- scales:type==='doughnut'?{}:{x:{ticks:{font:{size:11}}},y:{ticks:{font:{size:11}}}}}});
-mk('#c1','doughnut',Object.keys(gs),Object.values(gs));
-mk('#c2','bar',Object.keys(gc),Object.values(gc),true);
+const n5=D.solos.filter(s=>s.f>=50000).length;
+const YR=(D.built||'').slice(0,4);
+const newYr=D.groups.filter(g=>String(g[4]).includes(YR)&&g[6]!=='해체/종료').length;
+const LW=(D.news||[])[0];
+$('#cards').innerHTML=[
+  ['활동중 그룹',gs['활동중']||0,`전체 ${D.groups.length}팀 중`,'#22c55e'],
+  [`${YR} 새 얼굴`,newYr,'올해 데뷔·론칭한 팀','#ff4fa3'],
+  ['데뷔 대기',gs['데뷔전']||0,'프리데뷔·예고 단계','#a78bfa'],
+  ['이번 주 뉴스',LW?LW.items.length:0,LW?`${LW.week_start.slice(5).replace('-','.')} ~ ${LW.week_end.slice(5).replace('-','.')}`:'수집 전','#7c5cff'],
+  ['수집 스트리머',D.solos.length,`5만+ ${n5}명 · 소속 미상`,'#22c7e8']
+].map(([k,v,sub,c])=>`<div class="card" style="--c:${c}"><div class="k">${k}</div><div class="v">${v}</div><div class="s">${sub}</div></div>`).join('');
+// 이번 주 소식
+$('#h-news').innerHTML=LW?`<div class="ph"><h3>📰 이번 주 하이라이트 <span class="muted" style="font-weight:600">${esc(LW.week_start)} ~ ${esc(LW.week_end)}</span></h3><button class="more" data-go="news">뉴스 ${LW.items.length}건 보기 →</button></div>
+  <ul class="hl">${(LW.highlights||[]).slice(0,4).map(h=>`<li>${esc(h)}</li>`).join('')||LW.items.slice(0,4).map(i=>`<li>${esc(i.title)}</li>`).join('')}</ul>`
+  :'<h3>📰 이번 주 하이라이트</h3><p class="muted">아직 수집된 뉴스가 없어요.</p>';
+// 최근 데뷔 & 데뷔 대기
+const debDate=g=>{const m=String(g[7]).match(/^\[정식 데뷔 · (20\d\d)\.(\d{1,2})\.(\d{1,2})/);return m?`${m[1]}.${m[2].padStart(2,'0')}.${m[3].padStart(2,'0')}`:null;};
+const recent=D.groups.map(g=>[g,debDate(g)]).filter(x=>x[1]).sort((a,b)=>b[1].localeCompare(a[1])).slice(0,4);
+const waiting=D.groups.filter(g=>g[6]==='데뷔전');
+const gRow=(g,sub,badge)=>`<div class="rowi" onclick="openG(D.groups[${D.groups.indexOf(g)}])"><div><div class="nm">${esc(g[1])}</div><div class="sb">${esc(sub)}</div></div>${badge}</div>`;
+$('#h-debut').innerHTML=`<div class="ph"><h3>🎉 최근 데뷔</h3><button class="more" data-go="upcoming">일정 →</button></div>`+
+  (recent.map(([g,d])=>gRow(g,(g[3]||'').split('(')[0]+' · '+d,'<span class="st st-활동중">데뷔</span>')).join('')||'<p class="muted">최근 데뷔 기록 없음</p>')+
+  `<h3 style="margin:16px 0 6px">⏳ 데뷔 대기 <span class="muted" style="font-weight:600">${waiting.length}</span></h3><div style="display:flex;flex-wrap:wrap;gap:6px">${waiting.map(g=>`<span class="st st-데뷔전" style="cursor:pointer" onclick="openG(D.groups[${D.groups.indexOf(g)}])">${esc(g[1])}</span>`).join('')}</div>`;
+// 급상승 스트리머
+const DF=D.diff||{};
+const rise=(DF.top_gain||[]).filter(m=>m.delta>0).slice(0,5);
+$('#h-rise').innerHTML=`<div class="ph"><h3>🚀 이번 주 급상승 스트리머</h3><button class="more" data-go="trend">변동 리포트 →</button></div>`+
+  (rise.length?rise.map((m,i)=>`<div class="rowi" onclick="(function(){const s=D.solos.find(x=>x.n===${JSON.stringify(m.name).replace(/"/g,'&quot;')});if(s){showTab('solo');openS(s);}})()"><div style="display:flex;align-items:center"><span class="rank">${i+1}</span><div><div class="nm">${esc(m.name)}</div><div class="sb">${fmt(m.from)} → ${fmt(m.to)}</div></div></div><span class="up">+${fmt(m.delta)}</span></div>`).join(''):'<p class="muted">비교할 스냅샷이 아직 부족해요.</p>')+
+  (DF.available?`<p class="muted" style="margin-top:8px">${esc(DF.from)} → ${esc(DF.to)} · 신규 진입 ${DF.entered.length}명 · 이탈 ${DF.left.length}명</p>`:'');
+// 차트
+const ST_ORDER=['활동중','데뷔전','확인필요','휴면','전환','해체/종료'].filter(k=>gs[k]);
+mk('#c1','doughnut',ST_ORDER,ST_ORDER.map(k=>gs[k]),ST_ORDER.map(k=>STC[k]));
+const GC=Object.entries(gc).sort((a,b)=>b[1]-a[1]);
+mk('#c2','bar',GC.map(x=>x[0]),GC.map(x=>x[1]),PAL,true);
+(function(){const tl=D.timeline||{},ys=Object.keys(tl).sort();
+  new Chart($('#cy'),{type:'bar',data:{labels:ys,datasets:ST_ORDER.map(st=>({label:st,data:ys.map(y=>tl[y].debut.filter(d=>d.st===st).length),backgroundColor:STC[st],borderRadius:4,maxBarThickness:30}))},
+   options:{maintainAspectRatio:false,plugins:{legend:{position:'bottom',labels:{boxWidth:9,boxHeight:9,usePointStyle:true,pointStyle:'circle',padding:10}}},scales:{x:{stacked:true,grid:{display:false},border:{display:false}},y:{stacked:true,beginAtZero:true,grid:{color:GRID},border:{display:false},ticks:{precision:0}}}}});})();
 const bks=[['5만+',s=>s.f>=50000],['3만~5만',s=>s.f>=30000&&s.f<50000],['1만~3만',s=>s.f>=10000&&s.f<30000],['1천~1만',s=>s.f>=1000&&s.f<10000],['1천 미만',s=>s.f<1000]];
-mk('#c3','bar',bks.map(b=>b[0]),bks.map(b=>D.solos.filter(b[1]).length));
-const sp=cnt(D.solos,s=>s.p||'미상');
-mk('#c4','doughnut',Object.keys(sp),Object.values(sp));
+mk('#c3','bar',bks.map(b=>b[0]),bks.map(b=>D.solos.filter(b[1]).length),['#7c5cff','#9b7bff','#b9a1ff','#d4c6ff','#e6defc']);
+const sp=Object.entries(cnt(D.solos,s=>s.p||'미상')).sort((a,b)=>b[1]-a[1]);
+const PLC={youtube:'#ff4f5e',chzzk:'#22d39a',soop:'#3b82f6'};
+const PLN={youtube:'YouTube',chzzk:'치지직',soop:'SOOP'};
+mk('#c4','doughnut',sp.map(x=>PLN[x[0]]||x[0]),sp.map(x=>x[1]),sp.map((x,i)=>PLC[x[0]]||PAL[i]));
 
 /* 유튜브 자동 통계 조회: 채널 URL → 캐시 키(@핸들/UC아이디) */
 function ytLookup(url){
@@ -466,7 +591,7 @@ function openS(s,skipHash){
   $('#d-body').innerHTML=`<h2>${esc(s.n)}</h2><div class="muted">${esc(s.e)}</div>
   <div class="kv"><div><b>임계값 판정</b><span>${judge}</span></div><div><b>최대 팔로워</b><span><b>${s.f?s.f.toLocaleString():'—'}</b> (${esc(s.p)||'—'})</span></div>
   <div><b>데뷔일</b><span>${esc(s.d)||'—'}</span></div><div><b>최근 라이브</b><span>${esc(s.l)||'—'}</span></div></div>
-  <h3 style="margin-top:16px;font-size:13px;color:#555e76">채널</h3>${links||'<p class="muted" style="margin-top:6px">채널 URL 없음</p>'}${tw}
+  <h3 style="margin-top:16px;font-size:13px;color:var(--sub)">채널</h3>${links||'<p class="muted" style="margin-top:6px">채널 URL 없음</p>'}${tw}
   ${shareBtn()}`;
   drawer.classList.add('open');
 }
@@ -493,14 +618,14 @@ function renderTrend(){
   }
   empty.style.display='none';body.style.display='block';
   new Chart($('#ct1'),{type:'line',data:{labels:keys,datasets:[
-    {label:'총 인원',data:keys.map(k=>hist[k].total_people),borderColor:'#3d5afe',backgroundColor:'#3d5afe22',tension:.3,fill:true},
-    {label:'총 채널',data:keys.map(k=>hist[k].total_channels),borderColor:'#16a2b8',backgroundColor:'#16a2b822',tension:.3,fill:true}
-  ]},options:{plugins:{legend:{labels:{font:{size:11}}}},scales:{y:{beginAtZero:false,ticks:{font:{size:11}}},x:{ticks:{font:{size:11}}}}}});
+    {label:'총 인원',data:keys.map(k=>hist[k].total_people),borderColor:'#7c5cff',backgroundColor:'#7c5cff22',tension:.3,fill:true},
+    {label:'총 채널',data:keys.map(k=>hist[k].total_channels),borderColor:'#22c7e8',backgroundColor:'#22c7e822',tension:.3,fill:true}
+  ]},options:{maintainAspectRatio:false,plugins:{legend:{labels:{font:{size:11}}}},scales:{y:{beginAtZero:false,ticks:{font:{size:11}}},x:{ticks:{font:{size:11}}}}}});
   new Chart($('#ct2'),{type:'line',data:{labels:keys,datasets:[
-    {label:'5만+',data:keys.map(k=>hist[k].n_50k),borderColor:'#e74c3c',tension:.3},
+    {label:'5만+',data:keys.map(k=>hist[k].n_50k),borderColor:'#ff4fa3',tension:.3},
     {label:'3만+',data:keys.map(k=>hist[k].n_30k),borderColor:'#f5a623',tension:.3},
-    {label:'1만+',data:keys.map(k=>hist[k].n_10k),borderColor:'#27ae60',tension:.3}
-  ]},options:{plugins:{legend:{labels:{font:{size:11}}}},scales:{y:{beginAtZero:true,ticks:{font:{size:11}}},x:{ticks:{font:{size:11}}}}}});
+    {label:'1만+',data:keys.map(k=>hist[k].n_10k),borderColor:'#22c55e',tension:.3}
+  ]},options:{maintainAspectRatio:false,plugins:{legend:{labels:{font:{size:11}}}},scales:{y:{beginAtZero:true,ticks:{font:{size:11}}},x:{ticks:{font:{size:11}}}}}});
   const df=D.diff||{};
   if(df.available){
     const lst=(t,arr,fn)=>`<div class="chart-box" style="margin-bottom:12px"><h3>${t} (${arr.length})</h3>${arr.length?'<div style="display:flex;flex-wrap:wrap;gap:6px">'+arr.slice(0,40).map(fn).join('')+'</div>':'<span class="muted">없음</span>'}</div>`;
@@ -511,14 +636,12 @@ function renderTrend(){
       lst('✏️ 이름 변경(같은 사람)',df.renamed||[],o=>pill(`${o.from} → ${o.to}`,'st-전환'))+
       lst('⬆ 5만+ 신규 진입',df.up50,o=>pill(`${o.name} (${fmt(o.to)})`,'st-활동중'))+
       lst('⬇ 5만 미만으로 하락',df.down50,o=>pill(`${o.name} (${fmt(o.to)})`,'st-휴면'))+
-      `<div class="charts"><div class="chart-box"><h3>📈 팔로워 증가 톱</h3>${df.top_gain.filter(m=>m.delta>0).slice(0,10).map(m=>`<div style="display:flex;justify-content:space-between;padding:5px 0;border-bottom:1px solid #f1f3f9;font-size:13px"><span>${esc(m.name)}</span><span class="num" style="color:#157a36;font-weight:700">+${fmt(m.delta)}</span></div>`).join('')||'<span class="muted">없음</span>'}</div>`+
-      `<div class="chart-box"><h3>📉 팔로워 감소 톱</h3>${df.top_drop.filter(m=>m.delta<0).slice(0,10).map(m=>`<div style="display:flex;justify-content:space-between;padding:5px 0;border-bottom:1px solid #f1f3f9;font-size:13px"><span>${esc(m.name)}</span><span class="num" style="color:#b3261e;font-weight:700">${fmt(m.delta)}</span></div>`).join('')||'<span class="muted">없음</span>'}</div></div>`;
+      `<div class="charts"><div class="chart-box"><h3>📈 팔로워 증가 톱</h3>${df.top_gain.filter(m=>m.delta>0).slice(0,10).map(m=>`<div style="display:flex;justify-content:space-between;padding:5px 0;border-bottom:1px solid var(--line);font-size:13px"><span>${esc(m.name)}</span><span class="num" style="color:#157a36;font-weight:700">+${fmt(m.delta)}</span></div>`).join('')||'<span class="muted">없음</span>'}</div>`+
+      `<div class="chart-box"><h3>📉 팔로워 감소 톱</h3>${df.top_drop.filter(m=>m.delta<0).slice(0,10).map(m=>`<div style="display:flex;justify-content:space-between;padding:5px 0;border-bottom:1px solid var(--line);font-size:13px"><span>${esc(m.name)}</span><span class="num" style="color:#b3261e;font-weight:700">${fmt(m.delta)}</span></div>`).join('')||'<span class="muted">없음</span>'}</div></div>`;
   }else $('#diff-wrap').innerHTML='';
 }
 
-$('#foot').innerHTML=CFG.mode==='public'
-  ? '임계값(확정): 위키등재 OR 5만+ 팔로워 · 매주 월요일 GitHub Actions에서 자동 수집·재배포 (서버리스, 운영자 PC와 무관). 데이터 출처: 한국 버추얼아이돌 전수조사 + 나의 작은 버튜버 API.'
-  : '임계값(확정): 위키등재 OR 5만+ 팔로워 · 매주 월요일 09:00 자동 수집.';
+$('#foot').textContent='수록 기준: 위키 등재 또는 팔로워 5만+ · 출처: 전수조사 명부 + 나의 작은 버튜버 API + YouTube Data API';
 
 /* ── 공유 딥링크 ── */
 function setHash(h){ if(location.hash.slice(1)!==h) history.replaceState(null,'','#'+h); }
@@ -537,7 +660,7 @@ function routeHash(){
   if(kind==='g'){const g=D.groups.find(x=>String(x[0])===id); if(g){showTab('grp');openG(g,true);}}
   else if(kind==='s'){const s=D.solos.find(x=>x.n===id); if(s){showTab('solo');openS(s,true);}}
   else if(kind==='a'){const a=(D.agencies||[]).find(x=>x[0]===id); if(a){showTab('agency');openA(a,true);}}
-  else if(TABS.includes(kind)){showTab(kind);}
+  else if(TABS.includes(kind)||NAV.some(n=>n[0]===kind)){showTab(kind);}
 }
 
 /* ── 소속사 탭 ── */
@@ -556,22 +679,22 @@ function openA(a,skipHash){
   $('#d-body').innerHTML=`<h2>${esc(a[0])}</h2><div class="muted">${esc(a[1])}</div>
   <div class="kv"><div><b>대표 그룹</b><span>${esc(a[2])||'—'}</span></div></div>
   <div class="kv"><div style="display:block"><b>비고</b><p style="margin-top:6px;line-height:1.55">${esc(a[3])||'—'}</p></div></div>
-  ${linked.length?`<h3 style="margin-top:16px;font-size:13px;color:#555e76">전수목록 매칭 (${linked.length})</h3>`+linked.map(g=>`<div class="chlink" style="cursor:pointer" onclick="showTab('grp');openG(D.groups[${D.groups.indexOf(g)}])"><span class="pf">${esc(g[1])}</span><span class="fl"><span class="${stCls(g[6])}">${esc(g[6])}</span></span></div>`).join(''):''}
+  ${linked.length?`<h3 style="margin-top:16px;font-size:13px;color:var(--sub)">전수목록 매칭 (${linked.length})</h3>`+linked.map(g=>`<div class="chlink" style="cursor:pointer" onclick="showTab('grp');openG(D.groups[${D.groups.indexOf(g)}])"><span class="pf">${esc(g[1])}</span><span class="fl"><span class="${stCls(g[6])}">${esc(g[6])}</span></span></div>`).join(''):''}
   ${shareBtn()}`;
   drawer.classList.add('open');
 }
 
 /* ── 데뷔예정 탭 ── */
 function renderU(){
-  $('#up-cards').innerHTML=(D.upcoming||[]).map(u=>`<div class="chart-box"><div style="display:flex;justify-content:space-between;align-items:start;gap:8px"><h3 style="font-size:15px">${esc(u[0])}</h3><span class="st st-확인필요">${esc(u[2])}</span></div>
+  $('#up-cards').innerHTML=(D.upcoming||[]).map(u=>`<div class="chart-box"><div style="display:flex;justify-content:space-between;align-items:start;gap:8px"><h3 style="font-size:15px">${esc(u[0])}</h3><span class="st ${/완료|데뷔\)|발매 완료/.test(u[2])?'st-활동중':/중단|미확인/.test(u[2])?'st-확인필요':'st-데뷔전'}" style="white-space:normal;text-align:right">${esc(u[2])}</span></div>
     <div class="kv"><div><b>소속사</b><span>${esc(u[1])||'—'}</span></div><div><b>데뷔(예정)</b><span>${esc(u[3])||'—'}</span></div></div>
     <p class="muted" style="margin-top:8px;line-height:1.5">${esc(u[4])||''}</p></div>`).join('')||'<p class="muted">데뷔예정 데이터 없음</p>';
 }
 
 /* ── 주간 뉴스 탭 ── */
-const NW_CAT={'데뷔·프리데뷔':'#6b3fc0','음반·음원':'#157a36','공연·행사':'#9a6b00','소속사·산업':'#2455c3','멤버·활동':'#b3261e','해체·종료':'#5d6068','기타':'#555e76'};
+const NW_CAT={'데뷔·프리데뷔':'#6b3fc0','음반·음원':'#157a36','공연·행사':'#9a6b00','소속사·산업':'#2455c3','멤버·활동':'#b3261e','해체·종료':'#5d6068','기타':'var(--sub)'};
 let nwIdx=0,nwCat='';
-function nwGroupLink(name){ const g=D.groups.find(x=>x[1]===name||x[2]===name); return g?`<span class="nw-g" onclick="showTab('grp');openG(D.groups[${D.groups.indexOf(g)}])">${esc(name)}</span>`:`<span class="nw-g" style="cursor:default;background:#f1f3f9;color:#7a8194">${esc(name)}</span>`; }
+function nwGroupLink(name){ const g=D.groups.find(x=>x[1]===name||x[2]===name); return g?`<span class="nw-g" onclick="showTab('grp');openG(D.groups[${D.groups.indexOf(g)}])">${esc(name)}</span>`:`<span class="nw-g" style="cursor:default;background:var(--line);color:#7a8194">${esc(name)}</span>`; }
 function renderNews(){
   const weeks=D.news||[]; const sel=$('#nw-week'); if(!sel) return;
   if(!weeks.length){ $('#nw-list').innerHTML='<div class="chart-box"><p class="muted">아직 수집된 주간 뉴스가 없어요. 매주 월요일 자동 수집됩니다.</p></div>'; return; }
@@ -583,7 +706,7 @@ function renderNews(){
   document.querySelectorAll('#nw-chips .chip').forEach(c=>c.onclick=()=>{nwCat=c.dataset.c;renderNews();});
   $('#nw-high').innerHTML=(w.highlights&&w.highlights.length)?`<div class="nw-high"><h3>✨ 이번 주 하이라이트</h3><ul>${w.highlights.map(h=>`<li>${esc(h)}</li>`).join('')}</ul></div>`:'';
   const items=w.items.filter(i=>!nwCat||(i.category||'기타')===nwCat).sort((a,b)=>(b.date||'').localeCompare(a.date||''));
-  $('#nw-list').innerHTML=items.map(i=>{const col=NW_CAT[i.category]||'#555e76';return `<div class="nw-card" style="border-left-color:${col}">
+  $('#nw-list').innerHTML=items.map(i=>{const col=NW_CAT[i.category]||'var(--sub)';return `<div class="nw-card" style="border-left-color:${col}">
     <div style="display:flex;justify-content:space-between;gap:8px;align-items:start"><div><span class="nw-tag" style="background:${col}22;color:${col}">${esc(i.category||'기타')}</span><span class="muted">${esc(i.date||'')}</span></div>${i.url?`<a href="${esc(i.url)}" target="_blank" class="muted" style="white-space:nowrap">${esc(i.source||'출처')} ↗</a>`:`<span class="muted">${esc(i.source||'')}</span>`}</div>
     <h4 style="margin-top:6px">${esc(i.title)}</h4><p>${esc(i.summary||'')}</p>
     ${(i.groups||[]).length?`<div>${i.groups.map(nwGroupLink).join('')}</div>`:''}</div>`;}).join('')||'<p class="muted">해당 카테고리 뉴스 없음</p>';
@@ -593,7 +716,7 @@ const nws=$('#nw-week'); if(nws) nws.onchange=e=>{nwIdx=+e.target.value;nwCat=''
 /* ── AI 아티스트 탭 ── */
 function renderAI(){
   const el=$('#ai-cards'); if(!el) return;
-  el.innerHTML=(D.ai||[]).map(a=>`<div class="chart-box"><div style="display:flex;justify-content:space-between;align-items:start;gap:8px"><h3 style="font-size:15px">${esc(a[0])} <span class="muted">${esc(a[1])}</span></h3><span class="st st-확인필요">${esc(a[4])}</span></div>
+  el.innerHTML=(D.ai||[]).map(a=>`<div class="chart-box"><div style="display:flex;justify-content:space-between;align-items:start;gap:8px"><h3 style="font-size:15px">${esc(a[0])} <span class="muted">${esc(a[1])}</span></h3><span class="st st-ai">${esc(a[4])}</span></div>
     <div class="kv"><div><b>소속·제작</b><span>${esc(a[2])||'—'}</span></div><div><b>유형</b><span>${esc(a[3])}</span></div><div><b>데뷔</b><span>${esc(a[5])||'—'}</span></div><div><b>발매작</b><span>${esc(a[6])||'—'}</span></div></div>
     <p class="muted" style="margin-top:8px;line-height:1.5">${esc(a[7])||''}</p><p class="muted" style="margin-top:4px;font-size:11px">근거: ${esc(a[8])}</p></div>`).join('')||'<p class="muted">데이터 없음</p>';
 }
@@ -602,9 +725,9 @@ function renderAI(){
 function renderTL(){
   const tl=D.timeline||{},years=Object.keys(tl).sort();
   if(!years.length){$('#tl-body').innerHTML='<p class="muted">연도 데이터 없음</p>';return;}
-  new Chart($('#ctl'),{type:'bar',data:{labels:years,datasets:[{label:'데뷔',data:years.map(y=>tl[y].debut.length),backgroundColor:'#3d5afe',borderWidth:0}]},
-    options:{plugins:{legend:{display:false}},scales:{y:{beginAtZero:true,ticks:{font:{size:11},precision:0}},x:{ticks:{font:{size:11}}}}}});
-  $('#tl-body').innerHTML=years.slice().reverse().map(y=>`<div class="chart-box" style="margin-bottom:10px"><h3>${y} <span class="muted">· ${tl[y].debut.length}팀 데뷔</span></h3>
+  new Chart($('#ctl'),{type:'bar',data:{labels:years,datasets:ST_ORDER.map(st=>({label:st,data:years.map(y=>tl[y].debut.filter(d=>d.st===st).length),backgroundColor:STC[st],borderRadius:4,maxBarThickness:34}))},
+    options:{maintainAspectRatio:false,plugins:{legend:{position:'bottom',labels:{boxWidth:9,boxHeight:9,usePointStyle:true,pointStyle:'circle'}}},scales:{y:{stacked:true,beginAtZero:true,grid:{color:GRID},border:{display:false},ticks:{precision:0}},x:{stacked:true,grid:{display:false},border:{display:false}}}}});
+  $('#tl-body').innerHTML=years.slice().reverse().map(y=>`<div class="chart-box" style="margin-bottom:10px"><h3><span style="font-size:20px;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent">${y}</span> <span class="muted">· ${tl[y].debut.length}팀</span></h3>
     <div style="display:flex;flex-wrap:wrap;gap:6px;margin-top:6px">${tl[y].debut.map(d=>`<span class="${stCls(d.st)}" style="cursor:pointer" onclick="openByName('${esc(d.name).replace(/'/g,"\\'")}')">${esc(d.name)}</span>`).join('')}</div></div>`).join('');
 }
 function openByName(n){const g=D.groups.find(x=>x[1]===n);if(g){showTab('grp');openG(g);}}
@@ -624,7 +747,7 @@ function renderMethod(){
     <div class="kv">
       <div><b>그룹 명부</b><span>thewiki.kr·나무위키 '버추얼 그룹 목록', 언론 보도(머니투데이·이데일리·한경·스포츠경향·전자신문·톱셀럽·KMJ 등), MBC 버추얼 라이브 페스티벌 라인업을 교차검증</span></div>
       <div><b>스트리머 규모</b><span>'나의 작은 버튜버' 공개 API(유튜브 구독·치지직/SOOP 팔로워·최근 방송 집계). <b>소속사 정보는 제공하지 않음</b> → 소속 미상</span></div>
-      <div><b>채널 통계</b><span>YouTube Data API v3 — 명부 등재 엔티티의 채널 구독자·영상수·조회수를 월간 자동 갱신</span></div>
+      <div><b>채널 통계</b><span>YouTube Data API v3 — 명부 등재 엔티티의 채널 구독자·영상수·조회수를 매주 자동 갱신</span></div>
       <div><b>소속사 확정</b><span>공식 보도자료·공식 채널·위키 문서 (2026-06-06 재조사 반영)</span></div>
     </div>
   </div>
@@ -693,16 +816,15 @@ function renderAuthArea(){
   const el=$('#auth-area'); if(!el) return;
   if(!sb){ el.innerHTML=''; return; }
   if(ME){
-    el.innerHTML=`<span class="muted" style="font-size:12px">${esc(ME.email)} <span class="role-pill">${roleLabel(MYROLE)}</span></span> <button class="btn-s" id="btn-logout">로그아웃</button>`;
+    el.innerHTML=`<span class="muted" style="font-size:12px">${esc(ME.email)} <span class="role-pill">${roleLabel(MYROLE)}</span></span> <button class="hbtn" id="btn-logout">로그아웃</button>`;
     $('#btn-logout').onclick=async()=>{ await sb.auth.signOut(); ME=null;MYROLE=null; renderAuthArea(); applyRoleGating(); };
   }else{
-    el.innerHTML=`<button class="btn-s" id="btn-login">로그인 / 가입</button>`;
+    el.innerHTML=`<button class="hbtn" id="btn-login">로그인 / 가입</button>`;
     $('#btn-login').onclick=openAuthModal;
   }
 }
 function applyRoleGating(){
-  const tab=document.querySelector('.tab[data-t="admin"]');
-  if(tab) tab.style.display=isStaff()?'':'none';
+  const ab=$('#btn-admin'); if(ab) ab.style.display=isStaff()?'':'none';
   if(!isStaff()){ const on=document.querySelector('.tab.on'); if(on&&on.dataset.t==='admin') showTab('dash'); }
 }
 function openAuthModal(){ $('#am-msg').textContent=''; $('#auth-modal').classList.add('open'); }
@@ -793,7 +915,7 @@ async function loadApprovedGroups(){
     D.groups.push([++maxNo,s.name,s.name_en||'',s.agency||'(제보)',String(s.year||''),s.category||'스트리밍/MCN형',s.status||'활동중',s.note||'',s.channel||'','제보']);
     added=true;
   });
-  if(added){ $('#cnt-g').textContent=D.groups.length; renderG(); }
+  if(added){ $('#cnt-g').textContent=D.groups.length; renderG(); const on=TABS.find(k=>$('#t-'+k).style.display!=='none'); if(on==='grp') showTab('grp'); }
 }
 
 /* ── ⭐ 프리미엄/자료실 (항목별 접근 레벨) ── */
@@ -814,9 +936,9 @@ async function renderPremium(){
     html+=`<div class="chart-box" style="margin-bottom:12px">
       <h3 style="font-size:14px">새 자료 작성</h3>
       <input type="text" id="pc-title" style="width:100%;margin-top:8px" placeholder="제목">
-      <textarea id="pc-body" rows="4" style="width:100%;margin-top:8px;padding:8px 10px;border:1px solid #d7dbe8;border-radius:8px;font-size:13px;font-family:inherit" placeholder="가공 분석·인사이트·데이터 설명"></textarea>
+      <textarea id="pc-body" rows="4" style="width:100%;margin-top:8px;padding:8px 10px;border:1px solid var(--line);border-radius:8px;font-size:13px;font-family:inherit" placeholder="가공 분석·인사이트·데이터 설명"></textarea>
       <div style="display:flex;align-items:center;gap:8px;margin-top:8px">
-        <label style="font-size:12px;color:#555e76;font-weight:600">접근등급</label>
+        <label style="font-size:12px;color:var(--sub);font-weight:600">접근등급</label>
         <select id="pc-level"><option value="0">공개</option><option value="1">일반회원+</option><option value="2" selected>프리미엄+</option><option value="3">스태프</option></select>
         <button class="btn-p" id="pc-save">등록</button>
         <span id="pc-msg" class="muted"></span>
@@ -828,7 +950,7 @@ async function renderPremium(){
         <span style="display:flex;align-items:center;gap:6px">${lvBadge(c.min_level)}<span class="muted">${(c.created_at||'').slice(0,10)}</span></span></div>
       <p style="margin-top:8px;line-height:1.6;white-space:pre-wrap">${esc(c.body||'')}</p>
       ${staff?`<div style="display:flex;align-items:center;gap:8px;margin-top:10px">
-        <label style="font-size:12px;color:#555e76;font-weight:600">접근등급</label>
+        <label style="font-size:12px;color:var(--sub);font-weight:600">접근등급</label>
         <select class="pc-lvl" data-id="${c.id}"><option value="0" ${c.min_level===0?'selected':''}>공개</option><option value="1" ${c.min_level===1?'selected':''}>일반회원+</option><option value="2" ${c.min_level===2?'selected':''}>프리미엄+</option><option value="3" ${c.min_level===3?'selected':''}>스태프</option></select>
         <button class="btn-s pc-del" data-id="${c.id}">삭제</button></div>`:''}
     </div>`).join('') : `<div class="chart-box" style="text-align:center;padding:24px"><div style="font-size:30px">🔒</div><p class="muted" style="margin-top:8px;line-height:1.6">열람 가능한 자료가 아직 없어요.${myLevel()<2?'<br>가공 데이터는 <b>프리미엄 등급</b>부터 더 많이 열려요.'+(ME?' 관리자에게 등급을 요청해 주세요.':''):''}</p>${ME?'':'<button class="btn-p" style="margin-top:10px" onclick="openAuthModal()">로그인 / 가입</button>'}</div>`;
@@ -856,6 +978,7 @@ async function renderPremium(){
 
 $('#cyear').textContent=new Date().getFullYear();
 renderG();renderS();renderTrend();renderA();renderU();renderAI();renderNews();renderTL();renderMethod();
+showTab('dash');
 routeHash();
 window.addEventListener('hashchange',routeHash);
 loadMe(); loadApprovedGroups();
