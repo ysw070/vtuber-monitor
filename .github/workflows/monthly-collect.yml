@@ -12,6 +12,7 @@ on:
       - "data/news/**"
       - "data/*.xlsx"
       - "data/manual_groups.csv"
+      - "data/agency_members.csv"
       - "pipeline/**"
       - "build.py"
 
@@ -44,9 +45,9 @@ jobs:
       - name: 수집 → 스냅샷 → 유튜브통계 → 빌드
         env:
           GH_REPO: ${{ github.repository }}
-          # push 로 인한 재빌드는 외부 API를 부르지 않는다(개인 운영 API 부하·유튜브 할당량 보호)
+          # push 재빌드는 개인 운영 수집 API(나의 작은 버튜버)를 부르지 않는다. 유튜브·치지직 공개 API는 호출(할당량 여유 충분)
           SKIP_COLLECT: ${{ github.event_name == 'push' && '1' || '' }}
-          YT_API_KEY: ${{ github.event_name != 'push' && secrets.YT_API_KEY || '' }}
+          YT_API_KEY: ${{ secrets.YT_API_KEY }}
         run: python build.py
 
       - name: 갱신된 데이터 커밋(스냅샷 히스토리 보존)

@@ -57,6 +57,9 @@ def main():
     # 2.5) 유튜브 통계 보강(YT_API_KEY 있을 때만 동작, 없으면 no-op)
     run('2.5 유튜브 통계', [os.path.join(PIPE, 'enrich_youtube.py')], {})
 
+    # 2.6) 기업 소속 멤버 통계(치지직 공개 API + 유튜브) — 중소 수집원에 없는 멤버 보강
+    run('2.6 기업 소속 멤버', [os.path.join(PIPE, 'enrich_members.py')], {})
+
     # 3) 대시보드 빌드 (public 모드)
     xlsx = latest_xlsx()
     if not xlsx:

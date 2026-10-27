@@ -1,0 +1,6025 @@
+{
+ "이세계아이돌|아이네": {
+  "member": "아이네",
+  "group": "이세계아이돌",
+  "agency": "패러블 엔터테인먼트(왁타버스)",
+  "status": "활동",
+  "note": "치지직 미확인(SOOP 활동); SOOP ID API 확인",
+  "yt": {
+   "id": "",
+   "handle": "@INE_"
+  },
+  "chzzk": {},
+  "soop": {
+   "id": "inehine",
+   "name": "아이네♪",
+   "followers": 181825
+  },
+  "fetched": "2026-10-27",
+  "history": {
+   "2026-10-27": 181825
+  }
+ },
+ "이세계아이돌|징버거": {
+  "member": "징버거",
+  "group": "이세계아이돌",
+  "agency": "패러블 엔터테인먼트(왁타버스)",
+  "status": "활동",
+  "note": "치지직 미확인(SOOP 활동); SOOP ID API 확인",
+  "yt": {
+   "id": "UCHE7GBQVtdh-c1m3tjFdevQ",
+   "handle": ""
+  },
+  "chzzk": {},
+  "soop": {
+   "id": "jingburger1",
+   "name": "징버거☆",
+   "followers": 179815
+  },
+  "fetched": "2026-10-27",
+  "history": {
+   "2026-10-27": 179815
+  }
+ },
+ "이세계아이돌|릴파": {
+  "member": "릴파",
+  "group": "이세계아이돌",
+  "agency": "패러블 엔터테인먼트(왁타버스)",
+  "status": "활동",
+  "note": "치지직 미확인(SOOP 활동); SOOP ID API 확인",
+  "yt": {
+   "id": "",
+   "handle": "@lilpa"
+  },
+  "chzzk": {},
+  "soop": {
+   "id": "lilpa0309",
+   "name": "릴파♬",
+   "followers": 186412
+  },
+  "fetched": "2026-10-27",
+  "history": {
+   "2026-10-27": 186412
+  }
+ },
+ "이세계아이돌|주르르": {
+  "member": "주르르",
+  "group": "이세계아이돌",
+  "agency": "패러블 엔터테인먼트(왁타버스)",
+  "status": "활동",
+  "note": "치지직 채널명 ISD 주르르(나무위키: 개설만, 미사용); 주 플랫폼 SOOP; SOOP ID API 확인",
+  "yt": {
+   "id": "",
+   "handle": "@JU_RURU"
+  },
+  "chzzk": {
+   "id": "42a9dd26124aadf9e83e4697bee93f1b",
+   "name": "ISD 주르르",
+   "followers": 8784,
+   "verified": false
+  },
+  "soop": {
+   "id": "cotton1217",
+   "name": "주르르",
+   "followers": 172709
+  },
+  "fetched": "2026-10-27",
+  "history": {
+   "2026-10-27": 172709
+  }
+ },
+ "이세계아이돌|고세구": {
+  "member": "고세구",
+  "group": "이세계아이돌",
+  "agency": "패러블 엔터테인먼트(왁타버스)",
+  "status": "활동",
+  "note": "치지직 미확인(SOOP 활동); SOOP ID API 확인",
+  "yt": {
+   "id": "",
+   "handle": "@gosegu"
+  },
+  "chzzk": {},
+  "soop": {
+   "id": "gosegu2",
+   "name": "고세구!",
+   "followers": 233134
+  },
+  "fetched": "2026-10-27",
+  "history": {
+   "2026-10-27": 233134
+  }
+ },
+ "이세계아이돌|비챤": {
+  "member": "비챤",
+  "group": "이세계아이돌",
+  "agency": "패러블 엔터테인먼트(왁타버스)",
+  "status": "활동",
+  "note": "치지직 미확인(SOOP 활동); SOOP ID API 확인",
+  "yt": {
+   "id": "UCs6EwgxKLY9GG4QNUrP5hoQ",
+   "handle": ""
+  },
+  "chzzk": {},
+  "soop": {
+   "id": "viichan6",
+   "name": "비챤",
+   "followers": 176041
+  },
+  "fetched": "2026-10-27",
+  "history": {
+   "2026-10-27": 176041
+  }
+ },
+ "IRISÉ|KIIRI(키리)": {
+  "member": "KIIRI(키리)",
+  "group": "IRISÉ",
+  "agency": "패러블 엔터테인먼트",
+  "status": "활동",
+  "note": "개인 유튜브·치지직·SOOP 미확인(방송은 그룹 유튜브 @irise_theofficial·Weverse)",
+  "yt": {},
+  "chzzk": {},
+  "soop": {},
+  "fetched": "",
+  "history": {}
+ },
+ "IRISÉ|TIZ(티즈)": {
+  "member": "TIZ(티즈)",
+  "group": "IRISÉ",
+  "agency": "패러블 엔터테인먼트",
+  "status": "활동",
+  "note": "개인 유튜브·치지직·SOOP 미확인(방송은 그룹 유튜브 @irise_theofficial·Weverse)",
+  "yt": {},
+  "chzzk": {},
+  "soop": {},
+  "fetched": "",
+  "history": {}
+ },
+ "IRISÉ|LUNÉ": {
+  "member": "LUNÉ",
+  "group": "IRISÉ",
+  "agency": "패러블 엔터테인먼트",
+  "status": "졸업(2026.01)",
+  "note": "2026.01.12 활동 종료; 개인 유튜브·치지직·SOOP 미확인(방송은 그룹 유튜브 @irise_theofficial·Weverse)",
+  "yt": {},
+  "chzzk": {},
+  "soop": {},
+  "fetched": "",
+  "history": {}
+ },
+ "IRISÉ|SHANA(샤나)": {
+  "member": "SHANA(샤나)",
+  "group": "IRISÉ",
+  "agency": "패러블 엔터테인먼트",
+  "status": "졸업(2026.01)",
+  "note": "2026.01.12 활동 종료; 개인 유튜브·치지직·SOOP 미확인(방송은 그룹 유튜브 @irise_theofficial·Weverse)",
+  "yt": {},
+  "chzzk": {},
+  "soop": {},
+  "fetched": "",
+  "history": {}
+ },
+ "IRISÉ|ZERØ(제로)": {
+  "member": "ZERØ(제로)",
+  "group": "IRISÉ",
+  "agency": "패러블 엔터테인먼트",
+  "status": "졸업(2026.01)",
+  "note": "2026.01.12 활동 종료; 개인 유튜브·치지직·SOOP 미확인(방송은 그룹 유튜브 @irise_theofficial·Weverse)",
+  "yt": {},
+  "chzzk": {},
+  "soop": {},
+  "fetched": "",
+  "history": {}
+ },
+ "스텔라이브|아야츠노 유니": {
+  "member": "아야츠노 유니",
+  "group": "스텔라이브",
+  "agency": "스텔라이브",
+  "status": "활동",
+  "note": "1기 에버리스; 치지직 API 인증마크 확인; SOOP 미확인",
+  "yt": {
+   "id": "UClbYIn9LDbbFZ9w2shX3K0g",
+   "handle": ""
+  },
+  "chzzk": {
+   "id": "45e71a76e949e16a34764deb962f9d9f",
+   "name": "아야츠노 유니",
+   "followers": 319736,
+   "verified": true
+  },
+  "soop": {},
+  "fetched": "2026-10-27",
+  "history": {
+   "2026-10-27": 319736
+  }
+ },
+ "스텔라이브|사키하네 후야": {
+  "member": "사키하네 후야",
+  "group": "스텔라이브",
+  "agency": "스텔라이브",
+  "status": "활동",
+  "note": "1기 에버리스; 치지직 API 인증마크 확인; SOOP 미확인",
+  "yt": {
+   "id": "UC0YQnenKBCu5sGb7H61n6HA",
+   "handle": ""
+  },
+  "chzzk": {
+   "id": "36ddb9bb4f17593b60f1b63cec86611d",
+   "name": "사키하네 후야",
+   "followers": 178117,
+   "verified": true
+  },
+  "soop": {},
+  "fetched": "2026-10-27",
+  "history": {
+   "2026-10-27": 178117
+  }
+ },
+ "스텔라이브|시라유키 히나": {
+  "member": "시라유키 히나",
+  "group": "스텔라이브",
+  "agency": "스텔라이브",
+  "status": "활동",
+  "note": "치지직 API 인증마크 확인; SOOP 미확인",
+  "yt": {
+   "id": "UC1afpiIuBDcjYlmruAa0HiA",
+   "handle": ""
+  },
+  "chzzk": {
+   "id": "b044e3a3b9259246bc92e863e7d3f3b8",
+   "name": "시라유키 히나",
+   "followers": 250681,
+   "verified": true
+  },
+  "soop": {},
+  "fetched": "2026-10-27",
+  "history": {
+   "2026-10-27": 250681
+  }
+ },
+ "스텔라이브|네네코 마시로": {
+  "member": "네네코 마시로",
+  "group": "스텔라이브",
+  "agency": "스텔라이브",
+  "status": "활동",
+  "note": "치지직 API 인증마크 확인; SOOP 미확인",
+  "yt": {
+   "id": "UC_eeSpMBz8PG4ssdBPnP07g",
+   "handle": ""
+  },
+  "chzzk": {
+   "id": "4515b179f86b67b4981e16190817c580",
+   "name": "네네코 마시로",
+   "followers": 227383,
+   "verified": true
+  },
+  "soop": {},
+  "fetched": "2026-10-27",
+  "history": {
+   "2026-10-27": 227383
+  }
+ },
+ "스텔라이브|아카네 리제": {
+  "member": "아카네 리제",
+  "group": "스텔라이브",
+  "agency": "스텔라이브",
+  "status": "활동",
+  "note": "치지직 API 인증마크 확인; SOOP 미확인",
+  "yt": {
+   "id": "UC7-m6jQLinZQWIbwm9W-1iw",
+   "handle": ""
+  },
+  "chzzk": {
+   "id": "4325b1d5bbc321fad3042306646e2e50",
+   "name": "아카네 리제",
+   "followers": 274709,
+   "verified": true
+  },
+  "soop": {},
+  "fetched": "2026-10-27",
+  "history": {
+   "2026-10-27": 274709
+  }
+ },
+ "스텔라이브|아라하시 타비": {
+  "member": "아라하시 타비",
+  "group": "스텔라이브",
+  "agency": "스텔라이브",
+  "status": "활동",
+  "note": "치지직 API 인증마크 확인; SOOP 미확인",
+  "yt": {
+   "id": "UCAHVQ44O81aehLWfy9O6Elw",
+   "handle": ""
+  },
+  "chzzk": {
+   "id": "a6c4ddb09cdb160478996007bff35296",
+   "name": "아라하시 타비",
+   "followers": 276464,
+   "verified": true
+  },
+  "soop": {},
+  "fetched": "2026-10-27",
+  "history": {
+   "2026-10-27": 276464
+  }
+ },
+ "스텔라이브|텐코 시부키": {
+  "member": "텐코 시부키",
+  "group": "스텔라이브",
+  "agency": "스텔라이브",
+  "status": "활동",
+  "note": "치지직 API 인증마크 확인; SOOP 미확인",
+  "yt": {
+   "id": "UCYxLMfeX1CbMBll9MsGlzmw",
+   "handle": ""
+  },
+  "chzzk": {
+   "id": "64d76089fba26b180d9c9e48a32600d9",
+   "name": "텐코 시부키",
+   "followers": 260053,
+   "verified": true
+  },
+  "soop": {},
+  "fetched": "2026-10-27",
+  "history": {
+   "2026-10-27": 260053
+  }
+ },
+ "스텔라이브|아오쿠모 린": {
+  "member": "아오쿠모 린",
+  "group": "스텔라이브",
+  "agency": "스텔라이브",
+  "status": "활동",
+  "note": "치지직 API 인증마크 확인; SOOP 미확인",
+  "yt": {
+   "id": "UCQmcltnre6aG9SkDRYZqFIg",
+   "handle": ""
+  },
+  "chzzk": {
+   "id": "516937b5f85cbf2249ce31b0ad046b0f",
+   "name": "아오쿠모 린",
+   "followers": 239973,
+   "verified": true
+  },
+  "soop": {},
+  "fetched": "2026-10-27",
+  "history": {
+   "2026-10-27": 239973
+  }
+ },
+ "스텔라이브|하나코 나나": {
+  "member": "하나코 나나",
+  "group": "스텔라이브",
+  "agency": "스텔라이브",
+  "status": "활동",
+  "note": "치지직 API 인증마크 확인; SOOP 미확인",
+  "yt": {
+   "id": "UCcA21_PzN1EhNe7xS4MJGsQ",
+   "handle": ""
+  },
+  "chzzk": {
+   "id": "4d812b586ff63f8a2946e64fa860bbf5",
+   "name": "하나코 나나",
+   "followers": 232138,
+   "verified": true
+  },
+  "soop": {},
+  "fetched": "2026-10-27",
+  "history": {
+   "2026-10-27": 232138
+  }
+ },
+ "스텔라이브|유즈하 리코": {
+  "member": "유즈하 리코",
+  "group": "스텔라이브",
+  "agency": "스텔라이브",
+  "status": "활동",
+  "note": "치지직 API 인증마크 확인; SOOP 미확인",
+  "yt": {
+   "id": "UCj0c1jUr91dTetIQP2pFeLA",
+   "handle": ""
+  },
+  "chzzk": {
+   "id": "8fd39bb8de623317de90654718638b10",
+   "name": "유즈하 리코",
+   "followers": 230945,
+   "verified": true
+  },
+  "soop": {},
+  "fetched": "2026-10-27",
+  "history": {
+   "2026-10-27": 230945
+  }
+ },
+ "스텔라이브|시즈키 토아": {
+  "member": "시즈키 토아",
+  "group": "스텔라이브",
+  "agency": "스텔라이브",
+  "status": "활동",
+  "note": "4기 ABYSS; 치지직 API 인증마크 확인; SOOP 미확인",
+  "yt": {
+   "id": "UClcSEuDF_g_6g4snw_nAavw",
+   "handle": ""
+  },
+  "chzzk": {
+   "id": "2299fad4bebb504b0978e1ec08b2f7d3",
+   "name": "시즈키 토아",
+   "followers": 132380,
+   "verified": true
+  },
+  "soop": {},
+  "fetched": "2026-10-27",
+  "history": {
+   "2026-10-27": 132380
+  }
+ },
+ "스텔라이브|코가네 랑": {
+  "member": "코가네 랑",
+  "group": "스텔라이브",
+  "agency": "스텔라이브",
+  "status": "활동",
+  "note": "4기 ABYSS; 치지직 API 인증마크 확인; SOOP 미확인",
+  "yt": {
+   "id": "UCQ6LlsI7Bbj2yhSqLMI1gGA",
+   "handle": ""
+  },
+  "chzzk": {
+   "id": "c657aa3592260a2b59669a72ec151936",
+   "name": "코가네 랑",
+   "followers": 132539,
+   "verified": true
+  },
+  "soop": {},
+  "fetched": "2026-10-27",
+  "history": {
+   "2026-10-27": 132539
+  }
+ },
+ "스텔라이브|하나요 히요리": {
+  "member": "하나요 히요리",
+  "group": "스텔라이브",
+  "agency": "스텔라이브",
+  "status": "활동",
+  "note": "4기 ABYSS; 치지직 API 인증마크 확인; SOOP 미확인",
+  "yt": {
+   "id": "UCHAr9pWGS30akL4MQCQT4uQ",
+   "handle": ""
+  },
+  "chzzk": {
+   "id": "49d2c3cf8f0b2843d934ec15e82bb54c",
+   "name": "하나요 히요리",
+   "followers": 141651,
+   "verified": true
+  },
+  "soop": {},
+  "fetched": "2026-10-27",
+  "history": {
+   "2026-10-27": 141651
+  }
+ },
+ "스텔라이브|토키노 메리": {
+  "member": "토키노 메리",
+  "group": "스텔라이브",
+  "agency": "스텔라이브",
+  "status": "활동",
+  "note": "4기 ABYSS; 치지직 API 인증마크 확인; SOOP 미확인",
+  "yt": {
+   "id": "UCGSt1yNG5l-jpYRLpJ5oNtA",
+   "handle": ""
+  },
+  "chzzk": {
+   "id": "792acf9ca28b42918710327e14b06b68",
+   "name": "토키노 메리",
+   "followers": 165837,
+   "verified": true
+  },
+  "soop": {},
+  "fetched": "2026-10-27",
+  "history": {
+   "2026-10-27": 165837
+  }
+ },
+ "스텔라이브|아이리 칸나": {
+  "member": "아이리 칸나",
+  "group": "스텔라이브",
+  "agency": "스텔라이브",
+  "status": "졸업(2024.12)",
+  "note": "2024.12.02 졸업; 치지직 계정만 잔존(채널명 아이리 칸나에요); 유튜브 @airikannach 2025.10 삭제; SOOP 미확인",
+  "yt": {},
+  "chzzk": {
+   "id": "f722959d1b8e651bd56209b343932c01",
+   "name": "아이리 칸나에요",
+   "followers": 148074,
+   "verified": false
+  },
+  "soop": {},
+  "fetched": "2026-10-27",
+  "history": {
+   "2026-10-27": 148074
+  }
+ },
+ "하데스|솜주먹": {
+  "member": "솜주먹",
+  "group": "하데스",
+  "agency": "무엔터테인먼트",
+  "status": "활동",
+  "note": "리더; 치지직 미확인; SOOP ID API 확인",
+  "yt": {
+   "id": "",
+   "handle": "@ldrboo"
+  },
+  "chzzk": {},
+  "soop": {
+   "id": "ldrboo",
+   "name": "솜주먹",
+   "followers": 38202
+  },
+  "fetched": "2026-10-27",
+  "history": {
+   "2026-10-27": 38202
+  }
+ },
+ "하데스|연초록": {
+  "member": "연초록",
+  "group": "하데스",
+  "agency": "무엔터테인먼트",
+  "status": "활동",
+  "note": "치지직 미확인; SOOP ID API 확인",
+  "yt": {
+   "id": "",
+   "handle": "@연초록_CHOROK"
+  },
+  "chzzk": {},
+  "soop": {
+   "id": "whatcherry4",
+   "name": "연초록♪",
+   "followers": 29152
+  },
+  "fetched": "2026-10-27",
+  "history": {
+   "2026-10-27": 29152
+  }
+ },
+ "하데스|챈나": {
+  "member": "챈나",
+  "group": "하데스",
+  "agency": "무엔터테인먼트",
+  "status": "활동",
+  "note": "유튜브는 나무위키 /c/챈나 링크를 채널 ID로 확인; 치지직 미확인; SOOP ID API 확인",
+  "yt": {
+   "id": "UCHIcKC_Tqu8Hxab7pNQ6qxg",
+   "handle": ""
+  },
+  "chzzk": {},
+  "soop": {
+   "id": "chaenna02",
+   "name": "챈나",
+   "followers": 59284
+  },
+  "fetched": "2026-10-27",
+  "history": {
+   "2026-10-27": 59284
+  }
+ },
+ "하데스|띵귤": {
+  "member": "띵귤",
+  "group": "하데스",
+  "agency": "무엔터테인먼트",
+  "status": "활동",
+  "note": "치지직 동명 채널 있으나 본인 확인 불가; 치지직 미확인; SOOP ID API 확인",
+  "yt": {
+   "id": "",
+   "handle": "@Hades띵귤"
+  },
+  "chzzk": {},
+  "soop": {
+   "id": "singgyul",
+   "name": "띵귤_",
+   "followers": 29593
+  },
+  "fetched": "2026-10-27",
+  "history": {
+   "2026-10-27": 29593
+  }
+ },
+ "하데스|키마": {
+  "member": "키마",
+  "group": "하데스",
+  "agency": "무엔터테인먼트",
+  "status": "활동",
+  "note": "치지직 미확인; SOOP ID API 확인",
+  "yt": {
+   "id": "",
+   "handle": "@kyma_official"
+  },
+  "chzzk": {},
+  "soop": {
+   "id": "kymakyma",
+   "name": "키마",
+   "followers": 41910
+  },
+  "fetched": "2026-10-27",
+  "history": {
+   "2026-10-27": 41910
+  }
+ },
+ "러비타|김마르": {
+  "member": "김마르",
+  "group": "러비타",
+  "agency": "V-REAL(SOOP)/DOORIBUN",
+  "status": "활동",
+  "note": "치지직·SOOP API 확인",
+  "yt": {
+   "id": "",
+   "handle": "@Kimmare"
+  },
+  "chzzk": {
+   "id": "d24e1a6c844a6f57815fad3319dbdd4d",
+   "name": "김마르",
+   "followers": 365,
+   "verified": false
+  },
+  "soop": {
+   "id": "mare1106",
+   "name": "김마르",
+   "followers": 4740
+  },
+  "fetched": "2026-10-27",
+  "history": {
+   "2026-10-27": 4740
+  }
+ },
+ "러비타|이엘리": {
+  "member": "이엘리",
+  "group": "러비타",
+  "agency": "V-REAL(SOOP)/DOORIBUN",
+  "status": "활동",
+  "note": "치지직 미확인; SOOP ID 검색결과 기준",
+  "yt": {
+   "id": "UCt0iyc3mmIMnGDadANkjrjg",
+   "handle": ""
+  },
+  "chzzk": {},
+  "soop": {
+   "id": "yaliyalia",
+   "name": "이엘리",
+   "followers": 2648
+  },
+  "fetched": "2026-10-27",
+  "history": {
+   "2026-10-27": 2648
+  }
+ },
+ "러비타|플리": {
+  "member": "플리",
+  "group": "러비타",
+  "agency": "V-REAL(SOOP)/DOORIBUN",
+  "status": "활동",
+  "note": "치지직 미확인; SOOP ID API 확인",
+  "yt": {
+   "id": "",
+   "handle": "@plincesssss"
+  },
+  "chzzk": {},
+  "soop": {
+   "id": "plincess",
+   "name": "플리ㆍ",
+   "followers": 10872
+  },
+  "fetched": "2026-10-27",
+  "history": {
+   "2026-10-27": 10872
+  }
+ },
+ "러비타|힌콕": {
+  "member": "힌콕",
+  "group": "러비타",
+  "agency": "V-REAL(SOOP)/DOORIBUN",
+  "status": "활동",
+  "note": "치지직 미확인; SOOP ID API 확인",
+  "yt": {
+   "id": "",
+   "handle": "@힌콕"
+  },
+  "chzzk": {},
+  "soop": {
+   "id": "hinqocorv",
+   "name": "힌콕",
+   "followers": 15202
+  },
+  "fetched": "2026-10-27",
+  "history": {
+   "2026-10-27": 15202
+  }
+ },
+ "러비타|이주인": {
+  "member": "이주인",
+  "group": "러비타",
+  "agency": "V-REAL(SOOP)/DOORIBUN",
+  "status": "졸업(2026.04)",
+  "note": "2026.04.13 LUVITA 활동 종료 발표(전 리더); 치지직 미확인",
+  "yt": {
+   "id": "UCAeWi9Yt5O85W_nqllbhZbA",
+   "handle": ""
+  },
+  "chzzk": {},
+  "soop": {
+   "id": "jooinvlup",
+   "name": "이주인",
+   "followers": 17944
+  },
+  "fetched": "2026-10-27",
+  "history": {
+   "2026-10-27": 17944
+  }
+ },
+ "걸즈원|랩자": {
+  "member": "랩자",
+  "group": "걸즈원",
+  "agency": "트윈버스",
+  "status": "활동",
+  "note": "치지직 미확인; SOOP ID API 확인",
+  "yt": {
+   "id": "",
+   "handle": "@girlzone_rapja"
+  },
+  "chzzk": {},
+  "soop": {
+   "id": "rapja2025",
+   "name": "랩자RAPJA",
+   "followers": 3734
+  },
+  "fetched": "2026-10-27",
+  "history": {
+   "2026-10-27": 3734
+  }
+ },
+ "걸즈원|링링": {
+  "member": "링링",
+  "group": "걸즈원",
+  "agency": "트윈버스",
+  "status": "활동",
+  "note": "치지직 미확인; SOOP ID API 확인",
+  "yt": {
+   "id": "",
+   "handle": "@girlzone_lingling"
+  },
+  "chzzk": {},
+  "soop": {
+   "id": "lingling2026",
+   "name": "링링lingling",
+   "followers": 1186
+  },
+  "fetched": "2026-10-27",
+  "history": {
+   "2026-10-27": 1186
+  }
+ },
+ "걸즈원|미미": {
+  "member": "미미",
+  "group": "걸즈원",
+  "agency": "트윈버스",
+  "status": "활동",
+  "note": "치지직 미확인; SOOP ID API 확인",
+  "yt": {
+   "id": "",
+   "handle": "@girlzone_mimi"
+  },
+  "chzzk": {},
+  "soop": {
+   "id": "mimi2025",
+   "name": "미미MIMI#",
+   "followers": 1329
+  },
+  "fetched": "2026-10-27",
+  "history": {
+   "2026-10-27": 1329
+  }
+ },
+ "걸즈원|아이링": {
+  "member": "아이링",
+  "group": "걸즈원",
+  "agency": "트윈버스",
+  "status": "활동",
+  "note": "치지직 미확인; SOOP ID API 확인",
+  "yt": {
+   "id": "",
+   "handle": "@girlzone_iring"
+  },
+  "chzzk": {},
+  "soop": {
+   "id": "iring2025",
+   "name": "아이링IRING",
+   "followers": 1162
+  },
+  "fetched": "2026-10-27",
+  "history": {
+   "2026-10-27": 1162
+  }
+ },
+ "걸즈원|춘리": {
+  "member": "춘리",
+  "group": "걸즈원",
+  "agency": "트윈버스",
+  "status": "활동",
+  "note": "유튜브 미확인; 치지직 미확인; SOOP ID API 확인",
+  "yt": {},
+  "chzzk": {},
+  "soop": {
+   "id": "chunli2025",
+   "name": "춘리CHUNLI",
+   "followers": 545
+  },
+  "fetched": "2026-10-27",
+  "history": {
+   "2026-10-27": 545
+  }
+ },
+ "걸즈원|블로썸": {
+  "member": "블로썸",
+  "group": "걸즈원",
+  "agency": "트윈버스",
+  "status": "활동",
+  "note": "유튜브 미확인; 치지직 미확인; SOOP ID API 확인",
+  "yt": {},
+  "chzzk": {},
+  "soop": {
+   "id": "blossom2025",
+   "name": "블로썸",
+   "followers": 677
+  },
+  "fetched": "2026-10-27",
+  "history": {
+   "2026-10-27": 677
+  }
+ },
+ "걸즈원|세라": {
+  "member": "세라",
+  "group": "걸즈원",
+  "agency": "트윈버스",
+  "status": "활동",
+  "note": "치지직 미확인; SOOP ID API 확인",
+  "yt": {
+   "id": "",
+   "handle": "@girlzone_sERA"
+  },
+  "chzzk": {},
+  "soop": {
+   "id": "sera2025",
+   "name": "세라SERA#",
+   "followers": 1549
+  },
+  "fetched": "2026-10-27",
+  "history": {
+   "2026-10-27": 1549
+  }
+ },
+ "레븐|감자가비": {
+  "member": "감자가비",
+  "group": "레븐",
+  "agency": "레븐(LEAVEN)",
+  "status": "크루",
+  "note": "치지직 미확인; 유튜브 미확인; SOOP ID API 확인",
+  "yt": {},
+  "chzzk": {},
+  "soop": {
+   "id": "doki0818",
+   "name": "감자가비",
+   "followers": 7871
+  },
+  "fetched": "2026-10-27",
+  "history": {
+   "2026-10-27": 7871
+  }
+ },
+ "레븐|구나구나": {
+  "member": "구나구나",
+  "group": "레븐",
+  "agency": "레븐(LEAVEN)",
+  "status": "크루",
+  "note": "치지직 미확인; 유튜브 미확인; SOOP ID API 확인",
+  "yt": {},
+  "chzzk": {},
+  "soop": {
+   "id": "ethereal321",
+   "name": "구나구나_",
+   "followers": 592
+  },
+  "fetched": "2026-10-27",
+  "history": {
+   "2026-10-27": 592
+  }
+ },
+ "레븐|김병살": {
+  "member": "김병살",
+  "group": "레븐",
+  "agency": "레븐(LEAVEN)",
+  "status": "크루",
+  "note": "치지직 미확인; SOOP ID API 확인",
+  "yt": {
+   "id": "",
+   "handle": "@김병살"
+  },
+  "chzzk": {},
+  "soop": {
+   "id": "kbs9981",
+   "name": "김병살",
+   "followers": 10960
+  },
+  "fetched": "2026-10-27",
+  "history": {
+   "2026-10-27": 10960
+  }
+ },
+ "레븐|비에타": {
+  "member": "비에타",
+  "group": "레븐",
+  "agency": "레븐(LEAVEN)",
+  "status": "크루",
+  "note": "나무위키 표기 SOOP ID ektha9511 API 조회 실패로 미확인; 치지직 미확인; 유튜브 미확인",
+  "yt": {},
+  "chzzk": {},
+  "soop": {},
+  "fetched": "",
+  "history": {}
+ },
+ "레븐|아드리챔": {
+  "member": "아드리챔",
+  "group": "레븐",
+  "agency": "레븐(LEAVEN)",
+  "status": "크루",
+  "note": "치지직 미확인; 유튜브 미확인; SOOP ID API 확인",
+  "yt": {},
+  "chzzk": {},
+  "soop": {
+   "id": "adricham",
+   "name": "아드리챔",
+   "followers": 277
+  },
+  "fetched": "2026-10-27",
+  "history": {
+   "2026-10-27": 277
+  }
+ },
+ "레븐|유달린": {
+  "member": "유달린",
+  "group": "레븐",
+  "agency": "레븐(LEAVEN)",
+  "status": "크루",
+  "note": "치지직 이적(SOOP yudarlinn 송출 중단); 치지직 API 확인",
+  "yt": {
+   "id": "UCuXubrozmGddYqiWcd4WlLQ",
+   "handle": ""
+  },
+  "chzzk": {
+   "id": "844d222a850ac5822a9a68870a24b786",
+   "name": "유달린",
+   "followers": 4946,
+   "verified": false
+  },
+  "soop": {},
+  "fetched": "2026-10-27",
+  "history": {
+   "2026-10-27": 4946
+  }
+ },
+ "레븐|해리": {
+  "member": "해리",
+  "group": "레븐",
+  "agency": "레븐(LEAVEN)",
+  "status": "크루",
+  "note": "치지직 미확인; SOOP ID API 확인",
+  "yt": {
+   "id": "",
+   "handle": "@Harry11099"
+  },
+  "chzzk": {},
+  "soop": {
+   "id": "gofl2237",
+   "name": "해리",
+   "followers": 37815
+  },
+  "fetched": "2026-10-27",
+  "history": {
+   "2026-10-27": 37815
+  }
+ },
+ "레븐|지야": {
+  "member": "지야",
+  "group": "레븐",
+  "agency": "레븐(LEAVEN)",
+  "status": "크루",
+  "note": "치지직 미확인; 유튜브 미확인; SOOP ID API 확인",
+  "yt": {},
+  "chzzk": {},
+  "soop": {
+   "id": "jeeyab",
+   "name": "지야",
+   "followers": 5590
+  },
+  "fetched": "2026-10-27",
+  "history": {
+   "2026-10-27": 5590
+  }
+ },
+ "레븐|포도당": {
+  "member": "포도당",
+  "group": "레븐",
+  "agency": "레븐(LEAVEN)",
+  "status": "크루",
+  "note": "치지직 미확인; 유튜브 미확인; SOOP ID API 확인",
+  "yt": {},
+  "chzzk": {},
+  "soop": {
+   "id": "archbebe",
+   "name": "포도당_",
+   "followers": 4088
+  },
+  "fetched": "2026-10-27",
+  "history": {
+   "2026-10-27": 4088
+  }
+ },
+ "레븐|구슬요": {
+  "member": "구슬요",
+  "group": "레븐",
+  "agency": "레븐(LEAVEN)",
+  "status": "졸업(2024.10)",
+  "note": "2024.10.29 레븐 졸업; 치지직 미확인; SOOP ID API 확인",
+  "yt": {
+   "id": "",
+   "handle": "@beadyo97"
+  },
+  "chzzk": {},
+  "soop": {
+   "id": "beadyo97",
+   "name": "구슬요",
+   "followers": 41547
+  },
+  "fetched": "2026-10-27",
+  "history": {
+   "2026-10-27": 41547
+  }
+ },
+ "HONEYZ|허니츄러스": {
+  "member": "허니츄러스",
+  "group": "HONEYZ",
+  "agency": "PROJECT [i]",
+  "status": "활동",
+  "note": "리더; 치지직 API 인증마크 확인; SOOP 미확인",
+  "yt": {
+   "id": "",
+   "handle": "@Honey__Churros"
+  },
+  "chzzk": {
+   "id": "c0d9723cbb75dc223c6aa8a9d4f56002",
+   "name": "허니츄러스",
+   "followers": 142312,
+   "verified": true
+  },
+  "soop": {},
+  "fetched": "2026-10-27",
+  "history": {
+   "2026-10-27": 142312
+  }
+ },
+ "HONEYZ|아야": {
+  "member": "아야",
+  "group": "HONEYZ",
+  "agency": "PROJECT [i]",
+  "status": "활동",
+  "note": "치지직 API 인증마크 확인; SOOP 미확인",
+  "yt": {
+   "id": "",
+   "handle": "@AyaUke_Projecti"
+  },
+  "chzzk": {
+   "id": "abe8aa82baf3d3ef54ad8468ee73e7fc",
+   "name": "아야 AyaUke",
+   "followers": 53210,
+   "verified": true
+  },
+  "soop": {},
+  "fetched": "2026-10-27",
+  "history": {
+   "2026-10-27": 53210
+  }
+ },
+ "HONEYZ|담유이": {
+  "member": "담유이",
+  "group": "HONEYZ",
+  "agency": "PROJECT [i]",
+  "status": "활동",
+  "note": "치지직 API 인증마크 확인; SOOP 미확인",
+  "yt": {
+   "id": "",
+   "handle": "@DamYui_Projecti"
+  },
+  "chzzk": {
+   "id": "b82e8bc2505e37156b2d1140ba1fc05c",
+   "name": "담유이",
+   "followers": 46558,
+   "verified": true
+  },
+  "soop": {},
+  "fetched": "2026-10-27",
+  "history": {
+   "2026-10-27": 46558
+  }
+ },
+ "HONEYZ|디디디용": {
+  "member": "디디디용",
+  "group": "HONEYZ",
+  "agency": "PROJECT [i]",
+  "status": "활동",
+  "note": "치지직 API 인증마크 확인; SOOP 미확인",
+  "yt": {
+   "id": "",
+   "handle": "@DDDDragon_Projecti"
+  },
+  "chzzk": {
+   "id": "798e100206987b59805cfb75f927e965",
+   "name": "디디디용",
+   "followers": 69068,
+   "verified": true
+  },
+  "soop": {},
+  "fetched": "2026-10-27",
+  "history": {
+   "2026-10-27": 69068
+  }
+ },
+ "HONEYZ|오화요": {
+  "member": "오화요",
+  "group": "HONEYZ",
+  "agency": "PROJECT [i]",
+  "status": "활동",
+  "note": "치지직 API 인증마크 확인; SOOP 미확인",
+  "yt": {
+   "id": "",
+   "handle": "@Ohwayo_Projecti"
+  },
+  "chzzk": {
+   "id": "65a53076fe1a39636082dd6dba8b8a4b",
+   "name": "오화요 Ohwayo",
+   "followers": 46959,
+   "verified": true
+  },
+  "soop": {},
+  "fetched": "2026-10-27",
+  "history": {
+   "2026-10-27": 46959
+  }
+ },
+ "HONEYZ|망내": {
+  "member": "망내",
+  "group": "HONEYZ",
+  "agency": "PROJECT [i]",
+  "status": "졸업(2026.09)",
+  "note": "2026.09.22 전속계약 위반으로 퇴출(계약종료); 치지직 API 확인; 유튜브 영상 비공개 처리; SOOP 미확인",
+  "yt": {
+   "id": "UCicn6yqObjHrCKWkKL70ALg",
+   "handle": ""
+  },
+  "chzzk": {
+   "id": "bd07973b6021d72512240c01a386d5c9",
+   "name": "망내",
+   "followers": 63773,
+   "verified": false
+  },
+  "soop": {},
+  "fetched": "2026-10-27",
+  "history": {
+   "2026-10-27": 63773
+  }
+ },
+ "러브다이아|빙하유": {
+  "member": "빙하유",
+  "group": "러브다이아",
+  "agency": "오버더월(3Y코퍼레이션)",
+  "status": "졸업(2026.10)",
+  "note": "오버더월 계약 종료(2026.10.18) 후 독립. 2026.11.15 활동 종료 예정(건강상 이유); 2026.10.18 오버더월 계약 만료로 독립(그룹 활동 지속); 치지직 API 확인; SOOP ID API 확인(치지직 이적 후 송출 중단)",
+  "yt": {
+   "id": "UCHdHTb5jgeH8jys5_Ebqsuw",
+   "handle": ""
+  },
+  "chzzk": {
+   "id": "a048127622edd6c3ee8e477471a1d823",
+   "name": "빙하유",
+   "followers": 54452,
+   "verified": false
+  },
+  "soop": {
+   "id": "binghayu",
+   "name": "빙하유",
+   "followers": 1842
+  },
+  "fetched": "2026-10-27",
+  "history": {
+   "2026-10-27": 54452
+  }
+ },
+ "러브다이아|양메이": {
+  "member": "양메이",
+  "group": "러브다이아",
+  "agency": "오버더월(3Y코퍼레이션)",
+  "status": "졸업(2026.10)",
+  "note": "오버더월 계약 종료(2026.10.18) 후 독립. 2026.10.18 오버더월 계약 만료로 독립(그룹 활동 지속); 치지직 API 확인; 유튜브 본채널은 채널명 양메이 Yangmei 기준; SOOP 미확인",
+  "yt": {
+   "id": "UCJGXPBjwQOvv4su8hB7TiuQ",
+   "handle": ""
+  },
+  "chzzk": {
+   "id": "f1869f490ddd660c420b2f57c649e6bb",
+   "name": "양메이",
+   "followers": 8897,
+   "verified": false
+  },
+  "soop": {},
+  "fetched": "2026-10-27",
+  "history": {
+   "2026-10-27": 8897
+  }
+ },
+ "러브다이아|유리리": {
+  "member": "유리리",
+  "group": "러브다이아",
+  "agency": "오버더월(3Y코퍼레이션)",
+  "status": "졸업(2026.10)",
+  "note": "오버더월 계약 종료(2026.10.18) 후 독립. 2026.10.18 오버더월 계약 만료로 독립(그룹 활동 지속); 치지직 API 확인; 유튜브 본채널 후보 2개(U-LiLi ch. 유리리 선택, UCYKj50FFG5zzjr4x_vky-9Q 유리리 U-Lili도 존재); SOOP 미확인",
+  "yt": {
+   "id": "UCISQ9DgJdyTUCMtBNC-dl4A",
+   "handle": ""
+  },
+  "chzzk": {
+   "id": "29a1ed5c0829fa620fab900dba7e011b",
+   "name": "유리리",
+   "followers": 9010,
+   "verified": false
+  },
+  "soop": {},
+  "fetched": "2026-10-27",
+  "history": {
+   "2026-10-27": 9010
+  }
+ },
+ "러브다이아|박도나": {
+  "member": "박도나",
+  "group": "러브다이아",
+  "agency": "오버더월(3Y코퍼레이션)",
+  "status": "졸업(2024.10)",
+  "note": "2024.10.10 계약 종료; 치지직 API 확인; SOOP 미확인",
+  "yt": {
+   "id": "UCH_l8M_51qq-AH0017vpNew",
+   "handle": ""
+  },
+  "chzzk": {
+   "id": "95a050b9250958bec51343e5ae24b8f4",
+   "name": "박도나",
+   "followers": 22772,
+   "verified": false
+  },
+  "soop": {},
+  "fetched": "2026-10-27",
+  "history": {
+   "2026-10-27": 22772
+  }
+ },
+ "러브다이아|이아니": {
+  "member": "이아니",
+  "group": "러브다이아",
+  "agency": "오버더월(3Y코퍼레이션)",
+  "status": "졸업(2024.10)",
+  "note": "2024.10.10 계약 종료; 치지직 API 확인(채널명 이 아니); 유튜브·SOOP 미확인",
+  "yt": {},
+  "chzzk": {
+   "id": "eef5c2238f1667a915855c644ac4f975",
+   "name": "이 아니",
+   "followers": 10621,
+   "verified": false
+  },
+  "soop": {},
+  "fetched": "2026-10-27",
+  "history": {
+   "2026-10-27": 10621
+  }
+ },
+ "이브닛|여르미": {
+  "member": "여르미",
+  "group": "이브닛",
+  "agency": "AkaiV Studio",
+  "status": "활동",
+  "note": "리더; 치지직 미확인; SOOP ID API 확인",
+  "yt": {
+   "id": "",
+   "handle": "@Yeorumi"
+  },
+  "chzzk": {},
+  "soop": {
+   "id": "yeorumi030",
+   "name": "여르미_",
+   "followers": 45581
+  },
+  "fetched": "2026-10-27",
+  "history": {
+   "2026-10-27": 45581
+  }
+ },
+ "이브닛|u32": {
+  "member": "u32",
+  "group": "이브닛",
+  "agency": "AkaiV Studio",
+  "status": "활동",
+  "note": "치지직 미확인; SOOP ID API 확인",
+  "yt": {
+   "id": "",
+   "handle": "@u32S2"
+  },
+  "chzzk": {},
+  "soop": {
+   "id": "u3ams2",
+   "name": "u32",
+   "followers": 17620
+  },
+  "fetched": "2026-10-27",
+  "history": {
+   "2026-10-27": 17620
+  }
+ },
+ "이브닛|한결": {
+  "member": "한결",
+  "group": "이브닛",
+  "agency": "AkaiV Studio",
+  "status": "활동",
+  "note": "치지직 미확인; SOOP ID API 확인",
+  "yt": {
+   "id": "",
+   "handle": "@hangyeol8008"
+  },
+  "chzzk": {},
+  "soop": {
+   "id": "kaksjak0730",
+   "name": "한결___",
+   "followers": 57658
+  },
+  "fetched": "2026-10-27",
+  "history": {
+   "2026-10-27": 57658
+  }
+ },
+ "이브닛|비몽": {
+  "member": "비몽",
+  "group": "이브닛",
+  "agency": "AkaiV Studio",
+  "status": "활동",
+  "note": "치지직 미확인; SOOP ID API 확인",
+  "yt": {
+   "id": "",
+   "handle": "@beemong_"
+  },
+  "chzzk": {},
+  "soop": {
+   "id": "beemong",
+   "name": "비몽♪",
+   "followers": 37114
+  },
+  "fetched": "2026-10-27",
+  "history": {
+   "2026-10-27": 37114
+  }
+ },
+ "이브닛|샤르망": {
+  "member": "샤르망",
+  "group": "이브닛",
+  "agency": "AkaiV Studio",
+  "status": "활동",
+  "note": "치지직 미확인; SOOP ID API 확인",
+  "yt": {
+   "id": "",
+   "handle": "@owo_zzzz"
+  },
+  "chzzk": {},
+  "soop": {
+   "id": "owozzz",
+   "name": "샤르망",
+   "followers": 41095
+  },
+  "fetched": "2026-10-27",
+  "history": {
+   "2026-10-27": 41095
+  }
+ },
+ "UR:L|솜먕": {
+  "member": "솜먕",
+  "group": "UR:L",
+  "agency": "샌드박스 네트워크",
+  "status": "활동",
+  "note": "치지직 미확인; SOOP ID API 확인",
+  "yt": {
+   "id": "",
+   "handle": "@sommyang"
+  },
+  "chzzk": {},
+  "soop": {
+   "id": "myang0315",
+   "name": "솜먕",
+   "followers": 10143
+  },
+  "fetched": "2026-10-27",
+  "history": {
+   "2026-10-27": 10143
+  }
+ },
+ "UR:L|마냥": {
+  "member": "마냥",
+  "group": "UR:L",
+  "agency": "샌드박스 네트워크",
+  "status": "활동",
+  "note": "치지직 미확인; SOOP ID API 확인",
+  "yt": {
+   "id": "",
+   "handle": "@마냥"
+  },
+  "chzzk": {},
+  "soop": {
+   "id": "maluckitty",
+   "name": "마냥_",
+   "followers": 23160
+  },
+  "fetched": "2026-10-27",
+  "history": {
+   "2026-10-27": 23160
+  }
+ },
+ "UR:L|랑코": {
+  "member": "랑코",
+  "group": "UR:L",
+  "agency": "샌드박스 네트워크",
+  "status": "활동",
+  "note": "치지직 미확인; SOOP ID API 확인",
+  "yt": {
+   "id": "",
+   "handle": "@1langkko"
+  },
+  "chzzk": {},
+  "soop": {
+   "id": "llangkko0429",
+   "name": "랑코_",
+   "followers": 12527
+  },
+  "fetched": "2026-10-27",
+  "history": {
+   "2026-10-27": 12527
+  }
+ },
+ "UR:L|모카": {
+  "member": "모카",
+  "group": "UR:L",
+  "agency": "샌드박스 네트워크",
+  "status": "활동",
+  "note": "치지직 미확인; SOOP ID API 확인",
+  "yt": {
+   "id": "",
+   "handle": "@mocamu2"
+  },
+  "chzzk": {},
+  "soop": {
+   "id": "mocamu2",
+   "name": "모카:b",
+   "followers": 20098
+  },
+  "fetched": "2026-10-27",
+  "history": {
+   "2026-10-27": 20098
+  }
+ },
+ "UR:L|바밍": {
+  "member": "바밍",
+  "group": "UR:L",
+  "agency": "샌드박스 네트워크",
+  "status": "졸업(2025.06)",
+  "note": "2025.06.12 데뷔 전 개인 사정으로 하차; 채널 미확인",
+  "yt": {},
+  "chzzk": {},
+  "soop": {},
+  "fetched": "",
+  "history": {}
+ },
+ "플라네타|아마네 나기": {
+  "member": "아마네 나기",
+  "group": "플라네타",
+  "agency": "인챈트 엔터테인먼트",
+  "status": "활동",
+  "note": "1기 DENEB; 치지직 API 확인(채널명 아마네 나기 Planeta); SOOP 미확인",
+  "yt": {
+   "id": "",
+   "handle": "@amanenagi"
+  },
+  "chzzk": {
+   "id": "941ea3807ba8b9b7dddb1670e3e7e5af",
+   "name": "아마네 나기 Planeta",
+   "followers": 16534,
+   "verified": false
+  },
+  "soop": {},
+  "fetched": "2026-10-27",
+  "history": {
+   "2026-10-27": 16534
+  }
+ },
+ "플라네타|카네코 파냐": {
+  "member": "카네코 파냐",
+  "group": "플라네타",
+  "agency": "인챈트 엔터테인먼트",
+  "status": "활동",
+  "note": "1기 DENEB; 치지직 API 확인(채널명 카네코 파냐 Planeta); SOOP 미확인",
+  "yt": {
+   "id": "",
+   "handle": "@kanekopanya"
+  },
+  "chzzk": {
+   "id": "5ead7124638ac4c568f2cde0224b3b6b",
+   "name": "카네코 파냐 Planeta",
+   "followers": 18621,
+   "verified": false
+  },
+  "soop": {},
+  "fetched": "2026-10-27",
+  "history": {
+   "2026-10-27": 18621
+  }
+ },
+ "플라네타|치치": {
+  "member": "치치",
+  "group": "플라네타",
+  "agency": "인챈트 엔터테인먼트",
+  "status": "활동",
+  "note": "1기 DENEB; 치지직 API 확인(채널명 치치 Planeta); SOOP 미확인",
+  "yt": {
+   "id": "",
+   "handle": "@tanuki_0005"
+  },
+  "chzzk": {
+   "id": "d5e2e0c14dcca4c4b10c7c9633022f52",
+   "name": "치치 Planeta",
+   "followers": 21870,
+   "verified": false
+  },
+  "soop": {},
+  "fetched": "2026-10-27",
+  "history": {
+   "2026-10-27": 21870
+  }
+ },
+ "플라네타|쿠온 레이": {
+  "member": "쿠온 레이",
+  "group": "플라네타",
+  "agency": "인챈트 엔터테인먼트",
+  "status": "활동",
+  "note": "1기 DENEB; 치지직 API 확인(채널명 쿠온 레이 Planeta); SOOP 미확인",
+  "yt": {
+   "id": "",
+   "handle": "@kuon_rei"
+  },
+  "chzzk": {
+   "id": "59aa824e4c4a56dd51e7a5e2e9172648",
+   "name": "쿠온 레이 Planeta",
+   "followers": 17022,
+   "verified": false
+  },
+  "soop": {},
+  "fetched": "2026-10-27",
+  "history": {
+   "2026-10-27": 17022
+  }
+ },
+ "V-LUP(크리에이터버스)|시트리": {
+  "member": "시트리",
+  "group": "V-LUP(크리에이터버스)",
+  "agency": "크리에이터버스",
+  "status": "활동",
+  "note": "유튜브 본채널 미확인(공식사이트엔 다시보기 @sitry_archive만); 2026.10 SOOP 영구정지 후 치지직 이적; 치지직 API '시트리 VLUP' 1500명 SOOP vlupsitry 조회 불가(2026-10-28, 폐쇄 추정)",
+  "yt": {},
+  "chzzk": {
+   "id": "1762e0be34c62282013fde84208d0459",
+   "name": "시트리 VLUP",
+   "followers": 1509,
+   "verified": false
+  },
+  "soop": {},
+  "fetched": "2026-10-27",
+  "history": {
+   "2026-10-27": 1509
+  }
+ },
+ "V-LUP(크리에이터버스)|리미": {
+  "member": "리미",
+  "group": "V-LUP(크리에이터버스)",
+  "agency": "크리에이터버스",
+  "status": "활동",
+  "note": "치지직 API '리미 VLUP' 6306명",
+  "yt": {
+   "id": "",
+   "handle": "@Limi_vlup"
+  },
+  "chzzk": {
+   "id": "46d2e17ad675cb9c22546e11e9010ff2",
+   "name": "리미 VLUP",
+   "followers": 6308,
+   "verified": false
+  },
+  "soop": {},
+  "fetched": "2026-10-27",
+  "history": {
+   "2026-10-27": 6308
+  }
+ },
+ "V-LUP(크리에이터버스)|헤도": {
+  "member": "헤도",
+  "group": "V-LUP(크리에이터버스)",
+  "agency": "크리에이터버스",
+  "status": "활동",
+  "note": "치지직 API '헤도 VLUP' 971명",
+  "yt": {
+   "id": "",
+   "handle": "@heado_vlup"
+  },
+  "chzzk": {
+   "id": "a2818ad9ce87690868c3e6b60f3e33d0",
+   "name": "헤도 VLUP",
+   "followers": 973,
+   "verified": false
+  },
+  "soop": {},
+  "fetched": "2026-10-27",
+  "history": {
+   "2026-10-27": 973
+  }
+ },
+ "V-LUP(크리에이터버스)|키키모라": {
+  "member": "키키모라",
+  "group": "V-LUP(크리에이터버스)",
+  "agency": "크리에이터버스",
+  "status": "활동",
+  "note": "치지직 API '키키모라 VLUP' 1063명",
+  "yt": {
+   "id": "",
+   "handle": "@kikimora_vlup"
+  },
+  "chzzk": {
+   "id": "057813a95807a252872ab2b4d84f7f9d",
+   "name": "키키모라 VLUP",
+   "followers": 1063,
+   "verified": false
+  },
+  "soop": {},
+  "fetched": "2026-10-27",
+  "history": {
+   "2026-10-27": 1063
+  }
+ },
+ "V-LUP(크리에이터버스)|이주인": {
+  "member": "이주인",
+  "group": "V-LUP(크리에이터버스)",
+  "agency": "크리에이터버스",
+  "status": "졸업(2026.07)",
+  "note": "치지직 미확인",
+  "yt": {
+   "id": "",
+   "handle": "@jooin_vlup"
+  },
+  "chzzk": {},
+  "soop": {
+   "id": "jooinvlup",
+   "name": "이주인",
+   "followers": 17944
+  },
+  "fetched": "2026-10-27",
+  "history": {
+   "2026-10-27": 17944
+  }
+ },
+ "V-LUP(크리에이터버스)|노이": {
+  "member": "노이",
+  "group": "V-LUP(크리에이터버스)",
+  "agency": "크리에이터버스",
+  "status": "졸업(2026.02)",
+  "note": "치지직 API '노이 VLUP' 97명 SOOP noivlup 조회 불가(2026-10-28, 폐쇄 추정)",
+  "yt": {
+   "id": "",
+   "handle": "@noi_vlup"
+  },
+  "chzzk": {
+   "id": "0e6cedcaf93cd784f07dd5f99357c3da",
+   "name": "노이 VLUP",
+   "followers": 97,
+   "verified": false
+  },
+  "soop": {},
+  "fetched": "2026-10-27",
+  "history": {
+   "2026-10-27": 97
+  }
+ },
+ "V-LUP(크리에이터버스)|이아나 이그노시스": {
+  "member": "이아나 이그노시스",
+  "group": "V-LUP(크리에이터버스)",
+  "agency": "크리에이터버스",
+  "status": "졸업(2026.01)",
+  "note": "치지직 채널 현재 '(알 수 없음)' 표시(비활성 추정) SOOP ianavlup 조회 불가(2026-10-28, 폐쇄 추정)",
+  "yt": {
+   "id": "",
+   "handle": "@iana_vlup"
+  },
+  "chzzk": {},
+  "soop": {},
+  "fetched": "",
+  "history": {}
+ },
+ "V-LUP(크리에이터버스)|라즈": {
+  "member": "라즈",
+  "group": "V-LUP(크리에이터버스)",
+  "agency": "크리에이터버스",
+  "status": "졸업(2025.11)",
+  "note": "치지직 미확인 SOOP razvlup 조회 불가(2026-10-28, 폐쇄 추정)",
+  "yt": {
+   "id": "",
+   "handle": "@Raz_vlup"
+  },
+  "chzzk": {},
+  "soop": {},
+  "fetched": "",
+  "history": {}
+ },
+ "V-LUP(크리에이터버스)|벨디르": {
+  "member": "벨디르",
+  "group": "V-LUP(크리에이터버스)",
+  "agency": "크리에이터버스",
+  "status": "졸업(2025.10)",
+  "note": "치지직 API '벨디르 VLUP' 1683명",
+  "yt": {
+   "id": "",
+   "handle": "@beldir_vlup"
+  },
+  "chzzk": {
+   "id": "37663eab7717fc45522773cdaa302893",
+   "name": "벨디르 VLUP",
+   "followers": 1683,
+   "verified": false
+  },
+  "soop": {
+   "id": "beldir",
+   "name": "벨디르_",
+   "followers": 2803
+  },
+  "fetched": "2026-10-27",
+  "history": {
+   "2026-10-27": 2803
+  }
+ },
+ "V-LUP(크리에이터버스)|다프네": {
+  "member": "다프네",
+  "group": "V-LUP(크리에이터버스)",
+  "agency": "크리에이터버스",
+  "status": "졸업(2024.02)",
+  "note": "치지직·SOOP 미확인",
+  "yt": {
+   "id": "",
+   "handle": "@daphne_vlup"
+  },
+  "chzzk": {},
+  "soop": {},
+  "fetched": "",
+  "history": {}
+ },
+ "V-LUP(크리에이터버스)|메메": {
+  "member": "메메",
+  "group": "V-LUP(크리에이터버스)",
+  "agency": "크리에이터버스",
+  "status": "졸업(2023.12)",
+  "note": "채널 미확인",
+  "yt": {},
+  "chzzk": {},
+  "soop": {},
+  "fetched": "",
+  "history": {}
+ },
+ "V-LUP(크리에이터버스)|야호": {
+  "member": "야호",
+  "group": "V-LUP(크리에이터버스)",
+  "agency": "크리에이터버스",
+  "status": "졸업(2023.08)",
+  "note": "채널 미확인",
+  "yt": {},
+  "chzzk": {},
+  "soop": {},
+  "fetched": "",
+  "history": {}
+ },
+ "V-LUP(크리에이터버스)|유연": {
+  "member": "유연",
+  "group": "V-LUP(크리에이터버스)",
+  "agency": "크리에이터버스",
+  "status": "졸업(2022.05)",
+  "note": "채널 미확인",
+  "yt": {},
+  "chzzk": {},
+  "soop": {},
+  "fetched": "",
+  "history": {}
+ },
+ "V-LUP(크리에이터버스)|아리멍뭉": {
+  "member": "아리멍뭉",
+  "group": "V-LUP(크리에이터버스)",
+  "agency": "크리에이터버스",
+  "status": "졸업(2021.06)",
+  "note": "채널 미확인",
+  "yt": {},
+  "chzzk": {},
+  "soop": {},
+  "fetched": "",
+  "history": {}
+ },
+ "미츄(스콘)|이오몽": {
+  "member": "이오몽",
+  "group": "미츄(스콘)",
+  "agency": "스콘",
+  "status": "활동",
+  "note": "치지직 API 92652명",
+  "yt": {
+   "id": "",
+   "handle": "@이오몽"
+  },
+  "chzzk": {
+   "id": "d2fb83a5db130bf4d273c981b82ca41f",
+   "name": "이오몽",
+   "followers": 92680,
+   "verified": false
+  },
+  "soop": {
+   "id": "2omong",
+   "name": "이오몽_",
+   "followers": 53401
+  },
+  "fetched": "2026-10-27",
+  "history": {
+   "2026-10-27": 92680
+  }
+ },
+ "미츄(스콘)|마젯": {
+  "member": "마젯",
+  "group": "미츄(스콘)",
+  "agency": "스콘",
+  "status": "활동",
+  "note": "치지직 API 27391명",
+  "yt": {
+   "id": "",
+   "handle": "@마젯"
+  },
+  "chzzk": {
+   "id": "9ff4bdc7aa4f3384e84db402bc128b0c",
+   "name": "마젯",
+   "followers": 27393,
+   "verified": false
+  },
+  "soop": {},
+  "fetched": "2026-10-27",
+  "history": {
+   "2026-10-27": 27393
+  }
+ },
+ "미츄(스콘)|미녕이데려오깨": {
+  "member": "미녕이데려오깨",
+  "group": "미츄(스콘)",
+  "agency": "스콘",
+  "status": "활동",
+  "note": "치지직 API 63917명",
+  "yt": {
+   "id": "",
+   "handle": "@미녕이데려오깨"
+  },
+  "chzzk": {
+   "id": "c7d3b49d29be2d2b1d74ba8403f5851a",
+   "name": "미녕이데려오깨",
+   "followers": 63921,
+   "verified": false
+  },
+  "soop": {
+   "id": "givemecs",
+   "name": "미녕이데꼬깨",
+   "followers": 18809
+  },
+  "fetched": "2026-10-27",
+  "history": {
+   "2026-10-27": 63921
+  }
+ },
+ "미츄(스콘)|앵보": {
+  "member": "앵보",
+  "group": "미츄(스콘)",
+  "agency": "스콘",
+  "status": "활동",
+  "note": "치지직 API 59502명",
+  "yt": {
+   "id": "",
+   "handle": "@앵보"
+  },
+  "chzzk": {
+   "id": "41d1490bd67b3818d7dc53427a4d6cea",
+   "name": "앵보",
+   "followers": 59504,
+   "verified": false
+  },
+  "soop": {},
+  "fetched": "2026-10-27",
+  "history": {
+   "2026-10-27": 59504
+  }
+ },
+ "미츄(스콘)|세노": {
+  "member": "세노",
+  "group": "미츄(스콘)",
+  "agency": "스콘",
+  "status": "활동",
+  "note": "치지직 API '세노 SEN5' 27407명",
+  "yt": {
+   "id": "",
+   "handle": "@세노"
+  },
+  "chzzk": {
+   "id": "fb3220c02c64d799b31e97f432afebc0",
+   "name": "세노 SEN5",
+   "followers": 27408,
+   "verified": false
+  },
+  "soop": {},
+  "fetched": "2026-10-27",
+  "history": {
+   "2026-10-27": 27408
+  }
+ },
+ "미츄(스콘)|위도": {
+  "member": "위도",
+  "group": "미츄(스콘)",
+  "agency": "스콘",
+  "status": "활동",
+  "note": "치지직 API 26772명",
+  "yt": {
+   "id": "",
+   "handle": "@위도"
+  },
+  "chzzk": {
+   "id": "d7c83d4ce76a835ba79e27e5e46cb3e2",
+   "name": "위도",
+   "followers": 26773,
+   "verified": false
+  },
+  "soop": {},
+  "fetched": "2026-10-27",
+  "history": {
+   "2026-10-27": 26773
+  }
+ },
+ "미츄(스콘)|모아": {
+  "member": "모아",
+  "group": "미츄(스콘)",
+  "agency": "스콘",
+  "status": "활동",
+  "note": "치지직 API 25639명",
+  "yt": {
+   "id": "",
+   "handle": "@모아"
+  },
+  "chzzk": {
+   "id": "61958008140886fe1eda9910cfef5812",
+   "name": "모 아",
+   "followers": 25640,
+   "verified": false
+  },
+  "soop": {},
+  "fetched": "2026-10-27",
+  "history": {
+   "2026-10-27": 25640
+  }
+ },
+ "미츄(스콘)|부쿠키": {
+  "member": "부쿠키",
+  "group": "미츄(스콘)",
+  "agency": "스콘",
+  "status": "활동",
+  "note": "치지직 API 74246명",
+  "yt": {
+   "id": "",
+   "handle": "@부쿠키00"
+  },
+  "chzzk": {
+   "id": "f2fd35b4bce38e375cd77b6a6904b4a4",
+   "name": "부쿠키",
+   "followers": 74251,
+   "verified": false
+  },
+  "soop": {
+   "id": "bukuki00",
+   "name": "부쿠키",
+   "followers": 9785
+  },
+  "fetched": "2026-10-27",
+  "history": {
+   "2026-10-27": 74251
+  }
+ },
+ "미츄(스콘)|하지유": {
+  "member": "하지유",
+  "group": "미츄(스콘)",
+  "agency": "스콘",
+  "status": "활동",
+  "note": "치지직 API 18192명",
+  "yt": {
+   "id": "",
+   "handle": "@하지유w"
+  },
+  "chzzk": {
+   "id": "b3f0dd09666949762e0da59210c3f403",
+   "name": "하지유",
+   "followers": 18193,
+   "verified": false
+  },
+  "soop": {},
+  "fetched": "2026-10-27",
+  "history": {
+   "2026-10-27": 18193
+  }
+ },
+ "미츄(스콘)|희지": {
+  "member": "희지",
+  "group": "미츄(스콘)",
+  "agency": "스콘",
+  "status": "활동",
+  "note": "치지직 API 16292명",
+  "yt": {
+   "id": "",
+   "handle": "@희지_Heezy"
+  },
+  "chzzk": {
+   "id": "0d7600fc87a6a8621d5149d12da58ef8",
+   "name": "희 지",
+   "followers": 16292,
+   "verified": false
+  },
+  "soop": {},
+  "fetched": "2026-10-27",
+  "history": {
+   "2026-10-27": 16292
+  }
+ },
+ "미츄(스콘)|아쿠루": {
+  "member": "아쿠루",
+  "group": "미츄(스콘)",
+  "agency": "스콘",
+  "status": "졸업(2026.04)",
+  "note": "치지직 API 11564명",
+  "yt": {
+   "id": "",
+   "handle": "@아쿠루"
+  },
+  "chzzk": {
+   "id": "78cc61cc55bb3fad7f027d717ce61630",
+   "name": "아쿠루",
+   "followers": 11564,
+   "verified": false
+  },
+  "soop": {},
+  "fetched": "2026-10-27",
+  "history": {
+   "2026-10-27": 11564
+  }
+ },
+ "미츄(스콘)|초깨비": {
+  "member": "초깨비",
+  "group": "미츄(스콘)",
+  "agency": "스콘",
+  "status": "졸업(2026.04)",
+  "note": "스콘 개인 크리에이터로 소속 변경; 치지직 API 8637명 SOOP nater0820 조회 불가(2026-10-28, 폐쇄 추정)",
+  "yt": {
+   "id": "",
+   "handle": "@choggebi"
+  },
+  "chzzk": {
+   "id": "58fbc220638009db28385db1112d22df",
+   "name": "초깨비",
+   "followers": 8637,
+   "verified": false
+  },
+  "soop": {},
+  "fetched": "2026-10-27",
+  "history": {
+   "2026-10-27": 8637
+  }
+ },
+ "미츄(스콘)|가민": {
+  "member": "가민",
+  "group": "미츄(스콘)",
+  "agency": "스콘",
+  "status": "졸업(2025.12)",
+  "note": "스콘 개인 크리에이터로 소속 변경; 유튜브 미확인; 치지직 API '가 민' 2840명",
+  "yt": {},
+  "chzzk": {
+   "id": "ea0d508d8a5ce8fb0e2d4580dd9ff066",
+   "name": "가 민",
+   "followers": 2840,
+   "verified": false
+  },
+  "soop": {},
+  "fetched": "2026-10-27",
+  "history": {
+   "2026-10-27": 2840
+  }
+ },
+ "미츄(스콘)|오요": {
+  "member": "오요",
+  "group": "미츄(스콘)",
+  "agency": "스콘",
+  "status": "졸업(2025.10)",
+  "note": "치지직 API 10086명",
+  "yt": {
+   "id": "",
+   "handle": "@오요"
+  },
+  "chzzk": {
+   "id": "623c408c07bbf5b3c1a989afcffe079a",
+   "name": "오요 8Y8",
+   "followers": 10086,
+   "verified": false
+  },
+  "soop": {
+   "id": "oyobbbz",
+   "name": "오요OYO",
+   "followers": 5240
+  },
+  "fetched": "2026-10-27",
+  "history": {
+   "2026-10-27": 10086
+  }
+ },
+ "미츄(스콘)|김루야": {
+  "member": "김루야",
+  "group": "미츄(스콘)",
+  "agency": "스콘",
+  "status": "졸업(2025.09)",
+  "note": "유튜브 미확인; 치지직은 API 동명 단독결과('씨미로 이적') 3300명",
+  "yt": {},
+  "chzzk": {
+   "id": "324423cf78e5f3cd04423453cf8f1299",
+   "name": "김루야",
+   "followers": 3300,
+   "verified": false
+  },
+  "soop": {},
+  "fetched": "2026-10-27",
+  "history": {
+   "2026-10-27": 3300
+  }
+ },
+ "미츄(스콘)|탐랑": {
+  "member": "탐랑",
+  "group": "미츄(스콘)",
+  "agency": "스콘",
+  "status": "졸업(2024.12)",
+  "note": "유튜브 미확인; 치지직 API 4283명",
+  "yt": {},
+  "chzzk": {
+   "id": "fc62be23517b28eb8c554370aa1eca56",
+   "name": "탐랑",
+   "followers": 4283,
+   "verified": false
+  },
+  "soop": {},
+  "fetched": "2026-10-27",
+  "history": {
+   "2026-10-27": 4283
+  }
+ },
+ "미츄(스콘)|치요": {
+  "member": "치요",
+  "group": "미츄(스콘)",
+  "agency": "스콘",
+  "status": "졸업(2024.11)",
+  "note": "치지직 미확인; 이후 크로아(악어크루) 합류",
+  "yt": {
+   "id": "",
+   "handle": "@Chiyo75"
+  },
+  "chzzk": {},
+  "soop": {
+   "id": "chiyo75",
+   "name": "치요∀",
+   "followers": 16058
+  },
+  "fetched": "2026-10-27",
+  "history": {
+   "2026-10-27": 16058
+  }
+ },
+ "미츄(스콘)|니즈": {
+  "member": "니즈",
+  "group": "미츄(스콘)",
+  "agency": "스콘",
+  "status": "졸업(2024.02)",
+  "note": "채널 미확인",
+  "yt": {},
+  "chzzk": {},
+  "soop": {},
+  "fetched": "",
+  "history": {}
+ },
+ "블루점프|제갈금자": {
+  "member": "제갈금자",
+  "group": "블루점프",
+  "agency": "스콘",
+  "status": "활동",
+  "note": "SOOP 중심, 치지직 미확인",
+  "yt": {
+   "id": "",
+   "handle": "@제갈금자"
+  },
+  "chzzk": {},
+  "soop": {
+   "id": "dlsn9911",
+   "name": "제갈금자",
+   "followers": 71645
+  },
+  "fetched": "2026-10-27",
+  "history": {
+   "2026-10-27": 71645
+  }
+ },
+ "블루점프|모구구": {
+  "member": "모구구",
+  "group": "블루점프",
+  "agency": "스콘",
+  "status": "활동",
+  "note": "SOOP 중심, 치지직 미확인",
+  "yt": {
+   "id": "",
+   "handle": "@모구구"
+  },
+  "chzzk": {},
+  "soop": {
+   "id": "9mogu9",
+   "name": "모구구",
+   "followers": 26708
+  },
+  "fetched": "2026-10-27",
+  "history": {
+   "2026-10-27": 26708
+  }
+ },
+ "블루점프|하로하": {
+  "member": "하로하",
+  "group": "블루점프",
+  "agency": "스콘",
+  "status": "활동",
+  "note": "SOOP 중심, 치지직 미확인",
+  "yt": {
+   "id": "",
+   "handle": "@haroha11"
+  },
+  "chzzk": {},
+  "soop": {
+   "id": "haroha",
+   "name": "하로하!",
+   "followers": 18914
+  },
+  "fetched": "2026-10-27",
+  "history": {
+   "2026-10-27": 18914
+  }
+ },
+ "블루점프|누눙지": {
+  "member": "누눙지",
+  "group": "블루점프",
+  "agency": "스콘",
+  "status": "활동",
+  "note": "SOOP 중심, 치지직 미확인",
+  "yt": {
+   "id": "",
+   "handle": "@누눙지"
+  },
+  "chzzk": {},
+  "soop": {
+   "id": "kgoyangyeeee",
+   "name": "누눙지",
+   "followers": 35449
+  },
+  "fetched": "2026-10-27",
+  "history": {
+   "2026-10-27": 35449
+  }
+ },
+ "블루점프|마로니": {
+  "member": "마로니",
+  "group": "블루점프",
+  "agency": "스콘",
+  "status": "활동",
+  "note": "SOOP 중심, 치지직 미확인",
+  "yt": {
+   "id": "",
+   "handle": "@marronie318"
+  },
+  "chzzk": {},
+  "soop": {
+   "id": "marronie",
+   "name": "마로니!",
+   "followers": 25300
+  },
+  "fetched": "2026-10-27",
+  "history": {
+   "2026-10-27": 25300
+  }
+ },
+ "블루점프|양도끼": {
+  "member": "양도끼",
+  "group": "블루점프",
+  "agency": "스콘",
+  "status": "활동",
+  "note": "4기생 연습생(데뷔 예정); 치지직 미확인",
+  "yt": {
+   "id": "",
+   "handle": "@양도끼"
+  },
+  "chzzk": {},
+  "soop": {
+   "id": "yangdoki",
+   "name": "양도끼",
+   "followers": 43297
+  },
+  "fetched": "2026-10-27",
+  "history": {
+   "2026-10-27": 43297
+  }
+ },
+ "블루점프|리리안": {
+  "member": "리리안",
+  "group": "블루점프",
+  "agency": "스콘",
+  "status": "졸업(2025.09)",
+  "note": "JP 멤버, 채널 미확인",
+  "yt": {},
+  "chzzk": {},
+  "soop": {},
+  "fetched": "",
+  "history": {}
+ },
+ "블루점프|나인틴": {
+  "member": "나인틴",
+  "group": "블루점프",
+  "agency": "스콘",
+  "status": "졸업(2025.09)",
+  "note": "EN 멤버, 채널 미확인",
+  "yt": {},
+  "chzzk": {},
+  "soop": {},
+  "fetched": "",
+  "history": {}
+ },
+ "헥시아(스콘)|마무": {
+  "member": "마무",
+  "group": "헥시아(스콘)",
+  "agency": "스콘",
+  "status": "활동",
+  "note": "치지직 API 7778명",
+  "yt": {
+   "id": "",
+   "handle": "@H_Mamuu"
+  },
+  "chzzk": {
+   "id": "902744ac298720925b661711d76f7133",
+   "name": "마무 Mamuu",
+   "followers": 7778,
+   "verified": false
+  },
+  "soop": {},
+  "fetched": "2026-10-27",
+  "history": {
+   "2026-10-27": 7778
+  }
+ },
+ "헥시아(스콘)|아즈": {
+  "member": "아즈",
+  "group": "헥시아(스콘)",
+  "agency": "스콘",
+  "status": "활동",
+  "note": "치지직 API '아 즈 AZ' 10926명",
+  "yt": {
+   "id": "",
+   "handle": "@H_AzZZ"
+  },
+  "chzzk": {
+   "id": "e2640468861f80d658873c25dc69e32b",
+   "name": "아 즈 AZ",
+   "followers": 10926,
+   "verified": false
+  },
+  "soop": {},
+  "fetched": "2026-10-27",
+  "history": {
+   "2026-10-27": 10926
+  }
+ },
+ "헥시아(스콘)|루시": {
+  "member": "루시",
+  "group": "헥시아(스콘)",
+  "agency": "스콘",
+  "status": "활동",
+  "note": "치지직 API 9563명",
+  "yt": {
+   "id": "",
+   "handle": "@H_Luci"
+  },
+  "chzzk": {
+   "id": "0b0dd269c4663fc36ee1eef8a8b1bea4",
+   "name": "루시 Luci",
+   "followers": 9563,
+   "verified": false
+  },
+  "soop": {},
+  "fetched": "2026-10-27",
+  "history": {
+   "2026-10-27": 9563
+  }
+ },
+ "헥시아(스콘)|레비얀": {
+  "member": "레비얀",
+  "group": "헥시아(스콘)",
+  "agency": "스콘",
+  "status": "활동",
+  "note": "치지직 API 6432명",
+  "yt": {
+   "id": "",
+   "handle": "@H_Leviyan"
+  },
+  "chzzk": {
+   "id": "bbe12c4cd654528048568aca4e5e6166",
+   "name": "레비얀 Leviyan",
+   "followers": 6432,
+   "verified": false
+  },
+  "soop": {},
+  "fetched": "2026-10-27",
+  "history": {
+   "2026-10-27": 6432
+  }
+ },
+ "헥시아(스콘)|삿땅": {
+  "member": "삿땅",
+  "group": "헥시아(스콘)",
+  "agency": "스콘",
+  "status": "활동",
+  "note": "유튜브 미확인; 치지직 API 'SCON HEXIA 소속' 3428명",
+  "yt": {},
+  "chzzk": {
+   "id": "cdedd10b0a6c0c007a028a4f15c82ad1",
+   "name": "삿땅 Sattan",
+   "followers": 3428,
+   "verified": false
+  },
+  "soop": {},
+  "fetched": "2026-10-27",
+  "history": {
+   "2026-10-27": 3428
+  }
+ },
+ "헥시아(스콘)|베르": {
+  "member": "베르",
+  "group": "헥시아(스콘)",
+  "agency": "스콘",
+  "status": "졸업(2026.10)",
+  "note": "채널 미확인",
+  "yt": {},
+  "chzzk": {},
+  "soop": {},
+  "fetched": "",
+  "history": {}
+ },
+ "헥시아(스콘)|에린": {
+  "member": "에린",
+  "group": "헥시아(스콘)",
+  "agency": "스콘",
+  "status": "졸업(2026.07)",
+  "note": "채널 미확인",
+  "yt": {},
+  "chzzk": {},
+  "soop": {},
+  "fetched": "",
+  "history": {}
+ },
+ "스타게이저|아부네 치에": {
+  "member": "아부네 치에",
+  "group": "스타게이저",
+  "agency": "스타게이저",
+  "status": "활동",
+  "note": "벚꽃학원 1기; 치지직 미확인(동일인 낭만숟가락 채널 별도 존재)",
+  "yt": {
+   "id": "",
+   "handle": "@abunechie"
+  },
+  "chzzk": {},
+  "soop": {},
+  "fetched": "",
+  "history": {}
+ },
+ "스타게이저|유초린": {
+  "member": "유초린",
+  "group": "스타게이저",
+  "agency": "스타게이저",
+  "status": "활동",
+  "note": "벚꽃학원 1기; 치지직 API 3079명",
+  "yt": {
+   "id": "",
+   "handle": "@yuchorinchan"
+  },
+  "chzzk": {
+   "id": "5c627f663fde248f23c137bce2c9c209",
+   "name": "유초린",
+   "followers": 3079,
+   "verified": false
+  },
+  "soop": {},
+  "fetched": "2026-10-27",
+  "history": {
+   "2026-10-27": 3079
+  }
+ },
+ "스타게이저|가우루우": {
+  "member": "가우루우",
+  "group": "스타게이저",
+  "agency": "스타게이저",
+  "status": "활동",
+  "note": "벚꽃학원 1기(JP); 치지직 미확인",
+  "yt": {
+   "id": "",
+   "handle": "@Gawru.vampirewolf"
+  },
+  "chzzk": {},
+  "soop": {},
+  "fetched": "",
+  "history": {}
+ },
+ "스타게이저|류채경": {
+  "member": "류채경",
+  "group": "스타게이저",
+  "agency": "스타게이저",
+  "status": "활동",
+  "note": "벚꽃학원 2기; 치지직 API 10069명",
+  "yt": {
+   "id": "",
+   "handle": "@류채경"
+  },
+  "chzzk": {
+   "id": "d3feaaee7b98d56475dad56e9ab73827",
+   "name": "류채경",
+   "followers": 10070,
+   "verified": false
+  },
+  "soop": {},
+  "fetched": "2026-10-27",
+  "history": {
+   "2026-10-27": 10070
+  }
+ },
+ "스타게이저|밑줄": {
+  "member": "밑줄",
+  "group": "스타게이저",
+  "agency": "스타게이저",
+  "status": "활동",
+  "note": "벚꽃학원 3기; 치지직 API 18117명",
+  "yt": {
+   "id": "",
+   "handle": "@밑줄"
+  },
+  "chzzk": {
+   "id": "16fc49ff5ba7ec5d25a5a978cee3bdda",
+   "name": "밑줄",
+   "followers": 18117,
+   "verified": false
+  },
+  "soop": {},
+  "fetched": "2026-10-27",
+  "history": {
+   "2026-10-27": 18117
+  }
+ },
+ "스타게이저|사쿠라 루나": {
+  "member": "사쿠라 루나",
+  "group": "스타게이저",
+  "agency": "스타게이저",
+  "status": "활동",
+  "note": "벚꽃학원 3기(JP); 공식사이트 기재 구채널 b84139ca45c20d1a3088e494aeb723d1는 새 계정으로 이전 안내; 신채널 API 241명",
+  "yt": {
+   "id": "",
+   "handle": "@Sakuralun_"
+  },
+  "chzzk": {
+   "id": "a48374192ca3644915d53248243de0b8",
+   "name": "사쿠라 루나",
+   "followers": 241,
+   "verified": false
+  },
+  "soop": {},
+  "fetched": "2026-10-27",
+  "history": {
+   "2026-10-27": 241
+  }
+ },
+ "스타게이저|포무우짱": {
+  "member": "포무우짱",
+  "group": "스타게이저",
+  "agency": "스타게이저",
+  "status": "활동",
+  "note": "벚꽃학원 3기(JP); 치지직 채널조회 '포무우쨩' 437명",
+  "yt": {
+   "id": "",
+   "handle": "@pomuuchan"
+  },
+  "chzzk": {
+   "id": "19c6048dad6ec6388939cdfad767e5b0",
+   "name": "포무우쨩",
+   "followers": 437,
+   "verified": false
+  },
+  "soop": {},
+  "fetched": "2026-10-27",
+  "history": {
+   "2026-10-27": 437
+  }
+ },
+ "스타게이저|오새벽": {
+  "member": "오새벽",
+  "group": "스타게이저",
+  "agency": "스타게이저",
+  "status": "활동",
+  "note": "벚꽃학원 4기; 치지직 미확인(동명 채널 있으나 소속 근거 없음)",
+  "yt": {
+   "id": "",
+   "handle": "@oh_dawn"
+  },
+  "chzzk": {},
+  "soop": {},
+  "fetched": "",
+  "history": {}
+ },
+ "스타게이저|윤리즈": {
+  "member": "윤리즈",
+  "group": "스타게이저",
+  "agency": "스타게이저",
+  "status": "활동",
+  "note": "벚꽃학원 4기; 치지직 API 5429명",
+  "yt": {
+   "id": "",
+   "handle": "@Y_Liz0911"
+  },
+  "chzzk": {
+   "id": "6fb7f73dcb20077d77e6e053d0362228",
+   "name": "윤리즈",
+   "followers": 5429,
+   "verified": false
+  },
+  "soop": {},
+  "fetched": "2026-10-27",
+  "history": {
+   "2026-10-27": 5429
+  }
+ },
+ "스타게이저|모야지": {
+  "member": "모야지",
+  "group": "스타게이저",
+  "agency": "스타게이저",
+  "status": "활동",
+  "note": "벚꽃학원 4기; 치지직 API 12140명",
+  "yt": {
+   "id": "",
+   "handle": "@moyaji77"
+  },
+  "chzzk": {
+   "id": "ff8a77860f5a1da0bd6991c5041525f5",
+   "name": "모야지",
+   "followers": 12140,
+   "verified": false
+  },
+  "soop": {},
+  "fetched": "2026-10-27",
+  "history": {
+   "2026-10-27": 12140
+  }
+ },
+ "스타게이저|많쿠만": {
+  "member": "많쿠만",
+  "group": "스타게이저",
+  "agency": "스타게이저",
+  "status": "활동",
+  "note": "벚꽃학원 4기; 치지직 API '짤녀와 많쿠만in텟슈' 3206명",
+  "yt": {
+   "id": "UCJ-soEmJLdj_fSpBU5RpQyg",
+   "handle": ""
+  },
+  "chzzk": {
+   "id": "9ce95ae0f4a9c2fc99b5ecba1ba91cb7",
+   "name": "짤녀와 많쿠만in텟슈",
+   "followers": 3206,
+   "verified": false
+  },
+  "soop": {},
+  "fetched": "2026-10-27",
+  "history": {
+   "2026-10-27": 3206
+  }
+ },
+ "스타게이저|디아나": {
+  "member": "디아나",
+  "group": "스타게이저",
+  "agency": "스타게이저",
+  "status": "활동",
+  "note": "벚꽃학원 5기; 치지직 API 5480명",
+  "yt": {
+   "id": "",
+   "handle": "@diahnaing"
+  },
+  "chzzk": {
+   "id": "a80a95f91626493613a7b1093002b26d",
+   "name": "디아 나",
+   "followers": 5480,
+   "verified": false
+  },
+  "soop": {},
+  "fetched": "2026-10-27",
+  "history": {
+   "2026-10-27": 5480
+  }
+ },
+ "스타게이저|이아니": {
+  "member": "이아니",
+  "group": "스타게이저",
+  "agency": "스타게이저",
+  "status": "활동",
+  "note": "벚꽃학원 5기; 치지직 API 10621명",
+  "yt": {
+   "id": "",
+   "handle": "@leea_ni0530"
+  },
+  "chzzk": {
+   "id": "eef5c2238f1667a915855c644ac4f975",
+   "name": "이 아니",
+   "followers": 10621,
+   "verified": false
+  },
+  "soop": {},
+  "fetched": "2026-10-27",
+  "history": {
+   "2026-10-27": 10621
+  }
+ },
+ "스타게이저|나을": {
+  "member": "나을",
+  "group": "스타게이저",
+  "agency": "스타게이저",
+  "status": "활동",
+  "note": "벚꽃학원 5기; 유튜브는 공식사이트 기재 게임채널; 치지직 API 3137명",
+  "yt": {
+   "id": "",
+   "handle": "@NAEUL_GAME"
+  },
+  "chzzk": {
+   "id": "34dd8435552bd6739e7158f7762705b8",
+   "name": "나을 Naeul",
+   "followers": 3137,
+   "verified": false
+  },
+  "soop": {},
+  "fetched": "2026-10-27",
+  "history": {
+   "2026-10-27": 3137
+  }
+ },
+ "스타게이저|폰루루(폰루코·폰루아)": {
+  "member": "폰루루(폰루코·폰루아)",
+  "group": "스타게이저",
+  "agency": "스타게이저",
+  "status": "활동",
+  "note": "벚꽃학원 5기 쌍둥이 2인 공용 채널; 치지직 API 3605명",
+  "yt": {
+   "id": "",
+   "handle": "@pon_ruru"
+  },
+  "chzzk": {
+   "id": "051a3090c9566bdfd6af01cb1f463c16",
+   "name": "폰루루 ㅣ PON RuRu",
+   "followers": 3605,
+   "verified": false
+  },
+  "soop": {},
+  "fetched": "2026-10-27",
+  "history": {
+   "2026-10-27": 3605
+  }
+ },
+ "스타게이저|일오": {
+  "member": "일오",
+  "group": "스타게이저",
+  "agency": "스타게이저",
+  "status": "활동",
+  "note": "벚꽃학원 6기; 치지직 API 3818명",
+  "yt": {
+   "id": "",
+   "handle": "@15lovesyou"
+  },
+  "chzzk": {
+   "id": "97bf6a96e19616aba1a5f95e5dc0a901",
+   "name": "일오 채널",
+   "followers": 3818,
+   "verified": false
+  },
+  "soop": {},
+  "fetched": "2026-10-27",
+  "history": {
+   "2026-10-27": 3818
+  }
+ },
+ "스타게이저|츄키": {
+  "member": "츄키",
+  "group": "스타게이저",
+  "agency": "스타게이저",
+  "status": "활동",
+  "note": "벚꽃학원 6기; 유튜브 본채널 미확인(공식사이트 @츄키_CHUKi 링크 404, 다시보기 @re_CHUKi만 확인); 치지직 API 1015명",
+  "yt": {},
+  "chzzk": {
+   "id": "cc3e3251abaf1466434849bc0955cb4e",
+   "name": "츄키 CHUKi",
+   "followers": 1015,
+   "verified": false
+  },
+  "soop": {},
+  "fetched": "2026-10-27",
+  "history": {
+   "2026-10-27": 1015
+  }
+ },
+ "스타게이저|키케미치": {
+  "member": "키케미치",
+  "group": "스타게이저",
+  "agency": "스타게이저",
+  "status": "활동",
+  "note": "벚꽃학원 6기; 치지직 API 2607명",
+  "yt": {
+   "id": "",
+   "handle": "@kikemitch"
+  },
+  "chzzk": {
+   "id": "5be438fbbd4fa52c27fbf4fcdb21eb5d",
+   "name": "키케미치",
+   "followers": 2607,
+   "verified": false
+  },
+  "soop": {},
+  "fetched": "2026-10-27",
+  "history": {
+   "2026-10-27": 2607
+  }
+ },
+ "스타게이저|히로": {
+  "member": "히로",
+  "group": "스타게이저",
+  "agency": "스타게이저",
+  "status": "활동",
+  "note": "하나유메 연구소; 치지직 API '엄히로' 6505명",
+  "yt": {
+   "id": "",
+   "handle": "@히로라이브"
+  },
+  "chzzk": {
+   "id": "60761dc68dca3092c55c4371710ce848",
+   "name": "엄히로",
+   "followers": 6506,
+   "verified": false
+  },
+  "soop": {},
+  "fetched": "2026-10-27",
+  "history": {
+   "2026-10-27": 6506
+  }
+ },
+ "스타게이저|건망고": {
+  "member": "건망고",
+  "group": "스타게이저",
+  "agency": "스타게이저",
+  "status": "활동",
+  "note": "하나유메 연구소; 치지직 API 3301명",
+  "yt": {
+   "id": "",
+   "handle": "@Gun_Mango5"
+  },
+  "chzzk": {
+   "id": "b134c6981709fdb7c9e8c52f42c48d4b",
+   "name": "건망고",
+   "followers": 3301,
+   "verified": false
+  },
+  "soop": {},
+  "fetched": "2026-10-27",
+  "history": {
+   "2026-10-27": 3301
+  }
+ },
+ "스타게이저|사루코": {
+  "member": "사루코",
+  "group": "스타게이저",
+  "agency": "스타게이저",
+  "status": "활동",
+  "note": "하나유메 연구소; 유튜브 미확인; 치지직 API 2199명",
+  "yt": {},
+  "chzzk": {
+   "id": "02204f7cc552c79579eb3283b611a2de",
+   "name": "사루코",
+   "followers": 2199,
+   "verified": false
+  },
+  "soop": {},
+  "fetched": "2026-10-27",
+  "history": {
+   "2026-10-27": 2199
+  }
+ },
+ "스타게이저|다밍": {
+  "member": "다밍",
+  "group": "스타게이저",
+  "agency": "스타게이저",
+  "status": "활동",
+  "note": "하나유메 연구소; 유튜브 미확인; 치지직 API 1555명",
+  "yt": {},
+  "chzzk": {
+   "id": "0982b0a6aadbbde5f727cc00f47d3363",
+   "name": "다 밍",
+   "followers": 1555,
+   "verified": false
+  },
+  "soop": {},
+  "fetched": "2026-10-27",
+  "history": {
+   "2026-10-27": 1555
+  }
+ },
+ "스타게이저|스타으앙코": {
+  "member": "스타으앙코",
+  "group": "스타게이저",
+  "agency": "스타게이저",
+  "status": "활동",
+  "note": "하나유메 연구소; 치지직은 API(소개글 스타게이저 언급) 2400명",
+  "yt": {
+   "id": "",
+   "handle": "@staruanko"
+  },
+  "chzzk": {
+   "id": "2d27c050d8db708af8b54c9d128d2278",
+   "name": "스타으앙코",
+   "followers": 2400,
+   "verified": false
+  },
+  "soop": {},
+  "fetched": "2026-10-27",
+  "history": {
+   "2026-10-27": 2400
+  }
+ },
+ "스타게이저|우사미 미유": {
+  "member": "우사미 미유",
+  "group": "스타게이저",
+  "agency": "스타게이저",
+  "status": "활동",
+  "note": "하나유메 연구소; 치지직 API 4870명",
+  "yt": {
+   "id": "",
+   "handle": "@Miyu_Usami"
+  },
+  "chzzk": {
+   "id": "dac66ac2fc9b0d075ca026b136341570",
+   "name": "우사미 미유",
+   "followers": 4870,
+   "verified": false
+  },
+  "soop": {},
+  "fetched": "2026-10-27",
+  "history": {
+   "2026-10-27": 4870
+  }
+ },
+ "스타게이저|호시아": {
+  "member": "호시아",
+  "group": "스타게이저",
+  "agency": "스타게이저",
+  "status": "활동",
+  "note": "하나유메 연구소; 치지직 API 2058명",
+  "yt": {
+   "id": "",
+   "handle": "@Hoshia_Vtuber"
+  },
+  "chzzk": {
+   "id": "0e0fbee493aba6660d50a0ca215ebe10",
+   "name": "호시아",
+   "followers": 2058,
+   "verified": false
+  },
+  "soop": {},
+  "fetched": "2026-10-27",
+  "history": {
+   "2026-10-27": 2058
+  }
+ },
+ "스타게이저|서천해": {
+  "member": "서천해",
+  "group": "스타게이저",
+  "agency": "스타게이저",
+  "status": "활동",
+  "note": "새벽안개 관측소; 치지직 API 335명",
+  "yt": {
+   "id": "UC0PMJd96SlPu_88RF9BKBVA",
+   "handle": ""
+  },
+  "chzzk": {
+   "id": "bf983c0f15a09b8b5ce761c98b0815c7",
+   "name": "서천해",
+   "followers": 335,
+   "verified": false
+  },
+  "soop": {},
+  "fetched": "2026-10-27",
+  "history": {
+   "2026-10-27": 335
+  }
+ },
+ "스타게이저|김팔팔": {
+  "member": "김팔팔",
+  "group": "스타게이저",
+  "agency": "스타게이저",
+  "status": "활동",
+  "note": "새벽안개 관측소; 치지직 API 886명",
+  "yt": {
+   "id": "",
+   "handle": "@PalfalKim"
+  },
+  "chzzk": {
+   "id": "fc463a000289c4e7b212ad6a8f8c793e",
+   "name": "김팔팔",
+   "followers": 886,
+   "verified": false
+  },
+  "soop": {},
+  "fetched": "2026-10-27",
+  "history": {
+   "2026-10-27": 886
+  }
+ },
+ "스타게이저|데네": {
+  "member": "데네",
+  "group": "스타게이저",
+  "agency": "스타게이저",
+  "status": "활동",
+  "note": "새벽안개 관측소; 공식사이트 유튜브 @DENE0802 404, 치지직 미확인",
+  "yt": {},
+  "chzzk": {},
+  "soop": {},
+  "fetched": "",
+  "history": {}
+ },
+ "스타게이저|시하": {
+  "member": "시하",
+  "group": "스타게이저",
+  "agency": "스타게이저",
+  "status": "활동",
+  "note": "새벽안개 관측소; 유튜브 본채널 미확인(@SIHASTL 404); 치지직은 API(문의메일 starlinesiha) 451명",
+  "yt": {},
+  "chzzk": {
+   "id": "f0075cd632dd9a190b0ab5a44d7017fa",
+   "name": "시 하",
+   "followers": 451,
+   "verified": false
+  },
+  "soop": {},
+  "fetched": "2026-10-27",
+  "history": {
+   "2026-10-27": 451
+  }
+ },
+ "스타게이저|피온": {
+  "member": "피온",
+  "group": "스타게이저",
+  "agency": "스타게이저",
+  "status": "활동",
+  "note": "새벽안개 관측소; 치지직은 API(소개글 스타게이저 소속) 351명",
+  "yt": {
+   "id": "",
+   "handle": "@PionPionPionPionPion"
+  },
+  "chzzk": {
+   "id": "428be4f2ab3d5e8ec9eb2ab59a189999",
+   "name": "피온 Pion",
+   "followers": 351,
+   "verified": false
+  },
+  "soop": {},
+  "fetched": "2026-10-27",
+  "history": {
+   "2026-10-27": 351
+  }
+ },
+ "스타게이저|묘현": {
+  "member": "묘현",
+  "group": "스타게이저",
+  "agency": "스타게이저",
+  "status": "활동",
+  "note": "새벽안개 관측소; 치지직 API 4250명",
+  "yt": {
+   "id": "",
+   "handle": "@myo_youtube_0220"
+  },
+  "chzzk": {
+   "id": "1b55e07f8d3cdf58334796ed76cd9699",
+   "name": "묘현",
+   "followers": 4250,
+   "verified": false
+  },
+  "soop": {},
+  "fetched": "2026-10-27",
+  "history": {
+   "2026-10-27": 4250
+  }
+ },
+ "스타게이저|월야화랑": {
+  "member": "월야화랑",
+  "group": "스타게이저",
+  "agency": "스타게이저",
+  "status": "활동",
+  "note": "모모노미야; 치지직은 API(소개글 스타게이저 모모노미야) 4045명",
+  "yt": {
+   "id": "",
+   "handle": "@월야화랑"
+  },
+  "chzzk": {
+   "id": "3553849193a26f157ba0b83d6ea1857d",
+   "name": "월야화랑",
+   "followers": 4045,
+   "verified": false
+  },
+  "soop": {},
+  "fetched": "2026-10-27",
+  "history": {
+   "2026-10-27": 4045
+  }
+ },
+ "스타게이저|몽새": {
+  "member": "몽새",
+  "group": "스타게이저",
+  "agency": "스타게이저",
+  "status": "활동",
+  "note": "모모노미야; 치지직 API 3813명",
+  "yt": {
+   "id": "",
+   "handle": "@mongsae"
+  },
+  "chzzk": {
+   "id": "9bcfc5ce252bd85444a45ae8a80ae5e8",
+   "name": "몽새",
+   "followers": 3813,
+   "verified": false
+  },
+  "soop": {},
+  "fetched": "2026-10-27",
+  "history": {
+   "2026-10-27": 3813
+  }
+ },
+ "스타게이저|이새난": {
+  "member": "이새난",
+  "group": "스타게이저",
+  "agency": "스타게이저",
+  "status": "활동",
+  "note": "모모노미야; 치지직 API 2845명",
+  "yt": {
+   "id": "",
+   "handle": "@Senan_note"
+  },
+  "chzzk": {
+   "id": "b48485e5e917f5f5896fdf89b1f48c9f",
+   "name": "이새난",
+   "followers": 2845,
+   "verified": false
+  },
+  "soop": {},
+  "fetched": "2026-10-27",
+  "history": {
+   "2026-10-27": 2845
+  }
+ },
+ "스타게이저|김수동(스야)": {
+  "member": "김수동(스야)",
+  "group": "스타게이저",
+  "agency": "스타게이저",
+  "status": "졸업(2026.07)",
+  "note": "채널 미확인",
+  "yt": {},
+  "chzzk": {},
+  "soop": {},
+  "fetched": "",
+  "history": {}
+ },
+ "브이퍼리(스타게이저)|야코코": {
+  "member": "야코코",
+  "group": "브이퍼리(스타게이저)",
+  "agency": "스타게이저",
+  "status": "활동",
+  "note": "치지직 API 18863명",
+  "yt": {
+   "id": "",
+   "handle": "@0630"
+  },
+  "chzzk": {
+   "id": "e7b11b2af4a27928e5715420ec9166af",
+   "name": "야코코 Yacoco",
+   "followers": 18863,
+   "verified": false
+  },
+  "soop": {},
+  "fetched": "2026-10-27",
+  "history": {
+   "2026-10-27": 18863
+  }
+ },
+ "브이퍼리(스타게이저)|디어 베르체": {
+  "member": "디어 베르체",
+  "group": "브이퍼리(스타게이저)",
+  "agency": "스타게이저",
+  "status": "활동",
+  "note": "유튜브 미확인; 치지직 채널조회 '베르체 Verce'(브이퍼리 소속) 1119명",
+  "yt": {},
+  "chzzk": {
+   "id": "cc0a2ad99af54e3d49c3bcfa2ed7066c",
+   "name": "베르체 Verce",
+   "followers": 1119,
+   "verified": false
+  },
+  "soop": {},
+  "fetched": "2026-10-27",
+  "history": {
+   "2026-10-27": 1119
+  }
+ },
+ "VRECORD|아지카타 유논": {
+  "member": "아지카타 유논",
+  "group": "VRECORD",
+  "agency": "VRECORD",
+  "status": "활동",
+  "note": "엔터반; 치지직 API 8060명",
+  "yt": {
+   "id": "",
+   "handle": "@vrecord_yunon"
+  },
+  "chzzk": {
+   "id": "575b8dd00630a025c9ad3729df908abf",
+   "name": "유논 YUNON",
+   "followers": 8060,
+   "verified": false
+  },
+  "soop": {
+   "id": "vrecordyunon",
+   "name": "유논",
+   "followers": 3965
+  },
+  "fetched": "2026-10-27",
+  "history": {
+   "2026-10-27": 8060
+  }
+ },
+ "VRECORD|루시드": {
+  "member": "루시드",
+  "group": "VRECORD",
+  "agency": "VRECORD",
+  "status": "활동",
+  "note": "엔터반; 치지직 API 7042명",
+  "yt": {
+   "id": "",
+   "handle": "@vrecord_luxeed"
+  },
+  "chzzk": {
+   "id": "123121452613961512615dbaffc189b8",
+   "name": "루시드 LUXEED",
+   "followers": 7042,
+   "verified": false
+  },
+  "soop": {},
+  "fetched": "2026-10-27",
+  "history": {
+   "2026-10-27": 7042
+  }
+ },
+ "VRECORD|타루": {
+  "member": "타루",
+  "group": "VRECORD",
+  "agency": "VRECORD",
+  "status": "활동",
+  "note": "엔터반; SOOP 중심, 치지직 미확인",
+  "yt": {
+   "id": "",
+   "handle": "@vrecord_taru"
+  },
+  "chzzk": {},
+  "soop": {
+   "id": "tarusama",
+   "name": "타루_TARU",
+   "followers": 7003
+  },
+  "fetched": "2026-10-27",
+  "history": {
+   "2026-10-27": 7003
+  }
+ },
+ "VRECORD|모노": {
+  "member": "모노",
+  "group": "VRECORD",
+  "agency": "VRECORD",
+  "status": "활동",
+  "note": "엔터반; 치지직 채널조회 '모노 monomo' 2567명",
+  "yt": {
+   "id": "",
+   "handle": "@vrecord_mono"
+  },
+  "chzzk": {
+   "id": "ff7099c82e23867a8a4b67d5bbcea466",
+   "name": "모노 monomo",
+   "followers": 2567,
+   "verified": false
+  },
+  "soop": {},
+  "fetched": "2026-10-27",
+  "history": {
+   "2026-10-27": 2567
+  }
+ },
+ "VRECORD|머피 벨로": {
+  "member": "머피 벨로",
+  "group": "VRECORD",
+  "agency": "VRECORD",
+  "status": "활동",
+  "note": "엔터반; 치지직 API 1778명",
+  "yt": {
+   "id": "",
+   "handle": "@vrecord_murphy"
+  },
+  "chzzk": {
+   "id": "8f99eb06d95ad8723673d8081a350417",
+   "name": "머피 벨로",
+   "followers": 1778,
+   "verified": false
+  },
+  "soop": {},
+  "fetched": "2026-10-27",
+  "history": {
+   "2026-10-27": 1778
+  }
+ },
+ "VRECORD|스이무": {
+  "member": "스이무",
+  "group": "VRECORD",
+  "agency": "VRECORD",
+  "status": "활동",
+  "note": "엔터반; 치지직 API 2018명",
+  "yt": {
+   "id": "",
+   "handle": "@vrecord_suimu"
+  },
+  "chzzk": {
+   "id": "cd5481267bafb98094cf7a8e492284d3",
+   "name": "스이무 SUIMU",
+   "followers": 2019,
+   "verified": false
+  },
+  "soop": {},
+  "fetched": "2026-10-27",
+  "history": {
+   "2026-10-27": 2019
+  }
+ },
+ "VRECORD|루아 블루벨": {
+  "member": "루아 블루벨",
+  "group": "VRECORD",
+  "agency": "VRECORD",
+  "status": "활동",
+  "note": "게임반; 치지직 API 3158명",
+  "yt": {
+   "id": "",
+   "handle": "@vrecord_rua"
+  },
+  "chzzk": {
+   "id": "c84df61388f2c2bb8afac273bfd4d90b",
+   "name": "루아 블루벨",
+   "followers": 3158,
+   "verified": false
+  },
+  "soop": {},
+  "fetched": "2026-10-27",
+  "history": {
+   "2026-10-27": 3158
+  }
+ },
+ "VRECORD|요이": {
+  "member": "요이",
+  "group": "VRECORD",
+  "agency": "VRECORD",
+  "status": "활동",
+  "note": "게임반; 공식사이트 chzzk.id/yoe 리다이렉트로 확인, API '코모리 요이' 1441명",
+  "yt": {
+   "id": "",
+   "handle": "@vrecord_yoe"
+  },
+  "chzzk": {
+   "id": "bee55f2cbeea57d3ec290e0eff90b5bf",
+   "name": "코모리 요이",
+   "followers": 1441,
+   "verified": false
+  },
+  "soop": {},
+  "fetched": "2026-10-27",
+  "history": {
+   "2026-10-27": 1441
+  }
+ },
+ "VRECORD|마지텐 시아": {
+  "member": "마지텐 시아",
+  "group": "VRECORD",
+  "agency": "VRECORD",
+  "status": "활동",
+  "note": "게임반; 치지직 API 1848명",
+  "yt": {
+   "id": "",
+   "handle": "@vrecord_sia"
+  },
+  "chzzk": {
+   "id": "7f5ce470dbc71195d99704422a02992b",
+   "name": "마지텐 시아 Sia",
+   "followers": 1848,
+   "verified": false
+  },
+  "soop": {},
+  "fetched": "2026-10-27",
+  "history": {
+   "2026-10-27": 1848
+  }
+ },
+ "VRECORD|로드": {
+  "member": "로드",
+  "group": "VRECORD",
+  "agency": "VRECORD",
+  "status": "활동",
+  "note": "예능반; 치지직 채널조회 '박로드 LOOOOD' 4536명",
+  "yt": {
+   "id": "",
+   "handle": "@vrecord_looood"
+  },
+  "chzzk": {
+   "id": "0c177930bc3f79b69dd43b820ff606b8",
+   "name": "박로드 LOOOOD",
+   "followers": 4536,
+   "verified": false
+  },
+  "soop": {},
+  "fetched": "2026-10-27",
+  "history": {
+   "2026-10-27": 4536
+  }
+ },
+ "VRECORD|마카": {
+  "member": "마카",
+  "group": "VRECORD",
+  "agency": "VRECORD",
+  "status": "활동",
+  "note": "예능반; 치지직 채널조회 '마카 MACA' 1978명",
+  "yt": {
+   "id": "",
+   "handle": "@vrecord_maca"
+  },
+  "chzzk": {
+   "id": "f88e567b0914272ce7afcb427cff322b",
+   "name": "마카 MACA",
+   "followers": 1978,
+   "verified": false
+  },
+  "soop": {},
+  "fetched": "2026-10-27",
+  "history": {
+   "2026-10-27": 1978
+  }
+ },
+ "VRECORD|모서리": {
+  "member": "모서리",
+  "group": "VRECORD",
+  "agency": "VRECORD",
+  "status": "활동",
+  "note": "예능반; 유튜브 미확인(공식사이트 @vrecord_moseori 링크 무효); 치지직 API 846명",
+  "yt": {},
+  "chzzk": {
+   "id": "bc64d1142877738a7d31f584ae13ea79",
+   "name": "ㄴ모서리ㄱ",
+   "followers": 846,
+   "verified": false
+  },
+  "soop": {},
+  "fetched": "2026-10-27",
+  "history": {
+   "2026-10-27": 846
+  }
+ },
+ "VRECORD|키텔": {
+  "member": "키텔",
+  "group": "VRECORD",
+  "agency": "VRECORD",
+  "status": "활동",
+  "note": "예능반 PD(2026.07 합류); 치지직 API 5411명",
+  "yt": {
+   "id": "",
+   "handle": "@키텔KITTEL"
+  },
+  "chzzk": {
+   "id": "48d1f6c3fb214ca13afacd0ab1f639dc",
+   "name": "키텔",
+   "followers": 5412,
+   "verified": false
+  },
+  "soop": {},
+  "fetched": "2026-10-27",
+  "history": {
+   "2026-10-27": 5412
+  }
+ },
+ "VRECORD|달리": {
+  "member": "달리",
+  "group": "VRECORD",
+  "agency": "VRECORD",
+  "status": "활동",
+  "note": "자유반; SOOP 중심, 치지직 미확인",
+  "yt": {
+   "id": "",
+   "handle": "@vrecord_darli"
+  },
+  "chzzk": {},
+  "soop": {
+   "id": "darlida",
+   "name": "달리♪",
+   "followers": 3183
+  },
+  "fetched": "2026-10-27",
+  "history": {
+   "2026-10-27": 3183
+  }
+ },
+ "VRECORD|타누키 시오": {
+  "member": "타누키 시오",
+  "group": "VRECORD",
+  "agency": "VRECORD",
+  "status": "활동",
+  "note": "자유반; SOOP 중심, 치지직 미확인",
+  "yt": {
+   "id": "",
+   "handle": "@vrecord_siio"
+  },
+  "chzzk": {},
+  "soop": {
+   "id": "siioyeyo",
+   "name": "시오∋",
+   "followers": 2641
+  },
+  "fetched": "2026-10-27",
+  "history": {
+   "2026-10-27": 2641
+  }
+ },
+ "VRECORD|하리": {
+  "member": "하리",
+  "group": "VRECORD",
+  "agency": "VRECORD",
+  "status": "활동",
+  "note": "자유반; SOOP 중심, 치지직 미확인",
+  "yt": {
+   "id": "",
+   "handle": "@vrecord_hari"
+  },
+  "chzzk": {},
+  "soop": {
+   "id": "harivrecord",
+   "name": "하리_HARI",
+   "followers": 1803
+  },
+  "fetched": "2026-10-27",
+  "history": {
+   "2026-10-27": 1803
+  }
+ },
+ "VRECORD|네오 지오": {
+  "member": "네오 지오",
+  "group": "VRECORD",
+  "agency": "VRECORD",
+  "status": "활동",
+  "note": "자유반(2026.10 데뷔); 치지직 채널조회 '네오 지오' 451명",
+  "yt": {
+   "id": "",
+   "handle": "@vrecord_go"
+  },
+  "chzzk": {
+   "id": "c2f1439ba2c03327eb36f49506f5e2bd",
+   "name": "네오 지오",
+   "followers": 451,
+   "verified": false
+  },
+  "soop": {},
+  "fetched": "2026-10-27",
+  "history": {
+   "2026-10-27": 451
+  }
+ },
+ "VRECORD|사인": {
+  "member": "사인",
+  "group": "VRECORD",
+  "agency": "VRECORD",
+  "status": "졸업(2026.02)",
+  "note": "치지직 미확인",
+  "yt": {
+   "id": "",
+   "handle": "@vrecordsign"
+  },
+  "chzzk": {},
+  "soop": {
+   "id": "vrecordsign",
+   "name": "사인_SIGN",
+   "followers": 1511
+  },
+  "fetched": "2026-10-27",
+  "history": {
+   "2026-10-27": 1511
+  }
+ },
+ "VRECORD|이나": {
+  "member": "이나",
+  "group": "VRECORD",
+  "agency": "VRECORD",
+  "status": "졸업(2026.02)",
+  "note": "치지직 API '이나 VRECORD' 2015명",
+  "yt": {
+   "id": "",
+   "handle": "@vrecord_ina"
+  },
+  "chzzk": {
+   "id": "5f2d1c732a8edbb83fe654291299eb09",
+   "name": "이나 VRECORD",
+   "followers": 2015,
+   "verified": false
+  },
+  "soop": {},
+  "fetched": "2026-10-27",
+  "history": {
+   "2026-10-27": 2015
+  }
+ },
+ "VRECORD|해루": {
+  "member": "해루",
+  "group": "VRECORD",
+  "agency": "VRECORD",
+  "status": "졸업(2026.02)",
+  "note": "채널 미확인",
+  "yt": {},
+  "chzzk": {},
+  "soop": {},
+  "fetched": "",
+  "history": {}
+ },
+ "VRECORD|헤스": {
+  "member": "헤스",
+  "group": "VRECORD",
+  "agency": "VRECORD",
+  "status": "졸업(2025.11)",
+  "note": "개인세 전환; 유튜브(공식사이트 c/ 링크 무효)·치지직 미확인",
+  "yt": {},
+  "chzzk": {},
+  "soop": {
+   "id": "utahessx33",
+   "name": "헤스",
+   "followers": 8621
+  },
+  "fetched": "2026-10-27",
+  "history": {
+   "2026-10-27": 8621
+  }
+ },
+ "VRECORD|리리스": {
+  "member": "리리스",
+  "group": "VRECORD",
+  "agency": "VRECORD",
+  "status": "졸업(2025.11)",
+  "note": "개인세 전환; 유튜브(공식사이트 링크 무효)·치지직 미확인",
+  "yt": {},
+  "chzzk": {},
+  "soop": {
+   "id": "lilith1211",
+   "name": "리리스_",
+   "followers": 4543
+  },
+  "fetched": "2026-10-27",
+  "history": {
+   "2026-10-27": 4543
+  }
+ },
+ "VRECORD|차가운": {
+  "member": "차가운",
+  "group": "VRECORD",
+  "agency": "VRECORD",
+  "status": "졸업(2025.02)",
+  "note": "개인세 전환; 유튜브 미확인(공식사이트 링크 무효); 치지직 API '차 가 운' 2586명",
+  "yt": {},
+  "chzzk": {
+   "id": "0a1aef49164865b71039a79b7cc32da5",
+   "name": "차 가 운",
+   "followers": 2586,
+   "verified": false
+  },
+  "soop": {},
+  "fetched": "2026-10-27",
+  "history": {
+   "2026-10-27": 2586
+  }
+ },
+ "VRECORD|천휘": {
+  "member": "천휘",
+  "group": "VRECORD",
+  "agency": "VRECORD",
+  "status": "졸업(2025.02)",
+  "note": "치지직 공식사이트 기재 채널은 현재 무관한 이름으로 변경되어 미확인; 유튜브 미확인",
+  "yt": {},
+  "chzzk": {},
+  "soop": {},
+  "fetched": "",
+  "history": {}
+ },
+ "VRECORD|세비아": {
+  "member": "세비아",
+  "group": "VRECORD",
+  "agency": "VRECORD",
+  "status": "졸업(2025.01)",
+  "note": "치지직 채널 현재 '(알 수 없음)'(비활성 추정)",
+  "yt": {
+   "id": "",
+   "handle": "@vrecord_sevia"
+  },
+  "chzzk": {},
+  "soop": {},
+  "fetched": "",
+  "history": {}
+ },
+ "VRECORD|다비": {
+  "member": "다비",
+  "group": "VRECORD",
+  "agency": "VRECORD",
+  "status": "졸업(2024.11)",
+  "note": "계약 파기; 치지직 채널 현재 '(알 수 없음)'; 유튜브 미확인",
+  "yt": {},
+  "chzzk": {},
+  "soop": {},
+  "fetched": "",
+  "history": {}
+ },
+ "VRECORD|뮬": {
+  "member": "뮬",
+  "group": "VRECORD",
+  "agency": "VRECORD",
+  "status": "졸업(2024.11)",
+  "note": "개인세 전환; 유튜브 본채널 미확인(다시보기 @Myuleenest); 치지직 API 'MYULEE' 8275명",
+  "yt": {},
+  "chzzk": {
+   "id": "6b2e39072f3af6e84ee04d34aa164e57",
+   "name": "뮬 MYULEE",
+   "followers": 8275,
+   "verified": false
+  },
+  "soop": {
+   "id": "myulee00",
+   "name": "뮬__",
+   "followers": 736
+  },
+  "fetched": "2026-10-27",
+  "history": {
+   "2026-10-27": 8275
+  }
+ },
+ "VRECORD|피요": {
+  "member": "피요",
+  "group": "VRECORD",
+  "agency": "VRECORD",
+  "status": "졸업(2024.03)",
+  "note": "치지직 API '피요 VRECORD' 3246명",
+  "yt": {
+   "id": "",
+   "handle": "@vrecord_piyo"
+  },
+  "chzzk": {
+   "id": "a45b82ecd09276230c84ae2ecb197c48",
+   "name": "피요 VRECORD",
+   "followers": 3246,
+   "verified": false
+  },
+  "soop": {},
+  "fetched": "2026-10-27",
+  "history": {
+   "2026-10-27": 3246
+  }
+ },
+ "VRECORD|마시마로 뮤이": {
+  "member": "마시마로 뮤이",
+  "group": "VRECORD",
+  "agency": "VRECORD",
+  "status": "졸업(2024.01)",
+  "note": "치지직 미확인",
+  "yt": {
+   "id": "",
+   "handle": "@vrecord_myui"
+  },
+  "chzzk": {},
+  "soop": {},
+  "fetched": "",
+  "history": {}
+ },
+ "VRECORD|메리 크림치즈": {
+  "member": "메리 크림치즈",
+  "group": "VRECORD",
+  "agency": "VRECORD",
+  "status": "졸업(2024.01)",
+  "note": "치지직 미확인",
+  "yt": {
+   "id": "UCCDx3QSux3NO58afjpHNmkQ",
+   "handle": ""
+  },
+  "chzzk": {},
+  "soop": {},
+  "fetched": "",
+  "history": {}
+ },
+ "VRECORD|에블리스 쵸키": {
+  "member": "에블리스 쵸키",
+  "group": "VRECORD",
+  "agency": "VRECORD",
+  "status": "졸업(2024.01)",
+  "note": "치지직 미확인",
+  "yt": {
+   "id": "",
+   "handle": "@vrecord_choki"
+  },
+  "chzzk": {},
+  "soop": {},
+  "fetched": "",
+  "history": {}
+ },
+ "일루전 라이브|냐루": {
+  "member": "냐루",
+  "group": "일루전 라이브",
+  "agency": "일루전 라이브",
+  "status": "활동",
+  "note": "2기생 엣노스; 치지직 API 3964명",
+  "yt": {
+   "id": "",
+   "handle": "@냐루냐루"
+  },
+  "chzzk": {
+   "id": "a63d77c588c72b4d09f203e1bd06edaa",
+   "name": "냐루 NYARU",
+   "followers": 3964,
+   "verified": false
+  },
+  "soop": {},
+  "fetched": "2026-10-27",
+  "history": {
+   "2026-10-27": 3964
+  }
+ },
+ "일루전 라이브|청예솔": {
+  "member": "청예솔",
+  "group": "일루전 라이브",
+  "agency": "일루전 라이브",
+  "status": "활동",
+  "note": "2기생 엣노스; 유튜브는 나무위키상 음악[M] 표기 채널(채널명 '청예솔'), 다시보기 @illusionlive.chungyesol; 치지직 API 5325명",
+  "yt": {
+   "id": "",
+   "handle": "@chungyesolmusic"
+  },
+  "chzzk": {
+   "id": "4052512f2144699acc25cabaa6780b1e",
+   "name": "청예솔",
+   "followers": 5325,
+   "verified": false
+  },
+  "soop": {},
+  "fetched": "2026-10-27",
+  "history": {
+   "2026-10-27": 5325
+  }
+ },
+ "일루전 라이브|서몽": {
+  "member": "서몽",
+  "group": "일루전 라이브",
+  "agency": "일루전 라이브",
+  "status": "활동",
+  "note": "합류; 치지직 API 3663명",
+  "yt": {
+   "id": "",
+   "handle": "@illusionlive.seomong"
+  },
+  "chzzk": {
+   "id": "7a54f99072535a6976b2a43cf5a4d26a",
+   "name": "서몽 ILLUSION LIVE",
+   "followers": 3663,
+   "verified": false
+  },
+  "soop": {},
+  "fetched": "2026-10-27",
+  "history": {
+   "2026-10-27": 3663
+  }
+ },
+ "일루전 라이브|루스티카나": {
+  "member": "루스티카나",
+  "group": "일루전 라이브",
+  "agency": "일루전 라이브",
+  "status": "활동",
+  "note": "합류; 유튜브는 나무위키상 음악[M] 표기 채널(채널명 '루스티카나'), 다시보기 @1rusticana1; 치지직 API 1366명",
+  "yt": {
+   "id": "",
+   "handle": "@루스티카나"
+  },
+  "chzzk": {
+   "id": "472d8a425bbaaa8a8e837fbdd7b72c09",
+   "name": "루스티카나",
+   "followers": 1366,
+   "verified": false
+  },
+  "soop": {},
+  "fetched": "2026-10-27",
+  "history": {
+   "2026-10-27": 1366
+  }
+ },
+ "일루전 라이브|후유노": {
+  "member": "후유노",
+  "group": "일루전 라이브",
+  "agency": "일루전 라이브",
+  "status": "활동",
+  "note": "합류; 치지직 API 1593명",
+  "yt": {
+   "id": "",
+   "handle": "@fuyunocafe"
+  },
+  "chzzk": {
+   "id": "b411c762ef6a69108dff11b265219613",
+   "name": "후유노",
+   "followers": 1593,
+   "verified": false
+  },
+  "soop": {},
+  "fetched": "2026-10-27",
+  "history": {
+   "2026-10-27": 1593
+  }
+ },
+ "일루전 라이브|리이": {
+  "member": "리이",
+  "group": "일루전 라이브",
+  "agency": "일루전 라이브",
+  "status": "활동",
+  "note": "합류; 치지직 API 2045명",
+  "yt": {
+   "id": "",
+   "handle": "@LEEEUx_xU"
+  },
+  "chzzk": {
+   "id": "68daca14bebc804d56b3dc601c8e7aff",
+   "name": "리 이",
+   "followers": 2045,
+   "verified": false
+  },
+  "soop": {},
+  "fetched": "2026-10-27",
+  "history": {
+   "2026-10-27": 2045
+  }
+ },
+ "일루전 라이브|디롬": {
+  "member": "디롬",
+  "group": "일루전 라이브",
+  "agency": "일루전 라이브",
+  "status": "활동",
+  "note": "합류; 치지직 API 1448명",
+  "yt": {
+   "id": "",
+   "handle": "@romromroo"
+  },
+  "chzzk": {
+   "id": "aee61e81bb92a9688139b7642ed94866",
+   "name": "디롬",
+   "followers": 1448,
+   "verified": false
+  },
+  "soop": {},
+  "fetched": "2026-10-27",
+  "history": {
+   "2026-10-27": 1448
+  }
+ },
+ "일루전 라이브|소히": {
+  "member": "소히",
+  "group": "일루전 라이브",
+  "agency": "일루전 라이브",
+  "status": "활동",
+  "note": "합류; 치지직 API 6527명",
+  "yt": {
+   "id": "",
+   "handle": "@vsoheev"
+  },
+  "chzzk": {
+   "id": "288f7aafe3877bb18a4aacced0467667",
+   "name": "소히 SOHEE",
+   "followers": 6527,
+   "verified": false
+  },
+  "soop": {},
+  "fetched": "2026-10-27",
+  "history": {
+   "2026-10-27": 6527
+  }
+ },
+ "일루전 라이브|쿠모리 키피": {
+  "member": "쿠모리 키피",
+  "group": "일루전 라이브",
+  "agency": "일루전 라이브",
+  "status": "활동",
+  "note": "합류; 치지직 API 2157명",
+  "yt": {
+   "id": "",
+   "handle": "@kumori-keepie"
+  },
+  "chzzk": {
+   "id": "4a6b20709a851aa6dca927935e3bf6e1",
+   "name": "쿠모리 키피",
+   "followers": 2157,
+   "verified": false
+  },
+  "soop": {},
+  "fetched": "2026-10-27",
+  "history": {
+   "2026-10-27": 2157
+  }
+ },
+ "일루전 라이브|이비": {
+  "member": "이비",
+  "group": "일루전 라이브",
+  "agency": "일루전 라이브",
+  "status": "활동",
+  "note": "합류; 치지직 API 2424명",
+  "yt": {
+   "id": "",
+   "handle": "@ebnim"
+  },
+  "chzzk": {
+   "id": "baba7db944bf727c82747e3fc2fa3c4d",
+   "name": "이비 EB",
+   "followers": 2424,
+   "verified": false
+  },
+  "soop": {},
+  "fetched": "2026-10-27",
+  "history": {
+   "2026-10-27": 2424
+  }
+ },
+ "일루전 라이브|코메": {
+  "member": "코메",
+  "group": "일루전 라이브",
+  "agency": "일루전 라이브",
+  "status": "활동",
+  "note": "합류; 치지직 API 2209명",
+  "yt": {
+   "id": "",
+   "handle": "@Ne_comet"
+  },
+  "chzzk": {
+   "id": "fde66e266136cea72f06a13b7c8f484a",
+   "name": "코메 Comet",
+   "followers": 2209,
+   "verified": false
+  },
+  "soop": {},
+  "fetched": "2026-10-27",
+  "history": {
+   "2026-10-27": 2209
+  }
+ },
+ "일루전 라이브|위즐리어카": {
+  "member": "위즐리어카",
+  "group": "일루전 라이브",
+  "agency": "일루전 라이브",
+  "status": "활동",
+  "note": "합류; 치지직 API 3066명",
+  "yt": {
+   "id": "",
+   "handle": "@wizliorkaa"
+  },
+  "chzzk": {
+   "id": "e43e57d18238478ab373d447b8017d36",
+   "name": "위즐리어카",
+   "followers": 3066,
+   "verified": false
+  },
+  "soop": {},
+  "fetched": "2026-10-27",
+  "history": {
+   "2026-10-27": 3066
+  }
+ },
+ "일루전 라이브|도라리": {
+  "member": "도라리",
+  "group": "일루전 라이브",
+  "agency": "일루전 라이브",
+  "status": "활동",
+  "note": "합류; 치지직 API 2001명",
+  "yt": {
+   "id": "",
+   "handle": "@dorari_v"
+  },
+  "chzzk": {
+   "id": "7f66725b90a90b53e60277333c8c4264",
+   "name": "도라리 Dorari",
+   "followers": 2001,
+   "verified": false
+  },
+  "soop": {},
+  "fetched": "2026-10-27",
+  "history": {
+   "2026-10-27": 2001
+  }
+ },
+ "일루전 라이브|유메루": {
+  "member": "유메루",
+  "group": "일루전 라이브",
+  "agency": "일루전 라이브",
+  "status": "활동",
+  "note": "합류; 치지직 API 1276명",
+  "yt": {
+   "id": "",
+   "handle": "@yumeru623"
+  },
+  "chzzk": {
+   "id": "0cfb40c68e56441c3e0ca58231e3523b",
+   "name": "유 메루",
+   "followers": 1276,
+   "verified": false
+  },
+  "soop": {},
+  "fetched": "2026-10-27",
+  "history": {
+   "2026-10-27": 1276
+  }
+ },
+ "일루전 라이브|메리코": {
+  "member": "메리코",
+  "group": "일루전 라이브",
+  "agency": "일루전 라이브",
+  "status": "졸업(2025.04)",
+  "note": "나무위키 기재 유튜브 핸들 현재 404, 치지직 채널 '(알 수 없음)'로 검증 불가 → 미확인",
+  "yt": {},
+  "chzzk": {},
+  "soop": {},
+  "fetched": "",
+  "history": {}
+ },
+ "일루전 라이브|소미 엘리나": {
+  "member": "소미 엘리나",
+  "group": "일루전 라이브",
+  "agency": "일루전 라이브",
+  "status": "졸업(2024.06)",
+  "note": "치지직 채널 현재 이름 '(알 수 없음)'(소개글로 본인 확인); 유튜브 핸들 404로 미확인",
+  "yt": {},
+  "chzzk": {},
+  "soop": {},
+  "fetched": "",
+  "history": {}
+ },
+ "일루전 라이브|채리 브륄레": {
+  "member": "채리 브륄레",
+  "group": "일루전 라이브",
+  "agency": "일루전 라이브",
+  "status": "졸업(2023.06)",
+  "note": "유튜브 핸들 404, 채널 미확인",
+  "yt": {},
+  "chzzk": {},
+  "soop": {},
+  "fetched": "",
+  "history": {}
+ },
+ "일루전 라이브|사야 포르티스": {
+  "member": "사야 포르티스",
+  "group": "일루전 라이브",
+  "agency": "일루전 라이브",
+  "status": "졸업(2023.03)",
+  "note": "유튜브 핸들 404, 채널 미확인",
+  "yt": {},
+  "chzzk": {},
+  "soop": {},
+  "fetched": "",
+  "history": {}
+ },
+ "리스텔라|야토": {
+  "member": "야토",
+  "group": "리스텔라",
+  "agency": "샵팬픽",
+  "status": "활동",
+  "note": "첫 번째 스텔라; 치지직 API 20371명",
+  "yt": {
+   "id": "",
+   "handle": "@yatoisyato"
+  },
+  "chzzk": {
+   "id": "e87999abca4fd0c3214e05ef414ce951",
+   "name": "야토 Yato",
+   "followers": 20371,
+   "verified": false
+  },
+  "soop": {},
+  "fetched": "2026-10-27",
+  "history": {
+   "2026-10-27": 20371
+  }
+ },
+ "리스텔라|햄쿠비": {
+  "member": "햄쿠비",
+  "group": "리스텔라",
+  "agency": "샵팬픽",
+  "status": "활동",
+  "note": "두 번째 스텔라; 치지직 API 23714명",
+  "yt": {
+   "id": "",
+   "handle": "@hamkubby"
+  },
+  "chzzk": {
+   "id": "9351fb8417f73405c84e0846409e3263",
+   "name": "햄쿠비",
+   "followers": 23713,
+   "verified": false
+  },
+  "soop": {},
+  "fetched": "2026-10-27",
+  "history": {
+   "2026-10-27": 23713
+  }
+ },
+ "리스텔라|오단밍": {
+  "member": "오단밍",
+  "group": "리스텔라",
+  "agency": "샵팬픽",
+  "status": "활동",
+  "note": "두 번째 스텔라; 치지직 API 18600명",
+  "yt": {
+   "id": "",
+   "handle": "@odanming"
+  },
+  "chzzk": {
+   "id": "f3b204dd3fd6925835ca1848cd4b6d3c",
+   "name": "오단밍",
+   "followers": 18600,
+   "verified": false
+  },
+  "soop": {},
+  "fetched": "2026-10-27",
+  "history": {
+   "2026-10-27": 18600
+  }
+ },
+ "리스텔라|아미하 유네": {
+  "member": "아미하 유네",
+  "group": "리스텔라",
+  "agency": "샵팬픽",
+  "status": "활동",
+  "note": "세 번째 스텔라; 치지직 API 6534명",
+  "yt": {
+   "id": "",
+   "handle": "@아미하유네"
+  },
+  "chzzk": {
+   "id": "dd6cf0d465dae40bc4a83f78abd58352",
+   "name": "아미하 유네",
+   "followers": 6534,
+   "verified": false
+  },
+  "soop": {},
+  "fetched": "2026-10-27",
+  "history": {
+   "2026-10-27": 6534
+  }
+ },
+ "리스텔라|쇼코코 도리": {
+  "member": "쇼코코 도리",
+  "group": "리스텔라",
+  "agency": "샵팬픽",
+  "status": "활동",
+  "note": "세 번째 스텔라; 치지직 API 4947명",
+  "yt": {
+   "id": "",
+   "handle": "@쇼코코도리"
+  },
+  "chzzk": {
+   "id": "cb0ceb32cbf6bced3bac7892cbca37e1",
+   "name": "쇼코코 도리",
+   "followers": 4947,
+   "verified": false
+  },
+  "soop": {},
+  "fetched": "2026-10-27",
+  "history": {
+   "2026-10-27": 4947
+  }
+ },
+ "리스텔라|하쿠텐 후와": {
+  "member": "하쿠텐 후와",
+  "group": "리스텔라",
+  "agency": "샵팬픽",
+  "status": "활동",
+  "note": "세 번째 스텔라; 치지직 API 13505명",
+  "yt": {
+   "id": "",
+   "handle": "@하쿠텐후와"
+  },
+  "chzzk": {
+   "id": "7792c631f74f66e92ae25949a3a11abb",
+   "name": "하쿠텐 후와",
+   "followers": 13505,
+   "verified": false
+  },
+  "soop": {},
+  "fetched": "2026-10-27",
+  "history": {
+   "2026-10-27": 13505
+  }
+ },
+ "리스텔라|니우 니우": {
+  "member": "니우 니우",
+  "group": "리스텔라",
+  "agency": "샵팬픽",
+  "status": "졸업(2026.07)",
+  "note": "2026.07.01 졸업 공지; 유튜브 미확인; 치지직 API(문의 listella.tv) 3002명",
+  "yt": {},
+  "chzzk": {
+   "id": "1665ca6bfd987620c1d4f5171fbfc3db",
+   "name": "니우 니우",
+   "followers": 3002,
+   "verified": false
+  },
+  "soop": {},
+  "fetched": "2026-10-27",
+  "history": {
+   "2026-10-27": 3002
+  }
+ },
+ "리스텔라|로보 문릿": {
+  "member": "로보 문릿",
+  "group": "리스텔라",
+  "agency": "샵팬픽",
+  "status": "졸업(2025.07)",
+  "note": "채널 미확인",
+  "yt": {},
+  "chzzk": {},
+  "soop": {},
+  "fetched": "",
+  "history": {}
+ },
+ "리스텔라|바바루아 아망": {
+  "member": "바바루아 아망",
+  "group": "리스텔라",
+  "agency": "샵팬픽",
+  "status": "졸업(2024.04)",
+  "note": "채널 미확인",
+  "yt": {},
+  "chzzk": {},
+  "soop": {},
+  "fetched": "",
+  "history": {}
+ },
+ "리스텔라|오카루 토카": {
+  "member": "오카루 토카",
+  "group": "리스텔라",
+  "agency": "샵팬픽",
+  "status": "졸업(2024.01)",
+  "note": "채널 미확인",
+  "yt": {},
+  "chzzk": {},
+  "soop": {},
+  "fetched": "",
+  "history": {}
+ },
+ "V-llage(데브메이트)|티그리스 카닌": {
+  "member": "티그리스 카닌",
+  "group": "V-llage(데브메이트)",
+  "agency": "데브메이트",
+  "status": "활동",
+  "note": "3차 입주민; 채널 미확인(나무위키 링크 없음, 치지직 검색 결과 없음)",
+  "yt": {},
+  "chzzk": {},
+  "soop": {},
+  "fetched": "",
+  "history": {}
+ },
+ "V-llage(데브메이트)|코오리 세라": {
+  "member": "코오리 세라",
+  "group": "V-llage(데브메이트)",
+  "agency": "데브메이트",
+  "status": "활동",
+  "note": "3.5차 입주민; 유튜브 미확인; 치지직은 API 정확 이름 일치 'Kori Serah' 4734명",
+  "yt": {},
+  "chzzk": {
+   "id": "0d4e078913f04f0412f0092e10974492",
+   "name": "코오리 세라 Kori Serah",
+   "followers": 4735,
+   "verified": false
+  },
+  "soop": {},
+  "fetched": "2026-10-27",
+  "history": {
+   "2026-10-27": 4735
+  }
+ },
+ "V-llage(데브메이트)|무뉴뉴": {
+  "member": "무뉴뉴",
+  "group": "V-llage(데브메이트)",
+  "agency": "데브메이트",
+  "status": "활동",
+  "note": "2024 합류; 치지직 API 9468명",
+  "yt": {
+   "id": "",
+   "handle": "@무뉴뉴"
+  },
+  "chzzk": {
+   "id": "1b8a7d66b3e6c69551dc716d2634350e",
+   "name": "무뉴뉴",
+   "followers": 9468,
+   "verified": false
+  },
+  "soop": {
+   "id": "malolo",
+   "name": "무뉴뉴",
+   "followers": 2179
+  },
+  "fetched": "2026-10-27",
+  "history": {
+   "2026-10-27": 9468
+  }
+ },
+ "V-llage(데브메이트)|키지": {
+  "member": "키지",
+  "group": "V-llage(데브메이트)",
+  "agency": "데브메이트",
+  "status": "졸업(2026.02)",
+  "note": "5차 입주민; 채널 미확인",
+  "yt": {},
+  "chzzk": {},
+  "soop": {},
+  "fetched": "",
+  "history": {}
+ },
+ "V-llage(데브메이트)|치로": {
+  "member": "치로",
+  "group": "V-llage(데브메이트)",
+  "agency": "데브메이트",
+  "status": "졸업(2025.12)",
+  "note": "5차 입주민 계약 종료; 채널 미확인",
+  "yt": {},
+  "chzzk": {},
+  "soop": {},
+  "fetched": "",
+  "history": {}
+ },
+ "V-llage(데브메이트)|요나": {
+  "member": "요나",
+  "group": "V-llage(데브메이트)",
+  "agency": "데브메이트",
+  "status": "졸업(2025.12)",
+  "note": "계약 종료; 치지직 API 6221명",
+  "yt": {
+   "id": "",
+   "handle": "@요나"
+  },
+  "chzzk": {
+   "id": "7c52f0becffdf297fcd74c037aeca750",
+   "name": "요나",
+   "followers": 6221,
+   "verified": false
+  },
+  "soop": {
+   "id": "iotayona",
+   "name": "요나ㆍ",
+   "followers": 4655
+  },
+  "fetched": "2026-10-27",
+  "history": {
+   "2026-10-27": 6221
+  }
+ },
+ "V-llage(데브메이트)|쿠로가미 사샤": {
+  "member": "쿠로가미 사샤",
+  "group": "V-llage(데브메이트)",
+  "agency": "데브메이트",
+  "status": "졸업(2025.12)",
+  "note": "채널 미확인",
+  "yt": {},
+  "chzzk": {},
+  "soop": {},
+  "fetched": "",
+  "history": {}
+ },
+ "V-llage(데브메이트)|플로리스 로에": {
+  "member": "플로리스 로에",
+  "group": "V-llage(데브메이트)",
+  "agency": "데브메이트",
+  "status": "졸업(2025.08)",
+  "note": "치지직 미확인",
+  "yt": {
+   "id": "",
+   "handle": "@v_llage_loe"
+  },
+  "chzzk": {},
+  "soop": {
+   "id": "vllageloe",
+   "name": "로에ㆍ",
+   "followers": 14892
+  },
+  "fetched": "2026-10-27",
+  "history": {
+   "2026-10-27": 14892
+  }
+ },
+ "V-llage(데브메이트)|아스테리 에프타": {
+  "member": "아스테리 에프타",
+  "group": "V-llage(데브메이트)",
+  "agency": "데브메이트",
+  "status": "졸업(2025.07)",
+  "note": "채널 미확인",
+  "yt": {},
+  "chzzk": {},
+  "soop": {},
+  "fetched": "",
+  "history": {}
+ },
+ "V-llage(데브메이트)|에피오네 나시아": {
+  "member": "에피오네 나시아",
+  "group": "V-llage(데브메이트)",
+  "agency": "데브메이트",
+  "status": "졸업(2025.03)",
+  "note": "채널 미확인",
+  "yt": {},
+  "chzzk": {},
+  "soop": {},
+  "fetched": "",
+  "history": {}
+ },
+ "V-llage(데브메이트)|라니에": {
+  "member": "라니에",
+  "group": "V-llage(데브메이트)",
+  "agency": "데브메이트",
+  "status": "졸업(2024.12)",
+  "note": "채널 미확인",
+  "yt": {},
+  "chzzk": {},
+  "soop": {},
+  "fetched": "",
+  "history": {}
+ },
+ "V-llage(데브메이트)|루비엘": {
+  "member": "루비엘",
+  "group": "V-llage(데브메이트)",
+  "agency": "데브메이트",
+  "status": "졸업(2024.12)",
+  "note": "계약 파기; 채널 미확인",
+  "yt": {},
+  "chzzk": {},
+  "soop": {},
+  "fetched": "",
+  "history": {}
+ },
+ "V-llage(데브메이트)|아자라시 하푸": {
+  "member": "아자라시 하푸",
+  "group": "V-llage(데브메이트)",
+  "agency": "데브메이트",
+  "status": "졸업(2023.07)",
+  "note": "치지직 미확인",
+  "yt": {
+   "id": "",
+   "handle": "@v_llage_hapu"
+  },
+  "chzzk": {},
+  "soop": {},
+  "fetched": "",
+  "history": {}
+ },
+ "크로아(악어크루)|치요": {
+  "member": "치요",
+  "group": "크로아(악어크루)",
+  "agency": "악어크루",
+  "status": "활동",
+  "note": "SOOP 중심, 치지직 미확인",
+  "yt": {
+   "id": "",
+   "handle": "@Chiyo75"
+  },
+  "chzzk": {},
+  "soop": {
+   "id": "chiyo75",
+   "name": "치요∀",
+   "followers": 16058
+  },
+  "fetched": "2026-10-27",
+  "history": {
+   "2026-10-27": 16058
+  }
+ },
+ "크로아(악어크루)|요요": {
+  "member": "요요",
+  "group": "크로아(악어크루)",
+  "agency": "악어크루",
+  "status": "활동",
+  "note": "SOOP 중심, 치지직 미확인",
+  "yt": {
+   "id": "",
+   "handle": "@YoYo_48"
+  },
+  "chzzk": {},
+  "soop": {
+   "id": "wooldi",
+   "name": "요요에요∀",
+   "followers": 14680
+  },
+  "fetched": "2026-10-27",
+  "history": {
+   "2026-10-27": 14680
+  }
+ },
+ "크로아(악어크루)|김마늘": {
+  "member": "김마늘",
+  "group": "크로아(악어크루)",
+  "agency": "악어크루",
+  "status": "활동",
+  "note": "SOOP 중심, 치지직 미확인",
+  "yt": {
+   "id": "",
+   "handle": "@manlmanl321"
+  },
+  "chzzk": {},
+  "soop": {
+   "id": "kputmanl98",
+   "name": "김마늘∀",
+   "followers": 15606
+  },
+  "fetched": "2026-10-27",
+  "history": {
+   "2026-10-27": 15606
+  }
+ },
+ "크로아(악어크루)|류키": {
+  "member": "류키",
+  "group": "크로아(악어크루)",
+  "agency": "악어크루",
+  "status": "활동",
+  "note": "SOOP 중심, 치지직 미확인",
+  "yt": {
+   "id": "",
+   "handle": "@Rue_Ki"
+  },
+  "chzzk": {},
+  "soop": {
+   "id": "ruki02",
+   "name": "류키∀",
+   "followers": 12083
+  },
+  "fetched": "2026-10-27",
+  "history": {
+   "2026-10-27": 12083
+  }
+ },
+ "크로아(악어크루)|만타": {
+  "member": "만타",
+  "group": "크로아(악어크루)",
+  "agency": "악어크루",
+  "status": "활동",
+  "note": "메인보컬(2025.07 합류); 유튜브는 나무위키 첫 링크(채널명 '나는 만타'); 치지직 API '나는 만타' 15686명",
+  "yt": {
+   "id": "",
+   "handle": "@Manta_clip"
+  },
+  "chzzk": {
+   "id": "e0ccb72f0412d306b20847c94a2824d3",
+   "name": "나는 만타",
+   "followers": 15686,
+   "verified": false
+  },
+  "soop": {},
+  "fetched": "2026-10-27",
+  "history": {
+   "2026-10-27": 15686
+  }
+ },
+ "크로아(악어크루)|마이리": {
+  "member": "마이리",
+  "group": "크로아(악어크루)",
+  "agency": "악어크루",
+  "status": "졸업(2025.10)",
+  "note": "하차; 채널 미확인",
+  "yt": {},
+  "chzzk": {},
+  "soop": {},
+  "fetched": "",
+  "history": {}
+ },
+ "크로아(악어크루)|치치": {
+  "member": "치치",
+  "group": "크로아(악어크루)",
+  "agency": "악어크루",
+  "status": "졸업(2025.07)",
+  "note": "2025.07 멤버 교체로 탈락; 채널 미확인",
+  "yt": {},
+  "chzzk": {},
+  "soop": {},
+  "fetched": "",
+  "history": {}
+ },
+ "크로아(악어크루)|박순자": {
+  "member": "박순자",
+  "group": "크로아(악어크루)",
+  "agency": "악어크루",
+  "status": "졸업(2025.07)",
+  "note": "2025.07 멤버 교체로 탈락; 채널 미확인",
+  "yt": {},
+  "chzzk": {},
+  "soop": {},
+  "fetched": "",
+  "history": {}
+ },
+ "AESTHER|아리사": {
+  "member": "아리사",
+  "group": "AESTHER",
+  "agency": "카론 유니버스",
+  "status": "활동",
+  "note": "치지직 API 107948명",
+  "yt": {
+   "id": "",
+   "handle": "@Aesther_Arisa"
+  },
+  "chzzk": {
+   "id": "4de764d9dad3b25602284be6db3ac647",
+   "name": "아리사",
+   "followers": 107948,
+   "verified": true
+  },
+  "soop": {},
+  "fetched": "2026-10-27",
+  "history": {
+   "2026-10-27": 107948
+  }
+ },
+ "AESTHER|카린": {
+  "member": "카린",
+  "group": "AESTHER",
+  "agency": "카론 유니버스",
+  "status": "활동",
+  "note": "치지직 API 58400명",
+  "yt": {
+   "id": "",
+   "handle": "@Aesther_Karin"
+  },
+  "chzzk": {
+   "id": "32fb866e323242b770cdc790f991a6f6",
+   "name": "카린",
+   "followers": 58400,
+   "verified": true
+  },
+  "soop": {},
+  "fetched": "2026-10-27",
+  "history": {
+   "2026-10-27": 58400
+  }
+ },
+ "AESTHER|에리스": {
+  "member": "에리스",
+  "group": "AESTHER",
+  "agency": "카론 유니버스",
+  "status": "활동",
+  "note": "치지직 API 52493명",
+  "yt": {
+   "id": "",
+   "handle": "@Aesther_Eris"
+  },
+  "chzzk": {
+   "id": "17d8605fc37fb5ef49f5f67ae786fe4e",
+   "name": "에리스",
+   "followers": 52493,
+   "verified": true
+  },
+  "soop": {},
+  "fetched": "2026-10-27",
+  "history": {
+   "2026-10-27": 52493
+  }
+ },
+ "AESTHER|엘리": {
+  "member": "엘리",
+  "group": "AESTHER",
+  "agency": "카론 유니버스",
+  "status": "활동",
+  "note": "치지직 API 64138명",
+  "yt": {
+   "id": "",
+   "handle": "@Aesther_Ellie"
+  },
+  "chzzk": {
+   "id": "475313e6c26639d5763628313b4c130e",
+   "name": "엘리",
+   "followers": 64137,
+   "verified": true
+  },
+  "soop": {},
+  "fetched": "2026-10-27",
+  "history": {
+   "2026-10-27": 64137
+  }
+ },
+ "AESTHER|미카": {
+  "member": "미카",
+  "group": "AESTHER",
+  "agency": "카론 유니버스",
+  "status": "졸업(2024.04)",
+  "note": "채널 미확인",
+  "yt": {},
+  "chzzk": {},
+  "soop": {},
+  "fetched": "",
+  "history": {}
+ },
+ "PJX|오르": {
+  "member": "오르",
+  "group": "PJX",
+  "agency": "카론 유니버스",
+  "status": "활동",
+  "note": "치지직 API 'Or' 12718명",
+  "yt": {
+   "id": "",
+   "handle": "@OrCharon"
+  },
+  "chzzk": {
+   "id": "d547c7021e8eb042acf57a315bad7d35",
+   "name": "오르 Or",
+   "followers": 12717,
+   "verified": false
+  },
+  "soop": {},
+  "fetched": "2026-10-27",
+  "history": {
+   "2026-10-27": 12717
+  }
+ },
+ "PJX|유람": {
+  "member": "유람",
+  "group": "PJX",
+  "agency": "카론 유니버스",
+  "status": "활동",
+  "note": "치지직 API 25813명",
+  "yt": {
+   "id": "",
+   "handle": "@YuramCharon"
+  },
+  "chzzk": {
+   "id": "5d68142291810fa1a2a0dfa90a688362",
+   "name": "유람 Yuram",
+   "followers": 25814,
+   "verified": false
+  },
+  "soop": {},
+  "fetched": "2026-10-27",
+  "history": {
+   "2026-10-27": 25814
+  }
+ },
+ "PJX|디온": {
+  "member": "디온",
+  "group": "PJX",
+  "agency": "카론 유니버스",
+  "status": "활동",
+  "note": "치지직 API 11376명",
+  "yt": {
+   "id": "",
+   "handle": "@DionCharon"
+  },
+  "chzzk": {
+   "id": "f380f620615fffd54451032686932f9d",
+   "name": "디온 Dion",
+   "followers": 11376,
+   "verified": false
+  },
+  "soop": {},
+  "fetched": "2026-10-27",
+  "history": {
+   "2026-10-27": 11376
+  }
+ },
+ "PJX|제인": {
+  "member": "제인",
+  "group": "PJX",
+  "agency": "카론 유니버스",
+  "status": "활동",
+  "note": "유튜브 미확인; 치지직 API 'Zane' 5252명",
+  "yt": {},
+  "chzzk": {
+   "id": "f500490b0b9d77ac1ee2dace7f4d208a",
+   "name": "제인 Zane",
+   "followers": 5252,
+   "verified": false
+  },
+  "soop": {},
+  "fetched": "2026-10-27",
+  "history": {
+   "2026-10-27": 5252
+  }
+ },
+ "스테이터스|하렌 루베오스": {
+  "member": "하렌 루베오스",
+  "group": "스테이터스",
+  "agency": "스테이터스",
+  "status": "활동",
+  "note": "리베르타; 유튜브 미확인; 치지직은 API 정확 이름 일치 14593명",
+  "yt": {},
+  "chzzk": {
+   "id": "11f9a14c3439b7b1ceadd819d61624da",
+   "name": "하렌 루베오스",
+   "followers": 14593,
+   "verified": false
+  },
+  "soop": {},
+  "fetched": "2026-10-27",
+  "history": {
+   "2026-10-27": 14593
+  }
+ },
+ "스테이터스|니르": {
+  "member": "니르",
+  "group": "스테이터스",
+  "agency": "스테이터스",
+  "status": "활동",
+  "note": "리베르타; 유튜브 미확인; 치지직은 API '니르 Niru'(나무위키 영문명 일치) 10304명",
+  "yt": {},
+  "chzzk": {
+   "id": "e0b11eab54ad5ecf2306fdd2d7e4f5c2",
+   "name": "니르 Niru",
+   "followers": 10304,
+   "verified": false
+  },
+  "soop": {},
+  "fetched": "2026-10-27",
+  "history": {
+   "2026-10-27": 10304
+  }
+ },
+ "스테이터스|리나 아르시엘": {
+  "member": "리나 아르시엘",
+  "group": "스테이터스",
+  "agency": "스테이터스",
+  "status": "활동",
+  "note": "리베르타; 유튜브 미확인; 치지직은 API 정확 이름 일치 2971명",
+  "yt": {},
+  "chzzk": {
+   "id": "5009507194791cc30ba39cb16957c835",
+   "name": "리나 아르시엘",
+   "followers": 2971,
+   "verified": false
+  },
+  "soop": {},
+  "fetched": "2026-10-27",
+  "history": {
+   "2026-10-27": 2971
+  }
+ },
+ "스테이터스|쿠로노 이안": {
+  "member": "쿠로노 이안",
+  "group": "스테이터스",
+  "agency": "스테이터스",
+  "status": "활동",
+  "note": "리베르타; 유튜브 미확인; 치지직은 API 정확 이름 일치 2897명",
+  "yt": {},
+  "chzzk": {
+   "id": "a0e3e9f1bdd0626fb839f1ce3e8f7ba1",
+   "name": "쿠로노 이안",
+   "followers": 2897,
+   "verified": false
+  },
+  "soop": {},
+  "fetched": "2026-10-27",
+  "history": {
+   "2026-10-27": 2897
+  }
+ },
+ "스테이터스|센 카르멘": {
+  "member": "센 카르멘",
+  "group": "스테이터스",
+  "agency": "스테이터스",
+  "status": "졸업(2026.09)",
+  "note": "유튜브 미확인; 치지직은 API 정확 이름 일치 10304명",
+  "yt": {},
+  "chzzk": {
+   "id": "baf2109352261c8dd091feae895f3a11",
+   "name": "센 카르멘",
+   "followers": 10304,
+   "verified": false
+  },
+  "soop": {},
+  "fetched": "2026-10-27",
+  "history": {
+   "2026-10-27": 10304
+  }
+ },
+ "스테이터스|헤르베아 모코": {
+  "member": "헤르베아 모코",
+  "group": "스테이터스",
+  "agency": "스테이터스",
+  "status": "졸업(2026.04)",
+  "note": "채널 미확인",
+  "yt": {},
+  "chzzk": {},
+  "soop": {},
+  "fetched": "",
+  "history": {}
+ },
+ "스테이터스|우미네 아코": {
+  "member": "우미네 아코",
+  "group": "스테이터스",
+  "agency": "스테이터스",
+  "status": "졸업(2025.12)",
+  "note": "유튜브 미확인; 치지직 API(소개글 스테이터스 소속) 6005명",
+  "yt": {},
+  "chzzk": {
+   "id": "c5b12113207353d7ffb74dd6cfe18555",
+   "name": "우미네 아코",
+   "followers": 6005,
+   "verified": false
+  },
+  "soop": {},
+  "fetched": "2026-10-27",
+  "history": {
+   "2026-10-27": 6005
+  }
+ },
+ "위싱 라이브|아오하루 히카루": {
+  "member": "아오하루 히카루",
+  "group": "위싱 라이브",
+  "agency": "위싱 라이브",
+  "status": "활동",
+  "note": "1기생; 유튜브 미확인(나무위키·공식 링크 없음); 치지직 API(소개글 위싱라이브 1기생) 1284명",
+  "yt": {},
+  "chzzk": {
+   "id": "de792cdd725ddc22f2e4ab81deda8e11",
+   "name": "아오하루 히카루 Wishing",
+   "followers": 1284,
+   "verified": false
+  },
+  "soop": {},
+  "fetched": "2026-10-27",
+  "history": {
+   "2026-10-27": 1284
+  }
+ },
+ "위싱 라이브|하라페코 모모모": {
+  "member": "하라페코 모모모",
+  "group": "위싱 라이브",
+  "agency": "위싱 라이브",
+  "status": "활동",
+  "note": "1기생; 치지직 API 7999명",
+  "yt": {
+   "id": "",
+   "handle": "@wishing_momomo"
+  },
+  "chzzk": {
+   "id": "cc111c664f8e6a2ce297fd9a52db5636",
+   "name": "하라페코 모모모 Wishing",
+   "followers": 7999,
+   "verified": false
+  },
+  "soop": {},
+  "fetched": "2026-10-27",
+  "history": {
+   "2026-10-27": 7999
+  }
+ },
+ "위싱 라이브|사이네코 코나타": {
+  "member": "사이네코 코나타",
+  "group": "위싱 라이브",
+  "agency": "위싱 라이브",
+  "status": "활동",
+  "note": "1기생; 치지직 API 5203명",
+  "yt": {
+   "id": "",
+   "handle": "@wishing_konata"
+  },
+  "chzzk": {
+   "id": "dc5a830020254936843b8afeed98949f",
+   "name": "사이네코 코나타 Wishing",
+   "followers": 5203,
+   "verified": false
+  },
+  "soop": {},
+  "fetched": "2026-10-27",
+  "history": {
+   "2026-10-27": 5203
+  }
+ },
+ "위싱 라이브|쿠로카미 아우": {
+  "member": "쿠로카미 아우",
+  "group": "위싱 라이브",
+  "agency": "위싱 라이브",
+  "status": "졸업(2026.09)",
+  "note": "계약해지, 채널 전부 폐쇄",
+  "yt": {},
+  "chzzk": {},
+  "soop": {},
+  "fetched": "",
+  "history": {}
+ },
+ "위싱 라이브|캐린": {
+  "member": "캐린",
+  "group": "위싱 라이브",
+  "agency": "위싱 라이브",
+  "status": "졸업(2025.12)",
+  "note": "0기생; 유튜브 미확인; 치지직 API(소개글 251221 졸업) 2235명",
+  "yt": {},
+  "chzzk": {
+   "id": "2a6714553d589ccaa50a94bd0f922ada",
+   "name": "캐린",
+   "followers": 2235,
+   "verified": false
+  },
+  "soop": {},
+  "fetched": "2026-10-27",
+  "history": {
+   "2026-10-27": 2235
+  }
+ },
+ "버츄얼 헤르츠|이큐": {
+  "member": "이큐",
+  "group": "버츄얼 헤르츠",
+  "agency": "버츄얼 헤르츠",
+  "status": "활동",
+  "note": "치지직 API 4393명",
+  "yt": {
+   "id": "",
+   "handle": "@E.Que_VHZ"
+  },
+  "chzzk": {
+   "id": "74a2d3bb7aa1b0503e21bf58e61bfcc1",
+   "name": "이큐 EQue",
+   "followers": 4393,
+   "verified": false
+  },
+  "soop": {},
+  "fetched": "2026-10-27",
+  "history": {
+   "2026-10-27": 4393
+  }
+ },
+ "버츄얼 헤르츠|슈네": {
+  "member": "슈네",
+  "group": "버츄얼 헤르츠",
+  "agency": "버츄얼 헤르츠",
+  "status": "졸업(2026.04)",
+  "note": "채널 미확인",
+  "yt": {},
+  "chzzk": {},
+  "soop": {},
+  "fetched": "",
+  "history": {}
+ },
+ "버츄얼 헤르츠|아오": {
+  "member": "아오",
+  "group": "버츄얼 헤르츠",
+  "agency": "버츄얼 헤르츠",
+  "status": "졸업(2025.01)",
+  "note": "계약 해지; 채널 미확인",
+  "yt": {},
+  "chzzk": {},
+  "soop": {},
+  "fetched": "",
+  "history": {}
+ },
+ "버츄얼 헤르츠|니나": {
+  "member": "니나",
+  "group": "버츄얼 헤르츠",
+  "agency": "버츄얼 헤르츠",
+  "status": "졸업(2024.09)",
+  "note": "2024.09 활동 종료 후 이후 4.20 정식 졸업; 채널 미확인",
+  "yt": {},
+  "chzzk": {},
+  "soop": {},
+  "fetched": "",
+  "history": {}
+ },
+ "버츄얼 헤르츠|구미": {
+  "member": "구미",
+  "group": "버츄얼 헤르츠",
+  "agency": "버츄얼 헤르츠",
+  "status": "졸업(2024.06)",
+  "note": "채널 미확인",
+  "yt": {},
+  "chzzk": {},
+  "soop": {},
+  "fetched": "",
+  "history": {}
+ },
+ "라이브루리|로제타": {
+  "member": "로제타",
+  "group": "라이브루리",
+  "agency": "라이브루리",
+  "status": "활동",
+  "note": "1기; 치지직 API 20771명",
+  "yt": {
+   "id": "",
+   "handle": "@R.Rosetta"
+  },
+  "chzzk": {
+   "id": "faf9cdd37e2ce5e2af6944dbf42739a9",
+   "name": "로제타 Rosetta",
+   "followers": 20771,
+   "verified": false
+  },
+  "soop": {},
+  "fetched": "2026-10-27",
+  "history": {
+   "2026-10-27": 20771
+  }
+ },
+ "라이브루리|리노아": {
+  "member": "리노아",
+  "group": "라이브루리",
+  "agency": "라이브루리",
+  "status": "활동",
+  "note": "1기; @Re_noa는 2024.10부터 지식토크 채널 운영(다시보기 @R.Linoa_FULL 분리); 치지직 API 5571명",
+  "yt": {
+   "id": "",
+   "handle": "@Re_noa"
+  },
+  "chzzk": {
+   "id": "2f1107218a8e549f7b9ec5a53c488d33",
+   "name": "리노아 Linoa",
+   "followers": 5571,
+   "verified": false
+  },
+  "soop": {},
+  "fetched": "2026-10-27",
+  "history": {
+   "2026-10-27": 5571
+  }
+ },
+ "라이브루리|아렌": {
+  "member": "아렌",
+  "group": "라이브루리",
+  "agency": "라이브루리",
+  "status": "졸업(2026.06)",
+  "note": "나무위키 기재 유튜브 @r_aren 무효, 치지직 채널은 현재 '신호 없음'으로 본인 확인 불가 → 미확인",
+  "yt": {},
+  "chzzk": {},
+  "soop": {},
+  "fetched": "",
+  "history": {}
+ },
+ "라이브루리|헬리샤": {
+  "member": "헬리샤",
+  "group": "라이브루리",
+  "agency": "라이브루리",
+  "status": "졸업(2025.01)",
+  "note": "치지직 채널 현재 '(알 수 없음)'(소개글로 본인 확인)",
+  "yt": {
+   "id": "",
+   "handle": "@R.Hellixia"
+  },
+  "chzzk": {},
+  "soop": {},
+  "fetched": "",
+  "history": {}
+ },
+ "라이브루리|도라점장": {
+  "member": "도라점장",
+  "group": "라이브루리",
+  "agency": "라이브루리",
+  "status": "졸업(2024.12)",
+  "note": "계약 종료 후 개인세 '도라대장'으로 재데뷔; 치지직 채널조회 '도라대장' 10548명",
+  "yt": {
+   "id": "",
+   "handle": "@DORAtheStingray"
+  },
+  "chzzk": {
+   "id": "934945011c0ed0da3ed719a349d3ba66",
+   "name": "도라대장",
+   "followers": 10548,
+   "verified": false
+  },
+  "soop": {
+   "id": "doracafe",
+   "name": "도라점장",
+   "followers": 219
+  },
+  "fetched": "2026-10-27",
+  "history": {
+   "2026-10-27": 10548
+  }
+ },
+ "라이브루리|미치르 메르헨": {
+  "member": "미치르 메르헨",
+  "group": "라이브루리",
+  "agency": "라이브루리",
+  "status": "졸업(2024.06)",
+  "note": "계약 종료(이후 샌드박스 네트워크); 치지직 API 20526명",
+  "yt": {
+   "id": "",
+   "handle": "@MytylMaerchen"
+  },
+  "chzzk": {
+   "id": "390efc6c5186f85427b2d61297a9d4ed",
+   "name": "미치르",
+   "followers": 20526,
+   "verified": true
+  },
+  "soop": {},
+  "fetched": "2026-10-27",
+  "history": {
+   "2026-10-27": 20526
+  }
+ },
+ "큐버스|강해라": {
+  "member": "강해라",
+  "group": "큐버스",
+  "agency": "롤큐",
+  "status": "활동",
+  "note": "1기생; 치지직 API(소개글 큐버스 1기생) 1869명",
+  "yt": {
+   "id": "UCaRKqizX-JGvPDo-fTVmN6Q",
+   "handle": ""
+  },
+  "chzzk": {
+   "id": "be382af13826239a73546eb29b90fe2a",
+   "name": "강해라",
+   "followers": 1869,
+   "verified": false
+  },
+  "soop": {
+   "id": "kanghaera",
+   "name": "강해라!",
+   "followers": 2349
+  },
+  "fetched": "2026-10-27",
+  "history": {
+   "2026-10-27": 2349
+  }
+ },
+ "큐버스|홍애리": {
+  "member": "홍애리",
+  "group": "큐버스",
+  "agency": "롤큐",
+  "status": "활동",
+  "note": "1.5기생; 2025.04.16 장기 휴방 공지 후 방송 없음; 채널 미확인",
+  "yt": {},
+  "chzzk": {},
+  "soop": {},
+  "fetched": "",
+  "history": {}
+ },
+ "큐버스|하지오": {
+  "member": "하지오",
+  "group": "큐버스",
+  "agency": "롤큐",
+  "status": "졸업(2025.03)",
+  "note": "계약 종료; 채널 미확인",
+  "yt": {},
+  "chzzk": {},
+  "soop": {},
+  "fetched": "",
+  "history": {}
+ },
+ "큐버스|청아린": {
+  "member": "청아린",
+  "group": "큐버스",
+  "agency": "롤큐",
+  "status": "졸업(2024.07)",
+  "note": "0기생 계약 종료; 채널 미확인",
+  "yt": {},
+  "chzzk": {},
+  "soop": {},
+  "fetched": "",
+  "history": {}
+ },
+ "루나데이즈|코하네 쿠로": {
+  "member": "코하네 쿠로",
+  "group": "루나데이즈",
+  "agency": "루나데이즈",
+  "status": "활동",
+  "note": "아이즈키; 유튜브 미확인; 치지직 API(소개글 루나데이즈 소속) 2253명",
+  "yt": {},
+  "chzzk": {
+   "id": "b965a71b3cf88792b4e58bf95a299fc9",
+   "name": "코하네 쿠로",
+   "followers": 2253,
+   "verified": false
+  },
+  "soop": {},
+  "fetched": "2026-10-27",
+  "history": {
+   "2026-10-27": 2253
+  }
+ },
+ "루나데이즈|메이쇼코 키나": {
+  "member": "메이쇼코 키나",
+  "group": "루나데이즈",
+  "agency": "루나데이즈",
+  "status": "활동",
+  "note": "츠키아라(2기); 유튜브 미확인; 치지직 API(소개글 루나데이즈) 171명",
+  "yt": {},
+  "chzzk": {
+   "id": "569e9f4b3dbf6d4f24fe15ccfb0e1191",
+   "name": "메이쇼코 키나",
+   "followers": 171,
+   "verified": false
+  },
+  "soop": {},
+  "fetched": "2026-10-27",
+  "history": {
+   "2026-10-27": 171
+  }
+ },
+ "루나데이즈|아오하라 하요": {
+  "member": "아오하라 하요",
+  "group": "루나데이즈",
+  "agency": "루나데이즈",
+  "status": "활동",
+  "note": "츠키아라(2기); 유튜브 미확인; 치지직 API(소개글 루나데이즈) 125명",
+  "yt": {},
+  "chzzk": {
+   "id": "a7e1f3166ce8d8ad86e1f85fc07cec1e",
+   "name": "아오하라 하요",
+   "followers": 125,
+   "verified": false
+  },
+  "soop": {},
+  "fetched": "2026-10-27",
+  "history": {
+   "2026-10-27": 125
+  }
+ },
+ "루나데이즈|오카다 치나츠": {
+  "member": "오카다 치나츠",
+  "group": "루나데이즈",
+  "agency": "루나데이즈",
+  "status": "활동",
+  "note": "츠키아라(2기); 유튜브 미확인; 치지직 API(소개글 루나데이즈) 151명",
+  "yt": {},
+  "chzzk": {
+   "id": "466c153014440cac832ae6f872da3307",
+   "name": "오카다 치나츠",
+   "followers": 151,
+   "verified": false
+  },
+  "soop": {},
+  "fetched": "2026-10-27",
+  "history": {
+   "2026-10-27": 151
+  }
+ },
+ "루나데이즈|시로카미 레이": {
+  "member": "시로카미 레이",
+  "group": "루나데이즈",
+  "agency": "루나데이즈",
+  "status": "졸업(2026.07)",
+  "note": "아이즈키; 유튜브 미확인; 치지직은 API 정확 이름 일치(소개글 없음) 1533명",
+  "yt": {},
+  "chzzk": {
+   "id": "26c26c30fdac3e4c56143513181ae632",
+   "name": "시로카미 레이",
+   "followers": 1533,
+   "verified": false
+  },
+  "soop": {},
+  "fetched": "2026-10-27",
+  "history": {
+   "2026-10-27": 1533
+  }
+ },
+ "루나데이즈|모리": {
+  "member": "모리",
+  "group": "루나데이즈",
+  "agency": "루나데이즈",
+  "status": "졸업(2025.09)",
+  "note": "셀레네, 계약 해지; 채널 미확인",
+  "yt": {},
+  "chzzk": {},
+  "soop": {},
+  "fetched": "",
+  "history": {}
+ },
+ "루나데이즈|이렌": {
+  "member": "이렌",
+  "group": "루나데이즈",
+  "agency": "루나데이즈",
+  "status": "졸업(2025.09)",
+  "note": "셀레네, 계약 해지; 채널 미확인",
+  "yt": {},
+  "chzzk": {},
+  "soop": {},
+  "fetched": "",
+  "history": {}
+ },
+ "루나데이즈|츄아": {
+  "member": "츄아",
+  "group": "루나데이즈",
+  "agency": "루나데이즈",
+  "status": "졸업(2025.09)",
+  "note": "셀레네, 계약 해지; 채널 미확인",
+  "yt": {},
+  "chzzk": {},
+  "soop": {},
+  "fetched": "",
+  "history": {}
+ },
+ "스타데이즈|나츠키": {
+  "member": "나츠키",
+  "group": "스타데이즈",
+  "agency": "쓰리와이코프레이션(오버더월)",
+  "status": "활동",
+  "note": "치지직 API '쿠레나이 나츠키' 42084명",
+  "yt": {
+   "id": "",
+   "handle": "@나츠키"
+  },
+  "chzzk": {
+   "id": "a54372e8197f6d241a43a318279860d6",
+   "name": "쿠레나이 나츠키",
+   "followers": 42085,
+   "verified": false
+  },
+  "soop": {},
+  "fetched": "2026-10-27",
+  "history": {
+   "2026-10-27": 42085
+  }
+ },
+ "스타데이즈|테리": {
+  "member": "테리",
+  "group": "스타데이즈",
+  "agency": "쓰리와이코프레이션(오버더월)",
+  "status": "활동",
+  "note": "치지직 API '테리 눈나' 56792명",
+  "yt": {
+   "id": "",
+   "handle": "@테리눈나"
+  },
+  "chzzk": {
+   "id": "0a2020b09b8cc7f2285b7ae5de2ce4d3",
+   "name": "테리 눈나",
+   "followers": 56794,
+   "verified": false
+  },
+  "soop": {},
+  "fetched": "2026-10-27",
+  "history": {
+   "2026-10-27": 56794
+  }
+ },
+ "스타데이즈|반": {
+  "member": "반",
+  "group": "스타데이즈",
+  "agency": "쓰리와이코프레이션(오버더월)",
+  "status": "졸업(2025.09)",
+  "note": "1기; 채널 미확인",
+  "yt": {},
+  "chzzk": {},
+  "soop": {},
+  "fetched": "",
+  "history": {}
+ },
+ "스타데이즈|쵸키": {
+  "member": "쵸키",
+  "group": "스타데이즈",
+  "agency": "쓰리와이코프레이션(오버더월)",
+  "status": "졸업(2024.01)",
+  "note": "1기; 채널 미확인",
+  "yt": {},
+  "chzzk": {},
+  "soop": {},
+  "fetched": "",
+  "history": {}
+ },
+ "스타데이즈|나츠에": {
+  "member": "나츠에",
+  "group": "스타데이즈",
+  "agency": "쓰리와이코프레이션(오버더월)",
+  "status": "졸업(2023.06)",
+  "note": "1기; 채널 미확인",
+  "yt": {},
+  "chzzk": {},
+  "soop": {},
+  "fetched": "",
+  "history": {}
+ },
+ "스타데이즈|안케": {
+  "member": "안케",
+  "group": "스타데이즈",
+  "agency": "쓰리와이코프레이션(오버더월)",
+  "status": "졸업(2023.06)",
+  "note": "2기; 채널 미확인",
+  "yt": {},
+  "chzzk": {},
+  "soop": {},
+  "fetched": "",
+  "history": {}
+ },
+ "플라티|키마": {
+  "member": "키마",
+  "group": "플라티",
+  "agency": "플라티(개인 크루)",
+  "status": "활동",
+  "note": "SOOP 중심, 치지직 미확인",
+  "yt": {
+   "id": "",
+   "handle": "@kyma_official"
+  },
+  "chzzk": {},
+  "soop": {
+   "id": "kymakyma",
+   "name": "키마",
+   "followers": 41910
+  },
+  "fetched": "2026-10-27",
+  "history": {
+   "2026-10-27": 41910
+  }
+ },
+ "플라티|스노": {
+  "member": "스노",
+  "group": "플라티",
+  "agency": "플라티(개인 크루)",
+  "status": "활동",
+  "note": "SOOP 중심, 치지직 미확인",
+  "yt": {
+   "id": "",
+   "handle": "@snoh_v"
+  },
+  "chzzk": {},
+  "soop": {
+   "id": "snoh2023",
+   "name": "스노",
+   "followers": 6897
+  },
+  "fetched": "2026-10-27",
+  "history": {
+   "2026-10-27": 6897
+  }
+ },
+ "플라티|유나기": {
+  "member": "유나기",
+  "group": "플라티",
+  "agency": "플라티(개인 크루)",
+  "status": "활동",
+  "note": "SOOP 중심, 치지직 미확인",
+  "yt": {
+   "id": "",
+   "handle": "@nagi0413"
+  },
+  "chzzk": {},
+  "soop": {
+   "id": "nagi0413",
+   "name": "유나기",
+   "followers": 14825
+  },
+  "fetched": "2026-10-27",
+  "history": {
+   "2026-10-27": 14825
+  }
+ },
+ "플라티|리코타": {
+  "member": "리코타",
+  "group": "플라티",
+  "agency": "플라티(개인 크루)",
+  "status": "활동",
+  "note": "SOOP 활동으로 알려짐; 채널 미확인",
+  "yt": {},
+  "chzzk": {},
+  "soop": {},
+  "fetched": "",
+  "history": {}
+ },
+ "트윌릿 스튜디오|모코 파르페": {
+  "member": "모코 파르페",
+  "group": "트윌릿 스튜디오",
+  "agency": "에스에이엠지 엔터테인먼트",
+  "status": "활동",
+  "note": "치지직 API(문의 samg.kr) 9576명",
+  "yt": {
+   "id": "",
+   "handle": "@mocoparfe"
+  },
+  "chzzk": {
+   "id": "d20f164fe5946abe0bce2e5a43052923",
+   "name": "모코 파르페",
+   "followers": 9577,
+   "verified": false
+  },
+  "soop": {},
+  "fetched": "2026-10-27",
+  "history": {
+   "2026-10-27": 9577
+  }
+ },
+ "트윌릿 스튜디오|유우희": {
+  "member": "유우희",
+  "group": "트윌릿 스튜디오",
+  "agency": "에스에이엠지 엔터테인먼트",
+  "status": "활동",
+  "note": "유튜브 미확인; 치지직 API(소개글 '카페 카르테의 마스코트', 문의 samg) 1689명; 나무위키 목록의 '카페 카르테'는 유닛명으로 보여 별도 행 미작성",
+  "yt": {},
+  "chzzk": {
+   "id": "f794bcbf2cbab8f252b8e47d3c6e7fdf",
+   "name": "유우희 Uuhee",
+   "followers": 1689,
+   "verified": false
+  },
+  "soop": {},
+  "fetched": "2026-10-27",
+  "history": {
+   "2026-10-27": 1689
+  }
+ },
+ "트윌릿 스튜디오|댕키": {
+  "member": "댕키",
+  "group": "트윌릿 스튜디오",
+  "agency": "에스에이엠지 엔터테인먼트",
+  "status": "활동",
+  "note": "유튜브 미확인; 치지직 API(문의 samg.kr) 1506명",
+  "yt": {},
+  "chzzk": {
+   "id": "aa37bbdad4f5f9097bbee2faa3e511f7",
+   "name": "댕 키",
+   "followers": 1506,
+   "verified": false
+  },
+  "soop": {},
+  "fetched": "2026-10-27",
+  "history": {
+   "2026-10-27": 1506
+  }
+ },
+ "트윌릿 스튜디오|한서린": {
+  "member": "한서린",
+  "group": "트윌릿 스튜디오",
+  "agency": "에스에이엠지 엔터테인먼트",
+  "status": "활동",
+  "note": "유튜브 미확인; 치지직 API(문의 samg.kr) 3183명",
+  "yt": {},
+  "chzzk": {
+   "id": "d83adb241f93618891f71e852bf9c541",
+   "name": "한 서 린",
+   "followers": 3183,
+   "verified": false
+  },
+  "soop": {},
+  "fetched": "2026-10-27",
+  "history": {
+   "2026-10-27": 3183
+  }
+ },
+ "트윌릿 스튜디오|에루 솔스티스": {
+  "member": "에루 솔스티스",
+  "group": "트윌릿 스튜디오",
+  "agency": "에스에이엠지 엔터테인먼트",
+  "status": "활동",
+  "note": "유튜브 미확인; 치지직 API(문의 samg.kr) 1215명",
+  "yt": {},
+  "chzzk": {
+   "id": "1bacd9d540012f7cf0c77fa968b47394",
+   "name": "에루 솔스티스",
+   "followers": 1215,
+   "verified": false
+  },
+  "soop": {},
+  "fetched": "2026-10-27",
+  "history": {
+   "2026-10-27": 1215
+  }
+ },
+ "트윌릿 스튜디오|현시후": {
+  "member": "현시후",
+  "group": "트윌릿 스튜디오",
+  "agency": "에스에이엠지 엔터테인먼트",
+  "status": "졸업(2025.12)",
+  "note": "계약 종료; 채널 미확인",
+  "yt": {},
+  "chzzk": {},
+  "soop": {},
+  "fetched": "",
+  "history": {}
+ },
+ "헤이븐 프로덕션|미엘 스윗하트": {
+  "member": "미엘 스윗하트",
+  "group": "헤이븐 프로덕션",
+  "agency": "헤이븐 프로덕션",
+  "status": "활동",
+  "note": "유튜브 미확인; 치지직 API(소개글 헤이븐 프로덕션) 3454명",
+  "yt": {},
+  "chzzk": {
+   "id": "cf882ca21960c190dd6af5c8332d3876",
+   "name": "미엘 스윗하트 HAVEN",
+   "followers": 3454,
+   "verified": false
+  },
+  "soop": {},
+  "fetched": "2026-10-27",
+  "history": {
+   "2026-10-27": 3454
+  }
+ },
+ "헤이븐 프로덕션|히스이 렌야": {
+  "member": "히스이 렌야",
+  "group": "헤이븐 프로덕션",
+  "agency": "헤이븐 프로덕션",
+  "status": "활동",
+  "note": "유튜브 미확인; 치지직 API '히스이 렌야 HAVEN' 1154명",
+  "yt": {},
+  "chzzk": {
+   "id": "937dbaf38df21d2b2be9359493ce4774",
+   "name": "히스이 렌야 HAVEN",
+   "followers": 1154,
+   "verified": false
+  },
+  "soop": {},
+  "fetched": "2026-10-27",
+  "history": {
+   "2026-10-27": 1154
+  }
+ },
+ "애프터라이브|아마네루 피요": {
+  "member": "아마네루 피요",
+  "group": "애프터라이브",
+  "agency": "애프터라이브",
+  "status": "활동",
+  "note": "비바체; 유튜브 미확인; 치지직 API(소개글 After Live 1기생) 1156명",
+  "yt": {},
+  "chzzk": {
+   "id": "2b777f88980e1eda075a9de9928e54cc",
+   "name": "아마네루 피요",
+   "followers": 1156,
+   "verified": false
+  },
+  "soop": {},
+  "fetched": "2026-10-27",
+  "history": {
+   "2026-10-27": 1156
+  }
+ },
+ "애프터라이브|콘야 유메이": {
+  "member": "콘야 유메이",
+  "group": "애프터라이브",
+  "agency": "애프터라이브",
+  "status": "활동",
+  "note": "비바체; 유튜브 미확인; 치지직 API(소개글 After Live 1기생) 1857명",
+  "yt": {},
+  "chzzk": {
+   "id": "6c60ddcd83b2543a4a339a79fbdbb949",
+   "name": "콘야 유메이",
+   "followers": 1857,
+   "verified": false
+  },
+  "soop": {},
+  "fetched": "2026-10-27",
+  "history": {
+   "2026-10-27": 1857
+  }
+ },
+ "애프터라이브|하루야 치에": {
+  "member": "하루야 치에",
+  "group": "애프터라이브",
+  "agency": "애프터라이브",
+  "status": "활동",
+  "note": "비바체; 유튜브 미확인; 치지직 API(소개글 After Live 1기생) 2260명",
+  "yt": {},
+  "chzzk": {
+   "id": "474b909039b3944632e35acdfb217d3a",
+   "name": "하루야 치에",
+   "followers": 2260,
+   "verified": false
+  },
+  "soop": {},
+  "fetched": "2026-10-27",
+  "history": {
+   "2026-10-27": 2260
+  }
+ },
+ "애프터라이브|시노 레이": {
+  "member": "시노 레이",
+  "group": "애프터라이브",
+  "agency": "애프터라이브",
+  "status": "활동",
+  "note": "비바체; 유튜브 미확인; 치지직 API(소개글 애프터 라이브 1기생) 2161명",
+  "yt": {},
+  "chzzk": {
+   "id": "6636ac6dcac9c0b1e93b8259b8aced8d",
+   "name": "시노 레이",
+   "followers": 2161,
+   "verified": false
+  },
+  "soop": {},
+  "fetched": "2026-10-27",
+  "history": {
+   "2026-10-27": 2161
+  }
+ },
+ "벨로디|토카미 키나": {
+  "member": "토카미 키나",
+  "group": "벨로디",
+  "agency": "벨로디",
+  "status": "활동",
+  "note": "하나메(HANAME); 유튜브 미확인; 치지직 API(소개글 벨로디) 983명",
+  "yt": {},
+  "chzzk": {
+   "id": "f7c9055fd23f21d1e8af3a1305982366",
+   "name": "토카미 키나",
+   "followers": 983,
+   "verified": false
+  },
+  "soop": {},
+  "fetched": "2026-10-27",
+  "history": {
+   "2026-10-27": 983
+  }
+ },
+ "벨로디|쿠로사와 쿄코": {
+  "member": "쿠로사와 쿄코",
+  "group": "벨로디",
+  "agency": "벨로디",
+  "status": "활동",
+  "note": "하나메(HANAME); 유튜브 미확인; 치지직 API(소개글 벨로디) 1292명",
+  "yt": {},
+  "chzzk": {
+   "id": "72827bbec4187a10829703330c6149bc",
+   "name": "쿠로사와 쿄코",
+   "followers": 1292,
+   "verified": false
+  },
+  "soop": {},
+  "fetched": "2026-10-27",
+  "history": {
+   "2026-10-27": 1292
+  }
+ },
+ "아르포나|냐페르": {
+  "member": "냐페르",
+  "group": "아르포나",
+  "agency": "아르포나",
+  "status": "활동",
+  "note": "유모어; 유튜브 미확인; 치지직 API(소개글 아르포나 소속) 1078명",
+  "yt": {},
+  "chzzk": {
+   "id": "5d6a0908bb4eac47f3d839cbffe60961",
+   "name": "냐페르",
+   "followers": 1078,
+   "verified": false
+  },
+  "soop": {},
+  "fetched": "2026-10-27",
+  "history": {
+   "2026-10-27": 1078
+  }
+ },
+ "아르포나|선아린": {
+  "member": "선아린",
+  "group": "아르포나",
+  "agency": "아르포나",
+  "status": "활동",
+  "note": "유모어; 유튜브 미확인; 치지직 API(소개글 아르포나 소속) 945명",
+  "yt": {},
+  "chzzk": {
+   "id": "5891784ca4e2320cfa25668f1f247579",
+   "name": "선아린",
+   "followers": 945,
+   "verified": false
+  },
+  "soop": {},
+  "fetched": "2026-10-27",
+  "history": {
+   "2026-10-27": 945
+  }
+ }
+}

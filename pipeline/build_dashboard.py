@@ -72,6 +72,52 @@ for r in rows:
     ll = (r['last_live_at'] or '')[:10]
     if ll > a['l']: a['l'] = ll
     if r['twitter_id'] and not a['t']: a['t'] = r['twitter_id']
+# ── 기업 소속 멤버 병합(data/member_stats.json, enrich_members.py 생성) ──
+# 중소 수집원에 이미 있으면 채널 ID로 찾아 소속만 표시, 없으면 새 항목으로 추가.
+import re as _re0
+members = load_json(os.path.join(os.path.dirname(os.path.abspath(CSVF)), 'member_stats.json'), {})
+def _chid(plat, url):
+    m = _re0.search(r'(?:channel/|chzzk\.naver\.com/|sooplive\.co\.kr/)([A-Za-z0-9_\-]+)', url or '')
+    return (plat, m.group(1)) if m else None
+idx = {}
+for a in agg.values():
+    a['g'] = ''; a['k'] = ''
+    for plat, (f, url, cn) in a['ch'].items():
+        key = _chid(plat, url)
+        if key: idx[key] = a
+n_member_new = n_member_tag = 0
+_rank = lambda m: 0 if str(m.get('status', '활동')).startswith('활동') else (1 if str(m.get('status')).startswith('크루') else 2)
+_added = {}   # 채널키 → 추가된 항목(같은 사람이 여러 행이면 현재 소속 우선, 한 번만 추가)
+for mk, m in sorted(members.items(), key=lambda kv: _rank(kv[1])):
+    stt = str(m.get('status', '활동'))
+    kind = '기업' if stt.startswith('활동') else ('크루' if stt.startswith('크루') else '졸업')
+    yt, cz, sp = m.get('yt') or {}, m.get('chzzk') or {}, m.get('soop') or {}
+    hit = (cz.get('id') and idx.get(('chzzk', cz['id']))) or (yt.get('id') and idx.get(('youtube', yt['id']))) \
+          or (sp.get('id') and idx.get(('soop', sp['id'])))
+    if hit:
+        if not hit.get('k') or _rank(m) == 0 and hit['k'] != '기업':
+            hit['g'], hit['k'] = m['group'], kind
+        n_member_tag += 1
+        continue
+    keys = [k for k in [('chzzk', cz.get('id')), ('youtube', yt.get('id') or yt.get('handle')), ('soop', sp.get('id'))] if k[1]]
+    if any(k in _added for k in keys):
+        continue
+    ch = {}
+    if yt.get('id') or yt.get('handle'):
+        u = f"https://www.youtube.com/channel/{yt['id']}" if yt.get('id') else f"https://www.youtube.com/{yt['handle']}"
+        ch['youtube'] = [yt.get('subs') or 0, u, yt.get('title') or '']
+    if cz.get('id'):
+        ch['chzzk'] = [cz.get('followers') or 0, f"https://chzzk.naver.com/{cz['id']}", cz.get('name') or '']
+    if sp.get('id'):
+        ch['soop'] = [sp.get('followers') or 0, f"https://ch.sooplive.co.kr/{sp['id']}", sp.get('name') or '']
+    if not ch: continue
+    best = max(ch.items(), key=lambda x: x[1][0] or 0)
+    agg['m:' + mk] = {'n': m['member'], 'e': '', 'f': best[1][0] or 0, 'p': best[0] if best[1][0] else '',
+                      'd': '', 'l': '', 't': '', 'ch': ch, 'g': m['group'], 'k': kind, 'src': 'member',
+                      'h': m.get('history') or {}}
+    for k in keys: _added[k] = agg['m:' + mk]
+    n_member_new += 1
+print(f'agency members: tagged {n_member_tag}, added {n_member_new}')
 solos = sorted(agg.values(), key=lambda x: -x['f'])
 
 # 소속사·운영사 정리 시트 → [이름, 유형, 대표그룹, 비고]
@@ -232,6 +278,7 @@ tr.row{cursor:pointer}tr.row:hover td{background:color-mix(in srgb,var(--brand) 
 .st-휴면{background:rgba(148,163,184,.18);color:#64748b}.st-확인필요{background:rgba(56,189,248,.15);color:#0b84b8}.st-전환{background:rgba(245,158,11,.15);color:#b4730a}
 .st-데뷔전{background:rgba(167,139,250,.18);color:#7a4fe0}.st-제보{background:rgba(192,86,255,.14);color:#9b3fd6}.st-검증{background:rgba(20,184,166,.15);color:#0f8a7c}
 .st-ai{background:rgba(34,199,232,.15);color:#0b8aa6}
+.st-기업{background:rgba(124,92,255,.12);color:#6a45f0}.st-졸업{background:rgba(148,163,184,.16);color:#64748b}
 @media (prefers-color-scheme:dark){.st-활동중{color:#4ade80}.st-해체종료{color:#fb7185}.st-휴면{color:#a3b0c2}.st-확인필요{color:#7dd3fc}.st-전환{color:#fbbf24}.st-데뷔전{color:#c4b5fd}.st-제보{color:#e0a3ff}.st-검증{color:#5eead4}.st-ai{color:#67e8f9}}
 .cdot{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:6px;vertical-align:1px}
 .num{text-align:right;font-variant-numeric:tabular-nums}
@@ -325,18 +372,19 @@ footer .fl{display:flex;gap:14px;flex-wrap:wrap}footer .fl a{color:var(--sub);te
 </section>
 
 <section id="t-solo" style="display:none">
-  <p class="lead">'나의 작은 버튜버' 집계 API로 매주 자동 수집한 라이브 스트리머예요. 이 소스는 소속사 정보를 주지 않아 <b>소속 미상</b>으로 표시합니다. 소속이 확인된 솔로 아티스트는 명부의 <code>버추얼휴먼/솔로</code>로 따로 등재해요.</p>
+  <p class="lead">두 경로로 매주 자동 수집해요. <b>🌱 중소·개인</b>은 '나의 작은 버튜버' 집계 API(중소 버튜버 전용, 소속 정보 없음), <b>🏢 기업 소속</b>은 운영자가 관리하는 그룹 멤버 명단으로 치지직·유튜브 공개 API에서 팔로워를 가져옵니다. 숫자는 플랫폼별 팔로워·구독자 중 가장 큰 값이에요.</p>
+  <div class="toolbar" id="s-kind"><span class="chip on" data-k="">전체</span><span class="chip" data-k="기업">🏢 기업 소속</span><span class="chip" data-k="중소">🌱 중소·개인</span><span class="muted" id="s-kind-n" style="margin-left:4px"></span></div>
   <div class="charts" style="margin-bottom:14px">
     <div class="chart-box"><h3>규모 분포 (최대 팔로워)</h3><div class="cv sm"><canvas id="c3"></canvas></div></div>
     <div class="chart-box"><h3>주 플랫폼</h3><div class="cv sm"><canvas id="c4"></canvas></div></div>
   </div>
   <div class="toolbar">
-    <input type="text" id="q-s" placeholder="활동명 검색">
+    <input type="text" id="q-s" placeholder="활동명·소속 검색">
     <select id="f-plat"><option value="">전체 플랫폼</option></select>
     <select id="f-min"><option value="0">규모 전체</option><option value="10000">1만+</option><option value="30000">3만+</option><option value="50000">5만+</option></select>
     <span class="spacer"></span><button class="btn-s" id="btn-xs">⬇ CSV</button>
   </div>
-  <table><thead><tr><th data-k="n">활동명</th><th data-k="f" class="num">최대 팔로워</th><th data-k="p" class="hide-m">주 플랫폼</th><th data-k="d" class="hide-m">데뷔일</th><th data-k="l">최근 라이브</th></tr></thead><tbody id="tb-s"></tbody></table>
+  <table><thead><tr><th data-k="n">활동명</th><th data-k="g" class="hide-m">소속</th><th data-k="f" class="num">최대 팔로워</th><th data-k="p" class="hide-m">주 플랫폼</th><th data-k="d" class="hide-m">데뷔일</th><th data-k="l">최근 라이브</th></tr></thead><tbody id="tb-s"></tbody></table>
   <div class="pagei" id="pg-s"></div>
 </section>
 
@@ -489,7 +537,7 @@ $('#cards').innerHTML=[
   [`${YR} 새 얼굴`,newYr,'올해 데뷔·론칭한 팀','#ff4fa3'],
   ['데뷔 대기',gs['데뷔전']||0,'프리데뷔·예고 단계','#a78bfa'],
   ['이번 주 뉴스',LW?LW.items.length:0,LW?`${LW.week_start.slice(5).replace('-','.')} ~ ${LW.week_end.slice(5).replace('-','.')}`:'수집 전','#7c5cff'],
-  ['수집 스트리머',D.solos.length,`5만+ ${n5}명 · 소속 미상`,'#22c7e8']
+  ['수집 스트리머',D.solos.length,`기업 소속 ${D.solos.filter(s=>s.k==='기업').length}명 · 5만+ ${n5}명`,'#22c7e8']
 ].map(([k,v,sub,c])=>`<div class="card" style="--c:${c}"><div class="k">${k}</div><div class="v">${v}</div><div class="s">${sub}</div></div>`).join('');
 // 이번 주 소식
 $('#h-news').innerHTML=LW?`<div class="ph"><h3>📰 이번 주 하이라이트 <span class="muted" style="font-weight:600">${esc(LW.week_start)} ~ ${esc(LW.week_end)}</span></h3><button class="more" data-go="news">뉴스 ${LW.items.length}건 보기 →</button></div>
@@ -518,11 +566,17 @@ mk('#c2','bar',GC.map(x=>x[0]),GC.map(x=>x[1]),PAL,true);
   new Chart($('#cy'),{type:'bar',data:{labels:ys,datasets:ST_ORDER.map(st=>({label:st,data:ys.map(y=>tl[y].debut.filter(d=>d.st===st).length),backgroundColor:STC[st],borderRadius:4,maxBarThickness:30}))},
    options:{maintainAspectRatio:false,plugins:{legend:{position:'bottom',labels:{boxWidth:9,boxHeight:9,usePointStyle:true,pointStyle:'circle',padding:10}}},scales:{x:{stacked:true,grid:{display:false},border:{display:false}},y:{stacked:true,beginAtZero:true,grid:{color:GRID},border:{display:false},ticks:{precision:0}}}}});})();
 const bks=[['5만+',s=>s.f>=50000],['3만~5만',s=>s.f>=30000&&s.f<50000],['1만~3만',s=>s.f>=10000&&s.f<30000],['1천~1만',s=>s.f>=1000&&s.f<10000],['1천 미만',s=>s.f<1000]];
-mk('#c3','bar',bks.map(b=>b[0]),bks.map(b=>D.solos.filter(b[1]).length),['#7c5cff','#9b7bff','#b9a1ff','#d4c6ff','#e6defc']);
+const c3=mk('#c3','bar',bks.map(b=>b[0]),bks.map(b=>D.solos.filter(b[1]).length),['#7c5cff','#9b7bff','#b9a1ff','#d4c6ff','#e6defc']);
 const sp=Object.entries(cnt(D.solos,s=>s.p||'미상')).sort((a,b)=>b[1]-a[1]);
 const PLC={youtube:'#ff4f5e',chzzk:'#22d39a',soop:'#3b82f6'};
 const PLN={youtube:'YouTube',chzzk:'치지직',soop:'SOOP'};
-mk('#c4','doughnut',sp.map(x=>PLN[x[0]]||x[0]),sp.map(x=>x[1]),sp.map((x,i)=>PLC[x[0]]||PAL[i]));
+const c4=mk('#c4','doughnut',sp.map(x=>PLN[x[0]]||x[0]),sp.map(x=>x[1]),sp.map((x,i)=>PLC[x[0]]||PAL[i]));
+function updSoloCharts(){
+  const L=D.solos.filter(s=>!sK||(sK==='기업'?s.k==='기업':s.k!=='기업'));
+  c3.data.datasets[0].data=bks.map(b=>L.filter(b[1]).length); c3.update();
+  const m=cnt(L,s=>s.p||'미상'); c4.data.datasets[0].data=sp.map(x=>m[x[0]]||0); c4.update();
+  const nk=document.getElementById('s-kind-n'); if(nk) nk.textContent=`${L.length}명`;
+}
 
 /* 유튜브 자동 통계 조회: 채널 URL → 캐시 키(@핸들/UC아이디) */
 function ytLookup(url){
@@ -568,18 +622,21 @@ function openG(g,skipHash){
 }
 
 /* 개인세 테이블 */
-let sQ='',sP='',sM=0,sSort=['f',-1],sLimit=100;
+let sQ='',sP='',sM=0,sK='',sSort=['f',-1],sLimit=100;
+const kindOk=s=>!sK||(sK==='기업'?s.k==='기업':s.k!=='기업');
+const gTag=s=>s.k==='기업'?`<span class="st st-기업">${esc(s.g)}</span>`:(s.k==='졸업'?`<span class="st st-졸업">前 ${esc(s.g)}</span>`:(s.k==='크루'?`<span class="st st-졸업">${esc(s.g)} 크루</span>`:''));
 [...new Set(D.solos.map(s=>s.p).filter(Boolean))].forEach(p=>$('#f-plat').insertAdjacentHTML('beforeend',`<option>${esc(p)}</option>`));
 function renderS(){
-  let rs=D.solos.filter(s=>s.f>=sM&&(!sP||Object.keys(s.ch).includes(sP))&&(!sQ||(s.n+s.e).toLowerCase().includes(sQ)));
+  let rs=D.solos.filter(s=>kindOk(s)&&s.f>=sM&&(!sP||Object.keys(s.ch).includes(sP))&&(!sQ||(s.n+s.e+(s.g||'')).toLowerCase().includes(sQ)));
   rs.sort((a,b)=>{const k=sSort[0];return (a[k]>b[k]?1:a[k]<b[k]?-1:0)*sSort[1]});
   const total=rs.length;rs=rs.slice(0,sLimit);
-  $('#tb-s').innerHTML=rs.map(s=>`<tr class="row" data-n="${esc(s.n)}"><td><b>${esc(s.n)}</b> <span class="muted">${esc(s.e)}</span></td><td class="num"><b>${s.f?fmt(s.f):'—'}</b></td><td class="hide-m">${esc(s.p)||'—'}</td><td class="hide-m muted">${esc(s.d)||'—'}</td><td class="muted">${esc(s.l)||'—'}</td></tr>`).join('');
+  $('#tb-s').innerHTML=rs.map(s=>`<tr class="row" data-n="${esc(s.n)}"><td><b>${esc(s.n)}</b> <span class="muted">${esc(s.e)}</span></td><td class="hide-m">${gTag(s)||'<span class="muted">—</span>'}</td><td class="num"><b>${s.f?fmt(s.f):'—'}</b></td><td class="hide-m">${esc(({youtube:'YouTube',chzzk:'치지직',soop:'SOOP'})[s.p]||s.p)||'—'}</td><td class="hide-m muted">${esc(s.d)||'—'}</td><td class="muted">${esc(s.l)||'—'}</td></tr>`).join('');
   $('#pg-s').innerHTML=total>sLimit?`${total}건 중 ${sLimit}건 표시 — <a href="#" id="more">더 보기 (+100)</a>`:`${total}건 표시`;
   const m=$('#more');if(m)m.onclick=e=>{e.preventDefault();sLimit+=100;renderS()};
   document.querySelectorAll('#tb-s .row').forEach(tr=>tr.onclick=()=>openS(D.solos.find(x=>x.n===tr.dataset.n)));
 }
 $('#q-s').oninput=e=>{sQ=e.target.value.toLowerCase();sLimit=100;renderS()};
+document.querySelectorAll('#s-kind .chip').forEach(c=>c.onclick=()=>{document.querySelectorAll('#s-kind .chip').forEach(x=>x.classList.remove('on'));c.classList.add('on');sK=c.dataset.k;sLimit=100;renderS();updSoloCharts();});
 $('#f-plat').onchange=e=>{sP=e.target.value;sLimit=100;renderS()};
 $('#f-min').onchange=e=>{sM=+e.target.value;sLimit=100;renderS()};
 document.querySelectorAll('#t-solo th').forEach(th=>th.onclick=()=>{const k=th.dataset.k;sSort=[k,sSort[0]===k?-sSort[1]:-1];renderS()});
@@ -587,9 +644,10 @@ function openS(s,skipHash){
   if(!skipHash)setHash('s/'+encodeURIComponent(s.n));
   const links=Object.entries(s.ch).map(([p,[f,u,cn]])=>u?`<a class="chlink" target="_blank" href="${esc(u)}"><span class="pf">${esc(p)} · ${esc(cn||s.n)}</span><span class="fl">${f?fmt(f)+' 팔로워':''} ↗</span></a>`:'').join('');
   const tw=s.t?`<a class="chlink" target="_blank" href="https://x.com/${esc(s.t.replace('@',''))}"><span class="pf">𝕏 ${esc(s.t)}</span><span class="fl">새 창 ↗</span></a>`:'';
-  const judge=s.f>=50000?'<span class="st st-활동중">5만+ 포함 후보</span>':s.f>=30000?'<span class="st st-전환">3만~5만 워치</span>':'<span class="st st-휴면">기준 미달 (위키등재 별도확인)</span>';
+  const judge=s.f>=50000?'<span class="st st-활동중">5만+</span>':s.f>=30000?'<span class="st st-전환">3만~5만</span>':s.f>=10000?'<span class="st st-확인필요">1만~3만</span>':'<span class="st st-휴면">1만 미만</span>';
+  const aff=s.k?`<div><b>소속</b><span>${gTag(s)} ${s.k==='기업'?'<span class="muted">운영자 명단</span>':(s.k==='크루'?'<span class="muted">개인세 크루</span>':'<span class="muted">졸업·계약종료</span>')}</span></div>`:'<div><b>소속</b><span class="muted">미상 (중소·개인 수집원)</span></div>';
   $('#d-body').innerHTML=`<h2>${esc(s.n)}</h2><div class="muted">${esc(s.e)}</div>
-  <div class="kv"><div><b>임계값 판정</b><span>${judge}</span></div><div><b>최대 팔로워</b><span><b>${s.f?s.f.toLocaleString():'—'}</b> (${esc(s.p)||'—'})</span></div>
+  <div class="kv">${aff}<div><b>규모</b><span>${judge}</span></div><div><b>최대 팔로워</b><span><b>${s.f?s.f.toLocaleString():'—'}</b> (${esc(s.p)||'—'})</span></div>
   <div><b>데뷔일</b><span>${esc(s.d)||'—'}</span></div><div><b>최근 라이브</b><span>${esc(s.l)||'—'}</span></div></div>
   <h3 style="margin-top:16px;font-size:13px;color:var(--sub)">채널</h3>${links||'<p class="muted" style="margin-top:6px">채널 URL 없음</p>'}${tw}
   ${shareBtn()}`;
@@ -602,7 +660,7 @@ function dl(name,rows){
   const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([csv],{type:'text/csv'}));a.download=name;a.click();
 }
 $('#btn-xg').onclick=()=>dl(`버추얼그룹_전수목록_${D.collected}.csv`,[['No.','그룹명','영문/별칭','소속사·운영사','활동시작','분류','상태','비고'],...D.groups]);
-$('#btn-xs').onclick=()=>dl(`수집스트리머_${D.collected}.csv`,[['활동명','영문','최대 팔로워','주 플랫폼','플랫폼 목록','데뷔일','최근 라이브','트위터'],...D.solos.map(s=>[s.n,s.e,s.f,s.p,Object.keys(s.ch).join('·'),s.d,s.l,s.t])]);
+$('#btn-xs').onclick=()=>dl(`수집스트리머_${D.collected}.csv`,[['활동명','영문','구분','소속','최대 팔로워','주 플랫폼','플랫폼 목록','데뷔일','최근 라이브','트위터'],...D.solos.map(s=>[s.n,s.e,s.k==='기업'?'기업 소속':(s.k==='졸업'?'졸업':'중소·개인'),s.g||'',s.f,s.p,Object.keys(s.ch).join('·'),s.d,s.l,s.t])]);
 
 const CFG=D.cfg||{mode:'cowork'};
 const notice=$('#notice');
@@ -746,7 +804,8 @@ function renderMethod(){
     <h3 style="font-size:15px">① 수집 출처</h3>
     <div class="kv">
       <div><b>그룹 명부</b><span>thewiki.kr·나무위키 '버추얼 그룹 목록', 언론 보도(머니투데이·이데일리·한경·스포츠경향·전자신문·톱셀럽·KMJ 등), MBC 버추얼 라이브 페스티벌 라인업을 교차검증</span></div>
-      <div><b>스트리머 규모</b><span>'나의 작은 버튜버' 공개 API(유튜브 구독·치지직/SOOP 팔로워·최근 방송 집계). <b>소속사 정보는 제공하지 않음</b> → 소속 미상</span></div>
+      <div><b>스트리머 규모</b><span>'나의 작은 버튜버' 공개 API(중소 버튜버 전용 — 유튜브 구독·치지직/SOOP 팔로워·최근 방송). <b>소속사 정보는 제공하지 않음</b> → 소속 미상</span></div>
+      <div><b>기업 소속 멤버</b><span>운영자가 관리하는 그룹 멤버 명단(채널 ID는 치지직·SOOP 공개 API로 검증) → 치지직·SOOP 공개 API와 YouTube Data API로 매주 팔로워 수집. 졸업·계약종료 멤버는 '前 소속'으로 표시</span></div>
       <div><b>채널 통계</b><span>YouTube Data API v3 — 명부 등재 엔티티의 채널 구독자·영상수·조회수를 매주 자동 갱신</span></div>
       <div><b>소속사 확정</b><span>공식 보도자료·공식 채널·위키 문서 (2026-06-06 재조사 반영)</span></div>
     </div>
@@ -978,7 +1037,7 @@ async function renderPremium(){
 
 $('#cyear').textContent=new Date().getFullYear();
 renderG();renderS();renderTrend();renderA();renderU();renderAI();renderNews();renderTL();renderMethod();
-showTab('dash');
+showTab('dash');updSoloCharts();
 routeHash();
 window.addEventListener('hashchange',routeHash);
 loadMe(); loadApprovedGroups();
