@@ -28,10 +28,14 @@ def run(desc, argv, env=None):
 
 
 def latest_xlsx():
+    """버전 번호가 가장 큰 전수조사 xlsx (v10 > v9 > v8 — 문자열 비교 금지)."""
+    import re
     xs = glob.glob(os.path.join(DATA, '한국_버추얼아이돌_전수조사_v*.xlsx'))
-    if not xs:
-        xs = glob.glob(os.path.join(DATA, '*.xlsx'))
-    return max(xs) if xs else None
+    if xs:
+        ver = lambda p: int((re.search(r'_v(\d+)', os.path.basename(p)) or [0, 0])[1])
+        return max(xs, key=ver)
+    xs = glob.glob(os.path.join(DATA, '*.xlsx'))
+    return max(xs, key=os.path.getmtime) if xs else None
 
 
 def main():

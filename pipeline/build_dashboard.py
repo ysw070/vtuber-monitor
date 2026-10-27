@@ -58,11 +58,12 @@ collected_at = ''
 for r in rows:
     collected_at = max(collected_at, (r.get('collected_at') or '')[:10])
     n = r['name']
+    k = (r.get('vtuber_id') or '').strip() or n   # 고정 ID 기준(동명이인·개명 대비)
     try: f = int(float(r['followers'] or 0))
     except: f = 0
-    if n not in agg:
-        agg[n] = {'n': n, 'e': r['name_en'] or '', 'f': 0, 'p': '', 'd': r['debut_date'] or '', 'l': '', 't': r['twitter_id'] or '', 'ch': {}}
-    a = agg[n]
+    if k not in agg:
+        agg[k] = {'n': n, 'e': r['name_en'] or '', 'f': 0, 'p': '', 'd': r['debut_date'] or '', 'l': '', 't': r['twitter_id'] or '', 'ch': {}}
+    a = agg[k]
     plat = r['platform']
     if plat not in a['ch'] or f > a['ch'][plat][0]:
         a['ch'][plat] = [f, r['channel_url'] or '', r['channel_name'] or '']
@@ -507,6 +508,7 @@ function renderTrend(){
     $('#diff-wrap').innerHTML=`<h3 style="font-size:14px;margin-bottom:8px">📋 ${df.from} → ${df.to} 변동 리포트</h3>`+
       lst('🆕 신규 수집 진입',df.entered,n=>pill(n,'st-활동중'))+
       lst('🚪 이탈(목록에서 사라짐)',df.left,n=>pill(n,'st-해체종료'))+
+      lst('✏️ 이름 변경(같은 사람)',df.renamed||[],o=>pill(`${o.from} → ${o.to}`,'st-전환'))+
       lst('⬆ 5만+ 신규 진입',df.up50,o=>pill(`${o.name} (${fmt(o.to)})`,'st-활동중'))+
       lst('⬇ 5만 미만으로 하락',df.down50,o=>pill(`${o.name} (${fmt(o.to)})`,'st-휴면'))+
       `<div class="charts"><div class="chart-box"><h3>📈 팔로워 증가 톱</h3>${df.top_gain.filter(m=>m.delta>0).slice(0,10).map(m=>`<div style="display:flex;justify-content:space-between;padding:5px 0;border-bottom:1px solid #f1f3f9;font-size:13px"><span>${esc(m.name)}</span><span class="num" style="color:#157a36;font-weight:700">+${fmt(m.delta)}</span></div>`).join('')||'<span class="muted">없음</span>'}</div>`+
@@ -716,7 +718,7 @@ async function doAuth(mode){
   closeAuthModal(); await loadMe();
 }
 if($('#am-login')){ $('#am-login').onclick=()=>doAuth('login'); $('#am-signup').onclick=()=>doAuth('signup'); }
-if(sb) sb.auth.onAuthStateChange(()=>{ loadMe(); });
+if(sb) sb.auth.onAuthStateChange(ev=>{ if(ev!=='INITIAL_SESSION') loadMe(); });
 
 /* ── 그룹 제보 폼 (로그인 기반 → Supabase) ── */
 (function(){
@@ -859,7 +861,7 @@ window.addEventListener('hashchange',routeHash);
 loadMe(); loadApprovedGroups();
 </script></body></html>'''
 
-SB_SCRIPT = ('<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>'
+SB_SCRIPT = ('<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.117.3/dist/umd/supabase.min.js"></script>'
              if cfg.get('supabase') else '')
 html = (HTML.replace('__DATA__', DATA)
             .replace('__TASKID__', 'vtuber-monthly-collect')

@@ -1,10 +1,19 @@
 name: 주간 수집 및 배포
 
-# 매주 월요일 00:00 UTC(= 한국시간 오전 9시) 자동 실행 + 수동 실행(재수집 버튼)
+# 매주 월요일 00:00 UTC(= 한국시간 오전 9시) 자동 수집 + 수동 실행 + 데이터 푸시 시 재배포
 on:
   schedule:
     - cron: "0 0 * * 1"
   workflow_dispatch: {}
+  # 뉴스·명부·코드가 레포에 올라오면 즉시 재빌드·배포(수집 API·유튜브 API는 호출하지 않음)
+  push:
+    branches: [main]
+    paths:
+      - "data/news/**"
+      - "data/*.xlsx"
+      - "data/manual_groups.csv"
+      - "pipeline/**"
+      - "build.py"
 
 # Pages 배포에 필요한 권한 + 스냅샷 커밋 권한
 permissions:
@@ -35,7 +44,9 @@ jobs:
       - name: 수집 → 스냅샷 → 유튜브통계 → 빌드
         env:
           GH_REPO: ${{ github.repository }}
-          YT_API_KEY: ${{ secrets.YT_API_KEY }}
+          # push 로 인한 재빌드는 외부 API를 부르지 않는다(개인 운영 API 부하·유튜브 할당량 보호)
+          SKIP_COLLECT: ${{ github.event_name == 'push' && '1' || '' }}
+          YT_API_KEY: ${{ github.event_name != 'push' && secrets.YT_API_KEY || '' }}
         run: python build.py
 
       - name: 갱신된 데이터 커밋(스냅샷 히스토리 보존)
@@ -43,7 +54,7 @@ jobs:
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add data/ public/ || true
-          git commit -m "주간 수집: $(date -u +%Y-%m-%d)" || echo "변경 없음 — 커밋 건너뜀"
+          git commit -m "${{ github.event_name == 'push' && '재빌드' || '주간 수집' }}: $(date -u +%Y-%m-%d)" || echo "변경 없음 — 커밋 건너뜀"
           git push || echo "푸시 생략"
 
       - name: Pages 아티팩트 업로드(public/ 디렉터리)

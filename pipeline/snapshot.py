@@ -21,15 +21,16 @@ def load_csv(path):
     return list(csv.DictReader(open(path, encoding='utf-8-sig')))
 
 def agg_by_name(rows):
-    """이름 -> {f:최대팔로워, p:주플랫폼, plats:set, d:데뷔, l:최근라이브}"""
+    """사람 단위 집계. 키는 고정 ID(vtuber_id) — 개명해도 같은 사람으로 본다(없으면 이름).
+    값: {n:최신 표기 이름, f:최대팔로워, p:주플랫폼, plats:set, d:데뷔, l:최근라이브}"""
     a = {}
     for r in rows:
-        n = r['name']
+        k = (r.get('vtuber_id') or '').strip() or r['name']
         try: f = int(float(r['followers'] or 0))
         except: f = 0
-        if n not in a:
-            a[n] = {'f': 0, 'p': '', 'plats': set(), 'd': r.get('debut_date') or '', 'l': ''}
-        x = a[n]; x['plats'].add(r['platform'])
+        if k not in a:
+            a[k] = {'n': r['name'], 'f': 0, 'p': '', 'plats': set(), 'd': r.get('debut_date') or '', 'l': ''}
+        x = a[k]; x['plats'].add(r['platform'])
         if f > x['f']: x['f'], x['p'] = f, r['platform']
         ll = (r.get('last_live_at') or '')[:10]
         if ll > x['l']: x['l'] = ll
@@ -87,24 +88,27 @@ def diff_latest():
     da, db = [os.path.splitext(os.path.basename(x))[0] for x in (pa, pb)]
     a, b = agg_by_name(load_csv(pa)), agg_by_name(load_csv(pb))
     na, nb = set(a), set(b)
-    entered = sorted(nb - na)
-    left = sorted(na - nb)
-    up50 = [n for n in (nb & na) if b[n]['f'] >= 50000 and a[n]['f'] < 50000]
-    down50 = [n for n in (nb & na) if b[n]['f'] < 50000 and a[n]['f'] >= 50000]
+    N = lambda d, k: d[k]['n']
+    entered = sorted(N(b, k) for k in nb - na)
+    left = sorted(N(a, k) for k in na - nb)
+    renamed = sorted([{'from': a[k]['n'], 'to': b[k]['n']} for k in nb & na if a[k]['n'] != b[k]['n']],
+                     key=lambda x: x['to'])
+    up50 = [k for k in (nb & na) if b[k]['f'] >= 50000 and a[k]['f'] < 50000]
+    down50 = [k for k in (nb & na) if b[k]['f'] < 50000 and a[k]['f'] >= 50000]
     movers = []
-    for n in (nb & na):
-        dlt = b[n]['f'] - a[n]['f']
-        if a[n]['f'] >= 1000 or b[n]['f'] >= 1000:
-            movers.append({'name': n, 'from': a[n]['f'], 'to': b[n]['f'], 'delta': dlt})
+    for k in (nb & na):
+        dlt = b[k]['f'] - a[k]['f']
+        if a[k]['f'] >= 1000 or b[k]['f'] >= 1000:
+            movers.append({'name': b[k]['n'], 'from': a[k]['f'], 'to': b[k]['f'], 'delta': dlt})
     gain = sorted(movers, key=lambda x: -x['delta'])[:15]
     drop = sorted(movers, key=lambda x: x['delta'])[:15]
     res = {'available': True, 'from': da, 'to': db,
-           'entered': entered, 'left': left,
-           'up50': [{'name': n, 'to': b[n]['f']} for n in up50],
-           'down50': [{'name': n, 'to': b[n]['f']} for n in down50],
+           'entered': entered, 'left': left, 'renamed': renamed,
+           'up50': [{'name': b[k]['n'], 'to': b[k]['f']} for k in up50],
+           'down50': [{'name': b[k]['n'], 'to': b[k]['f']} for k in down50],
            'top_gain': gain, 'top_drop': drop}
     json.dump(res, open(out, 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
-    print(f'diff {da}->{db}: +{len(entered)} -{len(left)} | 5만진입 {len(up50)} 이탈 {len(down50)}')
+    print(f'diff {da}->{db}: +{len(entered)} -{len(left)} 개명{len(renamed)} | 5만진입 {len(up50)} 이탈 {len(down50)}')
 
 if __name__ == '__main__':
     cmd = sys.argv[1] if len(sys.argv) > 1 else 'save'

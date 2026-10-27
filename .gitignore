@@ -1,0 +1,6 @@
+__pycache__/
+*.pyc
+.DS_Store
+.venv/
+# 로컬 전용(Supabase SQL은 대시보드 SQL Editor에서 실행, 레포 불필요)
+supabase/
