@@ -6,18 +6,21 @@
   "status": "활동",
   "note": "치지직 미확인(SOOP 활동); SOOP ID API 확인",
   "yt": {
-   "id": "",
+   "id": "UCroM00J2ahCN6k-0-oAiDxg",
+   "title": "아이네 INE",
+   "subs": 355000,
+   "videos": 638,
    "handle": "@INE_"
   },
   "chzzk": {},
   "soop": {
    "id": "inehine",
    "name": "아이네♪",
-   "followers": 181825
+   "followers": 181824
   },
   "fetched": "2026-10-27",
   "history": {
-   "2026-10-27": 181825
+   "2026-10-27": 355000
   }
  },
  "이세계아이돌|징버거": {
@@ -28,17 +31,20 @@
   "note": "치지직 미확인(SOOP 활동); SOOP ID API 확인",
   "yt": {
    "id": "UCHE7GBQVtdh-c1m3tjFdevQ",
+   "title": "징버거 JINGBURGER",
+   "subs": 418000,
+   "videos": 1125,
    "handle": ""
   },
   "chzzk": {},
   "soop": {
    "id": "jingburger1",
    "name": "징버거☆",
-   "followers": 179815
+   "followers": 179814
   },
   "fetched": "2026-10-27",
   "history": {
-   "2026-10-27": 179815
+   "2026-10-27": 418000
   }
  },
  "이세계아이돌|릴파": {
@@ -48,18 +54,21 @@
   "status": "활동",
   "note": "치지직 미확인(SOOP 활동); SOOP ID API 확인",
   "yt": {
-   "id": "",
+   "id": "UC-oCJP9t47v7-DmsnmXV38Q",
+   "title": "릴파 lilpa",
+   "subs": 424000,
+   "videos": 1132,
    "handle": "@lilpa"
   },
   "chzzk": {},
   "soop": {
    "id": "lilpa0309",
    "name": "릴파♬",
-   "followers": 186412
+   "followers": 186411
   },
   "fetched": "2026-10-27",
   "history": {
-   "2026-10-27": 186412
+   "2026-10-27": 424000
   }
  },
  "이세계아이돌|주르르": {
@@ -69,7 +78,10 @@
   "status": "활동",
   "note": "치지직 채널명 ISD 주르르(나무위키: 개설만, 미사용); 주 플랫폼 SOOP; SOOP ID API 확인",
   "yt": {
-   "id": "",
+   "id": "UCTifMx1ONpElK5x6B4ng8eg",
+   "title": "주르르 JURURU",
+   "subs": 408000,
+   "videos": 827,
    "handle": "@JU_RURU"
   },
   "chzzk": {
@@ -81,11 +93,11 @@
   "soop": {
    "id": "cotton1217",
    "name": "주르르",
-   "followers": 172709
+   "followers": 172708
   },
   "fetched": "2026-10-27",
   "history": {
-   "2026-10-27": 172709
+   "2026-10-27": 408000
   }
  },
  "이세계아이돌|고세구": {
@@ -95,18 +107,21 @@
   "status": "활동",
   "note": "치지직 미확인(SOOP 활동); SOOP ID API 확인",
   "yt": {
-   "id": "",
+   "id": "UCV9WL7sW6_KjanYkUUaIDfQ",
+   "title": "고세구 GOSEGU",
+   "subs": 532000,
+   "videos": 1148,
    "handle": "@gosegu"
   },
   "chzzk": {},
   "soop": {
    "id": "gosegu2",
    "name": "고세구!",
-   "followers": 233134
+   "followers": 233132
   },
   "fetched": "2026-10-27",
   "history": {
-   "2026-10-27": 233134
+   "2026-10-27": 532000
   }
  },
  "이세계아이돌|비챤": {
@@ -117,17 +132,20 @@
   "note": "치지직 미확인(SOOP 활동); SOOP ID API 확인",
   "yt": {
    "id": "UCs6EwgxKLY9GG4QNUrP5hoQ",
+   "title": "비챤 VIichan",
+   "subs": 322000,
+   "videos": 1055,
    "handle": ""
   },
   "chzzk": {},
   "soop": {
    "id": "viichan6",
    "name": "비챤",
-   "followers": 176041
+   "followers": 176040
   },
   "fetched": "2026-10-27",
   "history": {
-   "2026-10-27": 176041
+   "2026-10-27": 322000
   }
  },
  "IRISÉ|KIIRI(키리)": {
@@ -198,6 +216,9 @@
   "note": "1기 에버리스; 치지직 API 인증마크 확인; SOOP 미확인",
   "yt": {
    "id": "UClbYIn9LDbbFZ9w2shX3K0g",
+   "title": "아야츠노 유니 AYATSUNO YUNI",
+   "subs": 374000,
+   "videos": 756,
    "handle": ""
   },
   "chzzk": {
@@ -209,7 +230,7 @@
   "soop": {},
   "fetched": "2026-10-27",
   "history": {
-   "2026-10-27": 319736
+   "2026-10-27": 374000
   }
  },
  "스텔라이브|사키하네 후야": {
@@ -220,18 +241,21 @@
   "note": "1기 에버리스; 치지직 API 인증마크 확인; SOOP 미확인",
   "yt": {
    "id": "UC0YQnenKBCu5sGb7H61n6HA",
+   "title": "사키하네 후야 SAKIHANE HUYA",
+   "subs": 152000,
+   "videos": 361,
    "handle": ""
   },
   "chzzk": {
    "id": "36ddb9bb4f17593b60f1b63cec86611d",
    "name": "사키하네 후야",
-   "followers": 178117,
+   "followers": 178118,
    "verified": true
   },
   "soop": {},
   "fetched": "2026-10-27",
   "history": {
-   "2026-10-27": 178117
+   "2026-10-27": 178118
   }
  },
  "스텔라이브|시라유키 히나": {
@@ -242,6 +266,9 @@
   "note": "치지직 API 인증마크 확인; SOOP 미확인",
   "yt": {
    "id": "UC1afpiIuBDcjYlmruAa0HiA",
+   "title": "시라유키 히나 SHIRAYUKI HINA",
+   "subs": 332000,
+   "videos": 644,
    "handle": ""
   },
   "chzzk": {
@@ -253,7 +280,7 @@
   "soop": {},
   "fetched": "2026-10-27",
   "history": {
-   "2026-10-27": 250681
+   "2026-10-27": 332000
   }
  },
  "스텔라이브|네네코 마시로": {
@@ -264,6 +291,9 @@
   "note": "치지직 API 인증마크 확인; SOOP 미확인",
   "yt": {
    "id": "UC_eeSpMBz8PG4ssdBPnP07g",
+   "title": "네네코 마시로 NENEKO MASHIRO",
+   "subs": 198000,
+   "videos": 448,
    "handle": ""
   },
   "chzzk": {
@@ -286,18 +316,21 @@
   "note": "치지직 API 인증마크 확인; SOOP 미확인",
   "yt": {
    "id": "UC7-m6jQLinZQWIbwm9W-1iw",
+   "title": "아카네 리제 AKANE LIZE",
+   "subs": 373000,
+   "videos": 639,
    "handle": ""
   },
   "chzzk": {
    "id": "4325b1d5bbc321fad3042306646e2e50",
    "name": "아카네 리제",
-   "followers": 274709,
+   "followers": 274710,
    "verified": true
   },
   "soop": {},
   "fetched": "2026-10-27",
   "history": {
-   "2026-10-27": 274709
+   "2026-10-27": 373000
   }
  },
  "스텔라이브|아라하시 타비": {
@@ -308,18 +341,21 @@
   "note": "치지직 API 인증마크 확인; SOOP 미확인",
   "yt": {
    "id": "UCAHVQ44O81aehLWfy9O6Elw",
+   "title": "아라하시 타비 ARAHASHI TABI",
+   "subs": 276000,
+   "videos": 821,
    "handle": ""
   },
   "chzzk": {
    "id": "a6c4ddb09cdb160478996007bff35296",
    "name": "아라하시 타비",
-   "followers": 276464,
+   "followers": 276465,
    "verified": true
   },
   "soop": {},
   "fetched": "2026-10-27",
   "history": {
-   "2026-10-27": 276464
+   "2026-10-27": 276465
   }
  },
  "스텔라이브|텐코 시부키": {
@@ -330,18 +366,21 @@
   "note": "치지직 API 인증마크 확인; SOOP 미확인",
   "yt": {
    "id": "UCYxLMfeX1CbMBll9MsGlzmw",
+   "title": "텐코 시부키 TENKO SHIBUKI",
+   "subs": 244000,
+   "videos": 667,
    "handle": ""
   },
   "chzzk": {
    "id": "64d76089fba26b180d9c9e48a32600d9",
    "name": "텐코 시부키",
-   "followers": 260053,
+   "followers": 260054,
    "verified": true
   },
   "soop": {},
   "fetched": "2026-10-27",
   "history": {
-   "2026-10-27": 260053
+   "2026-10-27": 260054
   }
  },
  "스텔라이브|아오쿠모 린": {
@@ -352,18 +391,21 @@
   "note": "치지직 API 인증마크 확인; SOOP 미확인",
   "yt": {
    "id": "UCQmcltnre6aG9SkDRYZqFIg",
+   "title": "아오쿠모 린 AOKUMO RIN",
+   "subs": 301000,
+   "videos": 472,
    "handle": ""
   },
   "chzzk": {
    "id": "516937b5f85cbf2249ce31b0ad046b0f",
    "name": "아오쿠모 린",
-   "followers": 239973,
+   "followers": 239974,
    "verified": true
   },
   "soop": {},
   "fetched": "2026-10-27",
   "history": {
-   "2026-10-27": 239973
+   "2026-10-27": 301000
   }
  },
  "스텔라이브|하나코 나나": {
@@ -374,6 +416,9 @@
   "note": "치지직 API 인증마크 확인; SOOP 미확인",
   "yt": {
    "id": "UCcA21_PzN1EhNe7xS4MJGsQ",
+   "title": "하나코 나나 HANAKO NANA",
+   "subs": 223000,
+   "videos": 543,
    "handle": ""
   },
   "chzzk": {
@@ -396,18 +441,21 @@
   "note": "치지직 API 인증마크 확인; SOOP 미확인",
   "yt": {
    "id": "UCj0c1jUr91dTetIQP2pFeLA",
+   "title": "유즈하 리코 YUZUHA RIKO",
+   "subs": 238000,
+   "videos": 610,
    "handle": ""
   },
   "chzzk": {
    "id": "8fd39bb8de623317de90654718638b10",
    "name": "유즈하 리코",
-   "followers": 230945,
+   "followers": 230946,
    "verified": true
   },
   "soop": {},
   "fetched": "2026-10-27",
   "history": {
-   "2026-10-27": 230945
+   "2026-10-27": 238000
   }
  },
  "스텔라이브|시즈키 토아": {
@@ -418,18 +466,21 @@
   "note": "4기 ABYSS; 치지직 API 인증마크 확인; SOOP 미확인",
   "yt": {
    "id": "UClcSEuDF_g_6g4snw_nAavw",
+   "title": "시즈키 토아 SHIZUKI TOA",
+   "subs": 96400,
+   "videos": 3,
    "handle": ""
   },
   "chzzk": {
    "id": "2299fad4bebb504b0978e1ec08b2f7d3",
    "name": "시즈키 토아",
-   "followers": 132380,
+   "followers": 132381,
    "verified": true
   },
   "soop": {},
   "fetched": "2026-10-27",
   "history": {
-   "2026-10-27": 132380
+   "2026-10-27": 132381
   }
  },
  "스텔라이브|코가네 랑": {
@@ -440,18 +491,21 @@
   "note": "4기 ABYSS; 치지직 API 인증마크 확인; SOOP 미확인",
   "yt": {
    "id": "UCQ6LlsI7Bbj2yhSqLMI1gGA",
+   "title": "코가네 랑 COGANE RANG",
+   "subs": 98000,
+   "videos": 3,
    "handle": ""
   },
   "chzzk": {
    "id": "c657aa3592260a2b59669a72ec151936",
    "name": "코가네 랑",
-   "followers": 132539,
+   "followers": 132542,
    "verified": true
   },
   "soop": {},
   "fetched": "2026-10-27",
   "history": {
-   "2026-10-27": 132539
+   "2026-10-27": 132542
   }
  },
  "스텔라이브|하나요 히요리": {
@@ -462,18 +516,21 @@
   "note": "4기 ABYSS; 치지직 API 인증마크 확인; SOOP 미확인",
   "yt": {
    "id": "UCHAr9pWGS30akL4MQCQT4uQ",
+   "title": "하나요 히요리 HANAYO HIYORI",
+   "subs": 96400,
+   "videos": 3,
    "handle": ""
   },
   "chzzk": {
    "id": "49d2c3cf8f0b2843d934ec15e82bb54c",
    "name": "하나요 히요리",
-   "followers": 141651,
+   "followers": 141656,
    "verified": true
   },
   "soop": {},
   "fetched": "2026-10-27",
   "history": {
-   "2026-10-27": 141651
+   "2026-10-27": 141656
   }
  },
  "스텔라이브|토키노 메리": {
@@ -484,18 +541,21 @@
   "note": "4기 ABYSS; 치지직 API 인증마크 확인; SOOP 미확인",
   "yt": {
    "id": "UCGSt1yNG5l-jpYRLpJ5oNtA",
+   "title": "토키노 메리 TOKINO MARY",
+   "subs": 169000,
+   "videos": 3,
    "handle": ""
   },
   "chzzk": {
    "id": "792acf9ca28b42918710327e14b06b68",
    "name": "토키노 메리",
-   "followers": 165837,
+   "followers": 165846,
    "verified": true
   },
   "soop": {},
   "fetched": "2026-10-27",
   "history": {
-   "2026-10-27": 165837
+   "2026-10-27": 169000
   }
  },
  "스텔라이브|아이리 칸나": {
@@ -524,7 +584,10 @@
   "status": "활동",
   "note": "리더; 치지직 미확인; SOOP ID API 확인",
   "yt": {
-   "id": "",
+   "id": "UCR_0wWPo2UvNuoO20z_WW6Q",
+   "title": "솜주먹",
+   "subs": 7230,
+   "videos": 50,
    "handle": "@ldrboo"
   },
   "chzzk": {},
@@ -545,7 +608,10 @@
   "status": "활동",
   "note": "치지직 미확인; SOOP ID API 확인",
   "yt": {
-   "id": "",
+   "id": "UCN-d93oYAlydkiqstF54OWQ",
+   "title": "연초록",
+   "subs": 1870,
+   "videos": 2,
    "handle": "@연초록_CHOROK"
   },
   "chzzk": {},
@@ -567,6 +633,9 @@
   "note": "유튜브는 나무위키 /c/챈나 링크를 채널 ID로 확인; 치지직 미확인; SOOP ID API 확인",
   "yt": {
    "id": "UCHIcKC_Tqu8Hxab7pNQ6qxg",
+   "title": "챈나",
+   "subs": 12100,
+   "videos": 74,
    "handle": ""
   },
   "chzzk": {},
@@ -587,7 +656,10 @@
   "status": "활동",
   "note": "치지직 동명 채널 있으나 본인 확인 불가; 치지직 미확인; SOOP ID API 확인",
   "yt": {
-   "id": "",
+   "id": "UCq1E2IJYLo1Em005Q9BqHlA",
+   "title": "띵귤 SINGGYUL",
+   "subs": 3090,
+   "videos": 22,
    "handle": "@Hades띵귤"
   },
   "chzzk": {},
@@ -608,7 +680,10 @@
   "status": "활동",
   "note": "치지직 미확인; SOOP ID API 확인",
   "yt": {
-   "id": "",
+   "id": "UCaacwbLBfcQDeazRwQ2dApg",
+   "title": "키마 Kyma",
+   "subs": 27000,
+   "videos": 132,
    "handle": "@kyma_official"
   },
   "chzzk": {},
@@ -629,7 +704,10 @@
   "status": "활동",
   "note": "치지직·SOOP API 확인",
   "yt": {
-   "id": "",
+   "id": "UCilfO17m5PHKijTZeV5QYcg",
+   "title": "김마르",
+   "subs": 2100,
+   "videos": 19,
    "handle": "@Kimmare"
   },
   "chzzk": {
@@ -656,6 +734,9 @@
   "note": "치지직 미확인; SOOP ID 검색결과 기준",
   "yt": {
    "id": "UCt0iyc3mmIMnGDadANkjrjg",
+   "title": "이엘리 ELLY",
+   "subs": 5850,
+   "videos": 266,
    "handle": ""
   },
   "chzzk": {},
@@ -666,7 +747,7 @@
   },
   "fetched": "2026-10-27",
   "history": {
-   "2026-10-27": 2648
+   "2026-10-27": 5850
   }
  },
  "러비타|플리": {
@@ -676,7 +757,10 @@
   "status": "활동",
   "note": "치지직 미확인; SOOP ID API 확인",
   "yt": {
-   "id": "",
+   "id": "UCTTHWvk6M928M7U2RHht49Q",
+   "title": "플리 PLI",
+   "subs": 588,
+   "videos": 3,
    "handle": "@plincesssss"
   },
   "chzzk": {},
@@ -697,18 +781,21 @@
   "status": "활동",
   "note": "치지직 미확인; SOOP ID API 확인",
   "yt": {
-   "id": "",
+   "id": "UC6mjfW-hFicoie2ZT5IUVGA",
+   "title": "힌콕 HINQOC",
+   "subs": 13600,
+   "videos": 429,
    "handle": "@힌콕"
   },
   "chzzk": {},
   "soop": {
    "id": "hinqocorv",
    "name": "힌콕",
-   "followers": 15202
+   "followers": 15203
   },
   "fetched": "2026-10-27",
   "history": {
-   "2026-10-27": 15202
+   "2026-10-27": 15203
   }
  },
  "러비타|이주인": {
@@ -719,6 +806,9 @@
   "note": "2026.04.13 LUVITA 활동 종료 발표(전 리더); 치지직 미확인",
   "yt": {
    "id": "UCAeWi9Yt5O85W_nqllbhZbA",
+   "title": "이주인 / イ・ジュイン 【V-LUP】",
+   "subs": 99300,
+   "videos": 875,
    "handle": ""
   },
   "chzzk": {},
@@ -729,7 +819,7 @@
   },
   "fetched": "2026-10-27",
   "history": {
-   "2026-10-27": 17944
+   "2026-10-27": 99300
   }
  },
  "걸즈원|랩자": {
@@ -739,7 +829,10 @@
   "status": "활동",
   "note": "치지직 미확인; SOOP ID API 확인",
   "yt": {
-   "id": "",
+   "id": "UCGZt4hZIeOOY3fZzbVaNRjA",
+   "title": "랩자_RAPJA",
+   "subs": 231,
+   "videos": 0,
    "handle": "@girlzone_rapja"
   },
   "chzzk": {},
@@ -760,7 +853,10 @@
   "status": "활동",
   "note": "치지직 미확인; SOOP ID API 확인",
   "yt": {
-   "id": "",
+   "id": "UCSWnOQWTcosbVYwOQcmVgjw",
+   "title": "링링_LINGLING",
+   "subs": 2760,
+   "videos": 28,
    "handle": "@girlzone_lingling"
   },
   "chzzk": {},
@@ -771,7 +867,7 @@
   },
   "fetched": "2026-10-27",
   "history": {
-   "2026-10-27": 1186
+   "2026-10-27": 2760
   }
  },
  "걸즈원|미미": {
@@ -781,7 +877,10 @@
   "status": "활동",
   "note": "치지직 미확인; SOOP ID API 확인",
   "yt": {
-   "id": "",
+   "id": "UClIzur18dNz-0ybzvhkC0jA",
+   "title": "미미_MIMI",
+   "subs": 137,
+   "videos": 0,
    "handle": "@girlzone_mimi"
   },
   "chzzk": {},
@@ -802,7 +901,10 @@
   "status": "활동",
   "note": "치지직 미확인; SOOP ID API 확인",
   "yt": {
-   "id": "",
+   "id": "UCrUQdGalPJfXOKyV-A-shtA",
+   "title": "아이링_IRING",
+   "subs": 77,
+   "videos": 16,
    "handle": "@girlzone_iring"
   },
   "chzzk": {},
@@ -859,7 +961,10 @@
   "status": "활동",
   "note": "치지직 미확인; SOOP ID API 확인",
   "yt": {
-   "id": "",
+   "id": "UC4AFBrgMVsR86bwHqb9d-Nw",
+   "title": "세라_SERA",
+   "subs": 66,
+   "videos": 11,
    "handle": "@girlzone_sERA"
   },
   "chzzk": {},
@@ -916,7 +1021,10 @@
   "status": "크루",
   "note": "치지직 미확인; SOOP ID API 확인",
   "yt": {
-   "id": "",
+   "id": "UCNc9ug2dyTI1ryXEfNyVx_Q",
+   "title": "김병살",
+   "subs": 5520,
+   "videos": 86,
    "handle": "@김병살"
   },
   "chzzk": {},
@@ -968,6 +1076,9 @@
   "note": "치지직 이적(SOOP yudarlinn 송출 중단); 치지직 API 확인",
   "yt": {
    "id": "UCuXubrozmGddYqiWcd4WlLQ",
+   "title": "유달린",
+   "subs": 10200,
+   "videos": 0,
    "handle": ""
   },
   "chzzk": {
@@ -979,7 +1090,7 @@
   "soop": {},
   "fetched": "2026-10-27",
   "history": {
-   "2026-10-27": 4946
+   "2026-10-27": 10200
   }
  },
  "레븐|해리": {
@@ -989,7 +1100,10 @@
   "status": "크루",
   "note": "치지직 미확인; SOOP ID API 확인",
   "yt": {
-   "id": "",
+   "id": "UCVey3Q_CodrHAWBonTGbHFg",
+   "title": "해리 HARRY",
+   "subs": 17300,
+   "videos": 274,
    "handle": "@Harry11099"
   },
   "chzzk": {},
@@ -1046,7 +1160,10 @@
   "status": "졸업(2024.10)",
   "note": "2024.10.29 레븐 졸업; 치지직 미확인; SOOP ID API 확인",
   "yt": {
-   "id": "",
+   "id": "UCbZptNWeIIZ3wf4uasQ04vQ",
+   "title": "구슬요Beadyo",
+   "subs": 35400,
+   "videos": 729,
    "handle": "@beadyo97"
   },
   "chzzk": {},
@@ -1067,7 +1184,10 @@
   "status": "활동",
   "note": "리더; 치지직 API 인증마크 확인; SOOP 미확인",
   "yt": {
-   "id": "",
+   "id": "UCkQFRBUPh5mcF1kca4f_DvQ",
+   "title": "허니츄러스 HoneyChurros",
+   "subs": 413000,
+   "videos": 707,
    "handle": "@Honey__Churros"
   },
   "chzzk": {
@@ -1079,7 +1199,7 @@
   "soop": {},
   "fetched": "2026-10-27",
   "history": {
-   "2026-10-27": 142312
+   "2026-10-27": 413000
   }
  },
  "HONEYZ|아야": {
@@ -1089,7 +1209,10 @@
   "status": "활동",
   "note": "치지직 API 인증마크 확인; SOOP 미확인",
   "yt": {
-   "id": "",
+   "id": "UCZcjMonq-hln97npqkYdHjQ",
+   "title": "아야 AyaUke",
+   "subs": 41400,
+   "videos": 83,
    "handle": "@AyaUke_Projecti"
   },
   "chzzk": {
@@ -1111,7 +1234,10 @@
   "status": "활동",
   "note": "치지직 API 인증마크 확인; SOOP 미확인",
   "yt": {
-   "id": "",
+   "id": "UC_XRkKvydFB_wX1dlr7OHrg",
+   "title": "담유이 DamYui",
+   "subs": 30600,
+   "videos": 135,
    "handle": "@DamYui_Projecti"
   },
   "chzzk": {
@@ -1133,7 +1259,10 @@
   "status": "활동",
   "note": "치지직 API 인증마크 확인; SOOP 미확인",
   "yt": {
-   "id": "",
+   "id": "UCmNurVU0rTyYqU4W4N0Mbgg",
+   "title": "디디디용 DDDDragon",
+   "subs": 37800,
+   "videos": 200,
    "handle": "@DDDDragon_Projecti"
   },
   "chzzk": {
@@ -1155,7 +1284,10 @@
   "status": "활동",
   "note": "치지직 API 인증마크 확인; SOOP 미확인",
   "yt": {
-   "id": "",
+   "id": "UC1RdgfinRXTboGZLZ4xG5Aw",
+   "title": "오화요 Ohwayo",
+   "subs": 65400,
+   "videos": 142,
    "handle": "@Ohwayo_Projecti"
   },
   "chzzk": {
@@ -1167,7 +1299,7 @@
   "soop": {},
   "fetched": "2026-10-27",
   "history": {
-   "2026-10-27": 46959
+   "2026-10-27": 65400
   }
  },
  "HONEYZ|망내": {
@@ -1178,6 +1310,9 @@
   "note": "2026.09.22 전속계약 위반으로 퇴출(계약종료); 치지직 API 확인; 유튜브 영상 비공개 처리; SOOP 미확인",
   "yt": {
    "id": "UCicn6yqObjHrCKWkKL70ALg",
+   "title": "망내 MangNae",
+   "subs": 69900,
+   "videos": 0,
    "handle": ""
   },
   "chzzk": {
@@ -1189,7 +1324,7 @@
   "soop": {},
   "fetched": "2026-10-27",
   "history": {
-   "2026-10-27": 63773
+   "2026-10-27": 69900
   }
  },
  "러브다이아|빙하유": {
@@ -1200,6 +1335,9 @@
   "note": "오버더월 계약 종료(2026.10.18) 후 독립. 2026.11.15 활동 종료 예정(건강상 이유); 2026.10.18 오버더월 계약 만료로 독립(그룹 활동 지속); 치지직 API 확인; SOOP ID API 확인(치지직 이적 후 송출 중단)",
   "yt": {
    "id": "UCHdHTb5jgeH8jys5_Ebqsuw",
+   "title": "빙하유 BingHayu",
+   "subs": 130000,
+   "videos": 249,
    "handle": ""
   },
   "chzzk": {
@@ -1215,7 +1353,7 @@
   },
   "fetched": "2026-10-27",
   "history": {
-   "2026-10-27": 54452
+   "2026-10-27": 130000
   }
  },
  "러브다이아|양메이": {
@@ -1226,6 +1364,9 @@
   "note": "오버더월 계약 종료(2026.10.18) 후 독립. 2026.10.18 오버더월 계약 만료로 독립(그룹 활동 지속); 치지직 API 확인; 유튜브 본채널은 채널명 양메이 Yangmei 기준; SOOP 미확인",
   "yt": {
    "id": "UCJGXPBjwQOvv4su8hB7TiuQ",
+   "title": "양메이 Yangmei",
+   "subs": 10300,
+   "videos": 162,
    "handle": ""
   },
   "chzzk": {
@@ -1237,7 +1378,7 @@
   "soop": {},
   "fetched": "2026-10-27",
   "history": {
-   "2026-10-27": 8897
+   "2026-10-27": 10300
   }
  },
  "러브다이아|유리리": {
@@ -1248,6 +1389,9 @@
   "note": "오버더월 계약 종료(2026.10.18) 후 독립. 2026.10.18 오버더월 계약 만료로 독립(그룹 활동 지속); 치지직 API 확인; 유튜브 본채널 후보 2개(U-LiLi ch. 유리리 선택, UCYKj50FFG5zzjr4x_vky-9Q 유리리 U-Lili도 존재); SOOP 미확인",
   "yt": {
    "id": "UCISQ9DgJdyTUCMtBNC-dl4A",
+   "title": "U-LiLi ch. 유리리",
+   "subs": 8430,
+   "videos": 10,
    "handle": ""
   },
   "chzzk": {
@@ -1270,6 +1414,9 @@
   "note": "2024.10.10 계약 종료; 치지직 API 확인; SOOP 미확인",
   "yt": {
    "id": "UCH_l8M_51qq-AH0017vpNew",
+   "title": "Parkdona ch. 박도나",
+   "subs": 8500,
+   "videos": 8,
    "handle": ""
   },
   "chzzk": {
@@ -1310,7 +1457,10 @@
   "status": "활동",
   "note": "리더; 치지직 미확인; SOOP ID API 확인",
   "yt": {
-   "id": "",
+   "id": "UC9UBS38T2wKKbEKgPFdAoFQ",
+   "title": "여르미 YEORUMI",
+   "subs": 58700,
+   "videos": 407,
    "handle": "@Yeorumi"
   },
   "chzzk": {},
@@ -1321,7 +1471,7 @@
   },
   "fetched": "2026-10-27",
   "history": {
-   "2026-10-27": 45581
+   "2026-10-27": 58700
   }
  },
  "이브닛|u32": {
@@ -1331,7 +1481,10 @@
   "status": "활동",
   "note": "치지직 미확인; SOOP ID API 확인",
   "yt": {
-   "id": "",
+   "id": "UCjsSt2r6DMjNlN6X4TjCc0g",
+   "title": "u32",
+   "subs": 21000,
+   "videos": 120,
    "handle": "@u32S2"
   },
   "chzzk": {},
@@ -1342,7 +1495,7 @@
   },
   "fetched": "2026-10-27",
   "history": {
-   "2026-10-27": 17620
+   "2026-10-27": 21000
   }
  },
  "이브닛|한결": {
@@ -1352,7 +1505,10 @@
   "status": "활동",
   "note": "치지직 미확인; SOOP ID API 확인",
   "yt": {
-   "id": "",
+   "id": "UCluZa5CRH783-eU22_N7f7w",
+   "title": "한결",
+   "subs": 66400,
+   "videos": 335,
    "handle": "@hangyeol8008"
   },
   "chzzk": {},
@@ -1363,7 +1519,7 @@
   },
   "fetched": "2026-10-27",
   "history": {
-   "2026-10-27": 57658
+   "2026-10-27": 66400
   }
  },
  "이브닛|비몽": {
@@ -1373,7 +1529,10 @@
   "status": "활동",
   "note": "치지직 미확인; SOOP ID API 확인",
   "yt": {
-   "id": "",
+   "id": "UCnWEtTLqxplJccIRh3sFjJg",
+   "title": "비몽 Beemong",
+   "subs": 44400,
+   "videos": 337,
    "handle": "@beemong_"
   },
   "chzzk": {},
@@ -1384,7 +1543,7 @@
   },
   "fetched": "2026-10-27",
   "history": {
-   "2026-10-27": 37114
+   "2026-10-27": 44400
   }
  },
  "이브닛|샤르망": {
@@ -1394,7 +1553,10 @@
   "status": "활동",
   "note": "치지직 미확인; SOOP ID API 확인",
   "yt": {
-   "id": "",
+   "id": "UCiWqkt4_1wzWtvCuUAe0fTA",
+   "title": "샤르망 [ Charmante ]",
+   "subs": 7060,
+   "videos": 65,
    "handle": "@owo_zzzz"
   },
   "chzzk": {},
@@ -1415,7 +1577,10 @@
   "status": "활동",
   "note": "치지직 미확인; SOOP ID API 확인",
   "yt": {
-   "id": "",
+   "id": "UCs7qFfGz4UUy4y2GyU8BpAQ",
+   "title": "솜먕 SOMMYANG",
+   "subs": 3240,
+   "videos": 108,
    "handle": "@sommyang"
   },
   "chzzk": {},
@@ -1436,7 +1601,10 @@
   "status": "활동",
   "note": "치지직 미확인; SOOP ID API 확인",
   "yt": {
-   "id": "",
+   "id": "UCtoHqh381tZlGSmPITK45Lw",
+   "title": "마냥",
+   "subs": 12400,
+   "videos": 13,
    "handle": "@마냥"
   },
   "chzzk": {},
@@ -1457,7 +1625,10 @@
   "status": "활동",
   "note": "치지직 미확인; SOOP ID API 확인",
   "yt": {
-   "id": "",
+   "id": "UCZeHbW3Ifpn4gz9x6OY07JQ",
+   "title": "김랑코",
+   "subs": 7670,
+   "videos": 63,
    "handle": "@1langkko"
   },
   "chzzk": {},
@@ -1478,7 +1649,10 @@
   "status": "활동",
   "note": "치지직 미확인; SOOP ID API 확인",
   "yt": {
-   "id": "",
+   "id": "UCiQ3nmup_0jgUOnZ_MQcwKQ",
+   "title": "모카:b",
+   "subs": 5070,
+   "videos": 32,
    "handle": "@mocamu2"
   },
   "chzzk": {},
@@ -1511,7 +1685,10 @@
   "status": "활동",
   "note": "1기 DENEB; 치지직 API 확인(채널명 아마네 나기 Planeta); SOOP 미확인",
   "yt": {
-   "id": "",
+   "id": "UCyplpNnZe4bMrPFyiI_UCmw",
+   "title": "아마네 나기 Planeta",
+   "subs": 1880,
+   "videos": 8,
    "handle": "@amanenagi"
   },
   "chzzk": {
@@ -1533,7 +1710,10 @@
   "status": "활동",
   "note": "1기 DENEB; 치지직 API 확인(채널명 카네코 파냐 Planeta); SOOP 미확인",
   "yt": {
-   "id": "",
+   "id": "UCBqiJLBfnqv4DoWZe8yRXCQ",
+   "title": "카네코 파냐 Planeta",
+   "subs": 2120,
+   "videos": 15,
    "handle": "@kanekopanya"
   },
   "chzzk": {
@@ -1555,7 +1735,10 @@
   "status": "활동",
   "note": "1기 DENEB; 치지직 API 확인(채널명 치치 Planeta); SOOP 미확인",
   "yt": {
-   "id": "",
+   "id": "UCykn4nwU27zBCR1tNIonaMA",
+   "title": "치치 Planeta",
+   "subs": 2020,
+   "videos": 11,
    "handle": "@tanuki_0005"
   },
   "chzzk": {
@@ -1577,7 +1760,10 @@
   "status": "활동",
   "note": "1기 DENEB; 치지직 API 확인(채널명 쿠온 레이 Planeta); SOOP 미확인",
   "yt": {
-   "id": "",
+   "id": "UC8CSdTDswgd8N1_oEwQpfUw",
+   "title": "쿠온 레이 Planeta",
+   "subs": 2310,
+   "videos": 2,
    "handle": "@kuon_rei"
   },
   "chzzk": {
@@ -1618,7 +1804,10 @@
   "status": "활동",
   "note": "치지직 API '리미 VLUP' 6306명",
   "yt": {
-   "id": "",
+   "id": "UCbcifz1SyLR__gWeh9ysang",
+   "title": "リミ / Limi 【V-LUP】",
+   "subs": 5750,
+   "videos": 281,
    "handle": "@Limi_vlup"
   },
   "chzzk": {
@@ -1640,7 +1829,10 @@
   "status": "활동",
   "note": "치지직 API '헤도 VLUP' 971명",
   "yt": {
-   "id": "",
+   "id": "UCLR8-1gq_qekguPsXuayGpQ",
+   "title": "헤도 / Heado 【V-LUP】",
+   "subs": 230,
+   "videos": 39,
    "handle": "@heado_vlup"
   },
   "chzzk": {
@@ -1662,7 +1854,10 @@
   "status": "활동",
   "note": "치지직 API '키키모라 VLUP' 1063명",
   "yt": {
-   "id": "",
+   "id": "UCpmzr0muSC-IBzntBdUQ5vQ",
+   "title": "키키모라 / Kikimora 【V-LUP】",
+   "subs": 249,
+   "videos": 44,
    "handle": "@kikimora_vlup"
   },
   "chzzk": {
@@ -1684,7 +1879,10 @@
   "status": "졸업(2026.07)",
   "note": "치지직 미확인",
   "yt": {
-   "id": "",
+   "id": "UCAeWi9Yt5O85W_nqllbhZbA",
+   "title": "이주인 / イ・ジュイン 【V-LUP】",
+   "subs": 99300,
+   "videos": 875,
    "handle": "@jooin_vlup"
   },
   "chzzk": {},
@@ -1695,7 +1893,7 @@
   },
   "fetched": "2026-10-27",
   "history": {
-   "2026-10-27": 17944
+   "2026-10-27": 99300
   }
  },
  "V-LUP(크리에이터버스)|노이": {
@@ -1705,7 +1903,10 @@
   "status": "졸업(2026.02)",
   "note": "치지직 API '노이 VLUP' 97명 SOOP noivlup 조회 불가(2026-10-28, 폐쇄 추정)",
   "yt": {
-   "id": "",
+   "id": "UC4kAO9_wzbT_sImRelB9O2g",
+   "title": "노이 / Noi 【V-LUP】",
+   "subs": 4980,
+   "videos": 178,
    "handle": "@noi_vlup"
   },
   "chzzk": {
@@ -1717,7 +1918,7 @@
   "soop": {},
   "fetched": "2026-10-27",
   "history": {
-   "2026-10-27": 97
+   "2026-10-27": 4980
   }
  },
  "V-LUP(크리에이터버스)|이아나 이그노시스": {
@@ -1727,13 +1928,18 @@
   "status": "졸업(2026.01)",
   "note": "치지직 채널 현재 '(알 수 없음)' 표시(비활성 추정) SOOP ianavlup 조회 불가(2026-10-28, 폐쇄 추정)",
   "yt": {
-   "id": "",
+   "id": "UC0EsOsc-LfQBMZH1tPNaSxQ",
+   "title": "이아나 이그노시스 / Iana Ignosis 【V-LUP】",
+   "subs": 7160,
+   "videos": 451,
    "handle": "@iana_vlup"
   },
   "chzzk": {},
   "soop": {},
-  "fetched": "",
-  "history": {}
+  "fetched": "2026-10-27",
+  "history": {
+   "2026-10-27": 7160
+  }
  },
  "V-LUP(크리에이터버스)|라즈": {
   "member": "라즈",
@@ -1742,13 +1948,18 @@
   "status": "졸업(2025.11)",
   "note": "치지직 미확인 SOOP razvlup 조회 불가(2026-10-28, 폐쇄 추정)",
   "yt": {
-   "id": "",
+   "id": "UCfy10QlCw2NucqVDQdDmSLg",
+   "title": "라즈 / Raz 【V-LUP】",
+   "subs": 47500,
+   "videos": 117,
    "handle": "@Raz_vlup"
   },
   "chzzk": {},
   "soop": {},
-  "fetched": "",
-  "history": {}
+  "fetched": "2026-10-27",
+  "history": {
+   "2026-10-27": 47500
+  }
  },
  "V-LUP(크리에이터버스)|벨디르": {
   "member": "벨디르",
@@ -1757,7 +1968,10 @@
   "status": "졸업(2025.10)",
   "note": "치지직 API '벨디르 VLUP' 1683명",
   "yt": {
-   "id": "",
+   "id": "UC6iKaRp6V3hssQI9kqiI10w",
+   "title": "벨디르 미스틸테인 / Beldir Mistiltein 【V-LUP】",
+   "subs": 18600,
+   "videos": 300,
    "handle": "@beldir_vlup"
   },
   "chzzk": {
@@ -1773,7 +1987,7 @@
   },
   "fetched": "2026-10-27",
   "history": {
-   "2026-10-27": 2803
+   "2026-10-27": 18600
   }
  },
  "V-LUP(크리에이터버스)|다프네": {
@@ -1783,13 +1997,18 @@
   "status": "졸업(2024.02)",
   "note": "치지직·SOOP 미확인",
   "yt": {
-   "id": "",
+   "id": "UC4kJLaJKH7QoLgpKGBed2HQ",
+   "title": "다프네 / Daphne 【V-LUP】",
+   "subs": 4060,
+   "videos": 101,
    "handle": "@daphne_vlup"
   },
   "chzzk": {},
   "soop": {},
-  "fetched": "",
-  "history": {}
+  "fetched": "2026-10-27",
+  "history": {
+   "2026-10-27": 4060
+  }
  },
  "V-LUP(크리에이터버스)|메메": {
   "member": "메메",
@@ -1846,7 +2065,10 @@
   "status": "활동",
   "note": "치지직 API 92652명",
   "yt": {
-   "id": "",
+   "id": "UCWnCjs_fzCa2IxBLr7CJKDg",
+   "title": "이오몽",
+   "subs": 287000,
+   "videos": 1015,
    "handle": "@이오몽"
   },
   "chzzk": {
@@ -1862,7 +2084,7 @@
   },
   "fetched": "2026-10-27",
   "history": {
-   "2026-10-27": 92680
+   "2026-10-27": 287000
   }
  },
  "미츄(스콘)|마젯": {
@@ -1872,7 +2094,10 @@
   "status": "활동",
   "note": "치지직 API 27391명",
   "yt": {
-   "id": "",
+   "id": "UCEmnAcKG61C1OhlqAeh9KUA",
+   "title": "마젯 Mazet",
+   "subs": 58500,
+   "videos": 737,
    "handle": "@마젯"
   },
   "chzzk": {
@@ -1884,7 +2109,7 @@
   "soop": {},
   "fetched": "2026-10-27",
   "history": {
-   "2026-10-27": 27393
+   "2026-10-27": 58500
   }
  },
  "미츄(스콘)|미녕이데려오깨": {
@@ -1894,7 +2119,10 @@
   "status": "활동",
   "note": "치지직 API 63917명",
   "yt": {
-   "id": "",
+   "id": "UCGg2clUz3C5id4ViTQsfenw",
+   "title": "미녕이데려오깨",
+   "subs": 88300,
+   "videos": 539,
    "handle": "@미녕이데려오깨"
   },
   "chzzk": {
@@ -1910,7 +2138,7 @@
   },
   "fetched": "2026-10-27",
   "history": {
-   "2026-10-27": 63921
+   "2026-10-27": 88300
   }
  },
  "미츄(스콘)|앵보": {
@@ -1920,19 +2148,22 @@
   "status": "활동",
   "note": "치지직 API 59502명",
   "yt": {
-   "id": "",
+   "id": "UCnwA84tROxLzFSyUl7CI07A",
+   "title": "앵보",
+   "subs": 157000,
+   "videos": 984,
    "handle": "@앵보"
   },
   "chzzk": {
    "id": "41d1490bd67b3818d7dc53427a4d6cea",
    "name": "앵보",
-   "followers": 59504,
+   "followers": 59505,
    "verified": false
   },
   "soop": {},
   "fetched": "2026-10-27",
   "history": {
-   "2026-10-27": 59504
+   "2026-10-27": 157000
   }
  },
  "미츄(스콘)|세노": {
@@ -1942,19 +2173,22 @@
   "status": "활동",
   "note": "치지직 API '세노 SEN5' 27407명",
   "yt": {
-   "id": "",
+   "id": "UCyyJs-SdqwY7W8-N5SbLFfA",
+   "title": "세노",
+   "subs": 74600,
+   "videos": 493,
    "handle": "@세노"
   },
   "chzzk": {
    "id": "fb3220c02c64d799b31e97f432afebc0",
    "name": "세노 SEN5",
-   "followers": 27408,
+   "followers": 27409,
    "verified": false
   },
   "soop": {},
   "fetched": "2026-10-27",
   "history": {
-   "2026-10-27": 27408
+   "2026-10-27": 74600
   }
  },
  "미츄(스콘)|위도": {
@@ -1964,7 +2198,10 @@
   "status": "활동",
   "note": "치지직 API 26772명",
   "yt": {
-   "id": "",
+   "id": "UCvqaWntfsfUayQGHSH_wsBw",
+   "title": "위도 W2RDØ",
+   "subs": 36200,
+   "videos": 382,
    "handle": "@위도"
   },
   "chzzk": {
@@ -1976,7 +2213,7 @@
   "soop": {},
   "fetched": "2026-10-27",
   "history": {
-   "2026-10-27": 26773
+   "2026-10-27": 36200
   }
  },
  "미츄(스콘)|모아": {
@@ -1986,7 +2223,10 @@
   "status": "활동",
   "note": "치지직 API 25639명",
   "yt": {
-   "id": "",
+   "id": "UCNHCPMgOqOYjk2O4ZkmVB9A",
+   "title": "모아",
+   "subs": 48600,
+   "videos": 360,
    "handle": "@모아"
   },
   "chzzk": {
@@ -1998,7 +2238,7 @@
   "soop": {},
   "fetched": "2026-10-27",
   "history": {
-   "2026-10-27": 25640
+   "2026-10-27": 48600
   }
  },
  "미츄(스콘)|부쿠키": {
@@ -2008,7 +2248,10 @@
   "status": "활동",
   "note": "치지직 API 74246명",
   "yt": {
-   "id": "",
+   "id": "UCF-EktpAclL-5krISxgerDw",
+   "title": "부쿠키",
+   "subs": 148000,
+   "videos": 496,
    "handle": "@부쿠키00"
   },
   "chzzk": {
@@ -2024,7 +2267,7 @@
   },
   "fetched": "2026-10-27",
   "history": {
-   "2026-10-27": 74251
+   "2026-10-27": 148000
   }
  },
  "미츄(스콘)|하지유": {
@@ -2034,7 +2277,10 @@
   "status": "활동",
   "note": "치지직 API 18192명",
   "yt": {
-   "id": "",
+   "id": "UC62i7rPIxuODdzGaqt8S6Vg",
+   "title": "하지유",
+   "subs": 27600,
+   "videos": 283,
    "handle": "@하지유w"
   },
   "chzzk": {
@@ -2046,7 +2292,7 @@
   "soop": {},
   "fetched": "2026-10-27",
   "history": {
-   "2026-10-27": 18193
+   "2026-10-27": 27600
   }
  },
  "미츄(스콘)|희지": {
@@ -2056,7 +2302,10 @@
   "status": "활동",
   "note": "치지직 API 16292명",
   "yt": {
-   "id": "",
+   "id": "UCGaaUtTBH4i2pQArOfIFUFw",
+   "title": "희지",
+   "subs": 15300,
+   "videos": 96,
    "handle": "@희지_Heezy"
   },
   "chzzk": {
@@ -2078,7 +2327,10 @@
   "status": "졸업(2026.04)",
   "note": "치지직 API 11564명",
   "yt": {
-   "id": "",
+   "id": "UCmhyAi0hFyQTkpOqAc70FPg",
+   "title": "아쿠루 akuru",
+   "subs": 11700,
+   "videos": 51,
    "handle": "@아쿠루"
   },
   "chzzk": {
@@ -2090,7 +2342,7 @@
   "soop": {},
   "fetched": "2026-10-27",
   "history": {
-   "2026-10-27": 11564
+   "2026-10-27": 11700
   }
  },
  "미츄(스콘)|초깨비": {
@@ -2100,7 +2352,10 @@
   "status": "졸업(2026.04)",
   "note": "스콘 개인 크리에이터로 소속 변경; 치지직 API 8637명 SOOP nater0820 조회 불가(2026-10-28, 폐쇄 추정)",
   "yt": {
-   "id": "",
+   "id": "UCBTjAr8Hv_ZYyYsCvKtu9fA",
+   "title": "초깨비 CHOGGEBI",
+   "subs": 5800,
+   "videos": 104,
    "handle": "@choggebi"
   },
   "chzzk": {
@@ -2141,7 +2396,10 @@
   "status": "졸업(2025.10)",
   "note": "치지직 API 10086명",
   "yt": {
-   "id": "",
+   "id": "UCXhTIte6TjoItbiUVUnMIlA",
+   "title": "오요 OYO",
+   "subs": 186000,
+   "videos": 10,
    "handle": "@오요"
   },
   "chzzk": {
@@ -2157,7 +2415,7 @@
   },
   "fetched": "2026-10-27",
   "history": {
-   "2026-10-27": 10086
+   "2026-10-27": 186000
   }
  },
  "미츄(스콘)|김루야": {
@@ -2205,7 +2463,10 @@
   "status": "졸업(2024.11)",
   "note": "치지직 미확인; 이후 크로아(악어크루) 합류",
   "yt": {
-   "id": "",
+   "id": "UC1wN4c4VWKwpTR6OAGq4_BA",
+   "title": "치요 Chiyo",
+   "subs": 15200,
+   "videos": 56,
    "handle": "@Chiyo75"
   },
   "chzzk": {},
@@ -2238,7 +2499,10 @@
   "status": "활동",
   "note": "SOOP 중심, 치지직 미확인",
   "yt": {
-   "id": "",
+   "id": "UC89cuCk2ua2P_ZMCO5dP9jg",
+   "title": "제갈금자",
+   "subs": 103000,
+   "videos": 928,
    "handle": "@제갈금자"
   },
   "chzzk": {},
@@ -2249,7 +2513,7 @@
   },
   "fetched": "2026-10-27",
   "history": {
-   "2026-10-27": 71645
+   "2026-10-27": 103000
   }
  },
  "블루점프|모구구": {
@@ -2259,7 +2523,10 @@
   "status": "활동",
   "note": "SOOP 중심, 치지직 미확인",
   "yt": {
-   "id": "",
+   "id": "UCApvBjzSzJzoO7G7EdxLYqQ",
+   "title": "모구구",
+   "subs": 40300,
+   "videos": 397,
    "handle": "@모구구"
   },
   "chzzk": {},
@@ -2270,7 +2537,7 @@
   },
   "fetched": "2026-10-27",
   "history": {
-   "2026-10-27": 26708
+   "2026-10-27": 40300
   }
  },
  "블루점프|하로하": {
@@ -2280,7 +2547,10 @@
   "status": "활동",
   "note": "SOOP 중심, 치지직 미확인",
   "yt": {
-   "id": "",
+   "id": "UCZLcgit4z7kCmPiiyhL0XAw",
+   "title": "HAROHA 하로하",
+   "subs": 34900,
+   "videos": 76,
    "handle": "@haroha11"
   },
   "chzzk": {},
@@ -2291,7 +2561,7 @@
   },
   "fetched": "2026-10-27",
   "history": {
-   "2026-10-27": 18914
+   "2026-10-27": 34900
   }
  },
  "블루점프|누눙지": {
@@ -2301,7 +2571,10 @@
   "status": "활동",
   "note": "SOOP 중심, 치지직 미확인",
   "yt": {
-   "id": "",
+   "id": "UC82tf2y824f0hZx566MoFTQ",
+   "title": "누눙지",
+   "subs": 50100,
+   "videos": 94,
    "handle": "@누눙지"
   },
   "chzzk": {},
@@ -2312,7 +2585,7 @@
   },
   "fetched": "2026-10-27",
   "history": {
-   "2026-10-27": 35449
+   "2026-10-27": 50100
   }
  },
  "블루점프|마로니": {
@@ -2322,7 +2595,10 @@
   "status": "활동",
   "note": "SOOP 중심, 치지직 미확인",
   "yt": {
-   "id": "",
+   "id": "UCOEU4FU1MqmF7cqd_qxtpuA",
+   "title": "마로니",
+   "subs": 76500,
+   "videos": 59,
    "handle": "@marronie318"
   },
   "chzzk": {},
@@ -2333,7 +2609,7 @@
   },
   "fetched": "2026-10-27",
   "history": {
-   "2026-10-27": 25300
+   "2026-10-27": 76500
   }
  },
  "블루점프|양도끼": {
@@ -2343,7 +2619,10 @@
   "status": "활동",
   "note": "4기생 연습생(데뷔 예정); 치지직 미확인",
   "yt": {
-   "id": "",
+   "id": "UCcUDG5x6lXnb0etXrBLZQvw",
+   "title": "양도끼",
+   "subs": 41300,
+   "videos": 655,
    "handle": "@양도끼"
   },
   "chzzk": {},
@@ -2388,7 +2667,10 @@
   "status": "활동",
   "note": "치지직 API 7778명",
   "yt": {
-   "id": "",
+   "id": "UC_SFDes1kseXgArF9YwQ5sw",
+   "title": "마무 Mamuu",
+   "subs": 4890,
+   "videos": 115,
    "handle": "@H_Mamuu"
   },
   "chzzk": {
@@ -2410,7 +2692,10 @@
   "status": "활동",
   "note": "치지직 API '아 즈 AZ' 10926명",
   "yt": {
-   "id": "",
+   "id": "UCG90QwbnFDSkMPnKpRzNWnQ",
+   "title": "아즈 AZ",
+   "subs": 9330,
+   "videos": 126,
    "handle": "@H_AzZZ"
   },
   "chzzk": {
@@ -2432,7 +2717,10 @@
   "status": "활동",
   "note": "치지직 API 9563명",
   "yt": {
-   "id": "",
+   "id": "UCAlAZQaw_3rIm5q2qLIIJXA",
+   "title": "루시 Luci",
+   "subs": 10100,
+   "videos": 180,
    "handle": "@H_Luci"
   },
   "chzzk": {
@@ -2444,7 +2732,7 @@
   "soop": {},
   "fetched": "2026-10-27",
   "history": {
-   "2026-10-27": 9563
+   "2026-10-27": 10100
   }
  },
  "헥시아(스콘)|레비얀": {
@@ -2454,7 +2742,10 @@
   "status": "활동",
   "note": "치지직 API 6432명",
   "yt": {
-   "id": "",
+   "id": "UCIeK_0-ggO2uUYTQSi4ZsAw",
+   "title": "레비얀 Leviyan",
+   "subs": 16000,
+   "videos": 68,
    "handle": "@H_Leviyan"
   },
   "chzzk": {
@@ -2466,7 +2757,7 @@
   "soop": {},
   "fetched": "2026-10-27",
   "history": {
-   "2026-10-27": 6432
+   "2026-10-27": 16000
   }
  },
  "헥시아(스콘)|삿땅": {
@@ -2479,13 +2770,13 @@
   "chzzk": {
    "id": "cdedd10b0a6c0c007a028a4f15c82ad1",
    "name": "삿땅 Sattan",
-   "followers": 3428,
+   "followers": 3429,
    "verified": false
   },
   "soop": {},
   "fetched": "2026-10-27",
   "history": {
-   "2026-10-27": 3428
+   "2026-10-27": 3429
   }
  },
  "헥시아(스콘)|베르": {
@@ -2519,13 +2810,18 @@
   "status": "활동",
   "note": "벚꽃학원 1기; 치지직 미확인(동일인 낭만숟가락 채널 별도 존재)",
   "yt": {
-   "id": "",
+   "id": "UCANBdbmjINHCt8Xl_wdKjtA",
+   "title": "치에 CHIE",
+   "subs": 4900,
+   "videos": 18,
    "handle": "@abunechie"
   },
   "chzzk": {},
   "soop": {},
-  "fetched": "",
-  "history": {}
+  "fetched": "2026-10-27",
+  "history": {
+   "2026-10-27": 4900
+  }
  },
  "스타게이저|유초린": {
   "member": "유초린",
@@ -2534,7 +2830,10 @@
   "status": "활동",
   "note": "벚꽃학원 1기; 치지직 API 3079명",
   "yt": {
-   "id": "",
+   "id": "UC-s5vxXTaXyFLw8CZtzl_Fw",
+   "title": "유초린 Yuchorin",
+   "subs": 45800,
+   "videos": 454,
    "handle": "@yuchorinchan"
   },
   "chzzk": {
@@ -2546,7 +2845,7 @@
   "soop": {},
   "fetched": "2026-10-27",
   "history": {
-   "2026-10-27": 3079
+   "2026-10-27": 45800
   }
  },
  "스타게이저|가우루우": {
@@ -2556,13 +2855,18 @@
   "status": "활동",
   "note": "벚꽃학원 1기(JP); 치지직 미확인",
   "yt": {
-   "id": "",
+   "id": "UCm1mU_wM36Cm_Zv0ryHMwCg",
+   "title": "-GAWRU Channel-",
+   "subs": 3720,
+   "videos": 11,
    "handle": "@Gawru.vampirewolf"
   },
   "chzzk": {},
   "soop": {},
-  "fetched": "",
-  "history": {}
+  "fetched": "2026-10-27",
+  "history": {
+   "2026-10-27": 3720
+  }
  },
  "스타게이저|류채경": {
   "member": "류채경",
@@ -2571,7 +2875,10 @@
   "status": "활동",
   "note": "벚꽃학원 2기; 치지직 API 10069명",
   "yt": {
-   "id": "",
+   "id": "UCl9aA8d2GBzcMa4NG2_-L2A",
+   "title": "류채경",
+   "subs": 48200,
+   "videos": 2448,
    "handle": "@류채경"
   },
   "chzzk": {
@@ -2583,7 +2890,7 @@
   "soop": {},
   "fetched": "2026-10-27",
   "history": {
-   "2026-10-27": 10070
+   "2026-10-27": 48200
   }
  },
  "스타게이저|밑줄": {
@@ -2593,7 +2900,10 @@
   "status": "활동",
   "note": "벚꽃학원 3기; 치지직 API 18117명",
   "yt": {
-   "id": "",
+   "id": "UCjBPx2oip2bKnnfqKyas0ew",
+   "title": "밑줄",
+   "subs": 23400,
+   "videos": 531,
    "handle": "@밑줄"
   },
   "chzzk": {
@@ -2605,7 +2915,7 @@
   "soop": {},
   "fetched": "2026-10-27",
   "history": {
-   "2026-10-27": 18117
+   "2026-10-27": 23400
   }
  },
  "스타게이저|사쿠라 루나": {
@@ -2615,7 +2925,10 @@
   "status": "활동",
   "note": "벚꽃학원 3기(JP); 공식사이트 기재 구채널 b84139ca45c20d1a3088e494aeb723d1는 새 계정으로 이전 안내; 신채널 API 241명",
   "yt": {
-   "id": "",
+   "id": "UC2zZ7XuJM2HM4QbhFYC2O2Q",
+   "title": "루나의 방・るなの部屋",
+   "subs": 450,
+   "videos": 50,
    "handle": "@Sakuralun_"
   },
   "chzzk": {
@@ -2627,7 +2940,7 @@
   "soop": {},
   "fetched": "2026-10-27",
   "history": {
-   "2026-10-27": 241
+   "2026-10-27": 450
   }
  },
  "스타게이저|포무우짱": {
@@ -2637,7 +2950,10 @@
   "status": "활동",
   "note": "벚꽃학원 3기(JP); 치지직 채널조회 '포무우쨩' 437명",
   "yt": {
-   "id": "",
+   "id": "UCp7ND0opVoVCMQDMQ9apRhw",
+   "title": "ぽむうちゃん / pomuuchan",
+   "subs": 482,
+   "videos": 26,
    "handle": "@pomuuchan"
   },
   "chzzk": {
@@ -2649,7 +2965,7 @@
   "soop": {},
   "fetched": "2026-10-27",
   "history": {
-   "2026-10-27": 437
+   "2026-10-27": 482
   }
  },
  "스타게이저|오새벽": {
@@ -2659,13 +2975,18 @@
   "status": "활동",
   "note": "벚꽃학원 4기; 치지직 미확인(동명 채널 있으나 소속 근거 없음)",
   "yt": {
-   "id": "",
+   "id": "UC2qfEGUpI-xJbJN_QXvkm1Q",
+   "title": "오새벽",
+   "subs": 1970,
+   "videos": 47,
    "handle": "@oh_dawn"
   },
   "chzzk": {},
   "soop": {},
-  "fetched": "",
-  "history": {}
+  "fetched": "2026-10-27",
+  "history": {
+   "2026-10-27": 1970
+  }
  },
  "스타게이저|윤리즈": {
   "member": "윤리즈",
@@ -2674,7 +2995,10 @@
   "status": "활동",
   "note": "벚꽃학원 4기; 치지직 API 5429명",
   "yt": {
-   "id": "",
+   "id": "UCCgi3HeyzONEqWbxkQLcnmw",
+   "title": "윤리즈가 잔뜩잔뜩",
+   "subs": 887,
+   "videos": 212,
    "handle": "@Y_Liz0911"
   },
   "chzzk": {
@@ -2696,7 +3020,10 @@
   "status": "활동",
   "note": "벚꽃학원 4기; 치지직 API 12140명",
   "yt": {
-   "id": "",
+   "id": "UCMWXv0lfTyi2zjOSkW-OCkg",
+   "title": "모야지moyaji",
+   "subs": 51900,
+   "videos": 267,
    "handle": "@moyaji77"
   },
   "chzzk": {
@@ -2708,7 +3035,7 @@
   "soop": {},
   "fetched": "2026-10-27",
   "history": {
-   "2026-10-27": 12140
+   "2026-10-27": 51900
   }
  },
  "스타게이저|많쿠만": {
@@ -2719,6 +3046,9 @@
   "note": "벚꽃학원 4기; 치지직 API '짤녀와 많쿠만in텟슈' 3206명",
   "yt": {
    "id": "UCJ-soEmJLdj_fSpBU5RpQyg",
+   "title": "짤녀와 많쿠만in텟슈",
+   "subs": 1980,
+   "videos": 312,
    "handle": ""
   },
   "chzzk": {
@@ -2740,7 +3070,10 @@
   "status": "활동",
   "note": "벚꽃학원 5기; 치지직 API 5480명",
   "yt": {
-   "id": "",
+   "id": "UCOZAtamIRUYWGwFDdhiM2Cw",
+   "title": "디아나 Diahna",
+   "subs": 9510,
+   "videos": 343,
    "handle": "@diahnaing"
   },
   "chzzk": {
@@ -2752,7 +3085,7 @@
   "soop": {},
   "fetched": "2026-10-27",
   "history": {
-   "2026-10-27": 5480
+   "2026-10-27": 9510
   }
  },
  "스타게이저|이아니": {
@@ -2762,7 +3095,10 @@
   "status": "활동",
   "note": "벚꽃학원 5기; 치지직 API 10621명",
   "yt": {
-   "id": "",
+   "id": "UCBDQeVAYDvdqV9-cTWX2TSw",
+   "title": "이아니 (본점)",
+   "subs": 2920,
+   "videos": 67,
    "handle": "@leea_ni0530"
   },
   "chzzk": {
@@ -2784,7 +3120,10 @@
   "status": "활동",
   "note": "벚꽃학원 5기; 유튜브는 공식사이트 기재 게임채널; 치지직 API 3137명",
   "yt": {
-   "id": "",
+   "id": "UCZQpyrZumNd4X4Ihi2ysHuQ",
+   "title": "나을 ナウル Naeul Game CH.",
+   "subs": 1540,
+   "videos": 60,
    "handle": "@NAEUL_GAME"
   },
   "chzzk": {
@@ -2806,7 +3145,10 @@
   "status": "활동",
   "note": "벚꽃학원 5기 쌍둥이 2인 공용 채널; 치지직 API 3605명",
   "yt": {
-   "id": "",
+   "id": "UCvYutS5E0aZGBJsFq4QjwiQ",
+   "title": "PON RuRu.Ch🦝2️⃣",
+   "subs": 945,
+   "videos": 0,
    "handle": "@pon_ruru"
   },
   "chzzk": {
@@ -2828,7 +3170,10 @@
   "status": "활동",
   "note": "벚꽃학원 6기; 치지직 API 3818명",
   "yt": {
-   "id": "",
+   "id": "UC9K23k9FslXmO_Hzp4I_EVA",
+   "title": "일오",
+   "subs": 632,
+   "videos": 131,
    "handle": "@15lovesyou"
   },
   "chzzk": {
@@ -2869,7 +3214,10 @@
   "status": "활동",
   "note": "벚꽃학원 6기; 치지직 API 2607명",
   "yt": {
-   "id": "",
+   "id": "UCKvpiziIf9-Yl5KQO_2jjrA",
+   "title": "키케미치 Kikemitch",
+   "subs": 3370,
+   "videos": 230,
    "handle": "@kikemitch"
   },
   "chzzk": {
@@ -2881,7 +3229,7 @@
   "soop": {},
   "fetched": "2026-10-27",
   "history": {
-   "2026-10-27": 2607
+   "2026-10-27": 3370
   }
  },
  "스타게이저|히로": {
@@ -2891,7 +3239,10 @@
   "status": "활동",
   "note": "하나유메 연구소; 치지직 API '엄히로' 6505명",
   "yt": {
-   "id": "",
+   "id": "UC84k_647eh3k9WKo4BjdUyw",
+   "title": "엄히로 - 26년도 현재 만 32세",
+   "subs": 11900,
+   "videos": 820,
    "handle": "@히로라이브"
   },
   "chzzk": {
@@ -2903,7 +3254,7 @@
   "soop": {},
   "fetched": "2026-10-27",
   "history": {
-   "2026-10-27": 6506
+   "2026-10-27": 11900
   }
  },
  "스타게이저|건망고": {
@@ -2913,7 +3264,10 @@
   "status": "활동",
   "note": "하나유메 연구소; 치지직 API 3301명",
   "yt": {
-   "id": "",
+   "id": "UCeS4HjwowQTRSHeMi8igkHg",
+   "title": "건망고 방송 아카이브",
+   "subs": 867,
+   "videos": 1175,
    "handle": "@Gun_Mango5"
   },
   "chzzk": {
@@ -2973,7 +3327,10 @@
   "status": "활동",
   "note": "하나유메 연구소; 치지직은 API(소개글 스타게이저 언급) 2400명",
   "yt": {
-   "id": "",
+   "id": "UCXwxNXzs5c0LCGVCtznX9Aw",
+   "title": "스타으앙코 / Staruanko",
+   "subs": 2250,
+   "videos": 226,
    "handle": "@staruanko"
   },
   "chzzk": {
@@ -2995,7 +3352,10 @@
   "status": "활동",
   "note": "하나유메 연구소; 치지직 API 4870명",
   "yt": {
-   "id": "",
+   "id": "UCV35vdFxb1TxfBhZ_t37Zlw",
+   "title": "Usami Miyu Ch. 宇佐美ミユ",
+   "subs": 917,
+   "videos": 820,
    "handle": "@Miyu_Usami"
   },
   "chzzk": {
@@ -3017,7 +3377,10 @@
   "status": "활동",
   "note": "하나유메 연구소; 치지직 API 2058명",
   "yt": {
-   "id": "",
+   "id": "UCMttKIJwbSz1AYtIk3JoPAA",
+   "title": "호시아🔔🐯Hoshia Ch.",
+   "subs": 3600,
+   "videos": 71,
    "handle": "@Hoshia_Vtuber"
   },
   "chzzk": {
@@ -3029,7 +3392,7 @@
   "soop": {},
   "fetched": "2026-10-27",
   "history": {
-   "2026-10-27": 2058
+   "2026-10-27": 3600
   }
  },
  "스타게이저|서천해": {
@@ -3040,6 +3403,9 @@
   "note": "새벽안개 관측소; 치지직 API 335명",
   "yt": {
    "id": "UC0PMJd96SlPu_88RF9BKBVA",
+   "title": "그대의 서천해_ 여성향 ASMR",
+   "subs": 826,
+   "videos": 16,
    "handle": ""
   },
   "chzzk": {
@@ -3051,7 +3417,7 @@
   "soop": {},
   "fetched": "2026-10-27",
   "history": {
-   "2026-10-27": 335
+   "2026-10-27": 826
   }
  },
  "스타게이저|김팔팔": {
@@ -3061,7 +3427,10 @@
   "status": "활동",
   "note": "새벽안개 관측소; 치지직 API 886명",
   "yt": {
-   "id": "",
+   "id": "UC3o8qu9v_9Sy6gQoxjsRGBw",
+   "title": "PalFal Ch.김팔팔 【Stargazer】",
+   "subs": 2560,
+   "videos": 643,
    "handle": "@PalfalKim"
   },
   "chzzk": {
@@ -3073,7 +3442,7 @@
   "soop": {},
   "fetched": "2026-10-27",
   "history": {
-   "2026-10-27": 886
+   "2026-10-27": 2560
   }
  },
  "스타게이저|데네": {
@@ -3114,7 +3483,10 @@
   "status": "활동",
   "note": "새벽안개 관측소; 치지직은 API(소개글 스타게이저 소속) 351명",
   "yt": {
-   "id": "",
+   "id": "UC-Ln0gTqkhzpyn-74UveG4Q",
+   "title": "ピオン / Pion",
+   "subs": 217,
+   "videos": 16,
    "handle": "@PionPionPionPionPion"
   },
   "chzzk": {
@@ -3136,7 +3508,10 @@
   "status": "활동",
   "note": "새벽안개 관측소; 치지직 API 4250명",
   "yt": {
-   "id": "",
+   "id": "UCOYfJSNZZUavqGWC5fU8GwQ",
+   "title": "묘현",
+   "subs": 32100,
+   "videos": 193,
    "handle": "@myo_youtube_0220"
   },
   "chzzk": {
@@ -3148,7 +3523,7 @@
   "soop": {},
   "fetched": "2026-10-27",
   "history": {
-   "2026-10-27": 4250
+   "2026-10-27": 32100
   }
  },
  "스타게이저|월야화랑": {
@@ -3158,7 +3533,10 @@
   "status": "활동",
   "note": "모모노미야; 치지직은 API(소개글 스타게이저 모모노미야) 4045명",
   "yt": {
-   "id": "",
+   "id": "UCLt5k6GHxK-wt5ZsXOcAmKg",
+   "title": "월야화랑",
+   "subs": 4450,
+   "videos": 510,
    "handle": "@월야화랑"
   },
   "chzzk": {
@@ -3170,7 +3548,7 @@
   "soop": {},
   "fetched": "2026-10-27",
   "history": {
-   "2026-10-27": 4045
+   "2026-10-27": 4450
   }
  },
  "스타게이저|몽새": {
@@ -3180,7 +3558,10 @@
   "status": "활동",
   "note": "모모노미야; 치지직 API 3813명",
   "yt": {
-   "id": "",
+   "id": "UCqOX88_TE4bdhz-05jCZO-Q",
+   "title": "몽새 - 유부녀 버추얼",
+   "subs": 8600,
+   "videos": 146,
    "handle": "@mongsae"
   },
   "chzzk": {
@@ -3192,7 +3573,7 @@
   "soop": {},
   "fetched": "2026-10-27",
   "history": {
-   "2026-10-27": 3813
+   "2026-10-27": 8600
   }
  },
  "스타게이저|이새난": {
@@ -3202,7 +3583,10 @@
   "status": "활동",
   "note": "모모노미야; 치지직 API 2845명",
   "yt": {
-   "id": "",
+   "id": "UCf1DklM5kyvJz4VyCDSQmTA",
+   "title": "이새난 YouTube",
+   "subs": 6340,
+   "videos": 181,
    "handle": "@Senan_note"
   },
   "chzzk": {
@@ -3214,7 +3598,7 @@
   "soop": {},
   "fetched": "2026-10-27",
   "history": {
-   "2026-10-27": 2845
+   "2026-10-27": 6340
   }
  },
  "스타게이저|김수동(스야)": {
@@ -3236,7 +3620,10 @@
   "status": "활동",
   "note": "치지직 API 18863명",
   "yt": {
-   "id": "",
+   "id": "UClWTMxooQefOLUV0TRcJ1Eg",
+   "title": "야코코",
+   "subs": 210000,
+   "videos": 529,
    "handle": "@0630"
   },
   "chzzk": {
@@ -3248,7 +3635,7 @@
   "soop": {},
   "fetched": "2026-10-27",
   "history": {
-   "2026-10-27": 18863
+   "2026-10-27": 210000
   }
  },
  "브이퍼리(스타게이저)|디어 베르체": {
@@ -3277,7 +3664,10 @@
   "status": "활동",
   "note": "엔터반; 치지직 API 8060명",
   "yt": {
-   "id": "",
+   "id": "UCtD8lp3h303iLyIJZ9c2lYA",
+   "title": "유논 YUNON [VRECORD]",
+   "subs": 11600,
+   "videos": 195,
    "handle": "@vrecord_yunon"
   },
   "chzzk": {
@@ -3293,7 +3683,7 @@
   },
   "fetched": "2026-10-27",
   "history": {
-   "2026-10-27": 8060
+   "2026-10-27": 11600
   }
  },
  "VRECORD|루시드": {
@@ -3303,7 +3693,10 @@
   "status": "활동",
   "note": "엔터반; 치지직 API 7042명",
   "yt": {
-   "id": "",
+   "id": "UCCdSoJSdmkcD5TwRh_qdXFQ",
+   "title": "루시드 LUXEED [VRECORD]",
+   "subs": 22700,
+   "videos": 70,
    "handle": "@vrecord_luxeed"
   },
   "chzzk": {
@@ -3315,7 +3708,7 @@
   "soop": {},
   "fetched": "2026-10-27",
   "history": {
-   "2026-10-27": 7042
+   "2026-10-27": 22700
   }
  },
  "VRECORD|타루": {
@@ -3325,7 +3718,10 @@
   "status": "활동",
   "note": "엔터반; SOOP 중심, 치지직 미확인",
   "yt": {
-   "id": "",
+   "id": "UCWOc1fOEu3uByDvAnQdZpPQ",
+   "title": "타루 TARU [VRECORD]",
+   "subs": 4890,
+   "videos": 17,
    "handle": "@vrecord_taru"
   },
   "chzzk": {},
@@ -3346,7 +3742,10 @@
   "status": "활동",
   "note": "엔터반; 치지직 채널조회 '모노 monomo' 2567명",
   "yt": {
-   "id": "",
+   "id": "UCuJzSNLZqYdiG1D751mB2YQ",
+   "title": "모노 MONO [VRECORD]",
+   "subs": 459,
+   "videos": 14,
    "handle": "@vrecord_mono"
   },
   "chzzk": {
@@ -3368,7 +3767,10 @@
   "status": "활동",
   "note": "엔터반; 치지직 API 1778명",
   "yt": {
-   "id": "",
+   "id": "UC56py30FTC2GdvR_Dj58JHg",
+   "title": "머피 MURPHY [VRECORD]",
+   "subs": 466,
+   "videos": 22,
    "handle": "@vrecord_murphy"
   },
   "chzzk": {
@@ -3390,7 +3792,10 @@
   "status": "활동",
   "note": "엔터반; 치지직 API 2018명",
   "yt": {
-   "id": "",
+   "id": "UCimcLM_HaU13QSV-F0fyB9w",
+   "title": "스이무 SUIMU [VRECORD]",
+   "subs": 1620,
+   "videos": 34,
    "handle": "@vrecord_suimu"
   },
   "chzzk": {
@@ -3412,7 +3817,10 @@
   "status": "활동",
   "note": "게임반; 치지직 API 3158명",
   "yt": {
-   "id": "",
+   "id": "UCume0T1OGOUTHAgsVqW__ZQ",
+   "title": "루아 RUA [VRECORD]",
+   "subs": 2330,
+   "videos": 48,
    "handle": "@vrecord_rua"
   },
   "chzzk": {
@@ -3434,7 +3842,10 @@
   "status": "활동",
   "note": "게임반; 공식사이트 chzzk.id/yoe 리다이렉트로 확인, API '코모리 요이' 1441명",
   "yt": {
-   "id": "",
+   "id": "UC-xNv_4RvW73xiN8IM5P7gA",
+   "title": "요이 YOE [VRECORD]",
+   "subs": 1140,
+   "videos": 77,
    "handle": "@vrecord_yoe"
   },
   "chzzk": {
@@ -3456,7 +3867,10 @@
   "status": "활동",
   "note": "게임반; 치지직 API 1848명",
   "yt": {
-   "id": "",
+   "id": "UC2Wf-Nc5c21Vt-cGeEgA0og",
+   "title": "시아 SIA [VRECORD]",
+   "subs": 1200,
+   "videos": 87,
    "handle": "@vrecord_sia"
   },
   "chzzk": {
@@ -3478,7 +3892,10 @@
   "status": "활동",
   "note": "예능반; 치지직 채널조회 '박로드 LOOOOD' 4536명",
   "yt": {
-   "id": "",
+   "id": "UCkpxP7z2_2ScuRGfJCQ-LhA",
+   "title": "로드 LOOOOD [VRECORD]",
+   "subs": 1960,
+   "videos": 30,
    "handle": "@vrecord_looood"
   },
   "chzzk": {
@@ -3500,7 +3917,10 @@
   "status": "활동",
   "note": "예능반; 치지직 채널조회 '마카 MACA' 1978명",
   "yt": {
-   "id": "",
+   "id": "UCZ1MbkTreF7ORNjSFy7cgvA",
+   "title": "마카 MACA [VRECORD]",
+   "subs": 605,
+   "videos": 11,
    "handle": "@vrecord_maca"
   },
   "chzzk": {
@@ -3541,7 +3961,10 @@
   "status": "활동",
   "note": "예능반 PD(2026.07 합류); 치지직 API 5411명",
   "yt": {
-   "id": "",
+   "id": "UCQkiE4sHHUp_cP55gjJfnUA",
+   "title": "키텔 KITTEL [VRECORD]",
+   "subs": 37400,
+   "videos": 1082,
    "handle": "@키텔KITTEL"
   },
   "chzzk": {
@@ -3553,7 +3976,7 @@
   "soop": {},
   "fetched": "2026-10-27",
   "history": {
-   "2026-10-27": 5412
+   "2026-10-27": 37400
   }
  },
  "VRECORD|달리": {
@@ -3563,7 +3986,10 @@
   "status": "활동",
   "note": "자유반; SOOP 중심, 치지직 미확인",
   "yt": {
-   "id": "",
+   "id": "UCHnglmAl-H2msooJRGlXCig",
+   "title": "달리 DARLI [VRECORD]",
+   "subs": 675,
+   "videos": 1,
    "handle": "@vrecord_darli"
   },
   "chzzk": {},
@@ -3584,7 +4010,10 @@
   "status": "활동",
   "note": "자유반; SOOP 중심, 치지직 미확인",
   "yt": {
-   "id": "",
+   "id": "UCz4Nw_6epv37rye1uSCA6xA",
+   "title": "시오 SIIO [VRECORD]",
+   "subs": 869,
+   "videos": 74,
    "handle": "@vrecord_siio"
   },
   "chzzk": {},
@@ -3605,7 +4034,10 @@
   "status": "활동",
   "note": "자유반; SOOP 중심, 치지직 미확인",
   "yt": {
-   "id": "",
+   "id": "UCfHB-f14_PNq8EJn6SmvJ0w",
+   "title": "하리 HARI [VRECORD]",
+   "subs": 708,
+   "videos": 3,
    "handle": "@vrecord_hari"
   },
   "chzzk": {},
@@ -3626,7 +4058,10 @@
   "status": "활동",
   "note": "자유반(2026.10 데뷔); 치지직 채널조회 '네오 지오' 451명",
   "yt": {
-   "id": "",
+   "id": "UCbeRg-S7JlsKmlBDExBJhIw",
+   "title": "지오 GO [VRECORD]",
+   "subs": 137,
+   "videos": 7,
    "handle": "@vrecord_go"
   },
   "chzzk": {
@@ -3648,7 +4083,10 @@
   "status": "졸업(2026.02)",
   "note": "치지직 미확인",
   "yt": {
-   "id": "",
+   "id": "UCZPrKaBCXobuOT9j2JhNebQ",
+   "title": "사인 SIGN [VRECORD]",
+   "subs": 656,
+   "videos": 4,
    "handle": "@vrecordsign"
   },
   "chzzk": {},
@@ -3669,7 +4107,10 @@
   "status": "졸업(2026.02)",
   "note": "치지직 API '이나 VRECORD' 2015명",
   "yt": {
-   "id": "",
+   "id": "UCSUfdNmjtea3rFwIIP3YmhA",
+   "title": "이나 INA [VRECORD]",
+   "subs": 2180,
+   "videos": 0,
    "handle": "@vrecord_ina"
   },
   "chzzk": {
@@ -3681,7 +4122,7 @@
   "soop": {},
   "fetched": "2026-10-27",
   "history": {
-   "2026-10-27": 2015
+   "2026-10-27": 2180
   }
  },
  "VRECORD|해루": {
@@ -3770,13 +4211,18 @@
   "status": "졸업(2025.01)",
   "note": "치지직 채널 현재 '(알 수 없음)'(비활성 추정)",
   "yt": {
-   "id": "",
+   "id": "UCa1PjkjBFP5KNhPA9UIgr4A",
+   "title": "세비아 SEVIA [VRECORD]",
+   "subs": 4400,
+   "videos": 103,
    "handle": "@vrecord_sevia"
   },
   "chzzk": {},
   "soop": {},
-  "fetched": "",
-  "history": {}
+  "fetched": "2026-10-27",
+  "history": {
+   "2026-10-27": 4400
+  }
  },
  "VRECORD|다비": {
   "member": "다비",
@@ -3820,7 +4266,10 @@
   "status": "졸업(2024.03)",
   "note": "치지직 API '피요 VRECORD' 3246명",
   "yt": {
-   "id": "",
+   "id": "UCC9Os6IqvCpCIpC1VoCfwPw",
+   "title": "피요 PIYO [VRECORD]",
+   "subs": 10300,
+   "videos": 6,
    "handle": "@vrecord_piyo"
   },
   "chzzk": {
@@ -3832,7 +4281,7 @@
   "soop": {},
   "fetched": "2026-10-27",
   "history": {
-   "2026-10-27": 3246
+   "2026-10-27": 10300
   }
  },
  "VRECORD|마시마로 뮤이": {
@@ -3842,13 +4291,18 @@
   "status": "졸업(2024.01)",
   "note": "치지직 미확인",
   "yt": {
-   "id": "",
+   "id": "UCOYiCg4UBwJd_0Rp2Z7VPhQ",
+   "title": "뮤이 MYUI [VRECORD]",
+   "subs": 3940,
+   "videos": 32,
    "handle": "@vrecord_myui"
   },
   "chzzk": {},
   "soop": {},
-  "fetched": "",
-  "history": {}
+  "fetched": "2026-10-27",
+  "history": {
+   "2026-10-27": 3940
+  }
  },
  "VRECORD|메리 크림치즈": {
   "member": "메리 크림치즈",
@@ -3872,13 +4326,18 @@
   "status": "졸업(2024.01)",
   "note": "치지직 미확인",
   "yt": {
-   "id": "",
+   "id": "UCABTQDxcB81jtk9UotbMD8w",
+   "title": "쵸키 CHOKI [VRECORD]",
+   "subs": 31800,
+   "videos": 1,
    "handle": "@vrecord_choki"
   },
   "chzzk": {},
   "soop": {},
-  "fetched": "",
-  "history": {}
+  "fetched": "2026-10-27",
+  "history": {
+   "2026-10-27": 31800
+  }
  },
  "일루전 라이브|냐루": {
   "member": "냐루",
@@ -3887,7 +4346,10 @@
   "status": "활동",
   "note": "2기생 엣노스; 치지직 API 3964명",
   "yt": {
-   "id": "",
+   "id": "UCxQapTzeo8Ik2Sc-TZqc4TA",
+   "title": "냐루 / NYARU",
+   "subs": 1440,
+   "videos": 21,
    "handle": "@냐루냐루"
   },
   "chzzk": {
@@ -3909,7 +4371,10 @@
   "status": "활동",
   "note": "2기생 엣노스; 유튜브는 나무위키상 음악[M] 표기 채널(채널명 '청예솔'), 다시보기 @illusionlive.chungyesol; 치지직 API 5325명",
   "yt": {
-   "id": "",
+   "id": "UCTe0ti6qrcy7FVZK6L-zyEg",
+   "title": "청예솔",
+   "subs": 3120,
+   "videos": 853,
    "handle": "@chungyesolmusic"
   },
   "chzzk": {
@@ -3931,19 +4396,22 @@
   "status": "활동",
   "note": "합류; 치지직 API 3663명",
   "yt": {
-   "id": "",
+   "id": "UC-duUpvFvz7HyRDPHha6nOw",
+   "title": "서몽",
+   "subs": 1730,
+   "videos": 143,
    "handle": "@illusionlive.seomong"
   },
   "chzzk": {
    "id": "7a54f99072535a6976b2a43cf5a4d26a",
    "name": "서몽 ILLUSION LIVE",
-   "followers": 3663,
+   "followers": 3662,
    "verified": false
   },
   "soop": {},
   "fetched": "2026-10-27",
   "history": {
-   "2026-10-27": 3663
+   "2026-10-27": 3662
   }
  },
  "일루전 라이브|루스티카나": {
@@ -3953,7 +4421,10 @@
   "status": "활동",
   "note": "합류; 유튜브는 나무위키상 음악[M] 표기 채널(채널명 '루스티카나'), 다시보기 @1rusticana1; 치지직 API 1366명",
   "yt": {
-   "id": "",
+   "id": "UCn8_TDVrNQsaefOYFOSisnQ",
+   "title": "루스티카나",
+   "subs": 161,
+   "videos": 4,
    "handle": "@루스티카나"
   },
   "chzzk": {
@@ -3975,7 +4446,10 @@
   "status": "활동",
   "note": "합류; 치지직 API 1593명",
   "yt": {
-   "id": "",
+   "id": "UCAEIy0zUcVRcde043VsaUOg",
+   "title": "후유노",
+   "subs": 587,
+   "videos": 111,
    "handle": "@fuyunocafe"
   },
   "chzzk": {
@@ -3997,7 +4471,10 @@
   "status": "활동",
   "note": "합류; 치지직 API 2045명",
   "yt": {
-   "id": "",
+   "id": "UCB3e-X7Wbn9x3jq29yvzzOw",
+   "title": "리이 LEEE",
+   "subs": 874,
+   "videos": 136,
    "handle": "@LEEEUx_xU"
   },
   "chzzk": {
@@ -4019,7 +4496,10 @@
   "status": "활동",
   "note": "합류; 치지직 API 1448명",
   "yt": {
-   "id": "",
+   "id": "UCct-Nw-7tAlYWgB9iCktJ5g",
+   "title": "디롬",
+   "subs": 980,
+   "videos": 60,
    "handle": "@romromroo"
   },
   "chzzk": {
@@ -4041,7 +4521,10 @@
   "status": "활동",
   "note": "합류; 치지직 API 6527명",
   "yt": {
-   "id": "",
+   "id": "UChEejxuuRu15AaVBV5kkM0g",
+   "title": "소히SOHEE",
+   "subs": 45100,
+   "videos": 594,
    "handle": "@vsoheev"
   },
   "chzzk": {
@@ -4053,7 +4536,7 @@
   "soop": {},
   "fetched": "2026-10-27",
   "history": {
-   "2026-10-27": 6527
+   "2026-10-27": 45100
   }
  },
  "일루전 라이브|쿠모리 키피": {
@@ -4063,7 +4546,10 @@
   "status": "활동",
   "note": "합류; 치지직 API 2157명",
   "yt": {
-   "id": "",
+   "id": "UCCc0g-U2IOy407dQKXN8RZQ",
+   "title": "쿠모리 키피",
+   "subs": 258,
+   "videos": 14,
    "handle": "@kumori-keepie"
   },
   "chzzk": {
@@ -4085,7 +4571,10 @@
   "status": "활동",
   "note": "합류; 치지직 API 2424명",
   "yt": {
-   "id": "",
+   "id": "UC-ohyyw3vTOuMP3oCvXMW3g",
+   "title": "이비 EB",
+   "subs": 2040,
+   "videos": 239,
    "handle": "@ebnim"
   },
   "chzzk": {
@@ -4107,7 +4596,10 @@
   "status": "활동",
   "note": "합류; 치지직 API 2209명",
   "yt": {
-   "id": "",
+   "id": "UCuXBoGY4L2b3V0zPCH3Lc_g",
+   "title": "코메 Comet",
+   "subs": 1490,
+   "videos": 195,
    "handle": "@Ne_comet"
   },
   "chzzk": {
@@ -4129,19 +4621,22 @@
   "status": "활동",
   "note": "합류; 치지직 API 3066명",
   "yt": {
-   "id": "",
+   "id": "UChBGp_7Sef_037Tvz09WKqw",
+   "title": "위즐리어카",
+   "subs": 2710,
+   "videos": 251,
    "handle": "@wizliorkaa"
   },
   "chzzk": {
    "id": "e43e57d18238478ab373d447b8017d36",
    "name": "위즐리어카",
-   "followers": 3066,
+   "followers": 3067,
    "verified": false
   },
   "soop": {},
   "fetched": "2026-10-27",
   "history": {
-   "2026-10-27": 3066
+   "2026-10-27": 3067
   }
  },
  "일루전 라이브|도라리": {
@@ -4151,7 +4646,10 @@
   "status": "활동",
   "note": "합류; 치지직 API 2001명",
   "yt": {
-   "id": "",
+   "id": "UCgDz3YqxJhSmfy4zcSOCo7w",
+   "title": "도라리",
+   "subs": 1710,
+   "videos": 46,
    "handle": "@dorari_v"
   },
   "chzzk": {
@@ -4173,7 +4671,10 @@
   "status": "활동",
   "note": "합류; 치지직 API 1276명",
   "yt": {
-   "id": "",
+   "id": "UCVa9K3J3gDsZG12GxSNWc7g",
+   "title": "유메루 YUMERU",
+   "subs": 472,
+   "videos": 25,
    "handle": "@yumeru623"
   },
   "chzzk": {
@@ -4243,7 +4744,10 @@
   "status": "활동",
   "note": "첫 번째 스텔라; 치지직 API 20371명",
   "yt": {
-   "id": "",
+   "id": "UChaT4DUnWxSsym-devGo6wQ",
+   "title": "야토 YATOㆍlistella",
+   "subs": 23800,
+   "videos": 691,
    "handle": "@yatoisyato"
   },
   "chzzk": {
@@ -4255,7 +4759,7 @@
   "soop": {},
   "fetched": "2026-10-27",
   "history": {
-   "2026-10-27": 20371
+   "2026-10-27": 23800
   }
  },
  "리스텔라|햄쿠비": {
@@ -4265,7 +4769,10 @@
   "status": "활동",
   "note": "두 번째 스텔라; 치지직 API 23714명",
   "yt": {
-   "id": "",
+   "id": "UC7HNJSsVk_rTYtzH9-TXUYA",
+   "title": "햄쿠비ㆍlistella",
+   "subs": 8340,
+   "videos": 88,
    "handle": "@hamkubby"
   },
   "chzzk": {
@@ -4287,7 +4794,10 @@
   "status": "활동",
   "note": "두 번째 스텔라; 치지직 API 18600명",
   "yt": {
-   "id": "",
+   "id": "UCgiVrKwgg7VQ6OM8nKHTm3A",
+   "title": "오단밍ㆍlistella",
+   "subs": 4090,
+   "videos": 91,
    "handle": "@odanming"
   },
   "chzzk": {
@@ -4309,7 +4819,10 @@
   "status": "활동",
   "note": "세 번째 스텔라; 치지직 API 6534명",
   "yt": {
-   "id": "",
+   "id": "UC4c1YvDuI-5hMpYj2xUKGvQ",
+   "title": "아미하 유네ㆍlistella",
+   "subs": 1070,
+   "videos": 12,
    "handle": "@아미하유네"
   },
   "chzzk": {
@@ -4331,7 +4844,10 @@
   "status": "활동",
   "note": "세 번째 스텔라; 치지직 API 4947명",
   "yt": {
-   "id": "",
+   "id": "UCkzf6cC5Gj-Nl4CSTsYo5Rg",
+   "title": "쇼코코 도리ㆍlistella",
+   "subs": 966,
+   "videos": 19,
    "handle": "@쇼코코도리"
   },
   "chzzk": {
@@ -4353,7 +4869,10 @@
   "status": "활동",
   "note": "세 번째 스텔라; 치지직 API 13505명",
   "yt": {
-   "id": "",
+   "id": "UCct3W0VdQ1j-h9CyF7q12ww",
+   "title": "하쿠텐 후와ㆍlistella",
+   "subs": 2950,
+   "videos": 12,
    "handle": "@하쿠텐후와"
   },
   "chzzk": {
@@ -4461,7 +4980,10 @@
   "status": "활동",
   "note": "2024 합류; 치지직 API 9468명",
   "yt": {
-   "id": "",
+   "id": "UCQy-sm5mjIO4c9heqqCbQ3Q",
+   "title": "무뉴뉴",
+   "subs": 10300,
+   "videos": 172,
    "handle": "@무뉴뉴"
   },
   "chzzk": {
@@ -4477,7 +4999,7 @@
   },
   "fetched": "2026-10-27",
   "history": {
-   "2026-10-27": 9468
+   "2026-10-27": 10300
   }
  },
  "V-llage(데브메이트)|키지": {
@@ -4511,7 +5033,10 @@
   "status": "졸업(2025.12)",
   "note": "계약 종료; 치지직 API 6221명",
   "yt": {
-   "id": "",
+   "id": "UChSejVxK1nHkvKaPSNeqBnA",
+   "title": "요나",
+   "subs": 12100,
+   "videos": 532,
    "handle": "@요나"
   },
   "chzzk": {
@@ -4527,7 +5052,7 @@
   },
   "fetched": "2026-10-27",
   "history": {
-   "2026-10-27": 6221
+   "2026-10-27": 12100
   }
  },
  "V-llage(데브메이트)|쿠로가미 사샤": {
@@ -4549,7 +5074,10 @@
   "status": "졸업(2025.08)",
   "note": "치지직 미확인",
   "yt": {
-   "id": "",
+   "id": "UC1o0DBktdoEqYbe0P-J4n6w",
+   "title": "로에 Loe 【V-llage】",
+   "subs": 14900,
+   "videos": 379,
    "handle": "@v_llage_loe"
   },
   "chzzk": {},
@@ -4560,7 +5088,7 @@
   },
   "fetched": "2026-10-27",
   "history": {
-   "2026-10-27": 14892
+   "2026-10-27": 14900
   }
  },
  "V-llage(데브메이트)|아스테리 에프타": {
@@ -4618,13 +5146,18 @@
   "status": "졸업(2023.07)",
   "note": "치지직 미확인",
   "yt": {
-   "id": "",
+   "id": "UCv1QC0A6RUWRqmg7Q-jsmLg",
+   "title": "하푸 Hapu 【V-llage】",
+   "subs": 31200,
+   "videos": 236,
    "handle": "@v_llage_hapu"
   },
   "chzzk": {},
   "soop": {},
-  "fetched": "",
-  "history": {}
+  "fetched": "2026-10-27",
+  "history": {
+   "2026-10-27": 31200
+  }
  },
  "크로아(악어크루)|치요": {
   "member": "치요",
@@ -4633,7 +5166,10 @@
   "status": "활동",
   "note": "SOOP 중심, 치지직 미확인",
   "yt": {
-   "id": "",
+   "id": "UC1wN4c4VWKwpTR6OAGq4_BA",
+   "title": "치요 Chiyo",
+   "subs": 15200,
+   "videos": 56,
    "handle": "@Chiyo75"
   },
   "chzzk": {},
@@ -4654,7 +5190,10 @@
   "status": "활동",
   "note": "SOOP 중심, 치지직 미확인",
   "yt": {
-   "id": "",
+   "id": "UCTVqhN1DqruX0QWI2rmHdLg",
+   "title": "요요",
+   "subs": 5590,
+   "videos": 41,
    "handle": "@YoYo_48"
   },
   "chzzk": {},
@@ -4675,7 +5214,10 @@
   "status": "활동",
   "note": "SOOP 중심, 치지직 미확인",
   "yt": {
-   "id": "",
+   "id": "UCemUh2LDTX-GkyEJ4Lh3esw",
+   "title": "김마늘",
+   "subs": 8520,
+   "videos": 22,
    "handle": "@manlmanl321"
   },
   "chzzk": {},
@@ -4696,7 +5238,10 @@
   "status": "활동",
   "note": "SOOP 중심, 치지직 미확인",
   "yt": {
-   "id": "",
+   "id": "UC1xFfnjtRBuXf8ZC8l8sxDw",
+   "title": "류키 [ Rue_Ki ]",
+   "subs": 12700,
+   "videos": 21,
    "handle": "@Rue_Ki"
   },
   "chzzk": {},
@@ -4707,7 +5252,7 @@
   },
   "fetched": "2026-10-27",
   "history": {
-   "2026-10-27": 12083
+   "2026-10-27": 12700
   }
  },
  "크로아(악어크루)|만타": {
@@ -4717,7 +5262,10 @@
   "status": "활동",
   "note": "메인보컬(2025.07 합류); 유튜브는 나무위키 첫 링크(채널명 '나는 만타'); 치지직 API '나는 만타' 15686명",
   "yt": {
-   "id": "",
+   "id": "UC8ffmqmNOuJTaIZ5n-It7Hg",
+   "title": "나는 만타",
+   "subs": 7960,
+   "videos": 167,
    "handle": "@Manta_clip"
   },
   "chzzk": {
@@ -4775,7 +5323,10 @@
   "status": "활동",
   "note": "치지직 API 107948명",
   "yt": {
-   "id": "",
+   "id": "UC0BeeGcSzCU0D2Dnr-I3SUw",
+   "title": "아리사 Arisa 【에스더】",
+   "subs": 84500,
+   "videos": 638,
    "handle": "@Aesther_Arisa"
   },
   "chzzk": {
@@ -4797,7 +5348,10 @@
   "status": "활동",
   "note": "치지직 API 58400명",
   "yt": {
-   "id": "",
+   "id": "UC42nHc9maWt8Foln8e8it5A",
+   "title": "카린 Karin【에스더】",
+   "subs": 27800,
+   "videos": 293,
    "handle": "@Aesther_Karin"
   },
   "chzzk": {
@@ -4819,7 +5373,10 @@
   "status": "활동",
   "note": "치지직 API 52493명",
   "yt": {
-   "id": "",
+   "id": "UCkqkaZH70jTTHzVDTs3ypcw",
+   "title": "에리스 Eris 【에스더】",
+   "subs": 33800,
+   "videos": 354,
    "handle": "@Aesther_Eris"
   },
   "chzzk": {
@@ -4841,7 +5398,10 @@
   "status": "활동",
   "note": "치지직 API 64138명",
   "yt": {
-   "id": "",
+   "id": "UCZCQ89t8HyeLkv4nGVtPwqQ",
+   "title": "엘리 Ellie 【에스더】",
+   "subs": 28100,
+   "videos": 742,
    "handle": "@Aesther_Ellie"
   },
   "chzzk": {
@@ -4875,19 +5435,22 @@
   "status": "활동",
   "note": "치지직 API 'Or' 12718명",
   "yt": {
-   "id": "",
+   "id": "UC-9p2G6U8eEsRaIjSLOCuDg",
+   "title": "오르 Or【PJX】",
+   "subs": 7550,
+   "videos": 13,
    "handle": "@OrCharon"
   },
   "chzzk": {
    "id": "d547c7021e8eb042acf57a315bad7d35",
    "name": "오르 Or",
-   "followers": 12717,
+   "followers": 12718,
    "verified": false
   },
   "soop": {},
   "fetched": "2026-10-27",
   "history": {
-   "2026-10-27": 12717
+   "2026-10-27": 12718
   }
  },
  "PJX|유람": {
@@ -4897,19 +5460,22 @@
   "status": "활동",
   "note": "치지직 API 25813명",
   "yt": {
-   "id": "",
+   "id": "UCbwCGmPKOzsZqn5zwK2vo2g",
+   "title": "유람 Yuram 【PJX】",
+   "subs": 55200,
+   "videos": 214,
    "handle": "@YuramCharon"
   },
   "chzzk": {
    "id": "5d68142291810fa1a2a0dfa90a688362",
    "name": "유람 Yuram",
-   "followers": 25814,
+   "followers": 25816,
    "verified": false
   },
   "soop": {},
   "fetched": "2026-10-27",
   "history": {
-   "2026-10-27": 25814
+   "2026-10-27": 55200
   }
  },
  "PJX|디온": {
@@ -4919,7 +5485,10 @@
   "status": "활동",
   "note": "치지직 API 11376명",
   "yt": {
-   "id": "",
+   "id": "UCyrNt-TNFHxrSuPil6JsJKQ",
+   "title": "디온 Dion 【PJX】",
+   "subs": 9810,
+   "videos": 87,
    "handle": "@DionCharon"
   },
   "chzzk": {
@@ -4982,13 +5551,13 @@
   "chzzk": {
    "id": "e0b11eab54ad5ecf2306fdd2d7e4f5c2",
    "name": "니르 Niru",
-   "followers": 10304,
+   "followers": 10305,
    "verified": false
   },
   "soop": {},
   "fetched": "2026-10-27",
   "history": {
-   "2026-10-27": 10304
+   "2026-10-27": 10305
   }
  },
  "스테이터스|리나 아르시엘": {
@@ -5105,7 +5674,10 @@
   "status": "활동",
   "note": "1기생; 치지직 API 7999명",
   "yt": {
-   "id": "",
+   "id": "UCZ1ZNMMScd8i3PK7qmU1zaA",
+   "title": "하라페코 모모모",
+   "subs": 1930,
+   "videos": 38,
    "handle": "@wishing_momomo"
   },
   "chzzk": {
@@ -5127,7 +5699,10 @@
   "status": "활동",
   "note": "1기생; 치지직 API 5203명",
   "yt": {
-   "id": "",
+   "id": "UCz_xNPBcTDH47ENPaRE_mAQ",
+   "title": "사이네코 코나타 Saineko konata",
+   "subs": 702,
+   "videos": 16,
    "handle": "@wishing_konata"
   },
   "chzzk": {
@@ -5180,7 +5755,10 @@
   "status": "활동",
   "note": "치지직 API 4393명",
   "yt": {
-   "id": "",
+   "id": "UCHOkiJyBi_bKIm7hHWZm9lQ",
+   "title": "이큐 E. Que Ch. Virtual Hertz",
+   "subs": 4240,
+   "videos": 42,
    "handle": "@E.Que_VHZ"
   },
   "chzzk": {
@@ -5250,7 +5828,10 @@
   "status": "활동",
   "note": "1기; 치지직 API 20771명",
   "yt": {
-   "id": "",
+   "id": "UCwFBKqPIXtloEldc4G-P_uQ",
+   "title": "로제타 Rosetta",
+   "subs": 51200,
+   "videos": 833,
    "handle": "@R.Rosetta"
   },
   "chzzk": {
@@ -5262,7 +5843,7 @@
   "soop": {},
   "fetched": "2026-10-27",
   "history": {
-   "2026-10-27": 20771
+   "2026-10-27": 51200
   }
  },
  "라이브루리|리노아": {
@@ -5272,7 +5853,10 @@
   "status": "활동",
   "note": "1기; @Re_noa는 2024.10부터 지식토크 채널 운영(다시보기 @R.Linoa_FULL 분리); 치지직 API 5571명",
   "yt": {
-   "id": "",
+   "id": "UCFRaHu-F9C-SnLK03lQStHw",
+   "title": "리노아 Linoa",
+   "subs": 3270,
+   "videos": 81,
    "handle": "@Re_noa"
   },
   "chzzk": {
@@ -5306,13 +5890,18 @@
   "status": "졸업(2025.01)",
   "note": "치지직 채널 현재 '(알 수 없음)'(소개글로 본인 확인)",
   "yt": {
-   "id": "",
+   "id": "UCHKjMcXA3k-Ew4ZKpNlDMxw",
+   "title": "헬리샤",
+   "subs": 2740,
+   "videos": 61,
    "handle": "@R.Hellixia"
   },
   "chzzk": {},
   "soop": {},
-  "fetched": "",
-  "history": {}
+  "fetched": "2026-10-27",
+  "history": {
+   "2026-10-27": 2740
+  }
  },
  "라이브루리|도라점장": {
   "member": "도라점장",
@@ -5321,7 +5910,10 @@
   "status": "졸업(2024.12)",
   "note": "계약 종료 후 개인세 '도라대장'으로 재데뷔; 치지직 채널조회 '도라대장' 10548명",
   "yt": {
-   "id": "",
+   "id": "UC8OwHlqauexxgY9X0iwh4zA",
+   "title": "도라대장",
+   "subs": 13900,
+   "videos": 353,
    "handle": "@DORAtheStingray"
   },
   "chzzk": {
@@ -5337,7 +5929,7 @@
   },
   "fetched": "2026-10-27",
   "history": {
-   "2026-10-27": 10548
+   "2026-10-27": 13900
   }
  },
  "라이브루리|미치르 메르헨": {
@@ -5347,7 +5939,10 @@
   "status": "졸업(2024.06)",
   "note": "계약 종료(이후 샌드박스 네트워크); 치지직 API 20526명",
   "yt": {
-   "id": "",
+   "id": "UCDOe-qeSf0sE3WWayKXuNrQ",
+   "title": "Mytyl Maerchen",
+   "subs": 27100,
+   "videos": 679,
    "handle": "@MytylMaerchen"
   },
   "chzzk": {
@@ -5359,7 +5954,7 @@
   "soop": {},
   "fetched": "2026-10-27",
   "history": {
-   "2026-10-27": 20526
+   "2026-10-27": 27100
   }
  },
  "큐버스|강해라": {
@@ -5370,6 +5965,9 @@
   "note": "1기생; 치지직 API(소개글 큐버스 1기생) 1869명",
   "yt": {
    "id": "UCaRKqizX-JGvPDo-fTVmN6Q",
+   "title": "강해라 KangHaera",
+   "subs": 13400,
+   "videos": 400,
    "handle": ""
   },
   "chzzk": {
@@ -5385,7 +5983,7 @@
   },
   "fetched": "2026-10-27",
   "history": {
-   "2026-10-27": 2349
+   "2026-10-27": 13400
   }
  },
  "큐버스|홍애리": {
@@ -5562,19 +6160,22 @@
   "status": "활동",
   "note": "치지직 API '쿠레나이 나츠키' 42084명",
   "yt": {
-   "id": "",
+   "id": "UCH5qHIX39urIof90KBQNIxg",
+   "title": "쿠레나이 나츠키 Kurenai Natsuki",
+   "subs": 32700,
+   "videos": 273,
    "handle": "@나츠키"
   },
   "chzzk": {
    "id": "a54372e8197f6d241a43a318279860d6",
    "name": "쿠레나이 나츠키",
-   "followers": 42085,
+   "followers": 42084,
    "verified": false
   },
   "soop": {},
   "fetched": "2026-10-27",
   "history": {
-   "2026-10-27": 42085
+   "2026-10-27": 42084
   }
  },
  "스타데이즈|테리": {
@@ -5584,7 +6185,10 @@
   "status": "활동",
   "note": "치지직 API '테리 눈나' 56792명",
   "yt": {
-   "id": "",
+   "id": "UC0Yq1Xn1e6vz6pFP78UdGqQ",
+   "title": "테리눈나 Terri Nunna",
+   "subs": 105000,
+   "videos": 579,
    "handle": "@테리눈나"
   },
   "chzzk": {
@@ -5596,7 +6200,7 @@
   "soop": {},
   "fetched": "2026-10-27",
   "history": {
-   "2026-10-27": 56794
+   "2026-10-27": 105000
   }
  },
  "스타데이즈|반": {
@@ -5654,7 +6258,10 @@
   "status": "활동",
   "note": "SOOP 중심, 치지직 미확인",
   "yt": {
-   "id": "",
+   "id": "UCaacwbLBfcQDeazRwQ2dApg",
+   "title": "키마 Kyma",
+   "subs": 27000,
+   "videos": 132,
    "handle": "@kyma_official"
   },
   "chzzk": {},
@@ -5675,7 +6282,10 @@
   "status": "활동",
   "note": "SOOP 중심, 치지직 미확인",
   "yt": {
-   "id": "",
+   "id": "UCMBTCVHptMpx-UKJynuB4kw",
+   "title": "스노",
+   "subs": 1710,
+   "videos": 33,
    "handle": "@snoh_v"
   },
   "chzzk": {},
@@ -5696,7 +6306,10 @@
   "status": "활동",
   "note": "SOOP 중심, 치지직 미확인",
   "yt": {
-   "id": "",
+   "id": "UCcFK1gOtKkaze4gc51qWosQ",
+   "title": "유나기",
+   "subs": 12700,
+   "videos": 80,
    "handle": "@nagi0413"
   },
   "chzzk": {},
@@ -5729,19 +6342,22 @@
   "status": "활동",
   "note": "치지직 API(문의 samg.kr) 9576명",
   "yt": {
-   "id": "",
+   "id": "UCt6LGQPj3P0I4iZ8OC-mumg",
+   "title": "모코 파르페",
+   "subs": 8980,
+   "videos": 278,
    "handle": "@mocoparfe"
   },
   "chzzk": {
    "id": "d20f164fe5946abe0bce2e5a43052923",
    "name": "모코 파르페",
-   "followers": 9577,
+   "followers": 9576,
    "verified": false
   },
   "soop": {},
   "fetched": "2026-10-27",
   "history": {
-   "2026-10-27": 9577
+   "2026-10-27": 9576
   }
  },
  "트윌릿 스튜디오|유우희": {
