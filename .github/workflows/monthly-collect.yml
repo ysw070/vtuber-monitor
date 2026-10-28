@@ -4,7 +4,12 @@ name: 주간 수집 및 배포
 on:
   schedule:
     - cron: "0 0 * * 1"
-  workflow_dispatch: {}
+  workflow_dispatch:
+    inputs:
+      rebuild_only:
+        description: "수집 API 없이 재빌드만(탐지 반영용)"
+        required: false
+        default: "false"
   # 뉴스·명부·코드가 레포에 올라오면 즉시 재빌드·배포(수집 API·유튜브 API는 호출하지 않음)
   push:
     branches: [main]
@@ -13,6 +18,7 @@ on:
       - "data/*.xlsx"
       - "data/manual_groups.csv"
       - "data/agency_members.csv"
+      - "data/discovered_chzzk.json"
       - "pipeline/**"
       - "build.py"
 
@@ -46,7 +52,7 @@ jobs:
         env:
           GH_REPO: ${{ github.repository }}
           # push 재빌드는 개인 운영 수집 API(나의 작은 버튜버)를 부르지 않는다. 유튜브·치지직 공개 API는 호출(할당량 여유 충분)
-          SKIP_COLLECT: ${{ github.event_name == 'push' && '1' || '' }}
+          SKIP_COLLECT: ${{ (github.event_name == 'push' || inputs.rebuild_only == 'true') && '1' || '' }}
           YT_API_KEY: ${{ secrets.YT_API_KEY }}
         run: python build.py
 
@@ -55,8 +61,9 @@ jobs:
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add data/ public/ || true
-          git commit -m "${{ github.event_name == 'push' && '재빌드' || '주간 수집' }}: $(date -u +%Y-%m-%d)" || echo "변경 없음 — 커밋 건너뜀"
-          git push || echo "푸시 생략"
+          git commit -m "${{ (github.event_name == 'push' || inputs.rebuild_only == 'true') && '재빌드' || '주간 수집' }}: $(date -u +%Y-%m-%d)" || echo "변경 없음 — 커밋 건너뜀"
+          # 탐지 워크플로 커밋과 겹칠 수 있으니 최신을 받아 재시도
+          for i in 1 2 3; do git pull --rebase -q -X theirs && git push -q && break; sleep 5; done || echo "푸시 실패"
 
       - name: Pages 아티팩트 업로드(public/ 디렉터리)
         uses: actions/upload-pages-artifact@v3

@@ -57,6 +57,11 @@ def main():
     # 2.5) 유튜브 통계 보강(YT_API_KEY 있을 때만 동작, 없으면 no-op)
     run('2.5 유튜브 통계', [os.path.join(PIPE, 'enrich_youtube.py')], {})
 
+    # 2.55) 치지직 태그 탐지 — 정기 수집 때만 스캔+전체 팔로워 갱신(push 재빌드는 생략)
+    if os.environ.get('SKIP_COLLECT') != '1':
+        run('2.55 치지직 탐지 스캔', [os.path.join(PIPE, 'discover_chzzk.py'), 'scan'], {})
+        run('2.56 치지직 탐지 갱신', [os.path.join(PIPE, 'discover_chzzk.py'), 'refresh'], {})
+
     # 2.6) 기업 소속 멤버 통계(치지직 공개 API + 유튜브) — 중소 수집원에 없는 멤버 보강
     run('2.6 기업 소속 멤버', [os.path.join(PIPE, 'enrich_members.py')], {})
 

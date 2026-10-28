@@ -1,0 +1,42 @@
+name: 치지직 버튜버 탐지
+
+# 3시간마다 치지직 '버튜버·버추얼' 태그 방송을 조회해 목록 밖 채널을 기록한다.
+# 새 채널이 생기면 data/discovered_chzzk.json 을 커밋하고, 팔로워 1천+ 신규가 있으면 '재빌드 전용' 배포를 호출.
+# (봇 커밋은 push 워크플로를 깨우지 않으므로 workflow_dispatch로 직접 호출)
+on:
+  schedule:
+    - cron: "17 */3 * * *"
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+  actions: write
+
+concurrency:
+  group: "discover"
+  cancel-in-progress: false
+
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: 탐지 스캔
+        id: scan
+        run: python pipeline/discover_chzzk.py scan
+      - name: 새 채널이 있으면 커밋
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/discovered_chzzk.json
+          if git diff --cached --quiet; then echo "변경 없음"; exit 0; fi
+          git commit -m "치지직 탐지: $(date -u +%Y-%m-%dT%H:%MZ)"
+          for i in 1 2 3; do git pull --rebase -q && git push -q && break; sleep 5; done
+      - name: 1천+ 신규가 있으면 재빌드·배포
+        if: steps.scan.outputs.new_big != '' && steps.scan.outputs.new_big != '0'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run monthly-collect.yml -f rebuild_only=true

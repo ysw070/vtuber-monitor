@@ -118,6 +118,20 @@ for mk, m in sorted(members.items(), key=lambda kv: _rank(kv[1])):
     for k in keys: _added[k] = agg['m:' + mk]
     n_member_new += 1
 print(f'agency members: tagged {n_member_tag}, added {n_member_new}')
+
+# ── 치지직 태그 탐지(data/discovered_chzzk.json, discover_chzzk.py) — 어디에도 등록 안 된 버튜버 보강 ──
+DISC_MIN = 1000   # 소규모·오탐 노이즈를 줄이기 위한 하한
+disc = load_json(os.path.join(os.path.dirname(os.path.abspath(CSVF)), 'discovered_chzzk.json'), {})
+n_disc = 0
+for cid, v in disc.items():
+    if ('chzzk', cid) in idx or ('chzzk', cid) in _added or (v.get('followers') or 0) < DISC_MIN:
+        continue
+    agg['d:' + cid] = {'n': v.get('name') or cid[:8], 'e': '', 'f': v.get('followers') or 0, 'p': 'chzzk',
+                       'd': '', 'l': v.get('last_seen') or '', 't': '',
+                       'ch': {'chzzk': [v.get('followers') or 0, f'https://chzzk.naver.com/{cid}', v.get('name') or '']},
+                       'g': '', 'k': '', 'src': 'disc', 'tg': (v.get('tags') or [])[:6], 'fs': v.get('first_seen') or ''}
+    n_disc += 1
+print(f'chzzk discovery: added {n_disc} (>= {DISC_MIN} followers)')
 solos = sorted(agg.values(), key=lambda x: -x['f'])
 
 # 소속사·운영사 정리 시트 → [이름, 유형, 대표그룹, 비고]
@@ -372,7 +386,7 @@ footer .fl{display:flex;gap:14px;flex-wrap:wrap}footer .fl a{color:var(--sub);te
 </section>
 
 <section id="t-solo" style="display:none">
-  <p class="lead">두 경로로 매주 자동 수집해요. <b>🌱 중소·개인</b>은 '나의 작은 버튜버' 집계 API(중소 버튜버 전용, 소속 정보 없음), <b>🏢 기업 소속</b>은 운영자가 관리하는 그룹 멤버 명단으로 치지직·유튜브 공개 API에서 팔로워를 가져옵니다. 숫자는 플랫폼별 팔로워·구독자 중 가장 큰 값이에요.</p>
+  <p class="lead">두 경로로 매주 자동 수집해요. <b>🌱 중소·개인</b>은 '나의 작은 버튜버' 집계 API(중소 버튜버 전용, 소속 정보 없음), <b>🏢 기업 소속</b>은 운영자가 관리하는 그룹·MCN 멤버 명단으로 치지직·SOOP·유튜브 공개 API에서 팔로워를 가져옵니다. <b>🔍 탐지</b>는 두 목록 어디에도 없지만 치지직에서 '버튜버·버추얼' 태그로 방송한 채널(팔로워 1천+)을 자동으로 찾아 넣은 것이에요. 숫자는 플랫폼별 팔로워·구독자 중 가장 큰 값이에요.</p>
   <div class="toolbar" id="s-kind"><span class="chip on" data-k="">전체</span><span class="chip" data-k="기업">🏢 기업 소속</span><span class="chip" data-k="중소">🌱 중소·개인</span><span class="muted" id="s-kind-n" style="margin-left:4px"></span></div>
   <div class="charts" style="margin-bottom:14px">
     <div class="chart-box"><h3>규모 분포 (최대 팔로워)</h3><div class="cv sm"><canvas id="c3"></canvas></div></div>
@@ -630,7 +644,7 @@ function renderS(){
   let rs=D.solos.filter(s=>kindOk(s)&&s.f>=sM&&(!sP||Object.keys(s.ch).includes(sP))&&(!sQ||(s.n+s.e+(s.g||'')).toLowerCase().includes(sQ)));
   rs.sort((a,b)=>{const k=sSort[0];return (a[k]>b[k]?1:a[k]<b[k]?-1:0)*sSort[1]});
   const total=rs.length;rs=rs.slice(0,sLimit);
-  $('#tb-s').innerHTML=rs.map(s=>`<tr class="row" data-n="${esc(s.n)}"><td><b>${esc(s.n)}</b> <span class="muted">${esc(s.e)}</span></td><td class="hide-m">${gTag(s)||'<span class="muted">—</span>'}</td><td class="num"><b>${s.f?fmt(s.f):'—'}</b></td><td class="hide-m">${esc(({youtube:'YouTube',chzzk:'치지직',soop:'SOOP'})[s.p]||s.p)||'—'}</td><td class="hide-m muted">${esc(s.d)||'—'}</td><td class="muted">${esc(s.l)||'—'}</td></tr>`).join('');
+  $('#tb-s').innerHTML=rs.map(s=>`<tr class="row" data-n="${esc(s.n)}"><td><b>${esc(s.n)}</b> <span class="muted">${esc(s.e)}</span>${s.src==='disc'?' <span class="st st-ai" title="치지직 버튜버 태그 방송에서 자동 탐지">🔍 탐지</span>':''}</td><td class="hide-m">${gTag(s)||'<span class="muted">—</span>'}</td><td class="num"><b>${s.f?fmt(s.f):'—'}</b></td><td class="hide-m">${esc(({youtube:'YouTube',chzzk:'치지직',soop:'SOOP'})[s.p]||s.p)||'—'}</td><td class="hide-m muted">${esc(s.d)||'—'}</td><td class="muted">${esc(s.l)||'—'}</td></tr>`).join('');
   $('#pg-s').innerHTML=total>sLimit?`${total}건 중 ${sLimit}건 표시 — <a href="#" id="more">더 보기 (+100)</a>`:`${total}건 표시`;
   const m=$('#more');if(m)m.onclick=e=>{e.preventDefault();sLimit+=100;renderS()};
   document.querySelectorAll('#tb-s .row').forEach(tr=>tr.onclick=()=>openS(D.solos.find(x=>x.n===tr.dataset.n)));
@@ -645,7 +659,7 @@ function openS(s,skipHash){
   const links=Object.entries(s.ch).map(([p,[f,u,cn]])=>u?`<a class="chlink" target="_blank" href="${esc(u)}"><span class="pf">${esc(p)} · ${esc(cn||s.n)}</span><span class="fl">${f?fmt(f)+' 팔로워':''} ↗</span></a>`:'').join('');
   const tw=s.t?`<a class="chlink" target="_blank" href="https://x.com/${esc(s.t.replace('@',''))}"><span class="pf">𝕏 ${esc(s.t)}</span><span class="fl">새 창 ↗</span></a>`:'';
   const judge=s.f>=50000?'<span class="st st-활동중">5만+</span>':s.f>=30000?'<span class="st st-전환">3만~5만</span>':s.f>=10000?'<span class="st st-확인필요">1만~3만</span>':'<span class="st st-휴면">1만 미만</span>';
-  const aff=s.k?`<div><b>소속</b><span>${gTag(s)} ${s.k==='기업'?'<span class="muted">운영자 명단</span>':(s.k==='크루'?'<span class="muted">개인세 크루</span>':'<span class="muted">졸업·계약종료</span>')}</span></div>`:'<div><b>소속</b><span class="muted">미상 (중소·개인 수집원)</span></div>';
+  const aff=s.k?`<div><b>소속</b><span>${gTag(s)} ${s.k==='기업'?'<span class="muted">운영자 명단</span>':(s.k==='크루'?'<span class="muted">개인세 크루</span>':'<span class="muted">졸업·계약종료</span>')}</span></div>`:(s.src==='disc'?`<div><b>소속</b><span class="muted">미상 · 🔍 치지직 태그 방송에서 자동 탐지 (첫 발견 ${esc(s.fs)})</span></div><div><b>방송 태그</b><span>${(s.tg||[]).map(t=>'#'+esc(t)).join(' ')}</span></div>`:'<div><b>소속</b><span class="muted">미상 (중소·개인 수집원)</span></div>');
   $('#d-body').innerHTML=`<h2>${esc(s.n)}</h2><div class="muted">${esc(s.e)}</div>
   <div class="kv">${aff}<div><b>규모</b><span>${judge}</span></div><div><b>최대 팔로워</b><span><b>${s.f?s.f.toLocaleString():'—'}</b> (${esc(s.p)||'—'})</span></div>
   <div><b>데뷔일</b><span>${esc(s.d)||'—'}</span></div><div><b>최근 라이브</b><span>${esc(s.l)||'—'}</span></div></div>
@@ -805,6 +819,7 @@ function renderMethod(){
     <div class="kv">
       <div><b>그룹 명부</b><span>thewiki.kr·나무위키 '버추얼 그룹 목록', 언론 보도(머니투데이·이데일리·한경·스포츠경향·전자신문·톱셀럽·KMJ 등), MBC 버추얼 라이브 페스티벌 라인업을 교차검증</span></div>
       <div><b>스트리머 규모</b><span>'나의 작은 버튜버' 공개 API(중소 버튜버 전용 — 유튜브 구독·치지직/SOOP 팔로워·최근 방송). <b>소속사 정보는 제공하지 않음</b> → 소속 미상</span></div>
+      <div><b>자동 탐지</b><span>치지직 '버튜버·버추얼·버츄얼·VTuber' 태그 방송을 3시간마다 조회해 목록 밖 채널을 기록, 팔로워 1천+만 수록. 등록제 수집원의 사각지대를 메우기 위한 것으로, 방송을 안 켠 기간엔 잡히지 않음(SOOP은 태그 조회 API가 없어 미적용)</span></div>
       <div><b>기업 소속 멤버</b><span>운영자가 관리하는 그룹 멤버 명단(채널 ID는 치지직·SOOP 공개 API로 검증) → 치지직·SOOP 공개 API와 YouTube Data API로 매주 팔로워 수집. 졸업·계약종료 멤버는 '前 소속'으로 표시</span></div>
       <div><b>채널 통계</b><span>YouTube Data API v3 — 명부 등재 엔티티의 채널 구독자·영상수·조회수를 매주 자동 갱신</span></div>
       <div><b>소속사 확정</b><span>공식 보도자료·공식 채널·위키 문서 (2026-06-06 재조사 반영)</span></div>
