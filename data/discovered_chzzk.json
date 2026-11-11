@@ -82,8 +82,8 @@
    "샌드박스"
   ],
   "first_seen": "2026-10-28",
-  "last_seen": "2026-11-10",
-  "seen_days": 10
+  "last_seen": "2026-11-11",
+  "seen_days": 11
  },
  "d2fb83a5db130bf4d273c981b82ca41f": {
   "name": "이오몽",
@@ -1752,6 +1752,7 @@
   "verified": true,
   "tags": [
    "다락캐스트",
+   "버츄얼",
    "버튜버",
    "짜짜섭",
    "치지직제작지원",
@@ -1772,8 +1773,8 @@
    "요아케노나나시"
   ],
   "first_seen": "2026-10-30",
-  "last_seen": "2026-11-08",
-  "seen_days": 5
+  "last_seen": "2026-11-11",
+  "seen_days": 6
  },
  "3a5c68e21e1de59efc438313f908dd6f": {
   "name": "임재천",
@@ -2467,8 +2468,8 @@
    "버튜버"
   ],
   "first_seen": "2026-11-01",
-  "last_seen": "2026-11-06",
-  "seen_days": 3
+  "last_seen": "2026-11-11",
+  "seen_days": 4
  },
  "cfc5f779ee9d5c6c75bc3b3e821019a4": {
   "name": "feviknight 페비나이트",
@@ -4599,8 +4600,8 @@
    "포팔서버"
   ],
   "first_seen": "2026-10-29",
-  "last_seen": "2026-11-10",
-  "seen_days": 6
+  "last_seen": "2026-11-11",
+  "seen_days": 7
  },
  "19e50acc081bbbe156c836dde6becb65": {
   "name": "치카게 사쿠야",
@@ -5183,8 +5184,8 @@
    "여캠"
   ],
   "first_seen": "2026-10-30",
-  "last_seen": "2026-11-10",
-  "seen_days": 5
+  "last_seen": "2026-11-11",
+  "seen_days": 6
  },
  "0786a044e6c8eeda0119338e434a4de1": {
   "name": "시 희",
@@ -6973,8 +6974,8 @@
    "코블몬"
   ],
   "first_seen": "2026-10-31",
-  "last_seen": "2026-11-10",
-  "seen_days": 9
+  "last_seen": "2026-11-11",
+  "seen_days": 10
  },
  "cfb55fb02bdcbf17c3eb0bd756ee7762": {
   "name": "코오모리 히키 Orbi",
@@ -8281,8 +8282,8 @@
    "수녕"
   ],
   "first_seen": "2026-10-31",
-  "last_seen": "2026-11-10",
-  "seen_days": 7
+  "last_seen": "2026-11-11",
+  "seen_days": 8
  },
  "9a513a7cf54cf28dfd4770df43ecd9f2": {
   "name": "푸루인",
@@ -11023,11 +11024,13 @@
   "followers": 1837,
   "verified": false,
   "tags": [
+   "다크소울3",
    "데바데",
    "리듬게임",
    "목소리",
    "반캠",
    "버튜버",
+   "소울라이크",
    "시참",
    "신입",
    "유입환영",
@@ -13156,10 +13159,12 @@
    "라디오",
    "로스트아크",
    "리그오브레전드",
+   "마인크래프트",
    "목소리0티어",
    "배린이",
    "배틀그라운드",
    "버츄얼",
+   "베일랜드",
    "블레이드평균수호단",
    "증바람"
   ],
@@ -13766,8 +13771,8 @@
    "허스키보이스"
   ],
   "first_seen": "2026-10-29",
-  "last_seen": "2026-11-10",
-  "seen_days": 11
+  "last_seen": "2026-11-11",
+  "seen_days": 12
  },
  "112677e72fc763fa4bd7a15a21cbc6c2": {
   "name": "이브린",
@@ -13899,8 +13904,8 @@
    "훈수유료"
   ],
   "first_seen": "2026-10-30",
-  "last_seen": "2026-10-31",
-  "seen_days": 2
+  "last_seen": "2026-11-11",
+  "seen_days": 3
  },
  "7a8ce0cbe4c3580e8a5e83013ce89e7c": {
   "name": "훈프리",
@@ -14184,8 +14189,8 @@
    "해피할로윈"
   ],
   "first_seen": "2026-10-28",
-  "last_seen": "2026-11-10",
-  "seen_days": 10
+  "last_seen": "2026-11-11",
+  "seen_days": 11
  },
  "4d7ec74331f8f3878a113fe3629f4757": {
   "name": "쪼로퀸",
@@ -15912,8 +15917,8 @@
    "하꼬"
   ],
   "first_seen": "2026-11-04",
-  "last_seen": "2026-11-10",
-  "seen_days": 5
+  "last_seen": "2026-11-11",
+  "seen_days": 6
  },
  "fad4a0460847a65e91c959f4d3d12a67": {
   "name": "츄우키",
@@ -16539,8 +16544,8 @@
    "유입환영"
   ],
   "first_seen": "2026-11-03",
-  "last_seen": "2026-11-10",
-  "seen_days": 3
+  "last_seen": "2026-11-11",
+  "seen_days": 4
  },
  "2434c8e01c4582b37b1ab925af938cde": {
   "name": "머렝 Mureng",
@@ -17897,8 +17902,8 @@
    "종합게임"
   ],
   "first_seen": "2026-10-29",
-  "last_seen": "2026-11-02",
-  "seen_days": 2
+  "last_seen": "2026-11-11",
+  "seen_days": 3
  },
  "3836532f2e6705e30e6280a9bebf5382": {
   "name": "초키ChoKey",
@@ -18618,8 +18623,8 @@
    "토크"
   ],
   "first_seen": "2026-10-29",
-  "last_seen": "2026-11-10",
-  "seen_days": 7
+  "last_seen": "2026-11-11",
+  "seen_days": 8
  },
  "ead308a8c25ff029890e3694e43c20f0": {
   "name": "깅효린",
@@ -23087,8 +23092,8 @@
    "버츄얼"
   ],
   "first_seen": "2026-10-30",
-  "last_seen": "2026-11-08",
-  "seen_days": 5
+  "last_seen": "2026-11-11",
+  "seen_days": 6
  },
  "95c52a393d3bd023200005106b15300a": {
   "name": "메디 MediBael",
@@ -26088,8 +26093,8 @@
    "코스프레"
   ],
   "first_seen": "2026-10-29",
-  "last_seen": "2026-11-08",
-  "seen_days": 7
+  "last_seen": "2026-11-11",
+  "seen_days": 8
  },
  "a57896cc3606f553e82c76c6b1479cba": {
   "name": "졍끼끼",
@@ -28029,8 +28034,8 @@
    "히키코모리"
   ],
   "first_seen": "2026-10-28",
-  "last_seen": "2026-11-10",
-  "seen_days": 13
+  "last_seen": "2026-11-11",
+  "seen_days": 14
  },
  "3b02175a568f495797bc222ba21d025c": {
   "name": "루루튀김",
@@ -28838,8 +28843,8 @@
    "소주병"
   ],
   "first_seen": "2026-10-28",
-  "last_seen": "2026-11-08",
-  "seen_days": 4
+  "last_seen": "2026-11-11",
+  "seen_days": 5
  },
  "c296bd19b3543707c7337b528a4efc2d": {
   "name": "끼 위",
@@ -29279,8 +29284,8 @@
    "휘핑컵"
   ],
   "first_seen": "2026-10-28",
-  "last_seen": "2026-11-10",
-  "seen_days": 14
+  "last_seen": "2026-11-11",
+  "seen_days": 15
  },
  "11ff6a1e680bdb9e79e0327bc611ac31": {
   "name": "소쿠리 SOKURI",
@@ -29454,8 +29459,8 @@
    "종합게임"
   ],
   "first_seen": "2026-10-28",
-  "last_seen": "2026-11-10",
-  "seen_days": 11
+  "last_seen": "2026-11-11",
+  "seen_days": 12
  },
  "f1d06daf1c125af5d4cb15f1365e195f": {
   "name": "카엘라일리",
@@ -30063,8 +30068,8 @@
    "유입환영"
   ],
   "first_seen": "2026-11-09",
-  "last_seen": "2026-11-09",
-  "seen_days": 1
+  "last_seen": "2026-11-11",
+  "seen_days": 2
  },
  "25393fc6c48d6766a02a4b63df37f147": {
   "name": "듀 나",
@@ -33451,8 +33456,8 @@
    "엘든링혐오자"
   ],
   "first_seen": "2026-10-30",
-  "last_seen": "2026-11-09",
-  "seen_days": 9
+  "last_seen": "2026-11-11",
+  "seen_days": 10
  },
  "5528881487891149b90191729861d604": {
   "name": "몽도이",
@@ -34495,8 +34500,8 @@
    "토크"
   ],
   "first_seen": "2026-11-03",
-  "last_seen": "2026-11-08",
-  "seen_days": 4
+  "last_seen": "2026-11-11",
+  "seen_days": 5
  },
  "3e1a9477d42ae145c02b0ce5e730a9b0": {
   "name": "도하 DoH4",
@@ -34771,8 +34776,8 @@
    "유입환영"
   ],
   "first_seen": "2026-11-08",
-  "last_seen": "2026-11-09",
-  "seen_days": 2
+  "last_seen": "2026-11-11",
+  "seen_days": 3
  },
  "af9213d2495bd7fe49c5fb8366c0a824": {
   "name": "오귤",
@@ -35126,8 +35131,8 @@
    "퍼리"
   ],
   "first_seen": "2026-10-30",
-  "last_seen": "2026-11-10",
-  "seen_days": 9
+  "last_seen": "2026-11-11",
+  "seen_days": 10
  },
  "8c615cb598cc8dbce78ac4c938a569b6": {
   "name": "슈요 shuyo",
@@ -36384,8 +36389,8 @@
    "수다"
   ],
   "first_seen": "2026-11-08",
-  "last_seen": "2026-11-08",
-  "seen_days": 1
+  "last_seen": "2026-11-11",
+  "seen_days": 2
  },
  "62dfdfc7c9aab6fa05c423b7ee244600": {
   "name": "빤휘",
@@ -37823,8 +37828,8 @@
    "셀린유저"
   ],
   "first_seen": "2026-10-28",
-  "last_seen": "2026-11-09",
-  "seen_days": 3
+  "last_seen": "2026-11-11",
+  "seen_days": 4
  },
  "ed5d1ec14256c95d33a5f1ec2b43c1c4": {
   "name": "헤일Haillop",
@@ -37931,8 +37936,8 @@
    "퍼리"
   ],
   "first_seen": "2026-10-28",
-  "last_seen": "2026-11-10",
-  "seen_days": 6
+  "last_seen": "2026-11-11",
+  "seen_days": 7
  },
  "674f82169df928bfd9246d134ea4d9ed": {
   "name": "유지해 Hestia",
@@ -38230,8 +38235,8 @@
    "토크"
   ],
   "first_seen": "2026-10-28",
-  "last_seen": "2026-11-10",
-  "seen_days": 5
+  "last_seen": "2026-11-11",
+  "seen_days": 6
  },
  "3301cf524ce670a14880092bbd97623d": {
   "name": "소망이",
@@ -39120,11 +39125,12 @@
   "tags": [
    "babozeu",
    "버튜버",
+   "소통좋아해",
    "표독주의"
   ],
   "first_seen": "2026-10-28",
-  "last_seen": "2026-10-28",
-  "seen_days": 1
+  "last_seen": "2026-11-11",
+  "seen_days": 2
  },
  "83d4bc3a9fb94cc38a03ffdd1df98533": {
   "name": "슈으쿠림",
@@ -39140,6 +39146,19 @@
   "first_seen": "2026-10-28",
   "last_seen": "2026-11-05",
   "seen_days": 2
+ },
+ "9d7026843017d103982bc5401b949429": {
+  "name": "표범희",
+  "followers": 373,
+  "verified": false,
+  "tags": [
+   "노래",
+   "버츄얼",
+   "신입"
+  ],
+  "first_seen": "2026-11-11",
+  "last_seen": "2026-11-11",
+  "seen_days": 1
  },
  "577506b2d214450f65587fb04adc243a": {
   "name": "우소 마토",
@@ -49200,8 +49219,8 @@
    "유입"
   ],
   "first_seen": "2026-10-29",
-  "last_seen": "2026-11-10",
-  "seen_days": 11
+  "last_seen": "2026-11-11",
+  "seen_days": 12
  },
  "57394f9d682f4a65ccad4f8693b1c18b": {
   "name": "겁쟁이 상어 Sharme",
@@ -51857,8 +51876,8 @@
    "스카니아"
   ],
   "first_seen": "2026-10-28",
-  "last_seen": "2026-11-08",
-  "seen_days": 7
+  "last_seen": "2026-11-11",
+  "seen_days": 8
  },
  "86683a9f0710884247f03846c0f343cc": {
   "name": "유 유 yuyu",
@@ -52286,8 +52305,8 @@
    "버튜버"
   ],
   "first_seen": "2026-11-02",
-  "last_seen": "2026-11-10",
-  "seen_days": 2
+  "last_seen": "2026-11-11",
+  "seen_days": 3
  },
  "4463aa23d2e85cd50c23a11ab032a695": {
   "name": "오늘은오늘S2",
@@ -52914,8 +52933,8 @@
    "트릭컬"
   ],
   "first_seen": "2026-11-01",
-  "last_seen": "2026-11-10",
-  "seen_days": 3
+  "last_seen": "2026-11-11",
+  "seen_days": 4
  },
  "61aece85539678ba9c182708b60fa160": {
   "name": "동금지",
@@ -53369,8 +53388,8 @@
    "토크"
   ],
   "first_seen": "2026-10-31",
-  "last_seen": "2026-11-08",
-  "seen_days": 5
+  "last_seen": "2026-11-11",
+  "seen_days": 6
  },
  "8ee90704bb70118c1f21375c2b9b8912": {
   "name": "Error Bug 에러 버그",
@@ -54120,8 +54139,8 @@
    "토크"
   ],
   "first_seen": "2026-10-30",
-  "last_seen": "2026-11-08",
-  "seen_days": 5
+  "last_seen": "2026-11-11",
+  "seen_days": 6
  },
  "cd9d9d5947e1f3ffa6fe76ed4367e39e": {
   "name": "해몽해몽",
@@ -54177,8 +54196,8 @@
    "베일랜드"
   ],
   "first_seen": "2026-11-09",
-  "last_seen": "2026-11-10",
-  "seen_days": 2
+  "last_seen": "2026-11-11",
+  "seen_days": 3
  },
  "fa47ade18b05182a5afa65229f9d5d28": {
   "name": "플렌티",
@@ -55411,8 +55430,8 @@
    "버튜버"
   ],
   "first_seen": "2026-10-28",
-  "last_seen": "2026-11-10",
-  "seen_days": 10
+  "last_seen": "2026-11-11",
+  "seen_days": 11
  },
  "829160b42644004740be1a5ccc18303b": {
   "name": "민히몽",
@@ -56060,8 +56079,8 @@
    "파이어엠블렘"
   ],
   "first_seen": "2026-10-31",
-  "last_seen": "2026-11-06",
-  "seen_days": 4
+  "last_seen": "2026-11-11",
+  "seen_days": 5
  },
  "d171b6d1211895e868342db05d04a771": {
   "name": "달래비 DalRaebi",
@@ -56678,6 +56697,20 @@
   "last_seen": "2026-11-10",
   "seen_days": 1
  },
+ "10e819c3345c472b18bfe794bdc87639": {
+  "name": "설은파",
+  "followers": 110,
+  "verified": false,
+  "tags": [
+   "talk",
+   "버츄얼",
+   "버튜버",
+   "신입"
+  ],
+  "first_seen": "2026-11-11",
+  "last_seen": "2026-11-11",
+  "seen_days": 1
+ },
  "48577bce4663080465705c96411d43fa": {
   "name": "치킨사랑해",
   "followers": 109,
@@ -56904,8 +56937,8 @@
    "신입"
   ],
   "first_seen": "2026-10-29",
-  "last_seen": "2026-11-08",
-  "seen_days": 5
+  "last_seen": "2026-11-11",
+  "seen_days": 6
  },
  "96c0fb64fc4f2bd4e411193d491042c2": {
   "name": "REDPEPER",
@@ -59195,11 +59228,13 @@
    "소통",
    "신입",
    "유입",
-   "종합게임"
+   "유입소통",
+   "종합게임",
+   "훈수o"
   ],
   "first_seen": "2026-10-28",
-  "last_seen": "2026-11-09",
-  "seen_days": 2
+  "last_seen": "2026-11-11",
+  "seen_days": 3
  },
  "8ccc30463255575d0ddb57d5ae5e7a0b": {
   "name": "정이령",
@@ -60351,8 +60386,8 @@
    "할무이"
   ],
   "first_seen": "2026-11-02",
-  "last_seen": "2026-11-04",
-  "seen_days": 2
+  "last_seen": "2026-11-11",
+  "seen_days": 3
  },
  "b819f7c3eeb06dca15d55f8775a2ddce": {
   "name": "호두붕어빵냠냠",
@@ -60367,8 +60402,8 @@
    "하꼬"
   ],
   "first_seen": "2026-10-30",
-  "last_seen": "2026-11-09",
-  "seen_days": 4
+  "last_seen": "2026-11-11",
+  "seen_days": 5
  },
  "c3e32c1fbf9b37138ccb2bbb038537dd": {
   "name": "104 백사",
@@ -60705,6 +60740,21 @@
   "last_seen": "2026-11-07",
   "seen_days": 2
  },
+ "a88489b717d160fa87c1c5b60c2260e4": {
+  "name": "몽롱이다",
+  "followers": 51,
+  "verified": false,
+  "tags": [
+   "버츄얼",
+   "소통",
+   "신입",
+   "저챗",
+   "하꼬"
+  ],
+  "first_seen": "2026-11-11",
+  "last_seen": "2026-11-11",
+  "seen_days": 1
+ },
  "2d2b43b40ac806fa6e6363d5b604ef25": {
   "name": "소금용",
   "followers": 50,
@@ -61004,12 +61054,13 @@
    "버츄얼",
    "버튜버",
    "버튜버키우기",
+   "베이스",
    "신입",
    "저챗"
   ],
   "first_seen": "2026-10-29",
-  "last_seen": "2026-11-10",
-  "seen_days": 4
+  "last_seen": "2026-11-11",
+  "seen_days": 5
  },
  "0431e8a0ae201103d33eb25d04ec918a": {
   "name": "Tsuraisang",
