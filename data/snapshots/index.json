@@ -250,5 +250,19 @@
    "youtube": 208,
    "soop": 65
   }
+ },
+ "2026-11-23": {
+  "total_people": 635,
+  "total_channels": 1538,
+  "n_50k": 31,
+  "n_30k": 63,
+  "n_10k": 167,
+  "n_1k": 513,
+  "sum_followers": 9415158,
+  "platforms": {
+   "chzzk": 362,
+   "youtube": 206,
+   "soop": 67
+  }
  }
 }
